@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>André Czupala – UX Designer</title>
+  <title>André Czupala – UX & Product Designer</title>
 
-  <!-- Webfont: Poppins (wie im CV) -->
+  <!-- Poppins (wie im CV) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description" content="UX Designer – Research, Prototyping, Usability Testing, Designsysteme." />
-  <meta property="og:title" content="André Czupala – UX Designer" />
-  <meta property="og:description" content="Portfolio & Lebenslauf" />
+  <meta name="description" content="UX & Product Designer. Research, Prototyping, Designsysteme. Portfolio und Lebenslauf." />
+  <meta property="og:title" content="André Czupala – UX & Product Designer" />
+  <meta property="og:description" content="Portfolio und Lebenslauf" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#FF7262" />
 
@@ -21,14 +21,23 @@
   <main class="wrap">
     <header class="header">
       <h1>André Czupala</h1>
-      <p class="tagline">UX Designer – Research, Prototyping, Designsysteme</p>
+      <p class="tagline">UX &amp; Product Designer</p>
     </header>
+
+    <section class="about">
+      <p>
+        Ich bin UX &amp; Product Designer mit Fokus auf Research, Prototyping und Designsysteme.
+        Mein Anspruch ist es, digitale Produkte nutzerzentriert und skalierbar zu gestalten,
+        von der ersten Idee bis zur Umsetzung. Ich kombiniere analytisches Denken, einen hohen
+        Qualitätsanspruch und einen klaren Blick für Produktstrukturen.
+      </p>
+    </section>
 
     <nav class="actions" aria-label="Hauptaktionen">
       <a class="btn btn-primary" href="CV2025.pdf" download>
         <span aria-hidden="true">📄</span> Lebenslauf herunterladen
       </a>
-      <a class="btn btn-ghost" href="Portfolio.pdf" target="_blank" rel="noopener">
+      <a class="btn btn-ghost" href="portfolio.html">
         <span aria-hidden="true">📂</span> Portfolio ansehen
       </a>
     </nav>
@@ -40,12 +49,11 @@
     </section>
 
     <footer class="foot">
-      <small>© <span id="y"></span> André Czupala • <a href="impressum.html">Impressum</a></small>
+      <small>© <span id="y"></span> André Czupala • <a class="link" href="impressum.html">Impressum</a></small>
     </footer>
   </main>
 
   <script>
-    // Jahr automatisch setzen
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
