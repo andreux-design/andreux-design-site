@@ -30,6 +30,7 @@ body{
   text-rendering:optimizeLegibility;
 }
 
+/* Layout */
 .wrap{
   min-height:100dvh;
   display:grid;
@@ -37,10 +38,7 @@ body{
   padding: clamp(24px, 4vw, 56px);
 }
 
-.header{
-  text-align:center;
-  margin-bottom: 8px;
-}
+.header{ text-align:center; margin-bottom:8px; }
 h1{
   font-size:clamp(28px, 5vw, 44px);
   line-height:1.1;
@@ -55,6 +53,7 @@ h1{
   font-size:clamp(16px, 2.8vw, 20px);
 }
 
+/* About-Text auf der Startseite */
 .about{
   max-width: 720px;
   margin: 18px auto 26px;
@@ -64,6 +63,7 @@ h1{
   text-align: center;
 }
 
+/* CTA-Buttons */
 .actions{
   margin-top:22px;
   display:flex;
@@ -71,7 +71,6 @@ h1{
   flex-wrap:wrap;
   justify-content:center;
 }
-
 .btn{
   --pad: 14px 18px;
   display:inline-flex;
@@ -91,13 +90,8 @@ h1{
   outline:none;
   box-shadow: 0 0 0 6px var(--ring);
 }
-
-.btn-primary{
-  background:var(--accent);
-  color:#fff;
-}
+.btn-primary{ background:var(--accent); color:#fff; }
 .btn-primary:hover{ background:var(--accent-hover); }
-
 .btn-ghost{
   background:transparent;
   border-color:var(--accent);
@@ -107,6 +101,7 @@ h1{
   background: color-mix(in oklab, var(--accent) 9%, transparent);
 }
 
+/* Kontakt-/Meta-Zeile */
 .meta{
   margin-top:18px;
   color:var(--muted);
@@ -131,8 +126,63 @@ h1{
   font-size:13px;
 }
 
+/* ---------- Portfolio-Seite ---------- */
+
+/* Subheadline dezenter */
+.subtag{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-weight:400;
+  font-size:clamp(14px, 2.4vw, 16px);
+}
+
+/* Vertikale Liste der Cases mit Luft */
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:36px;
+  width:min(980px, 100%);
+  margin-top:22px;
+}
+
+/* Case-Karte */
+.case{
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--muted) 18%, transparent);
+  border-radius:16px;
+  padding:20px;
+  box-shadow: 0 6px 26px rgba(0,0,0,.04);
+}
+.case h2{ margin:0 0 6px; font-size: clamp(18px, 3.6vw, 24px); }
+.case-meta{ margin:0 0 14px; color:var(--muted); }
+
+/* Aktionen: Primary + Link */
+.case-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn-narrow{
+  max-width:280px;
+  justify-content:center;
+}
+.link-accent{
+  color: var(--accent);
+  font-weight:600;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+}
+.link-accent:hover{
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
+}
+
+/* Footer zentriert auf Portfolio */
+.foot-center{ text-align:center; margin-top:32px; }
+
 /* Mobile: Buttons blockig */
 @media (max-width:480px){
-  .actions{flex-direction:column}
+  .actions{ flex-direction:column }
   .btn{ justify-content:center; width:100% }
 }
