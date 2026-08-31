@@ -46,6 +46,27 @@ nicht flächig: keine Inhalte, die erst nach einem Scroll-Ereignis existieren, u
 
 ## Regeln für Inhalte
 
+**Die Quelle ist `cv/cv-data.json` im Repo `bewerbungen-2026`, das Werkzeug ist
+`bin/sprache.py` dort. Beides, nicht eines von beidem** (André, 31.08.2026).
+Jeder Text auf dieser Seite stammt inhaltlich aus der gesperrten Quelle UND wird
+vor dem Livegang gemessen:
+
+```
+npm run sprache -- <datei.md> --profil linkedin
+```
+
+Es gibt keine Leitung zwischen den Repos, der Text wird also von Hand
+herübergenommen. Das ist Absicht und ändert nichts an der Pflicht zu messen.
+
+**Anlass:** die erste Fassung dieser Seite entstand am 31.08.2026 aus gesperrten
+Sätzen und wurde nie gemessen. 8 von 13, LIX 57 statt 50, drei Sätze über
+dreißig Wörter. Belegtexte des Lebenslaufs sind verbfinal und dicht; das ist für
+eine Job-Karte richtig und für eine Webseite zu lang.
+
+**Gekürzt wird durch Weglassen, nicht durch Umformulieren.** Eine zweite Fassung
+derselben Behauptung driftet, sobald eine korrigiert wird.
+
+
 - Keine Em-Dashes, keine Adjektive ohne Beleg
 - Muster **Beleg**: Behauptung, dann Ergebnis, eingeleitet durch das Wort
   „Ergebnis". Dasselbe Muster wie im CV, das ist der Konsistenzhebel

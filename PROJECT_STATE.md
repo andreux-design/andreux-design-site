@@ -10,6 +10,18 @@ dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
 
 ## Offen
 
+- [ ] **Vier Entscheidungen zum Positionierungsvorschlag**, ausgeschrieben in
+      `VORSCHLAG-positionierung.md`: Problemfeld statt Rollenbezeichnung im
+      Kopf, colibre streichen, Abschnitt "Was ich verworfen habe", und wie weit
+      der Block zum eigenen System geht. Umgesetzt ist davon nichts
+- [ ] **Bilder.** Groesste Luecke der Seite und die einzige, die nur André
+      schliessen kann. Fuer das Produktionssystem waere die Ausgabe der
+      Pruefkette ein ehrliches Bild, fuer GoTiger ein Ausschnitt aus dem Prototyp
+- [ ] **Der Text ist ungemessen live gegangen.** 8 von 13 mit
+      `bin/sprache.py --profil linkedin`: 371 Woerter, LIX 57, Flesch 38, drei
+      Saetze ueber dreissig Woerter. Gekuerzt wird durch Weglassen, siehe
+      CLAUDE.md
+
 - [ ] Astro aufsetzen, `@andreux/design-tokens` einbinden
 - [ ] Netlify-Buildeinstellungen setzen (Buildbefehl, Publish-Verzeichnis).
       Existieren heute nicht, weil die Seite ohne Build ausgeliefert wird
@@ -28,6 +40,31 @@ dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
 
 ## Entschieden
+
+**Das Bewerbungssystem wird gezeigt, nicht veroeffentlicht** (André, 31.08.2026).
+Ein Block auf dieser Seite beschreibt, wie es arbeitet, mit der Ausgabe der
+Pruefkette als Bild und dem erzeugten PDF als Beleg. Das Repo `bewerbungen-2026`
+bleibt privat.
+
+Gruende, in dieser Reihenfolge: das Repo sagt auf jeder zweiten Seite, dass
+André einen neuen Job sucht, und er arbeitet seit 12/2025 bei BFP. Dieselbe
+Ueberlegung wie beim Zwischenzeugnis, das aus demselben Grund nicht angefordert
+wird. Dazu stehen dort seine Gehaltsuntergrenze, seine Wechselgruende, seine als
+Spekulation markierte Einschaetzung zur Geschaeftsfuehrung von GoTiger und die
+Grenzen zu BFP.
+
+**Offen gelassen:** ein zweites, sauberes Repo mit nur den Werkzeugen und
+erfundenen Beispieldaten. Waere fuer sich eine Arbeitsprobe, wie
+`design-tokens` es ist. Preis: zwei Repos mit denselben Werkzeugen laufen
+auseinander. Erst bauen, wenn eine Stelle ausdruecklich Code sehen will.
+
+**Risiko, das dabei mitlaeuft und ueber die Rahmung geloest wird:** wer sieht,
+dass die Unterlagen aus einem KI-System kommen, kann daraus lesen, das
+Anschreiben sei nicht selbst geschrieben. Die Rahmung ist deshalb nicht "KI
+schreibt meine Bewerbung", sondern "ich habe Pruefstufen gebaut, die meine
+eigenen Texte gegen die Quelle pruefen, und sie haben mich mehrfach beim
+Uebertreiben erwischt". Das ist auch das, was tatsaechlich passiert ist.
+
 
 - **Astro**, statisch, Content Collections für Fallstudien
 - **Deploy über Git**, wegen Vorschau-URLs pro Branch
