@@ -226,6 +226,31 @@ p { max-width: var(--mass-prosa-web); }
 /* Belege. Kein Bildplatz mehr: drei gestrichelte Kaesten auf einer Seite,
    die live geht, lesen sich als unfertig. Solange es keine Bilder gibt,
    tragen die verlinkten PDFs und Prototypen den Nachweis. */
+/* Bild in einer Arbeit. Ohne max-width sprengt ein 880px-Screenshot die
+   Textspalte; die Bildunterschrift traegt die Herkunft, damit niemand sie
+   fuer eine Nachbildung haelt. */
+.bild { margin: 0 0 var(--raum-6); }
+.bild img {
+  display: block; width: 100%; height: auto;
+  border: var(--strich-0) solid var(--linie);
+}
+.bild figcaption {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-leise); margin-top: var(--raum-4);
+}
+
+/* Der kompakte Eintrag am Ende der Arbeiten. Er traegt keinen eigenen Titel
+   und keine Tags: er soll nicht mit den drei vorderen konkurrieren. */
+.ausserdem { padding-top: var(--raum-8); border-top: var(--strich-0) solid var(--linie); }
+.ausserdem .streifen {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  letter-spacing: var(--spur-versal); text-transform: uppercase;
+  color: var(--tinte-leise);
+}
+.ausserdem p { font-size: var(--schrift-m1); color: var(--tinte-gedaempft); margin: 0; }
+.ausserdem b { color: var(--tinte); font-weight: 600; }
+.beleg-link.schmal { padding: var(--raum-2) var(--raum-4); margin-top: var(--raum-4); }
+
 .belege { display: flex; flex-wrap: wrap; gap: var(--raum-5); margin-bottom: var(--raum-6); }
 .beleg-link {
   display: inline-flex; align-items: baseline; gap: var(--raum-4);
@@ -339,6 +364,31 @@ p { max-width: var(--mass-prosa-web); }
         <div></div>
       </div>
 
+          <article class="arbeit marke-zwei">
+            <div class="reihe">
+              <div class="streifen streifen-marke">
+                <span>2026, laufend</span>
+                <span>Eigenes Projekt</span>
+              </div>
+              <div>
+                <h3>Ein System, das mich beim Übertreiben erwischt</h3>
+                <p class="untertitel">Regelwerk, Vorlagen und Prüfstufen</p>
+                <p class="text">Der Inhalt steht in einer Quelldatei, Satz für Satz von mir. Pro Dokument wird daraus ausgewählt, nicht umformuliert: die Auswahl nennt nur Kennungen. Prüfungen brechen den Bau ab, wenn eine Zahl oder eine Farbe nicht aus dem System stammt. Dazu kommen Agenten, die einzelne Behauptungen gegen die Quelle halten, ohne zu wissen, was der Text erreichen soll. Sie dürfen melden und nichts reparieren. Aus derselben Quelle entstehen Lebenslauf, Anschreiben und die Texte dieser Seite.</p>
+                <figure class="bild">
+                  <img src="bilder/pruefkette.png" alt="Ausgabe der Prüfkette: neunzehn Prüfungen, alle bestanden" loading="lazy" width="880">
+                  <figcaption>Die Prüfkette dieses Lebenslaufs, unverändert aus dem Terminal.</figcaption>
+                </figure>
+                <p class="ergebnis"><b>Ergebnis:</b> neunzehn Prüfungen. Eine davon fand, dass der Arbeitsmodus bei allen zwölf Stationen in den Daten stand und in keinem Dokument gedruckt wurde.</p>
+                <div class="marken">
+                  <span class="marke-tag">Claude Code</span>
+                  <span class="marke-tag">Regelwerk</span>
+                  <span class="marke-tag">Prüfstufen</span>
+                  <span class="marke-tag">Design Tokens</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
           <article class="arbeit">
             <div class="reihe">
               <div class="streifen streifen-marke">
@@ -348,7 +398,7 @@ p { max-width: var(--mass-prosa-web); }
               <div>
                 <h3>GoTiger App</h3>
                 <p class="untertitel">Schnelllieferdienst für asiatische Lebensmittel</p>
-                <p class="text">Ausgerollt in Berlin. Registrierung und Onboarding, Produktübersicht mit Filtern, Detailansicht und Suche, Warenkorb und Lieferslot, dazu Rezepte, die Zutaten nach Portionsgröße und Lagerbestand in den Warenkorb bringen, ein Community-Bereich mit Instagram-Videos und ein Swipe-Spiel zur Rezeptfindung. Alles live gegangen.</p>
+                <p class="text">Ausgerollt in Berlin. Registrierung und Onboarding, Produktübersicht mit Filtern, Warenkorb und Lieferslot, dazu Rezepte, die Zutaten in den Warenkorb bringen, und ein Swipe-Spiel zur Rezeptfindung. Alles live gegangen.</p>
                 <div class="marken">
                   <span class="marke-tag">Figma-Designsystem</span>
                   <span class="marke-tag">Prototyp</span>
@@ -387,29 +437,13 @@ p { max-width: var(--mass-prosa-web); }
             </div>
           </article>
 
-          <article class="arbeit">
-            <div class="reihe">
-              <div class="streifen streifen-marke">
-                <span>Sommersemester 2022</span>
-                <span>Studienprojekt</span>
-              </div>
-              <div>
-                <h3>colibre</h3>
-                <p class="untertitel">Marke und App-Prototyp, Fach Brand Design</p>
-                <p class="text">Thema vom Team selbst gewählt. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, in der Nutzer eigene Orte auf der Karte teilen. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst; zwei Kolleginnen arbeiteten Grafiken und Texte zu und übernahmen die Präsentation.</p>
-                <div class="marken">
-                  <span class="marke-tag">Brand Design</span>
-                  <span class="marke-tag">Designsystem</span>
-                  <span class="marke-tag">Prototyp</span>
-                  <span class="marke-tag">Teamführung</span>
-                </div>
-                <div class="belege">
-                  <a class="beleg-link" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&node-id=545-3938&viewport=-580%2C172%2C0.25&t=XAePuIVsb1D3zHfT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a>
-                </div>
-                <!-- OFFEN: Das Projekt-PDF nennt das falsche Semester. Es wird erst wieder verlinkt, wenn es berichtigt ist. -->
-              </div>
+          <div class="ausserdem reihe">
+            <div class="streifen">Ausserdem</div>
+            <div>
+              <p><b>colibre</b>, Sommersemester 2022. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, Studienprojekt im Fach Brand Design. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst.
+              <a class="beleg-link schmal" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&amp;node-id=545-3938&amp;viewport=-580%2C172%2C0.25&amp;t=XAePuIVsb1D3zHfT-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a></p>
             </div>
-          </article>
+          </div>
 
     </div>
   </section>
@@ -420,10 +454,26 @@ p { max-width: var(--mass-prosa-web); }
       <div class="reihe">
         <h2 id="h-weise">Arbeitsweise</h2>
         <div>
-          <h3>Ein System, das Qualität erzwingt, statt sie zu erhoffen</h3>
+          <h3>Produktionsketten in der Agentur</h3>
           <p class="text">In meiner aktuellen Rolle habe ich zuerst von Hand ein Regelwerk aus Text- und Designregeln aufgebaut, dazu Vorlagen und eine Prüfliste, damit nicht Geschmack vor Fakten gestellt wird. Darauf setzt eine Produktionskette mit Claude Code auf, die dieses Regelwerk als Grundlage mit hineinnimmt.</p>
-          <p class="text">Denselben Aufbau nutze ich für meine eigenen Unterlagen: eine Quelldatei, aus der jede Fassung entsteht, und Prüfungen, die den Bau abbrechen, wenn eine Zahl oder eine Farbe nicht aus dem System stammt. Diese Seite folgt derselben Regel.</p>
+          <!-- Absatz am 31.08.2026 entfernt: er beschrieb das eigene System, das
+               jetzt als erste Arbeit oben steht. Dieselbe Aussage zweimal. -->
           <!-- OFFEN: Platzhalter: Diese Passage beschreibt ein internes System und zeigt es nicht. Keine Screenshots, keine Kundennamen, keine internen Zahlen. Vor dem Livegang gegenlesen. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verworfen ------------------------------------------------------------ -->
+  <section class="abschnitt" id="verworfen" aria-labelledby="h-verworfen">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-verworfen">Was ich verworfen habe</h2>
+        <div>
+          <p class="text">Drei Registerentwürfe, nebeneinander gerendert. Alle drei verworfen: es war derselbe einspaltige Listenkörper in drei Kostümen.</p>
+          <p class="text">Ein zweispaltiges Layout. Sechs von zwölf Belegen landeten beim falschen Arbeitgeber, weil der Browser erst alle Kopfzeilen zeichnet und danach den Inhalt, und ein Lesegerät folgt dieser Reihenfolge.</p>
+          <p class="text">Ein Anschreiben, das jede Regel erfüllte und sich trotzdem maschinell las. Der Grund war nicht die Satzlänge. Es war, wie wenig die Satzlängen streuten.</p>
+          <p class="text">Eine Akzentfarbe, im Schwarzweißdruck nicht von gewöhnlichem Grautext zu unterscheiden. Sie blieb, bekam aber überall zusätzlich Gewicht.</p>
         </div>
       </div>
     </div>

@@ -78,6 +78,25 @@ eine Job-Karte richtig und für eine Webseite zu lang.
 **Gekürzt wird durch Weglassen, nicht durch Umformulieren.** Eine zweite Fassung
 derselben Behauptung driftet, sobald eine korrigiert wird.
 
+**Gemessen am 31.08.2026, nach dem Umbau: 12 von 13 im Profil `website`.**
+Einzige Abweichung ist LIX mit 53 statt 50, und die bleibt bewusst stehen.
+
+LIX rechnet Satzlänge plus Anteil langer Wörter. Die langen Wörter dieser Seite
+sind fast alle gesperrte Fachbegriffe aus `cv/cv-data.json`, darunter
+Schnelllieferdienst, Arbeitsinformationen und End-to-End-Produktdesign. Sie
+lassen sich nicht durch Weglassen kürzen, ohne die Aussage zu ändern, und
+umformuliert wird nicht.
+
+**Die beiden anderen Lesbarkeitszahlen bestehen:** Flesch nach Amstad 44 bei
+mindestens 40, Wiener Sachtextformel 11,6 bei höchstens 12. Die
+Sachtextformel ist ausdrücklich für deutsche Sachtexte gebaut und urteilt
+milder über Komposita. Zwei von drei Messungen tragen, und die dritte kennt
+das Problem: in `doku/profiltexte.md` steht, dass Komposita jede
+Lesbarkeitszahl treiben.
+
+**Was das nicht heißt:** LIX 53 ist kein Freibrief. Wächst der Wert weiter oder
+fällt eine der anderen beiden, wird gekürzt.
+
 
 - Keine Em-Dashes, keine Adjektive ohne Beleg
 - Muster **Beleg**: Behauptung, dann Ergebnis, eingeleitet durch das Wort
