@@ -1,60 +1,611 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>André Czupala – UX & Product Designer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>André Czupala, Senior Product Designer</title>
+<meta name="description" content="Senior Product Designer in Frankfurt am Main. Designsysteme, KI-gestützte Produktionsketten, Landingpages von Konzept über Design bis Text.">
 
-  <!-- Poppins (wie im CV) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-  <meta name="description" content="UX & Product Designer. Research, Prototyping, Designsysteme. Portfolio und Lebenslauf." />
-  <meta property="og:title" content="André Czupala – UX & Product Designer" />
-  <meta property="og:description" content="Portfolio und Lebenslauf" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#FF7262" />
+<style>
+/* ---------------------------------------------------------------------------
+   ENTWURF, 31.08.2026. Liegt im Scratchpad, nicht im Repo. Nichts Bestehendes
+   ist ersetzt: index.html, portfolio.html und styles.css von andreux.design
+   sind unberuehrt.
 
-  <link rel="stylesheet" href="styles.css" />
+   Die Tokens sind aus @andreux/design-tokens dist/tokens.web.css KOPIERT,
+   damit der Entwurf ohne npm-Installation laeuft. Beim Einzug ins Repo wird
+   der Block durch einen Import ersetzt, nicht gepflegt.
+
+   Die zwei Akzentwerte stehen heute in design/erkundung/e4.css des
+   CV-Projekts und NICHT im Tokenpaket. Wenn die Seite bleibt, gehoeren sie
+   ins Paket, sonst gibt es sie zweimal.
+
+   DREI FARBEN, JEDE MIT EINER AUFGABE. Orange traegt die Seite. Magenta und
+   Blau markieren die zweite und dritte Saeule, und zwar nur dort, wo genau
+   diese Faehigkeit gemeint ist. Eine Farbe ohne Aufgabe ist Dekoration.
+
+   Orange ist International Orange, #FF4F00, das Orange der Shuttle-Tanks und
+   der Startanzuege. Es stand bereits als --akzent-flaeche im System. Das
+   Worm-Logo waere Pantone 179, #E03C31, und ist ein Rot, kein Orange.
+
+   Magenta und Blau sind nicht gegriffen: fuer den jeweiligen Farbton wurde
+   die hellste Fassung gesucht, die auf Weiss noch 5,4:1 erreicht, und die
+   dunkelste, die auf #0B0E12 noch 5,4:1 erreicht.
+
+   GEMESSEN am 31.08.2026, WCAG-Kontrast:
+     Text auf hellem Grund #FFFFFF     Text auf dunklem Grund #0B0E12
+       #BF3B00  5,47:1  Orange           #FF4F00  5,87:1  Orange
+       #CD0B72  5,40:1  Magenta          #F4369C  5,40:1  Magenta
+       #0967D3  5,41:1  Blau             #2687F6  5,40:1  Blau
+       #6C7280  4,82:1  leiser Text      #B0B6BD  9,46:1  leiser Text
+     Flaechen, WCAG 1.4.11 verlangt 3:1, nicht 4,5:1:
+       #FF4F00  3,30 hell / 5,87 dunkel
+       #E8007D  4,44 hell / 4,35 dunkel
+       #0A84FF  3,65 hell / 5,30 dunkel
+   Die alte Seite lag mit #fff auf #FF7262 bei 2,9:1 und fiel durch AA.
+--------------------------------------------------------------------------- */
+
+:root {
+  --schrift-m2: 0.8125rem; --schrift-m1: 0.9375rem; --schrift-0: 1.0625rem;
+  --schrift-1: 1.1875rem;  --schrift-3: 1.5rem;     --schrift-6: 2.125rem;
+  --schrift-9: 3.0625rem;
+
+  --raum-2: 0.25rem;  --raum-3: 0.375rem; --raum-4: 0.5rem;  --raum-5: 0.75rem;
+  --raum-6: 1rem;     --raum-7: 1.5rem;   --raum-8: 2rem;    --raum-9: 3rem;
+  --raum-10: 4rem;    --raum-11: 6rem;    --raum-12: 8rem;
+
+  --strich-0: 1px; --strich-1: 3px;
+
+  --zeile-display: 1.08; --zeile-ueberschrift: 1.2; --zeile-text: 1.5;
+  --zeile-meta: 1.4;     --zeile-versal: 1.2;
+  --spur-display: -0.02em; --spur-gross: -0.01em; --spur-versal: 0.08em;
+
+  --mass-prosa-web: 68ch; --mass-claim: 22ch;
+
+  --tinte-95: #0B0E12; --tinte-90: #15181D; --tinte-80: #262A31;
+  --tinte-70: #3C4149; --tinte-60: #565B63; --tinte-50: #6C7280;
+  --tinte-40: #8E949D; --tinte-30: #B0B6BD; --tinte-20: #D2D6DB;
+  --tinte-10: #E7EAEE; --tinte-05: #F4F6F8; --weiss: #FFFFFF;
+
+  --dauer-1: 120ms; --dauer-2: 200ms; --dauer-3: 320ms;
+  --kurve-aus: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Rollen, hell */
+  --flaeche: var(--weiss);
+  --flaeche-gehoben: var(--tinte-05);
+  --tinte: var(--tinte-90);
+  --tinte-gedaempft: var(--tinte-60);
+  --tinte-leise: var(--tinte-50);
+  --linie: var(--tinte-20);
+  --linie-stark: var(--tinte-40);
+  --akzent-text: #BF3B00;
+  --akzent-flaeche: #FF4F00;
+  --magenta-text: #CD0B72;
+  --magenta-flaeche: #E8007D;
+  --blau-text: #0967D3;
+  --blau-flaeche: #0A84FF;
+
+  /* Die Marke eines Blocks. Ohne Angabe traegt er Orange. */
+  --marke-text: var(--akzent-text);
+  --marke-flaeche: var(--akzent-flaeche);
+
+  --familie-display: "Sora", system-ui, sans-serif;
+  --familie-text: "IBM Plex Sans", system-ui, sans-serif;
+  --familie-meta: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* Dunkel: nur Rollen kippen, nie die Rampe. Der Flaechenakzent wird zum
+   Textakzent, weil er auf dunklem Grund 5,87:1 erreicht und der helle nur
+   3,54:1. Eine Regel, zwei Gruende. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-thema="hell"]) {
+    --flaeche: var(--tinte-95); --flaeche-gehoben: var(--tinte-90);
+    --tinte: var(--tinte-10);   --tinte-gedaempft: var(--tinte-30);
+    --tinte-leise: var(--tinte-40); --linie: var(--tinte-80);
+    --linie-stark: var(--tinte-50); --akzent-text: #FF4F00;
+  --magenta-text: #F4369C; --blau-text: #2687F6;
+  }
+}
+:root[data-thema="dunkel"] {
+  --flaeche: var(--tinte-95); --flaeche-gehoben: var(--tinte-90);
+  --tinte: var(--tinte-10);   --tinte-gedaempft: var(--tinte-30);
+  --tinte-leise: var(--tinte-40); --linie: var(--tinte-80);
+  --linie-stark: var(--tinte-50); --akzent-text: #FF4F00;
+  --magenta-text: #F4369C; --blau-text: #2687F6;
+}
+:root[data-thema="hell"] {
+  --flaeche: var(--weiss); --flaeche-gehoben: var(--tinte-05);
+  --tinte: var(--tinte-90); --tinte-gedaempft: var(--tinte-60);
+  --tinte-leise: var(--tinte-50); --linie: var(--tinte-20);
+  --linie-stark: var(--tinte-40); --akzent-text: #BF3B00;
+  --magenta-text: #CD0B72; --blau-text: #0967D3;
+}
+
+/* Die drei Marken. Nur diese drei Klassen verteilen Farbe, damit sie nicht
+   an dreissig Stellen einzeln gesetzt wird. */
+.marke-eins { --marke-text: var(--akzent-text);  --marke-flaeche: var(--akzent-flaeche); }
+.marke-zwei { --marke-text: var(--magenta-text); --marke-flaeche: var(--magenta-flaeche); }
+.marke-drei { --marke-text: var(--blau-text);    --marke-flaeche: var(--blau-flaeche); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--flaeche);
+  color: var(--tinte);
+  font-family: var(--familie-text);
+  font-size: var(--schrift-0);
+  line-height: var(--zeile-text);
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+a { color: inherit; }
+:where(a, button):focus-visible {
+  outline: var(--strich-1) solid var(--akzent-text);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* --- Raster ------------------------------------------------------------- */
+/* Der linke Streifen ist derselbe Gedanke wie im Lebenslauf: Metadaten
+   links, Inhalt rechts, eine Kante ueber das ganze Dokument. Unter 900px
+   faellt er weg, statt zu schrumpfen. */
+.bahn {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: var(--raum-6);
+}
+.reihe {
+  display: grid;
+  gap: var(--raum-5) var(--raum-8);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .bahn { padding-inline: var(--raum-9); }
+  .reihe { grid-template-columns: 11rem minmax(0, 1fr); }
+}
+
+.streifen {
+  font-family: var(--familie-meta);
+  font-size: var(--schrift-m2);
+  line-height: var(--zeile-meta);
+  color: var(--tinte-leise);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-3) var(--raum-5);
+}
+@media (min-width: 900px) {
+  .streifen { flex-direction: column; gap: var(--raum-3); padding-top: 0.35em; }
+}
+/* Dasselbe Quadrat wie im Lebenslauf, hier in der Marke des Blocks. */
+.streifen-marke::before {
+  content: ""; display: inline-block;
+  width: 0.5rem; height: 0.5rem; margin-right: var(--raum-4);
+  background: var(--marke-flaeche); vertical-align: 0.05em;
+}
+
+/* --- Kopf --------------------------------------------------------------- */
+.kopf {
+  border-bottom: var(--strich-0) solid var(--linie);
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--flaeche) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+.kopf-inhalt {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--raum-6);
+  padding-block: var(--raum-5);
+}
+.marke {
+  font-family: var(--familie-display); font-weight: 600;
+  letter-spacing: var(--spur-gross);
+  text-decoration: none;
+}
+.kopf-nav { display: flex; align-items: center; gap: var(--raum-6); }
+.kopf-nav a {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-gedaempft); text-decoration: none;
+}
+.kopf-nav a:hover { color: var(--akzent-text); }
+@media (max-width: 599px) { .kopf-nav .verstecken-schmal { display: none; } }
+
+.thema-knopf {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-gedaempft);
+  background: none; border: var(--strich-0) solid var(--linie);
+  border-radius: 999px; padding: var(--raum-2) var(--raum-5);
+  cursor: pointer;
+  transition: border-color var(--dauer-2) var(--kurve-aus),
+              color var(--dauer-2) var(--kurve-aus);
+}
+.thema-knopf:hover { border-color: var(--linie-stark); color: var(--tinte); }
+
+/* --- Anschlag ----------------------------------------------------------- */
+.anschlag { padding-block: var(--raum-12) var(--raum-11); }
+.anschlag h1 {
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: clamp(2.125rem, 5.2vw, 3.0625rem);
+  line-height: var(--zeile-display); letter-spacing: var(--spur-display);
+  margin: 0 0 var(--raum-7);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.anschlag h1 em { font-style: normal; color: var(--marke-text); }
+.anschlag .satz {
+  font-size: var(--schrift-1); color: var(--tinte-gedaempft);
+  max-width: var(--mass-prosa-web); margin: 0;
+}
+.eigenname {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  letter-spacing: var(--spur-versal); text-transform: uppercase;
+  color: var(--tinte-leise); margin: 0 0 var(--raum-6);
+}
+
+/* Eintritt: einmalig beim Laden, nicht an Scrollen gebunden. Der Inhalt
+   existiert ohne JavaScript vollstaendig, die Bewegung ist rein additiv. */
+@media (prefers-reduced-motion: no-preference) {
+  .heben { animation: heben var(--dauer-3) var(--kurve-aus) both; }
+  .heben:nth-child(2) { animation-delay: 60ms; }
+  .heben:nth-child(3) { animation-delay: 120ms; }
+  @keyframes heben {
+    from { opacity: 0; transform: translateY(0.5rem); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* --- Abschnitte --------------------------------------------------------- */
+.abschnitt { padding-block: var(--raum-10); border-top: var(--strich-0) solid var(--linie); }
+.abschnitt > .bahn > .reihe + .reihe { margin-top: var(--raum-9); }
+h2 {
+  font-family: var(--familie-meta); font-weight: 500;
+  font-size: var(--schrift-m2); letter-spacing: var(--spur-versal);
+  text-transform: uppercase; color: var(--tinte-leise);
+  margin: 0;
+}
+h2::before {
+  content: ""; display: block;
+  width: var(--raum-8); height: var(--strich-1);
+  background: var(--marke-flaeche); margin-bottom: var(--raum-4);
+}
+h3 {
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: var(--schrift-3); line-height: var(--zeile-ueberschrift);
+  letter-spacing: var(--spur-gross);
+  margin: 0 0 var(--raum-4);
+}
+p { max-width: var(--mass-prosa-web); }
+
+.saeulen { display: grid; gap: var(--raum-8); }
+@media (min-width: 700px) { .saeulen { grid-template-columns: repeat(3, 1fr); } }
+.saeule { border-top: var(--strich-1) solid var(--marke-flaeche); padding-top: var(--raum-5); }
+.saeule h3 { font-size: var(--schrift-1); }
+.saeule p { margin: 0; color: var(--tinte-gedaempft); font-size: var(--schrift-m1); }
+
+/* --- Arbeiten ----------------------------------------------------------- */
+.arbeit { padding-block: var(--raum-9); }
+.arbeit + .arbeit { border-top: var(--strich-0) solid var(--linie); }
+.arbeit:first-of-type { padding-top: var(--raum-6); }
+.arbeit .untertitel {
+  color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
+  margin: calc(var(--raum-4) * -1) 0 var(--raum-6);
+}
+.arbeit p.text { margin: 0 0 var(--raum-6); }
+.marken { display: flex; flex-wrap: wrap; gap: var(--raum-3); margin-bottom: var(--raum-6); }
+.marke-tag {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-gedaempft);
+  border: var(--strich-0) solid var(--linie);
+  padding: var(--raum-2) var(--raum-4);
+}
+
+/* Belege. Kein Bildplatz mehr: drei gestrichelte Kaesten auf einer Seite,
+   die live geht, lesen sich als unfertig. Solange es keine Bilder gibt,
+   tragen die verlinkten PDFs und Prototypen den Nachweis. */
+.belege { display: flex; flex-wrap: wrap; gap: var(--raum-5); margin-bottom: var(--raum-6); }
+.beleg-link {
+  display: inline-flex; align-items: baseline; gap: var(--raum-4);
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
+  text-decoration: none;
+  border: var(--strich-0) solid var(--linie-stark);
+  padding: var(--raum-4) var(--raum-6);
+  transition: border-color var(--dauer-2) var(--kurve-aus),
+              color var(--dauer-2) var(--kurve-aus);
+}
+.beleg-link::before {
+  content: ""; width: 0.5rem; height: 0.5rem;
+  background: var(--marke-flaeche); align-self: center;
+}
+.beleg-link:hover { border-color: var(--marke-flaeche); color: var(--marke-text); }
+.beleg-link .gewicht { color: var(--tinte-leise); font-size: var(--schrift-m2); }
+
+/* --- Ergebniszeile, dasselbe Muster wie im Lebenslauf ------------------- */
+.ergebnis {
+  border-left: var(--strich-1) solid var(--marke-flaeche);
+  padding-left: var(--raum-5);
+  margin: 0 0 var(--raum-6);
+  color: var(--tinte-gedaempft);
+  font-size: var(--schrift-m1);
+}
+.ergebnis b { color: var(--tinte); font-weight: 500; }
+
+/* --- Kontakt ------------------------------------------------------------ */
+.kontakt-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--raum-5); }
+.kontakt-liste a {
+  font-family: var(--familie-display); font-weight: 500;
+  font-size: var(--schrift-3); letter-spacing: var(--spur-gross);
+  text-decoration: none;
+  border-bottom: var(--strich-0) solid var(--linie-stark);
+  transition: border-color var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus);
+}
+.kontakt-liste a:hover { color: var(--marke-text); border-color: var(--marke-flaeche); }
+
+.fuss {
+  border-top: var(--strich-0) solid var(--linie);
+  padding-block: var(--raum-8);
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-leise);
+}
+.fuss-inhalt { display: flex; flex-wrap: wrap; gap: var(--raum-6); justify-content: space-between; }
+.fuss a { color: var(--tinte-gedaempft); }
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <header class="header">
-      <h1>André Czupala</h1>
-      <p class="tagline">UX &amp; Product Designer</p>
-    </header>
 
-    <section class="about">
-      <p>
-        Ich bin UX &amp; Product Designer mit Fokus auf Research, Prototyping und Designsysteme.
-        Mein Anspruch ist es, digitale Produkte nutzerzentriert und skalierbar zu gestalten,
-        von der ersten Idee bis zur Umsetzung. Ich kombiniere analytisches Denken, einen hohen
-        Qualitätsanspruch und einen klaren Blick für Produktstrukturen.
-      </p>
-    </section>
-
-    <nav class="actions" aria-label="Hauptaktionen">
-      <a class="btn btn-primary" href="downloads/Andre_Czupala_CV_UX_Designer_2025_DE_OnePage.pdf" download>
-        <span aria-hidden="true">📄</span> Lebenslauf herunterladen
-      </a>
-      <a class="btn btn-ghost" href="portfolio.html">
-        <span aria-hidden="true">📂</span> Portfolio ansehen
-      </a>
+<header class="kopf">
+  <div class="bahn kopf-inhalt">
+    <a class="marke" href="#oben">André Czupala</a>
+    <nav class="kopf-nav" aria-label="Seitenbereiche">
+      <a class="verstecken-schmal" href="#arbeiten">Arbeiten</a>
+      <a class="verstecken-schmal" href="#arbeitsweise">Arbeitsweise</a>
+      <a href="#kontakt">Kontakt</a>
+      <button class="thema-knopf" type="button" id="thema" aria-pressed="false">Thema</button>
     </nav>
+  </div>
+</header>
 
-    <section class="meta">
-      <a class="link" href="mailto:hello@andreux.design">hello@andreux.design</a>
-      <span class="dot" aria-hidden="true">•</span>
-      <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-    </section>
+<main id="oben">
 
-    <footer class="foot">
-      <small>© <span id="y"></span> André Czupala • <a class="link" href="impressum.html">Impressum</a></small>
-    </footer>
-  </main>
+  <!-- Anschlag ------------------------------------------------------------ -->
+  <section class="anschlag">
+    <div class="bahn">
+      <div class="reihe">
+        <div class="streifen">
+          <span>Frankfurt am Main</span>
+          <span>Seit 2010 im Beruf</span>
+          <span>B.Sc. UX Design</span>
+        </div>
+        <div>
+          <p class="eigenname heben">Senior Product Designer</p>
+          <h1 class="heben">Ich gestalte nicht nur Oberflächen, ich baue die <em>Regeln und Prüfstufen</em>, mit denen sie entstehen.</h1>
+          <p class="satz heben">Designsysteme, Produktionsketten mit Claude Code und Landingpages, die ich von Konzept über Design bis Text verantworte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <!-- Säulen -------------------------------------------------------------- -->
+  <section class="abschnitt" aria-labelledby="h-saeulen">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-saeulen">Drei Säulen</h2>
+        <div class="saeulen">
+          <div class="saeule marke-eins">
+            <h3>End-to-End-Produktdesign</h3>
+            <p>Research, Konzept, Prototyp, Designsystem, Übergabe an die Entwicklung, Betreuung bis zum Livegang.</p>
+          </div>
+          <div class="saeule marke-zwei">
+            <h3>KI-gestützte Systeme</h3>
+            <p>Ich baue Produktionsketten aus Regelwerk, Vorlagen und Prüfstufen. Früher habe ich Entwickler gebrieft, heute Modelle. Dieselbe Fähigkeit.</p>
+          </div>
+          <div class="saeule marke-drei">
+            <h3>Conversion und Geschäftsverständnis</h3>
+            <p>Ich begründe Entwürfe gegen messbare Wirkung, inklusive Text. Das Fundament seit 2010, Conversion-Praxis seit Dezember 2025.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arbeiten ------------------------------------------------------------ -->
+  <section class="abschnitt" id="arbeiten" aria-labelledby="h-arbeiten">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-arbeiten">Ausgewählte Arbeiten</h2>
+        <div></div>
+      </div>
+
+          <article class="arbeit">
+            <div class="reihe">
+              <div class="streifen streifen-marke">
+                <span>04/2022 bis 05/2023</span>
+                <span>GoTiger, Berlin</span>
+              </div>
+              <div>
+                <h3>GoTiger App</h3>
+                <p class="untertitel">Schnelllieferdienst für asiatische Lebensmittel</p>
+                <p class="text">Ausgerollt in Berlin. Registrierung und Onboarding, Produktübersicht mit Filtern, Detailansicht und Suche, Warenkorb und Lieferslot, dazu Rezepte, die Zutaten nach Portionsgröße und Lagerbestand in den Warenkorb bringen, ein Community-Bereich mit Instagram-Videos und ein Swipe-Spiel zur Rezeptfindung. Alles live gegangen.</p>
+                <div class="marken">
+                  <span class="marke-tag">Figma-Designsystem</span>
+                  <span class="marke-tag">Prototyp</span>
+                  <span class="marke-tag">Research</span>
+                  <span class="marke-tag">Entwicklerbriefing</span>
+                </div>
+                <div class="belege">
+                  <a class="beleg-link" href="https://www.figma.com/proto/dKZ4NJh3u3cbS198PXPHnq/GoTigerAppPrototype?page-id=0%3A1&node-id=1-4017&p=f&viewport=452%2C365%2C0.02&t=3wbB6h4NsIjWTk6Y-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4017&show-proto-sidebar=1" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a>
+                  <a class="beleg-link" href="downloads/Portfolio-GoTiger-App-DE.pdf" target="_blank" rel="noopener">Projekt als PDF <span class="gewicht">2,0 MB</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="arbeit">
+            <div class="reihe">
+              <div class="streifen streifen-marke">
+                <span>10/2024 bis 03/2025</span>
+                <span>Bachelorthesis</span>
+              </div>
+              <div>
+                <h3>Filo</h3>
+                <p class="untertitel">Plattform, die verstreute Arbeitsinformationen bündelt</p>
+                <p class="text">Zentrale Plattform, die Informationen aus Tools wie E-Mail, Kalender und Projektmanagement bündelt und priorisiert. Klickbarer Figma-Prototyp, dessen Zustände über 271 Variablen ohne Backend simuliert sind.</p>
+                <p class="ergebnis"><b>Ergebnis:</b> evaluiert in moderierten Online-Sitzungen mit 23 Teilnehmenden, mit Think-Aloud, standardisiertem UEQ-S und offenen Fragen.</p>
+                <div class="marken">
+                  <span class="marke-tag">User Research</span>
+                  <span class="marke-tag">Usability-Tests</span>
+                  <span class="marke-tag">Figma-Variablen</span>
+                  <span class="marke-tag">Informationsarchitektur</span>
+                </div>
+                <div class="belege">
+                  <a class="beleg-link" href="downloads/Bachelor_Thesis_Czupala_2025_UXD_Final.pdf" target="_blank" rel="noopener">Thesis lesen <span class="gewicht">PDF, 74 Seiten</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="arbeit">
+            <div class="reihe">
+              <div class="streifen streifen-marke">
+                <span>Sommersemester 2022</span>
+                <span>Studienprojekt</span>
+              </div>
+              <div>
+                <h3>colibre</h3>
+                <p class="untertitel">Marke und App-Prototyp, Fach Brand Design</p>
+                <p class="text">Thema vom Team selbst gewählt. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, in der Nutzer eigene Orte auf der Karte teilen. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst; zwei Kolleginnen arbeiteten Grafiken und Texte zu und übernahmen die Präsentation.</p>
+                <div class="marken">
+                  <span class="marke-tag">Brand Design</span>
+                  <span class="marke-tag">Designsystem</span>
+                  <span class="marke-tag">Prototyp</span>
+                  <span class="marke-tag">Teamführung</span>
+                </div>
+                <div class="belege">
+                  <a class="beleg-link" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&node-id=545-3938&viewport=-580%2C172%2C0.25&t=XAePuIVsb1D3zHfT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a>
+                </div>
+                <!-- OFFEN: Das Projekt-PDF nennt das falsche Semester. Es wird erst wieder verlinkt, wenn es berichtigt ist. -->
+              </div>
+            </div>
+          </article>
+
+    </div>
+  </section>
+
+  <!-- Arbeitsweise -------------------------------------------------------- -->
+  <section class="abschnitt marke-zwei" id="arbeitsweise" aria-labelledby="h-weise">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-weise">Arbeitsweise</h2>
+        <div>
+          <h3>Ein System, das Qualität erzwingt, statt sie zu erhoffen</h3>
+          <p class="text">In meiner aktuellen Rolle habe ich zuerst von Hand ein Regelwerk aus Text- und Designregeln aufgebaut, dazu Vorlagen und eine Prüfliste, damit nicht Geschmack vor Fakten gestellt wird. Darauf setzt eine Produktionskette mit Claude Code auf, die dieses Regelwerk als Grundlage mit hineinnimmt.</p>
+          <p class="text">Denselben Aufbau nutze ich für meine eigenen Unterlagen: eine Quelldatei, aus der jede Fassung entsteht, und Prüfungen, die den Bau abbrechen, wenn eine Zahl oder eine Farbe nicht aus dem System stammt. Diese Seite folgt derselben Regel.</p>
+          <!-- OFFEN: Platzhalter: Diese Passage beschreibt ein internes System und zeigt es nicht. Keine Screenshots, keine Kundennamen, keine internen Zahlen. Vor dem Livegang gegenlesen. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion ---------------------------------------------------------- -->
+  <section class="abschnitt marke-drei" aria-labelledby="h-conversion">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-conversion">Conversion</h2>
+        <div>
+          <h3>Entwürfe, die sich an Zahlen messen lassen</h3>
+          <p class="text">Ich verantworte Landingpages von Konzept über Design bis Text, im Standard als dreistufiger Funnel aus Startseite, Formular und Dankesseite. Für eine Seite habe ich eine gekürzte Fassung der Überschriften vorgelegt und schriftlich gegen den Forschungsstand begründet: Leseanteil, Verweildauer, F-Muster beim Scannen und die gesunkene Aufmerksamkeitsspanne, mit Quellen belegt.</p>
+          <!-- OFFEN: Platzhalter: Die gemessenen Conversion-Zahlen liegen vor, gehören dem Arbeitgeber und dürfen hier nicht stehen. Zu klären, was stattdessen belegt. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lebenslauf ---------------------------------------------------------- -->
+  <section class="abschnitt" aria-labelledby="h-cv">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-cv">Lebenslauf</h2>
+        <div>
+          <p class="text">Zwölf Stationen seit 2010, vom Fotostudio über die Druckvorstufe und die Automobilentwicklung bis zum Produktdesign.</p>
+          <!-- OFFEN, 31.08.2026: Der Link wartet auf die zugeschnittene Fassung.
+               Gemessen an diesem Tag: das Register traegt 1.800 bis 2.150
+               Zeichen je Seite, die vollstaendige Fassung braucht sechs bis
+               sieben Seiten. Ein Lebenslauf in dieser Laenge gehoert nicht
+               oeffentlich verlinkt. Wieder eintragen, sobald die Fassung
+               steht und das Gate gruen ist.
+          <div class="belege">
+            <a class="beleg-link" href="downloads/Andre-Czupala-Lebenslauf.pdf" target="_blank" rel="noopener">Lebenslauf als PDF <span class="gewicht">234 KB</span></a>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt ------------------------------------------------------------- -->
+  <section class="abschnitt" id="kontakt" aria-labelledby="h-kontakt">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-kontakt">Kontakt</h2>
+        <div>
+          <ul class="kontakt-liste">
+            <li><a href="mailto:hello@andreux.design">hello@andreux.design</a></li>
+            <li><a href="https://www.linkedin.com/in/andreczupala" rel="me noopener">linkedin.com/in/andreczupala</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="bahn fuss-inhalt">
+    <span>&copy; <span id="jahr">2026</span> André Czupala</span>
+    <span><a href="impressum.html">Impressum</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('jahr').textContent = new Date().getFullYear();
+
+  // Thema: die Voreinstellung ist das Systemthema. Der Knopf setzt data-thema
+  // und merkt sich die Wahl. Faellt localStorage aus, bleibt das Systemthema,
+  // die Seite funktioniert unveraendert.
+  (function () {
+    var wurzel = document.documentElement;
+    var knopf = document.getElementById('thema');
+    var gemerkt = null;
+    try { gemerkt = localStorage.getItem('thema'); } catch (e) {}
+    if (gemerkt) wurzel.setAttribute('data-thema', gemerkt);
+
+    function dunkel() {
+      var gesetzt = wurzel.getAttribute('data-thema');
+      if (gesetzt) return gesetzt === 'dunkel';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    function beschriften() {
+      knopf.setAttribute('aria-pressed', String(dunkel()));
+      knopf.textContent = dunkel() ? 'Hell' : 'Dunkel';
+    }
+    beschriften();
+    knopf.addEventListener('click', function () {
+      var neu = dunkel() ? 'hell' : 'dunkel';
+      wurzel.setAttribute('data-thema', neu);
+      try { localStorage.setItem('thema', neu); } catch (e) {}
+      beschriften();
+    });
+  })();
+</script>
+
 </body>
 </html>
