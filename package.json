@@ -1,0 +1,12 @@
+{
+  "name": "andreux-design-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Portfolioseite andreux.design. Statisches HTML, kein Build.",
+  "scripts": {
+    "tokens": "cp node_modules/@andreux/design-tokens/dist/tokens.web.css tokens.css && echo 'tokens.css aus dem Paket erneuert'"
+  },
+  "dependencies": {
+    "@andreux/design-tokens": "github:andreux-design/design-tokens#v1.1.0"
+  }
+}
