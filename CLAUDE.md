@@ -14,19 +14,31 @@ bewusst herüberkopiert wird. **Es gibt keine Leitung zu den privaten Daten.**
 - Wer eine Datei beurteilt, hat sie gelesen, nicht ihre Beschreibung.
 - Wenn eine Prüfung anschlägt, zuerst die Prüfung verdächtigen.
 
-## Stand: noch die alte Seite
+## Stand: die neue Seite ist live (31.08.2026)
 
-Aktuell statisches HTML: `index.html`, `portfolio.html`, `impressum.html`,
-ein `styles.css`, dazu `downloads/` mit neun PDFs (23 MB). Kein Build.
+`index.html` entsteht aus dem gesperrten Datensatz des CV-Projekts, dazu
+`impressum.html`, `tokens.css` aus dem Paket und `downloads/` mit sechs
+Dateien. Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
+`tokens.css` aus `@andreux/design-tokens`, gepinnt auf `v1.1.0`.
 
-**Diese Fassung wird ersetzt**, nicht weiterentwickelt. Sie hat belegte Mängel:
-`#fff` auf `#FF7262` ergibt 2,9:1 und fällt durch WCAG AA; die Akzentfarbe ist
+`portfolio.html` ist ersetzt. `/portfolio` und `/portfolio.html` leiten per
+`_redirects` auf den Abschnitt Ausgewählte Arbeiten der Startseite. Die alten
+Fassungen von `index.html` und `portfolio.html` stehen im Commit `ac86f39`,
+`styles.css` gehört nur noch zu ihnen.
+
+**Was an der alten Fassung belegt falsch war**, als Maßstab für die neue:
+`#fff` auf `#FF7262` ergab 2,9:1 und fiel durch WCAG AA; die Akzentfarbe war
 Figmas eigene Markenfarbe; Emoji als Icons; alles zentriert, inklusive eines
-720 px breiten Fließtextabsatzes; die Schrift lädt nur auf einer von drei Seiten.
+720 px breiten Fließtextabsatzes; die Schrift lud nur auf einer von drei Seiten.
+
+**Was an der neuen offen ist:** die vier Entscheidungen in
+`VORSCHLAG-positionierung.md`, die fehlenden Bilder, und der Text, der mit
+8 von 13 ungemessen live gegangen ist.
 
 ## Geplant
 
-Astro, statisch, mit Content Collections für die Fallstudien. Begründung: die
+**Noch nicht umgesetzt.** Astro, statisch, mit Content Collections für die
+Fallstudien. Begründung: die
 Seiten sind zu 95 % Text und Bild, Astro liefert dafür standardmäßig null
 JavaScript aus. React bleibt über `client:`-Direktiven verfügbar, wo Interaktion
 wirklich zählt.
