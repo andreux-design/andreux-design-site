@@ -22,18 +22,20 @@ dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
       Saetze ueber dreissig Woerter. Gekuerzt wird durch Weglassen, siehe
       CLAUDE.md
 
-- [ ] Astro aufsetzen, `@andreux/design-tokens` einbinden
+- [ ] Astro aufsetzen. `@andreux/design-tokens` ist seit dem 31.08.2026
+      eingebunden, ueber package.json auf v1.1.0 und `npm run tokens`
 - [ ] Netlify-Buildeinstellungen setzen (Buildbefehl, Publish-Verzeichnis).
       Existieren heute nicht, weil die Seite ohne Build ausgeliefert wird
 - [ ] Content Collection für Fallstudien mit Zod-Schema
 - [ ] Erste Fallstudie: **Filo**, nicht das Landingpage-System.
       Filo ist unstrittig eigene Arbeit, beim LP-System liegen die Rechte
       laut Vertrag beim Arbeitgeber
-- [ ] Entscheiden, was von den 23 MB in `downloads/` bleibt
-- [ ] Historienballast: Repo 46,5 MB gegen 23 MB Arbeitsverzeichnis.
-      Bereinigen ginge nur durch Umschreiben der Historie
-- [ ] `impressum.html`: Linktext `hello@andreux.design`, `href` zeigt auf
-      `info@andreux.design`. Stimmt nicht überein
+- [ ] Entscheiden, was von `downloads/` bleibt. Am 31.08.2026 von 23 MB und
+      neun Dateien auf 13 MB und sechs geschrumpft; die Thesis allein wiegt 6 MB
+- [ ] **Historienballast, jetzt auch eine Rechtefrage.** 36 MB Historie gegen
+      13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
+      stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
+      weg sind sie erst durch Umschreiben der Historie
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
       nicht als Skill installieren: der holt seine Regeln zur Laufzeit per
