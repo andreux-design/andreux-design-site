@@ -200,16 +200,40 @@ h3 {
 }
 p { max-width: var(--mass-prosa-web); }
 
-.saeulen { display: grid; gap: var(--raum-8); }
-@media (min-width: 700px) { .saeulen { grid-template-columns: repeat(3, 1fr); } }
-.saeule { border-top: var(--strich-1) solid var(--marke-flaeche); padding-top: var(--raum-5); }
-.saeule h3 { font-size: var(--schrift-1); }
-.saeule p { margin: 0; color: var(--tinte-gedaempft); font-size: var(--schrift-m1); }
+/* Der Anspruch einer Faehigkeit. Er steht in der Textspalte gross, waehrend
+   der Name der Faehigkeit im Streifen steht: derselbe Bau wie im Lebenslauf,
+   Kennung links, Aussage rechts. Bis zum 01.09.2026 standen hier drei
+   nebeneinandergestellte Saeulenkaesten; sie nannten die Faehigkeit zweimal,
+   einmal als Ueberschrift und einmal im Text darunter. */
+.anspruch {
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: var(--schrift-6); line-height: var(--zeile-ueberschrift);
+  letter-spacing: var(--spur-gross);
+  margin: 0;
+  text-wrap: pretty;
+}
+/* Die Zeile, die vom Standpunkt zu den Belegen fuehrt. Sie traegt keine
+   eigene Aussage, deshalb weder Groesse noch Farbe eines Anspruchs. */
+.ueberleitung {
+  margin: var(--raum-7) 0 0;
+  color: var(--tinte-gedaempft);
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
+}
+/* Schlusszeile unter dem Kontakt. Sie sagt, wie die Seite entstanden ist,
+   und gehoert damit zur Aussage, nicht zur Fusszeile. */
+.methode {
+  margin: var(--raum-8) 0 0;
+  padding-top: var(--raum-6);
+  border-top: var(--strich-0) solid var(--linie);
+  color: var(--tinte-leise);
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  line-height: var(--zeile-meta);
+}
 
 /* --- Arbeiten ----------------------------------------------------------- */
 .arbeit { padding-block: var(--raum-9); }
 .arbeit + .arbeit { border-top: var(--strich-0) solid var(--linie); }
-.arbeit:first-of-type { padding-top: var(--raum-6); }
+.arbeit:first-of-type { padding-top: var(--raum-9); }
 .arbeit .untertitel {
   color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
   margin: calc(var(--raum-4) * -1) 0 var(--raum-6);
@@ -226,18 +250,11 @@ p { max-width: var(--mass-prosa-web); }
 /* Belege. Kein Bildplatz mehr: drei gestrichelte Kaesten auf einer Seite,
    die live geht, lesen sich als unfertig. Solange es keine Bilder gibt,
    tragen die verlinkten PDFs und Prototypen den Nachweis. */
-/* Bild in einer Arbeit. Ohne max-width sprengt ein 880px-Screenshot die
-   Textspalte; die Bildunterschrift traegt die Herkunft, damit niemand sie
-   fuer eine Nachbildung haelt. */
-.bild { margin: 0 0 var(--raum-6); }
-.bild img {
-  display: block; width: 100%; height: auto;
-  border: var(--strich-0) solid var(--linie);
-}
-.bild figcaption {
-  font-family: var(--familie-meta); font-size: var(--schrift-m2);
-  color: var(--tinte-leise); margin-top: var(--raum-4);
-}
+/* HIER STAND DIE AUSGABE DER PRUEFKETTE ALS BILD. Entfernt am 01.09.2026,
+   Entscheidung André: sie verraet den Zweck des Systems, naemlich dass er
+   seine eigenen Bewerbungsunterlagen baut, und eine Terminalausgabe sagt
+   ohne Erklaerung nichts. Die Regeln fuer .bild stehen im Vorgaengercommit,
+   falls je ein anderes Bild an dieselbe Stelle kommt. */
 
 /* Der kompakte Eintrag am Ende der Arbeiten. Er traegt keinen eigenen Titel
    und keine Tags: er soll nicht mit den drei vorderen konkurrieren. */
@@ -305,8 +322,8 @@ p { max-width: var(--mass-prosa-web); }
   <div class="bahn kopf-inhalt">
     <a class="marke" href="#oben">André Czupala</a>
     <nav class="kopf-nav" aria-label="Seitenbereiche">
-      <a class="verstecken-schmal" href="#arbeiten">Arbeiten</a>
-      <a class="verstecken-schmal" href="#arbeitsweise">Arbeitsweise</a>
+      <a class="verstecken-schmal" href="#koennen">Was ich kann</a>
+      <a class="verstecken-schmal" href="#verworfen">Verworfen</a>
       <a href="#kontakt">Kontakt</a>
       <button class="thema-knopf" type="button" id="thema" aria-pressed="false">Thema</button>
     </nav>
@@ -326,180 +343,193 @@ p { max-width: var(--mass-prosa-web); }
         </div>
         <div>
           <p class="eigenname heben">Senior Product Designer</p>
-          <h1 class="heben">Ich gestalte nicht nur Oberflächen, ich baue die <em>Regeln und Prüfstufen</em>, mit denen sie entstehen.</h1>
-          <p class="satz heben">Designsysteme, Produktionsketten mit Claude Code und Landingpages, die ich von Konzept über Design bis Text verantworte.</p>
+          <h1 class="heben">Ich entscheide nicht nach <em>Geschmack</em>.</h1>
+          <p class="satz heben">Wer nach Geschmack entscheidet, verliert die Diskussion gegen den, der lauter ist. Stattdessen baue ich ein Regelwerk aus Text- und Designregeln, mit Prüfliste.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Säulen -------------------------------------------------------------- -->
-  <section class="abschnitt" aria-labelledby="h-saeulen">
+  <!-- Woher das kommt ------------------------------------------------------ -->
+  <section class="abschnitt" aria-labelledby="h-haltung">
     <div class="bahn">
       <div class="reihe">
-        <h2 id="h-saeulen">Drei Säulen</h2>
-        <div class="saeulen">
-          <div class="saeule marke-eins">
-            <h3>End-to-End-Produktdesign</h3>
-            <p>Research, Konzept, Prototyp, Designsystem, Übergabe an die Entwicklung, Betreuung bis zum Livegang.</p>
-          </div>
-          <div class="saeule marke-zwei">
-            <h3>KI-gestützte Systeme</h3>
-            <p>Ich baue Produktionsketten aus Regelwerk, Vorlagen und Prüfstufen. Früher habe ich Entwickler gebrieft, heute Modelle. Dieselbe Fähigkeit.</p>
-          </div>
-          <div class="saeule marke-drei">
-            <h3>Conversion und Geschäftsverständnis</h3>
-            <p>Ich begründe Entwürfe gegen messbare Wirkung, inklusive Text. Das Fundament seit 2010, Conversion-Praxis seit Dezember 2025.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Arbeiten ------------------------------------------------------------ -->
-  <section class="abschnitt" id="arbeiten" aria-labelledby="h-arbeiten">
-    <div class="bahn">
-      <div class="reihe">
-        <h2 id="h-arbeiten">Ausgewählte Arbeiten</h2>
-        <div></div>
-      </div>
-
-          <article class="arbeit marke-zwei">
-            <div class="reihe">
-              <div class="streifen streifen-marke">
-                <span>2026, laufend</span>
-                <span>Eigenes Projekt</span>
-              </div>
-              <div>
-                <h3>Ein System, das mich beim Übertreiben erwischt</h3>
-                <p class="untertitel">Regelwerk, Vorlagen und Prüfstufen</p>
-                <p class="text">Der Inhalt steht in einer Quelldatei, Satz für Satz von mir. Pro Dokument wird daraus ausgewählt, nicht umformuliert: die Auswahl nennt nur Kennungen. Prüfungen brechen den Bau ab, wenn eine Zahl oder eine Farbe nicht aus dem System stammt. Dazu kommen Agenten, die einzelne Behauptungen gegen die Quelle halten, ohne zu wissen, was der Text erreichen soll. Sie dürfen melden und nichts reparieren. Aus derselben Quelle entstehen Lebenslauf, Anschreiben und die Texte dieser Seite.</p>
-                <figure class="bild">
-                  <img src="bilder/pruefkette.png" alt="Ausgabe der Prüfkette: neunzehn Prüfungen, alle bestanden" loading="lazy" width="880">
-                  <figcaption>Die Prüfkette dieses Lebenslaufs, unverändert aus dem Terminal.</figcaption>
-                </figure>
-                <p class="ergebnis"><b>Ergebnis:</b> neunzehn Prüfungen. Eine davon fand, dass der Arbeitsmodus bei allen zwölf Stationen in den Daten stand und in keinem Dokument gedruckt wurde.</p>
-                <div class="marken">
-                  <span class="marke-tag">Claude Code</span>
-                  <span class="marke-tag">Regelwerk</span>
-                  <span class="marke-tag">Prüfstufen</span>
-                  <span class="marke-tag">Design Tokens</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="arbeit">
-            <div class="reihe">
-              <div class="streifen streifen-marke">
-                <span>04/2022 bis 05/2023</span>
-                <span>GoTiger, Berlin</span>
-              </div>
-              <div>
-                <h3>GoTiger App</h3>
-                <p class="untertitel">Schnelllieferdienst für asiatische Lebensmittel</p>
-                <p class="text">Ausgerollt in Berlin. Registrierung und Onboarding, Produktübersicht mit Filtern, Warenkorb und Lieferslot, dazu Rezepte, die Zutaten in den Warenkorb bringen, und ein Swipe-Spiel zur Rezeptfindung. Alles live gegangen.</p>
-                <div class="marken">
-                  <span class="marke-tag">Figma-Designsystem</span>
-                  <span class="marke-tag">Prototyp</span>
-                  <span class="marke-tag">Research</span>
-                  <span class="marke-tag">Entwicklerbriefing</span>
-                </div>
-                <div class="belege">
-                  <a class="beleg-link" href="https://www.figma.com/proto/dKZ4NJh3u3cbS198PXPHnq/GoTigerAppPrototype?page-id=0%3A1&node-id=1-4017&p=f&viewport=452%2C365%2C0.02&t=3wbB6h4NsIjWTk6Y-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4017&show-proto-sidebar=1" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a>
-                  <a class="beleg-link" href="downloads/Portfolio-GoTiger-App-DE.pdf" target="_blank" rel="noopener">Projekt als PDF <span class="gewicht">2,0 MB</span></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="arbeit">
-            <div class="reihe">
-              <div class="streifen streifen-marke">
-                <span>10/2024 bis 03/2025</span>
-                <span>Bachelorthesis</span>
-              </div>
-              <div>
-                <h3>Filo</h3>
-                <p class="untertitel">Plattform, die verstreute Arbeitsinformationen bündelt</p>
-                <p class="text">Zentrale Plattform, die Informationen aus Tools wie E-Mail, Kalender und Projektmanagement bündelt und priorisiert. Klickbarer Figma-Prototyp, dessen Zustände über 271 Variablen ohne Backend simuliert sind.</p>
-                <p class="ergebnis"><b>Ergebnis:</b> evaluiert in moderierten Online-Sitzungen mit 23 Teilnehmenden, mit Think-Aloud, standardisiertem UEQ-S und offenen Fragen.</p>
-                <div class="marken">
-                  <span class="marke-tag">User Research</span>
-                  <span class="marke-tag">Usability-Tests</span>
-                  <span class="marke-tag">Figma-Variablen</span>
-                  <span class="marke-tag">Informationsarchitektur</span>
-                </div>
-                <div class="belege">
-                  <a class="beleg-link" href="downloads/Bachelor_Thesis_Czupala_2025_UXD_Final.pdf" target="_blank" rel="noopener">Thesis lesen <span class="gewicht">PDF, 74 Seiten</span></a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <div class="ausserdem reihe">
-            <div class="streifen">Ausserdem</div>
-            <div>
-              <p><b>colibre</b>, Sommersemester 2022. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, Studienprojekt im Fach Brand Design. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst.
-              <a class="beleg-link schmal" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&amp;node-id=545-3938&amp;viewport=-580%2C172%2C0.25&amp;t=XAePuIVsb1D3zHfT-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a></p>
-            </div>
-          </div>
-
-    </div>
-  </section>
-
-  <!-- Arbeitsweise -------------------------------------------------------- -->
-  <section class="abschnitt marke-zwei" id="arbeitsweise" aria-labelledby="h-weise">
-    <div class="bahn">
-      <div class="reihe">
-        <h2 id="h-weise">Arbeitsweise</h2>
+        <h2 id="h-haltung">Woher das kommt</h2>
         <div>
-          <h3>Produktionsketten in der Agentur</h3>
-          <p class="text">In meiner aktuellen Rolle habe ich zuerst von Hand ein Regelwerk aus Text- und Designregeln aufgebaut, dazu Vorlagen und eine Prüfliste, damit nicht Geschmack vor Fakten gestellt wird. Darauf setzt eine Produktionskette mit Claude Code auf, die dieses Regelwerk als Grundlage mit hineinnimmt.</p>
-          <!-- Absatz am 31.08.2026 entfernt: er beschrieb das eigene System, das
-               jetzt als erste Arbeit oben steht. Dieselbe Aussage zweimal. -->
-          <!-- OFFEN: Platzhalter: Diese Passage beschreibt ein internes System und zeigt es nicht. Keine Screenshots, keine Kundennamen, keine internen Zahlen. Vor dem Livegang gegenlesen. -->
+          <p class="text">Angefangen hat das mit Widerspruch in Projekten. Der kam oft genug, nur ging es dabei selten um Fakten und meistens um Geschmack. Seitdem baue ich mir Prüfungen, die auf Fakten bestehen. Für ein Team heißt das: Accessibility ist Bedingung für die Freigabe, nicht Nacharbeit.</p>
+          <p class="ueberleitung">Drei Dinge kann ich, und für jedes gibt es unten den Beleg.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Verworfen ------------------------------------------------------------ -->
+  <!-- Können 1: KI-gestützte Systeme --------------------------------------- -->
+  <section class="abschnitt marke-zwei" id="koennen" aria-labelledby="h-ki">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-ki">KI-gestützte Systeme</h2>
+        <div>
+          <p class="anspruch">Ich baue Produktionsketten aus Regelwerk, Vorlagen und Prüfstufen. Früher habe ich Entwickler gebrieft, heute Modelle. Dieselbe Fähigkeit.</p>
+        </div>
+      </div>
+
+      <article class="arbeit marke-zwei">
+        <div class="reihe">
+          <div class="streifen streifen-marke">
+            <span>Seit 12/2025</span>
+            <span>In der Agentur</span>
+          </div>
+          <div>
+            <h3>Eine Produktionskette für ganze Kampagnen</h3>
+            <p class="text">Aufgesetzt mit Claude Code. Das Regelwerk davor ist von Hand entstanden. Über eine Bedienoberfläche läuft die Produktion mit getrennten Freigaben für Text und Seite, abgestufter Selbständigkeit und einem Not-Aus.</p>
+            <p class="ergebnis"><b>Nicht gezeigt:</b> die Rechte liegen beim Arbeitgeber. Beschrieben ist der Mechanismus.</p>
+            <div class="marken">
+              <span class="marke-tag">Claude Code</span>
+              <span class="marke-tag">Regelwerk</span>
+              <span class="marke-tag">Freigabelogik</span>
+              <span class="marke-tag">Designsystem</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="arbeit marke-zwei">
+        <div class="reihe">
+          <div class="streifen streifen-marke">
+            <span>2026, laufend</span>
+            <span>Eigenes Projekt</span>
+          </div>
+          <div>
+            <h3>Ein System, das mich beim Übertreiben erwischt</h3>
+            <p class="text">Der Inhalt steht in einer Quelldatei, Satz für Satz von mir. Pro Dokument wird daraus ausgewählt, nicht umformuliert: Die Auswahl nennt nur Kennungen. Dazu kommen Prüfprogramme, die einzelne Behauptungen gegen die Quelle halten, ohne zu wissen, was der Text erreichen soll. Sie dürfen melden und nichts reparieren. Einundzwanzig Prüfungen brechen den Bau ab, wenn eine Schriftgröße oder eine Farbe nicht aus dem Designsystem stammt.</p>
+            <p class="ergebnis"><b>Ergebnis:</b> eine Prüfung vergleicht, was in der Quelle steht, mit dem, was im fertigen Dokument ankommt. So fiel auf, dass eine Angabe überall gepflegt war und nirgends gedruckt wurde.</p>
+            <div class="marken">
+              <span class="marke-tag">Claude Code</span>
+              <span class="marke-tag">Prüfstufen</span>
+              <span class="marke-tag">Design Tokens</span>
+              <span class="marke-tag">Playwright</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Können 2: End-to-End-Produktdesign ------------------------------------ -->
+  <section class="abschnitt marke-eins" aria-labelledby="h-e2e">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-e2e">End-to-End-Produktdesign</h2>
+        <div>
+          <p class="anspruch">Research, Konzept, Prototyp, Designsystem, Übergabe an die Entwicklung, Betreuung bis zum Livegang.</p>
+        </div>
+      </div>
+
+      <article class="arbeit">
+        <div class="reihe">
+          <div class="streifen streifen-marke">
+            <span>04/2022 bis 05/2023</span>
+            <span>GoTiger, Berlin</span>
+          </div>
+          <div>
+            <h3>GoTiger App</h3>
+            <p class="untertitel">Schnelllieferdienst für asiatische Lebensmittel</p>
+            <p class="text">Ausgerollt in Berlin. Registrierung und Onboarding, Produktübersicht mit Filtern, Warenkorb und Lieferslot, dazu Rezepte, die Zutaten in den Warenkorb bringen, und ein Swipe-Spiel zur Rezeptfindung. Alles live gegangen.</p>
+            <div class="marken">
+              <span class="marke-tag">Figma-Designsystem</span>
+              <span class="marke-tag">Prototyp</span>
+              <span class="marke-tag">Research</span>
+              <span class="marke-tag">Entwicklerbriefing</span>
+            </div>
+            <div class="belege">
+              <a class="beleg-link" href="https://www.figma.com/proto/dKZ4NJh3u3cbS198PXPHnq/GoTigerAppPrototype?page-id=0%3A1&amp;node-id=1-4017&amp;p=f&amp;viewport=452%2C365%2C0.02&amp;t=3wbB6h4NsIjWTk6Y-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A4017&amp;show-proto-sidebar=1" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a>
+              <a class="beleg-link" href="downloads/Portfolio-GoTiger-App-DE.pdf" target="_blank" rel="noopener">Projekt als PDF <span class="gewicht">2,0 MB</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="arbeit">
+        <div class="reihe">
+          <div class="streifen streifen-marke">
+            <span>10/2024 bis 03/2025</span>
+            <span>Bachelorthesis</span>
+          </div>
+          <div>
+            <h3>Filo</h3>
+            <p class="text">Zentrale Plattform, die Informationen aus Tools wie E-Mail, Kalender und Projektmanagement bündelt und priorisiert. Klickbarer Figma-Prototyp, dessen Zustände über 271 Variablen ohne Backend simuliert sind.</p>
+            <p class="ergebnis"><b>Ergebnis:</b> evaluiert in moderierten Online-Sitzungen mit 23 Teilnehmenden, mit Think-Aloud, standardisiertem UEQ-S und offenen Fragen.</p>
+            <div class="marken">
+              <span class="marke-tag">User Research</span>
+              <span class="marke-tag">Usability-Tests</span>
+              <span class="marke-tag">Figma-Variablen</span>
+              <span class="marke-tag">Informationsarchitektur</span>
+            </div>
+            <div class="belege">
+              <a class="beleg-link" href="downloads/Bachelor_Thesis_Czupala_2025_UXD_Final.pdf" target="_blank" rel="noopener">Thesis lesen <span class="gewicht">PDF, 74 Seiten</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="ausserdem reihe">
+        <div class="streifen">Ausserdem</div>
+        <div>
+          <p><b>colibre</b>, Sommersemester 2022. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, Studienprojekt im Fach Brand Design. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst.
+          <a class="beleg-link schmal" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&amp;node-id=545-3938&amp;viewport=-580%2C172%2C0.25&amp;t=XAePuIVsb1D3zHfT-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Können 3: Conversion -------------------------------------------------- -->
+  <section class="abschnitt marke-drei" aria-labelledby="h-conv">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-conv">Conversion und Geschäftsverständnis</h2>
+        <div>
+          <p class="anspruch">Ich begründe Entwürfe gegen messbare Wirkung, inklusive Text.</p>
+          <p class="text">Das Fundament seit 2010, Conversion-Praxis seit Dezember 2025.</p>
+        </div>
+      </div>
+
+      <article class="arbeit marke-drei">
+        <div class="reihe">
+          <div class="streifen streifen-marke">
+            <span>2026</span>
+            <span>In der Agentur</span>
+          </div>
+          <div>
+            <h3>Kürzere Überschriften</h3>
+            <p class="untertitel">Ein Vorschlag, der sich widerlegen lässt</p>
+            <p class="text">Für eine Landingpage habe ich eine gekürzte Fassung der Überschriften vorgelegt und schriftlich gegen den Forschungsstand begründet: Leseanteil, Verweildauer, F-Muster beim Scannen und die gesunkene Aufmerksamkeitsspanne, mit Quellen belegt. Dazu schlug ich vor, beide Fassungen gegeneinander laufen zu lassen und die Anfragen zu zählen.</p>
+            <div class="marken">
+              <span class="marke-tag">Landingpages</span>
+              <span class="marke-tag">UX-Writing</span>
+              <span class="marke-tag">A/B-Test</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Verworfen ------------------------------------------------------------- -->
   <section class="abschnitt" id="verworfen" aria-labelledby="h-verworfen">
     <div class="bahn">
       <div class="reihe">
         <h2 id="h-verworfen">Was ich verworfen habe</h2>
         <div>
-          <p class="text">Drei Registerentwürfe, nebeneinander gerendert. Alle drei verworfen: es war derselbe einspaltige Listenkörper in drei Kostümen.</p>
-          <p class="text">Ein zweispaltiges Layout. Sechs von zwölf Belegen landeten beim falschen Arbeitgeber, weil der Browser erst alle Kopfzeilen zeichnet und danach den Inhalt, und ein Lesegerät folgt dieser Reihenfolge.</p>
-          <p class="text">Ein Anschreiben, das jede Regel erfüllte und sich trotzdem maschinell las. Der Grund war nicht die Satzlänge. Es war, wie wenig die Satzlängen streuten.</p>
-          <p class="text">Eine Akzentfarbe, im Schwarzweißdruck nicht von gewöhnlichem Grautext zu unterscheiden. Sie blieb, bekam aber überall zusätzlich Gewicht.</p>
+          <p class="text">Drei Typografie-Entwürfe für den Lebenslauf, nebeneinander gerendert. Alle drei verworfen: Es war dieselbe einspaltige Liste in drei Kostümen.</p>
+          <p class="text">Ein zweispaltiges Layout. Sechs von zwölf Belegen landeten beim falschen Arbeitgeber, weil der Browser erst alle Kopfzeilen zeichnet und danach den Inhalt. Ein Programm, das Lebensläufe ausliest, folgt dieser Reihenfolge.</p>
+          <p class="text">Ein Anschreiben, das jede Regel erfüllte und sich trotzdem maschinell las. Der Grund war nicht die Satzlänge. Er lag darin, wie wenig die Satzlängen streuten.</p>
+          <p class="text">Farbe als alleiniges Unterscheidungsmerkmal. In Graustufen gemessen ist der Akzent von Grautext nicht zu unterscheiden, und Firmen drucken schwarzweiß. Die Farbe blieb, bekam aber überall zusätzlich Gewicht.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Conversion ---------------------------------------------------------- -->
-  <section class="abschnitt marke-drei" aria-labelledby="h-conversion">
-    <div class="bahn">
-      <div class="reihe">
-        <h2 id="h-conversion">Conversion</h2>
-        <div>
-          <h3>Entwürfe, die sich an Zahlen messen lassen</h3>
-          <p class="text">Ich verantworte Landingpages von Konzept über Design bis Text, im Standard als dreistufiger Funnel aus Startseite, Formular und Dankesseite. Für eine Seite habe ich eine gekürzte Fassung der Überschriften vorgelegt und schriftlich gegen den Forschungsstand begründet: Leseanteil, Verweildauer, F-Muster beim Scannen und die gesunkene Aufmerksamkeitsspanne, mit Quellen belegt.</p>
-          <!-- OFFEN: Platzhalter: Die gemessenen Conversion-Zahlen liegen vor, gehören dem Arbeitgeber und dürfen hier nicht stehen. Zu klären, was stattdessen belegt. -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Abschnitt Lebenslauf am 31.08.2026 entfernt (André: "Sagt aktuell
-       nichts"). Er trug nur noch einen Satz, seit der PDF-Link stillgelegt
-       wurde: die zugeschnittene Fassung steht aus, die vollstaendige braucht
-       sieben Seiten. Kommt zurueck, wenn es ein PDF zu verlinken gibt. Der
-       Wortlaut steht im Vorgaengercommit. -->
-
-  <!-- Kontakt ------------------------------------------------------------- -->
+  <!-- Kontakt --------------------------------------------------------------- -->
   <section class="abschnitt" id="kontakt" aria-labelledby="h-kontakt">
     <div class="bahn">
       <div class="reihe">
@@ -509,6 +539,7 @@ p { max-width: var(--mass-prosa-web); }
             <li><a href="mailto:hello@andreux.design">hello@andreux.design</a></li>
             <li><a href="https://www.linkedin.com/in/andreczupala" rel="me noopener">linkedin.com/in/andreczupala</a></li>
           </ul>
+          <p class="methode">Auch diese Seite ist so gebaut. Jeder Satz hier hat eine Quelle in einer Datei, und eine Prüfung meldet, wenn die Quelle fehlt.</p>
         </div>
       </div>
     </div>

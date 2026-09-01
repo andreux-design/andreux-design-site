@@ -43,6 +43,31 @@ dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
 
 ## Entschieden
 
+**Die beiden colibre-PDFs sind aus `downloads/` entfernt** (André, 01.09.2026).
+Sie nannten "Sommersemester 2023", Lebenslauf und Seite nennen 2022. Verlinkt
+waren sie nicht mehr, oeffentlich abrufbar schon. Derselbe Widerspruch stoppte
+am 27.07.2026 das GFT-Paket. **Offen:** `bedingungen.zeitraum` der Projektkarte
+`colibre` in `cv/cv-data.json` fuehrt den Punkt weiter als offen und weiss noch
+nicht, dass die Dateien weg sind. Wer die Karte das naechste Mal aufmacht,
+zieht das nach.
+
+**Die Startseite ist nach Faehigkeiten geordnet, nicht chronologisch**
+(01.09.2026). Eine Chronologie zeigt, wo André war; die Seite soll zeigen,
+wohin er will. Links im Streifen die Faehigkeit, rechts der Anspruch, darunter
+die Belege. Reihenfolge KI-Systeme, End-to-End, Conversion.
+
+**Der Screenshot der Pruefkette ist raus** (André, 31.08.2026, ausgefuehrt am
+01.09.2026). Er verraet den Zweck des Systems, naemlich dass André seine
+eigenen Bewerbungsunterlagen damit baut, und eine Terminalausgabe sagt ohne
+Erklaerung nichts. Die Datei `bilder/pruefkette.png` ist geloescht, damit sie
+nicht weiter ausgeliefert wird. **Die Entscheidung stand am 31.08. schon fest
+und wurde nicht ausgefuehrt**, das Bild blieb einen Tag live und wurde beim
+Umbau sogar wieder eingebaut.
+
+**Der Textblock zum eigenen System bleibt** (André, 01.09.2026). Pruefagenten,
+die nicht wissen duerfen, was der Text erreichen soll, und nichts reparieren
+duerfen, hat sonst niemand. Ohne das Bild.
+
 **Das Bewerbungssystem wird gezeigt, nicht veroeffentlicht** (André, 31.08.2026).
 Ein Block auf dieser Seite beschreibt, wie es arbeitet, mit der Ausgabe der
 Pruefkette als Bild und dem erzeugten PDF als Beleg. Das Repo `bewerbungen-2026`
