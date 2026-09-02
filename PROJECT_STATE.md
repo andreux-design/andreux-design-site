@@ -1,12 +1,48 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-08-31
+Letzte Aktualisierung: 2026-09-02
 
 ## Nächster Schritt
 
 **Noch nicht anfangen.** Das Layoutvorgehen wird zuerst im CV-Projekt geklärt,
 weil beide Projekte dieselben Tokens benutzen und die gestalterische Richtung
 dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
+
+## Entschieden am 02.09.2026: Weissraum statt Trennlinien
+
+**Keine Trennlinien mehr im Inhalt** (André: "Mir gefällt es ohne Linie fast
+besser"). Entfernt sind die Abschnittslinie (`.abschnitt` border-top), die Linie
+zwischen zwei Projekten (`.arbeit + .arbeit`) und die Linie ueber "Ausserdem".
+Der Weissraum traegt jetzt, gemessen 128px zwischen den Projekten, beide gleich.
+Dieselbe Entscheidung wie im Lebenslauf, wo ausser der Linkunterstreichung keine
+waagerechte Linie steht.
+
+**Die Tag-Chips behalten ihren Rahmen** (André). Gegenprobe gemessen: der
+Chiprahmen liegt bei rgb(210,214,219), der Buttonrahmen bei rgb(142,148,157),
+also etwa doppelter Kontrast, dazu 13px gegen 15px und das Orangequadrat nur
+beim Button. Die beiden Kaesten konkurrieren nicht, die Hierarchie ist messbar.
+
+**Alle Beleg-Buttons sind gleich.** Die Sonderklasse `.beleg-link.schmal` ist
+geloescht, sie existierte fuer ein einziges Element und ueberschrieb beide
+Polsterwerte: der colibre-Button war 32,5px statt 40,5px hoch und stand als
+Inline-Element IM Textabsatz statt in einem eigenen `div.belege`. Abstand nach
+oben jetzt 16px nach Chips und 12px nach Text; optisch dasselbe, weil unter
+einer Textzeile noch 3,8px halber Durchschuss stehen.
+
+**Der Saeulenbalken misst die Spalte.** Er stand fuenfmal in gleicher Groesse,
+auch ueber "Woher das kommt" und "Kontakt", und markierte damit nur "neuer
+Abschnitt". Jetzt tragen die drei Saeulen 176 x 3px in ihrer Bereichsfarbe, die
+uebrigen Abschnitte 32 x 1px. 176px ist die Breite des linken Streifens, der
+Balken endet also an der Kante der Textspalte. Neu dafuer:
+`--streifen-breite: 11rem`, einmal benannt, speist Raster und Balken.
+**Bewusst keine Medienregel fuer schmale Ansichten:** unter 900px faellt die
+zweite Spalte weg, der Balken bleibt 176px und deckelt dann die Bezeichnung.
+Auf volle Breite gezogen wird daraus wieder eine waagerechte Linie quer durch
+die Spalte, also genau das, was oben entfernt wurde. Am Rendering geprueft.
+
+Verworfen wurden zwei Alternativen: ein dickerer kurzer Balken (32 x 6px, das
+Verhaeltnis kippt zum Klotz) und beides zusammen (176 x 6px, bei drei
+verschiedenen Farben auf einer Seite zu praesent).
 
 ## Offen
 

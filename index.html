@@ -34,6 +34,11 @@
   --familie-text: "IBM Plex Sans", system-ui, sans-serif;
   --familie-meta: "IBM Plex Mono", ui-monospace, monospace;
 
+  /* Die Breite des linken Streifens. Steht hier, weil sie an zwei Stellen
+     gebraucht wird: im Raster und als Laenge des Saeulenbalkens. Zweimal
+     getippt liefe sie auseinander, sobald eine der beiden sich aendert. */
+  --streifen-breite: 11rem;
+
   /* Die Marke eines Blocks. Ohne Angabe traegt er den ersten Akzent. */
   --marke-text: var(--akzent-text);
   --marke-flaeche: var(--akzent-flaeche);
@@ -87,7 +92,7 @@ a { color: inherit; }
 }
 @media (min-width: 900px) {
   .bahn { padding-inline: var(--raum-9); }
-  .reihe { grid-template-columns: 11rem minmax(0, 1fr); }
+  .reihe { grid-template-columns: var(--streifen-breite) minmax(0, 1fr); }
 }
 
 .streifen {
@@ -179,7 +184,9 @@ a { color: inherit; }
 }
 
 /* --- Abschnitte --------------------------------------------------------- */
-.abschnitt { padding-block: var(--raum-10); border-top: var(--strich-0) solid var(--linie); }
+/* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
+   Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */
+.abschnitt { padding-block: var(--raum-11); }
 .abschnitt > .bahn > .reihe + .reihe { margin-top: var(--raum-9); }
 h2 {
   font-family: var(--familie-meta); font-weight: 500;
@@ -187,10 +194,21 @@ h2 {
   text-transform: uppercase; color: var(--tinte-leise);
   margin: 0;
 }
+/* Der Balken markiert seit dem 02.09.2026 nicht mehr nur "neuer Abschnitt",
+   sondern unterscheidet die drei Saeulen von den uebrigen Abschnitten. Anlass:
+   mit dem Wegfall der Trennlinien traegt er die Gliederung allein, und er stand
+   fuenfmal in gleicher Groesse, auch ueber "Woher das kommt" und "Kontakt".
+   Die Saeulen bekommen die volle Streifenbreite, damit der Balken an der Kante
+   der Textspalte endet und die Spalte misst statt nur dort zu liegen. */
 h2::before {
   content: ""; display: block;
-  width: var(--raum-8); height: var(--strich-1);
+  width: var(--raum-8); height: var(--strich-0);
   background: var(--marke-flaeche); margin-bottom: var(--raum-4);
+}
+.abschnitt.marke-eins h2::before,
+.abschnitt.marke-zwei h2::before,
+.abschnitt.marke-drei h2::before {
+  width: var(--streifen-breite); height: var(--strich-1);
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;
@@ -232,7 +250,7 @@ p { max-width: var(--mass-prosa-web); }
 
 /* --- Arbeiten ----------------------------------------------------------- */
 .arbeit { padding-block: var(--raum-9); }
-.arbeit + .arbeit { border-top: var(--strich-0) solid var(--linie); }
+.arbeit + .arbeit { padding-top: var(--raum-10); }
 .arbeit:first-of-type { padding-top: var(--raum-9); }
 .arbeit .untertitel {
   color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
@@ -258,7 +276,7 @@ p { max-width: var(--mass-prosa-web); }
 
 /* Der kompakte Eintrag am Ende der Arbeiten. Er traegt keinen eigenen Titel
    und keine Tags: er soll nicht mit den drei vorderen konkurrieren. */
-.ausserdem { padding-top: var(--raum-8); border-top: var(--strich-0) solid var(--linie); }
+.ausserdem { padding-top: var(--raum-10); }
 .ausserdem .streifen {
   font-family: var(--familie-meta); font-size: var(--schrift-m2);
   letter-spacing: var(--spur-versal); text-transform: uppercase;
@@ -266,9 +284,15 @@ p { max-width: var(--mass-prosa-web); }
 }
 .ausserdem p { font-size: var(--schrift-m1); color: var(--tinte-gedaempft); margin: 0; }
 .ausserdem b { color: var(--tinte); font-weight: 600; }
-.beleg-link.schmal { padding: var(--raum-2) var(--raum-4); margin-top: var(--raum-4); }
 
 .belege { display: flex; flex-wrap: wrap; gap: var(--raum-5); margin-bottom: var(--raum-6); }
+/* Alle Beleg-Buttons haben denselben Abstand nach oben, gemessen an der
+   sichtbaren Kante des Objekts darueber, nicht am Kasten. Nach den Chips
+   sind das 16px (.marken margin-bottom). Nach einem Textabsatz stehen unter
+   der Grundlinie noch 3,8px halber Durchschuss, deshalb hier 12px: 12 + 3,8
+   ergibt dieselben 16. Dieselbe Regel wie beim Quadrat im Lebenslauf, das an
+   der Tusche ausgerichtet wird und nicht am Glyphenkasten. */
+.ausserdem p + .belege { margin-top: var(--raum-5); margin-bottom: 0; }
 .beleg-link {
   display: inline-flex; align-items: baseline; gap: var(--raum-4);
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
@@ -474,8 +498,10 @@ p { max-width: var(--mass-prosa-web); }
       <div class="ausserdem reihe">
         <div class="streifen">Ausserdem</div>
         <div>
-          <p><b>colibre</b>, Sommersemester 2022. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, Studienprojekt im Fach Brand Design. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst.
-          <a class="beleg-link schmal" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&amp;node-id=545-3938&amp;viewport=-580%2C172%2C0.25&amp;t=XAePuIVsb1D3zHfT-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a></p>
+          <p><b>colibre</b>, Sommersemester 2022. Marke, Designsystem und interaktiver Prototyp einer Outdoor-App, Studienprojekt im Fach Brand Design. Verteilte als Erfahrenster im dreiköpfigen Team die Aufgaben nach Können und baute den Prototyp selbst.</p>
+          <div class="belege">
+            <a class="beleg-link" href="https://www.figma.com/proto/3mhUebGROgwS5MDqDyTknu/BrandDesign?page-id=143%3A776&amp;node-id=545-3938&amp;viewport=-580%2C172%2C0.25&amp;t=XAePuIVsb1D3zHfT-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=545%3A3938" target="_blank" rel="noopener">Prototyp ansehen <span class="gewicht">Figma</span></a>
+          </div>
         </div>
       </div>
     </div>
