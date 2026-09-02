@@ -5,8 +5,8 @@
   "description": "Portfolioseite andreux.design. Statisches HTML, kein Build.",
   "scripts": {
     "tokens": "cp node_modules/@andreux/design-tokens/dist/tokens.web.css tokens.css && echo 'tokens.css aus dem Paket erneuert'",
-    "gates": "node bin/gates.mjs",
-    "test": "node bin/gates.mjs"
+    "gates": "node bin/gates.mjs index.html && node bin/gates.mjs impressum.html",
+    "test": "node bin/gates.mjs index.html && node bin/gates.mjs impressum.html"
   },
   "dependencies": {
     "@andreux/design-tokens": "github:andreux-design/design-tokens#v1.1.0"

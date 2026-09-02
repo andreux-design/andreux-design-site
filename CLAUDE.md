@@ -22,9 +22,29 @@ Dateien. Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
 `tokens.css` aus `@andreux/design-tokens`, gepinnt auf `v1.1.0`.
 
 `portfolio.html` ist ersetzt. `/portfolio` und `/portfolio.html` leiten per
-`_redirects` auf den Abschnitt Ausgewählte Arbeiten der Startseite. Die alten
-Fassungen von `index.html` und `portfolio.html` stehen im Commit `ac86f39`,
-`styles.css` gehört nur noch zu ihnen.
+`_redirects` auf `#koennen` der Startseite. Die alten Fassungen von
+`index.html` und `portfolio.html` stehen im Commit `ac86f39`. **`styles.css`
+trägt weiterhin `impressum.html`**, es ist kein Rest der alten Seiten.
+
+## Blockierende Gates
+
+```
+npm run gates     dreizehn Prüfungen gegen index.html und impressum.html
+npm run tokens    tokens.css aus @andreux/design-tokens erneuern
+```
+
+Geprüft wird am gerenderten Ergebnis, nicht am Quelltext: Systemtreue (jedes
+`var(--…)` ist definiert), jede Klasse hat eine Regel, kein toter Anker, jedes
+`aria-labelledby` zeigt auf eine Kennung, jede lokale Datei liegt da, die Ziele
+in `_redirects` zeigen auf vorhandene Anker, keine JS-Fehler, keine toten
+Anfragen, kein waagerechter Überlauf. Alles in beiden Themen und bei 1280 wie
+390 Pixeln.
+
+**Anlass, 01.09.2026:** im Stilblock stand `var(--schrift-2)`, eine Stufe, die
+es im Tokenpaket nicht gibt. Die Regel lief ins Leere und nichts hat gemeldet.
+**Anlass, 02.09.2026:** `/portfolio` zeigte auf `#arbeiten`, einen Anker, den
+der Umbau vom Vortag entfernt hatte. Ein Redirect meldet das nicht, er liefert
+weiter 301.
 
 **Was an der alten Fassung belegt falsch war**, als Maßstab für die neue:
 `#fff` auf `#FF7262` ergab 2,9:1 und fiel durch WCAG AA; die Akzentfarbe war

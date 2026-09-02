@@ -27,7 +27,17 @@ const pruef = (ok, name, zusatz = "") => {
 };
 
 const html = readFileSync(resolve(wurzel, seite), "utf8");
-const stil = (html.match(/<style>([\s\S]*?)<\/style>/) || [, ""])[1];
+// Der Stil einer Seite steht nicht nur im <style>-Block. impressum.html holt
+// ihn aus styles.css, und am 02.09.2026 meldete diese Pruefung deshalb vier
+// Klassen als regellos, die alle eine Regel hatten. Erst die Pruefung
+// verdaechtigen. Verlinkte Bogen aus dem Repo kommen dazu, entfernte nicht.
+const gebunden = [...html.matchAll(/<link[^>]+href="(?!https?:)([^"]+\.css)"/g)]
+  .map(m => resolve(wurzel, m[1]))
+  .filter(f => existsSync(f))
+  .map(f => readFileSync(f, "utf8"))
+  .join("\n");
+const eigen = (html.match(/<style>([\s\S]*?)<\/style>/) || [, ""])[1];
+const stil = eigen + "\n" + gebunden;
 console.log(`\nGate: ${seite}\n`);
 
 /* 1. Nur Werte aus dem System. */
@@ -37,7 +47,7 @@ const ohne = [...new Set([...stil.matchAll(/var\((--[\w-]+)/g)].map(m => m[1]))]
 pruef(ohne.length === 0, "Nur Werte aus dem System", ohne.length ? ohne.join(", ") : `${da.size} Tokens`);
 
 /* 2. Jede Klasse im Markup hat eine Regel, jede Regel einen Gegenstand. */
-const markup = html.replace(stil, "");
+const markup = html.replace(eigen, "");
 const benutzt = new Set([...markup.matchAll(/class="([^"]+)"/g)].flatMap(m => m[1].split(/\s+/)));
 // Vorausschau statt Verbrauch: `.kopf-nav .verstecken-schmal` und
 // `.beleg-link.schmal` verlieren sonst den zweiten Namen, weil der Punkt,
@@ -62,7 +72,21 @@ const lokal = [...html.matchAll(/(?:href|src)="(?!https?:|#|mailto:)([^"]+)"/g)]
 const weg = lokal.filter(p => !existsSync(resolve(wurzel, p.split("?")[0])));
 pruef(weg.length === 0, "Alle lokalen Dateien vorhanden", weg.join(", ") || `${lokal.length} geprueft`);
 
-/* 6. bis 9. am gerenderten Ergebnis, in beiden Themen. */
+/* 6. Jedes Ziel in _redirects zeigt auf einen Anker, den es gibt.
+      AM 02.09.2026 GEFUNDEN: /portfolio zeigte auf #arbeiten, ein Anker, den der
+      Umbau vom Vortag entfernt hatte. Ein Redirect meldet das nicht, er liefert
+      weiter 301 und laesst den Leser oben auf der Seite stehen. */
+const rd = existsSync(resolve(wurzel, "_redirects"))
+  ? readFileSync(resolve(wurzel, "_redirects"), "utf8") : "";
+const zieleTot = seite !== "index.html" ? [] :
+  [...rd.matchAll(/^\s*\S+\s+(\S*)#(\S+)/gm)]
+    .filter(m => !m[1] || m[1] === "/")
+    .map(m => m[2]).filter(a => !ids.has(a));
+if (seite === "index.html") {
+  pruef(zieleTot.length === 0, "Anker in _redirects vorhanden", zieleTot.join(", "));
+}
+
+/* 7. bis 10. am gerenderten Ergebnis, in beiden Themen. */
 const b = await chromium.launch();
 for (const thema of ["light", "dark"]) {
   const ctx = await b.newContext({ colorScheme: thema, viewport: { width: 1280, height: 900 } });

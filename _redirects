@@ -1,6 +1,9 @@
-# Die alte Portfolioseite ist am 31.08.2026 durch den Abschnitt "Ausgewaehlte
-# Arbeiten" auf der Startseite ersetzt worden. Beide alten Pfade zeigen dorthin,
-# damit geteilte Links nicht ins Leere laufen. Die Datei selbst liegt als
-# alt-portfolio-2025.html im Repo und ist ueber keinen Pfad mehr erreichbar.
-/portfolio       /#arbeiten  301
-/portfolio.html  /#arbeiten  301
+# Die alte Portfolioseite ist am 31.08.2026 durch die Startseite ersetzt worden.
+# Beide alten Pfade zeigen dorthin, damit geteilte Links nicht ins Leere laufen.
+#
+# ZIEL GEAENDERT am 02.09.2026. Bis dahin stand hier #arbeiten. Beim Umbau auf
+# Faehigkeiten am 01.09.2026 hiess der Abschnitt #koennen, und niemand hat es
+# gemerkt: der Redirect lieferte weiter 301, nur der Anker war tot. Seitdem
+# prueft bin/gates.mjs auch die Ziele dieser Datei.
+/portfolio       /#koennen  301
+/portfolio.html  /#koennen  301
