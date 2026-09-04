@@ -1,12 +1,43 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-09-02
+Letzte Aktualisierung: 2026-09-04
 
 ## Nächster Schritt
 
 **Noch nicht anfangen.** Das Layoutvorgehen wird zuerst im CV-Projekt geklärt,
 weil beide Projekte dieselben Tokens benutzen und die gestalterische Richtung
 dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
+
+## Umgebaut am 04.09.2026: drei neue Saeulen
+
+**Reihenfolge jetzt:** End-to-End-Produktdesign, Designsysteme, KI-gestuetzte
+Systeme. Der Abschnitt Conversion ist entfallen, der Abschnitt "Woher das kommt"
+ebenfalls; seine Aussage steht jetzt im Anschlag.
+
+**Warum.** Gemessen an den drei Zielstellen, die André verfolgt: alle drei
+verlangen Designsysteme ausdruecklich, keine einzige verlangt Conversion. Die
+Begruendung liegt im Bewerbungsrepo, `CLAUDE.md` Abschnitt Positionierung und
+`_saeulen_hinweis` in der Quelle.
+
+**Anschlag neu:** "Ich bin der einzige Designer in meiner Agentur." Darunter,
+woher die Systeme kommen und wohin er will. Der alte Satz "Wer nach Geschmack
+entscheidet, verliert die Diskussion gegen den, der lauter ist" ist weg, André
+hat ihn am 02.09.2026 widerlegt.
+
+**Ankerpflege:** `id="koennen"` sitzt jetzt auf der ersten Saeule, sonst liefe
+der Redirect `/portfolio` ins Leere. Die drei Markenfarben sind nach Position
+zugeordnet, `marke-eins` fuehrt.
+
+**Tag-Chips von 19 auf 17.** Gestrichen sind Informationsarchitektur,
+Bibliothek, Playwright und ein zweites Claude Code: der Text ihres Abschnitts
+deckte sie nicht. Geprueft wird jetzt wie im Lebenslauf, jeder Tag muss im
+gedruckten Text seines Abschnitts gedeckt sein.
+
+**Der gesamte Seitentext lebt in `texte/website.md` des Bewerbungsrepos** und
+ist dort durch Herkunftspruefung, Gradpruefung, Sprachmessung, Faktenpruefer,
+Lektor und Leckpruefung gelaufen. Hier steht nur das Markup.
+
+Gate gruen, 14 von 14.
 
 ## Entschieden am 02.09.2026: Weissraum statt Trennlinien
 
