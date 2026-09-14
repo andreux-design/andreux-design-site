@@ -40,5 +40,28 @@
       <a href="index.html">← Zurück zur Startseite</a>
     </footer>
   </main>
+<script>
+  // Safari wertet theme-color mit media nur beim Laden aus. Wechselt das
+  // System waehrend des Besuchs, bleibt die Browserleiste alt, obwohl die
+  // Seite schon umgestellt ist (André, 14.09.2026). Deshalb wird der Wert hier
+  // aus der gerenderten Flaeche nachgezogen, gelesen aus --flaeche, nicht
+  // getippt.
+  (function () {
+    var medien = window.matchMedia('(prefers-color-scheme: dark)');
+    var meta = document.querySelector('meta[name="theme-color"]:not([media])');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'theme-color');
+      document.head.appendChild(meta);
+    }
+    function nachziehen() {
+      var farbe = getComputedStyle(document.documentElement).getPropertyValue('--flaeche').trim();
+      if (farbe) meta.setAttribute('content', farbe);
+    }
+    nachziehen();
+    if (medien.addEventListener) medien.addEventListener('change', nachziehen);
+    else if (medien.addListener) medien.addListener(nachziehen);
+  })();
+</script>
 </body>
 </html>
