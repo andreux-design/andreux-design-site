@@ -352,7 +352,6 @@ p { max-width: var(--mass-prosa-web); }
       <a class="verstecken-schmal" href="#koennen">Was ich kann</a>
       <a href="#kontakt">Kontakt</a>
       <a href="index.en.html" lang="en" hreflang="en" aria-label="This page in English">EN</a>
-      <button class="thema-knopf" type="button" id="thema" aria-pressed="false">Thema</button>
     </nav>
   </div>
 </header>
@@ -583,41 +582,10 @@ p { max-width: var(--mass-prosa-web); }
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  // Thema: die Seite folgt IMMER dem System, auch wenn es sich waehrend des
-  // Besuchs umstellt. Der Knopf schaltet nur fuer diesen Besuch um
-  // (sessionStorage); beim naechsten Besuch gilt wieder das System. André am
-  // 14.09.2026: "Die Seite soll immer automatisch richtig einstellen. Man
-  // braucht keinen Automatik Knopf. Aber man soll trotzdem umstellen koennen."
-  // Vorher lag die erste Wahl fuer immer in localStorage, und die Seite hat
-  // das System danach nie wieder befragt.
-  (function () {
-    var wurzel = document.documentElement;
-    var knopf = document.getElementById('thema');
-    var namen = { hell: 'Hell', dunkel: 'Dunkel' };
-    var medien = window.matchMedia('(prefers-color-scheme: dark)');
-    var wahl = null;
-    try { wahl = sessionStorage.getItem('thema'); } catch (e) {}
-    try { localStorage.removeItem('thema'); } catch (e) {}
-
-    function aktiv() { return wahl || (medien.matches ? 'dunkel' : 'hell'); }
-    function anwenden() {
-      if (wahl) wurzel.setAttribute('data-thema', wahl);
-      else wurzel.removeAttribute('data-thema');
-      var jetzt = aktiv();
-      knopf.textContent = namen[jetzt === 'dunkel' ? 'hell' : 'dunkel'];
-      knopf.setAttribute('aria-pressed', String(jetzt === 'dunkel'));
-    }
-    anwenden();
-    knopf.addEventListener('click', function () {
-      wahl = aktiv() === 'dunkel' ? 'hell' : 'dunkel';
-      try { sessionStorage.setItem('thema', wahl); } catch (e) {}
-      anwenden();
-    });
-    // Systemwechsel: die Wahl fuer diesen Besuch faellt, das System gewinnt.
-    function system() { wahl = null; try { sessionStorage.removeItem('thema'); } catch (e) {} anwenden(); }
-    if (medien.addEventListener) medien.addEventListener('change', system);
-    else if (medien.addListener) medien.addListener(system);
-  })();
+  // Kein Themaknopf mehr (André, 14.09.2026): Hell und Dunkel kommen allein
+  // aus prefers-color-scheme in tokens.css; wechselt das System, wechselt die
+  // Seite mit. Eine alte gespeicherte Wahl wird entfernt.
+  try { localStorage.removeItem('thema'); sessionStorage.removeItem('thema'); } catch (e) {}
 </script>
 
 </body>
