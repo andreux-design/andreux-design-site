@@ -379,6 +379,9 @@ p { max-width: var(--mass-prosa-web); }
 .fuss-inhalt { display: flex; flex-wrap: wrap; gap: var(--raum-6); justify-content: space-between; }
 .fuss a {
   color: var(--tinte-gedaempft);
+  /* Wie die Kopfzeile: Navigation an ihrem Platz, ohne Unterstreichung. Links
+     im Fliesstext behalten sie (WCAG 1.4.1 gilt fuer Text, nicht fuer Menues). */
+  text-decoration: none;
   /* Trefferflaeche 44px, gemessen vorher 70 x 17px. Negativer Aussenabstand,
      damit die Fusszeile nicht waechst. */
   display: inline-flex; align-items: center; min-height: 44px; min-width: 44px;
@@ -386,6 +389,7 @@ p { max-width: var(--mass-prosa-web); }
 }
 /* Links im Fliesstext (nur das Impressum hat welche): dieselbe Flaeche, ohne
    dass die Zeile hoeher wird. */
+.fuss a:hover { color: var(--akzent-text); }
 main p a { display: inline-block; padding: 11px 0; margin: -11px 0; }
 /* Ueberscroll-Flaeche oben und unten in der Seitenfarbe, sonst blitzt beim
    Ziehen der Browserhintergrund durch. */
