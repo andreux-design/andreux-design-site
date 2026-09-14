@@ -325,6 +325,8 @@ p { max-width: var(--mass-prosa-web); }
   text-decoration: none;
   border: var(--strich-0) solid var(--linie-stark);
   padding: var(--raum-4) var(--raum-6);
+  /* 44px Daumenflaeche (Apple HIG, WCAG 2.5.5); gemessen am 14.09.2026: 41px. */
+  min-height: 44px;
   transition: border-color var(--dauer-2) var(--kurve-aus),
               color var(--dauer-2) var(--kurve-aus);
 }
@@ -351,6 +353,9 @@ p { max-width: var(--mass-prosa-web); }
   font-family: var(--familie-display); font-weight: 500;
   font-size: var(--schrift-3); letter-spacing: var(--spur-gross);
   text-decoration: none;
+  /* Trefferflaeche 44px, gemessen vorher 31px. Der Innenabstand oben haelt die
+     Unterstreichung an der Grundlinie, der Abstand der Liste bleibt raum-5. */
+  display: inline-block; padding-top: 13px; min-height: 44px;
   border-bottom: var(--strich-0) solid var(--linie-stark);
   transition: border-color var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus);
 }
@@ -363,7 +368,16 @@ p { max-width: var(--mass-prosa-web); }
   color: var(--tinte-leise);
 }
 .fuss-inhalt { display: flex; flex-wrap: wrap; gap: var(--raum-6); justify-content: space-between; }
-.fuss a { color: var(--tinte-gedaempft); }
+.fuss a {
+  color: var(--tinte-gedaempft);
+  /* Trefferflaeche 44px, gemessen vorher 70 x 17px. Negativer Aussenabstand,
+     damit die Fusszeile nicht waechst. */
+  display: inline-flex; align-items: center; min-height: 44px; min-width: 44px;
+  padding: 0 var(--raum-3); margin: -12px calc(-1 * var(--raum-3));
+}
+/* Links im Fliesstext (nur das Impressum hat welche): dieselbe Flaeche, ohne
+   dass die Zeile hoeher wird. */
+main p a { display: inline-block; padding: 11px 0; margin: -11px 0; }
 /* Ueberscroll-Flaeche oben und unten in der Seitenfarbe, sonst blitzt beim
    Ziehen der Browserhintergrund durch. */
 html { background: var(--flaeche); }

@@ -102,16 +102,16 @@ for (const thema of ["light", "dark"]) {
     await s.setViewportSize({ width: breite, height: 900 });
     const ueber = await s.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     pruef(ueber === 0, `Kein waagerechter Ueberlauf (${thema}, ${breite}px)`, `${ueber}px`);
-    // Trefferflaechen im Kopf, nur schmal und nur einmal: 44px ist die
+    // Trefferflaechen aller Links und Knoepfe, nur schmal und nur einmal: 44px ist die
     // Daumenflaeche nach Apple, 24px das Minimum aus WCAG 2.5.8. Gemessen am
     // 14.09.2026 vor der Korrektur: "EN" 16 x 20px, "Kontakt" 55 x 20px.
     if (breite === 390 && thema === "light") {
-      const klein = await s.$$eval(".kopf a, .kopf button", els => els
+      const klein = await s.$$eval("a, button", els => els
         .map(e => ({ t: e.textContent.trim(), r: e.getBoundingClientRect() }))
         .filter(x => x.r.width > 0)
         .filter(x => x.r.width < 44 || x.r.height < 44)
         .map(x => `${x.t} ${Math.round(x.r.width)}x${Math.round(x.r.height)}`));
-      pruef(klein.length === 0, "Trefferflaechen im Kopf mindestens 44px (390px)", klein.join(", "));
+      pruef(klein.length === 0, "Trefferflaechen aller Links und Knoepfe mindestens 44px (390px)", klein.join(", "));
     }
   }
   await ctx.close();
