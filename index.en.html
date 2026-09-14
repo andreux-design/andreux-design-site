@@ -352,7 +352,7 @@ p { max-width: var(--mass-prosa-web); }
       <a class="verstecken-schmal" href="#koennen">What I do</a>
       <a href="#kontakt">Contact</a>
       <a href="index.html" lang="de" hreflang="de" aria-label="Diese Seite auf Deutsch">DE</a>
-      <button class="thema-knopf" type="button" id="thema" aria-live="polite">Theme</button>
+      <button class="thema-knopf" type="button" id="thema" aria-pressed="false">Theme</button>
     </nav>
   </div>
 </header>
@@ -583,40 +583,40 @@ p { max-width: var(--mass-prosa-web); }
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  // Thema, dreistufig seit dem 14.09.2026: Automatisch (folgt dem System,
-  // auch wenn es sich waehrend des Besuchs aendert), Hell, Dunkel. Vorher
-  // kannte der Knopf nur Hell und Dunkel, und die erste Wahl blieb fuer immer
-  // in localStorage: danach folgte die Seite dem System nie wieder. André am
-  // 14.09.2026: "dass es sich ans System anpasst". Faellt localStorage aus,
-  // bleibt es bei Automatisch.
+  // Thema: die Seite folgt IMMER dem System, auch wenn es sich waehrend des
+  // Besuchs umstellt. Der Knopf schaltet nur fuer diesen Besuch um
+  // (sessionStorage); beim naechsten Besuch gilt wieder das System. André am
+  // 14.09.2026: "Die Seite soll immer automatisch richtig einstellen. Man
+  // braucht keinen Automatik Knopf. Aber man soll trotzdem umstellen koennen."
+  // Vorher lag die erste Wahl fuer immer in localStorage, und die Seite hat
+  // das System danach nie wieder befragt.
   (function () {
     var wurzel = document.documentElement;
     var knopf = document.getElementById('thema');
-    var namen = { auto: 'Auto', hell: 'Light', dunkel: 'Dark' };
-    var reihe = ['auto', 'hell', 'dunkel'];
+    var namen = { hell: 'Light', dunkel: 'Dark' };
     var medien = window.matchMedia('(prefers-color-scheme: dark)');
-    var stand = 'auto';
-    try { stand = localStorage.getItem('thema') || 'auto'; } catch (e) {}
-    if (reihe.indexOf(stand) < 0) stand = 'auto';
+    var wahl = null;
+    try { wahl = sessionStorage.getItem('thema'); } catch (e) {}
+    try { localStorage.removeItem('thema'); } catch (e) {}
 
+    function aktiv() { return wahl || (medien.matches ? 'dunkel' : 'hell'); }
     function anwenden() {
-      if (stand === 'auto') wurzel.removeAttribute('data-thema');
-      else wurzel.setAttribute('data-thema', stand);
-      var dunkel = stand === 'dunkel' || (stand === 'auto' && medien.matches);
-      knopf.textContent = namen[stand] + (stand === 'auto' ? (dunkel ? ' (dark)' : ' (light)') : '');
-      knopf.setAttribute('title', 'Theme: ' + namen[stand] + '. Click to switch.');
+      if (wahl) wurzel.setAttribute('data-thema', wahl);
+      else wurzel.removeAttribute('data-thema');
+      var jetzt = aktiv();
+      knopf.textContent = namen[jetzt === 'dunkel' ? 'hell' : 'dunkel'];
+      knopf.setAttribute('aria-pressed', String(jetzt === 'dunkel'));
     }
     anwenden();
     knopf.addEventListener('click', function () {
-      stand = reihe[(reihe.indexOf(stand) + 1) % reihe.length];
-      try {
-        if (stand === 'auto') localStorage.removeItem('thema');
-        else localStorage.setItem('thema', stand);
-      } catch (e) {}
+      wahl = aktiv() === 'dunkel' ? 'hell' : 'dunkel';
+      try { sessionStorage.setItem('thema', wahl); } catch (e) {}
       anwenden();
     });
-    if (medien.addEventListener) medien.addEventListener('change', anwenden);
-    else if (medien.addListener) medien.addListener(anwenden);
+    // Systemwechsel: die Wahl fuer diesen Besuch faellt, das System gewinnt.
+    function system() { wahl = null; try { sessionStorage.removeItem('thema'); } catch (e) {} anwenden(); }
+    if (medien.addEventListener) medien.addEventListener('change', system);
+    else if (medien.addListener) medien.addListener(system);
   })();
 </script>
 
