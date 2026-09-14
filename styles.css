@@ -364,7 +364,9 @@ p { max-width: var(--mass-prosa-web); }
 .fuss {
   border-top: var(--strich-0) solid var(--linie);
   padding-block: var(--raum-8);
-  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  /* --schrift-m1 statt -m2 seit dem 14.09.2026 (André): die Fusszeile ist der
+     einzige Weg zum Impressum und soll lesbar sein, nicht nur antippbar. */
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
   color: var(--tinte-leise);
 }
 .fuss-inhalt { display: flex; flex-wrap: wrap; gap: var(--raum-6); justify-content: space-between; }
