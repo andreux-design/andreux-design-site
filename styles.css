@@ -1,193 +1,335 @@
-:root{
-  /* Flaeche und Tinte aus dem Tokenpaket (tokens.css wird vor dieser Datei
-     geladen), damit Impressum, Startseite und Browserleiste dieselbe Farbe
-     tragen. Seit 14.09.2026; vorher #fafafa und #111. */
+/* Stil der Seite andreux.design. Bis zum 14.09.2026 stand er im <style>-Block
+   von index.html, und styles.css trug den Stil der alten Seite von 2025.
+   Jetzt eine Datei fuer index.html, index.en.html und impressum.html. */
+
+/* ---------------------------------------------------------------------------
+   Nur was diese Seite selbst braucht. Farben, Schriftstufen, Raum, Bewegung
+   und die Dunkelmodus-Rollen kommen aus tokens.css, und die stammt aus dem
+   Paket @andreux/design-tokens, gepinnt auf v1.1.0. Erneuert mit
+   `npm run tokens`, nie von Hand bearbeitet.
+
+   BIS ZUM 31.08.2026 stand hier eine Kopie der Tokens, und die zwei
+   Akzentwerte gab es ausserdem in design/erkundung/e4.css des CV-Projekts.
+   Drei Stellen fuer eine Farbe. Jetzt eine.
+
+   Die drei Akzente und ihre Aufgabe: --akzent traegt die Seite,
+   --akzent-2 markiert die Saeule KI-gestuetzte Systeme, --akzent-3 die Saeule
+   Conversion. Verteilt wird ueber genau drei Klassen, .marke-eins bis -drei.
+   Gemessene Kontraste stehen in tokens/farbe.json des Paketrepos, geprueft
+   von dessen bin/kontrast.mjs.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* Scrollbalken, Formulare und Systemflaechen folgen dem Modus mit. */
   color-scheme: light dark;
-  --bg: var(--flaeche, #fafafa);
-  --fg: var(--tinte, #222);
-  --muted: var(--tinte-gedaempft, #6b6b6b);
-  --accent: #FF7262;     /* CV-Orange */
-  --accent-hover:#e05b4c;
-  --card:#ffffff;
-  --ring: rgba(255,114,98,.35);
+  --familie-display: "Sora", system-ui, sans-serif;
+  --familie-text: "IBM Plex Sans", system-ui, sans-serif;
+  --familie-meta: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Die Breite des linken Streifens. Steht hier, weil sie an zwei Stellen
+     gebraucht wird: im Raster und als Laenge des Saeulenbalkens. Zweimal
+     getippt liefe sie auseinander, sobald eine der beiden sich aendert. */
+  --streifen-breite: 11rem;
+
+  /* Die Marke eines Blocks. Ohne Angabe traegt er den ersten Akzent. */
+  --marke-text: var(--akzent-text);
+  --marke-flaeche: var(--akzent-flaeche);
 }
 
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg: var(--flaeche, #111);
-    --fg: var(--tinte, #eaeaea);
-    --muted: var(--tinte-gedaempft, #b7b7b7);
-    --card:#161616;
-    --ring: rgba(255,114,98,.5);
+/* Die drei Marken. Nur diese drei Klassen verteilen Farbe, damit sie nicht
+   an dreissig Stellen einzeln gesetzt wird. */
+.marke-eins { --marke-text: var(--akzent-text);   --marke-flaeche: var(--akzent-flaeche); }
+.marke-zwei { --marke-text: var(--akzent-2-text); --marke-flaeche: var(--akzent-2-flaeche); }
+.marke-drei { --marke-text: var(--akzent-3-text); --marke-flaeche: var(--akzent-3-flaeche); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--flaeche);
+  color: var(--tinte);
+  font-family: var(--familie-text);
+  font-size: var(--schrift-0);
+  line-height: var(--zeile-text);
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
   }
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-html{background:var(--bg)}
-body{
-  margin:0;
-  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--fg);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+a { color: inherit; }
+:where(a, button):focus-visible {
+  outline: var(--strich-1) solid var(--akzent-text);
+  outline-offset: 3px;
+  border-radius: 1px;
 }
 
-/* Layout */
-.wrap{
-  min-height:100dvh;
-  display:grid;
-  place-items:center;
-  padding: clamp(24px, 4vw, 56px);
+/* --- Raster ------------------------------------------------------------- */
+/* Der linke Streifen ist derselbe Gedanke wie im Lebenslauf: Metadaten
+   links, Inhalt rechts, eine Kante ueber das ganze Dokument. Unter 900px
+   faellt er weg, statt zu schrumpfen. */
+.bahn {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: var(--raum-6);
+}
+.reihe {
+  display: grid;
+  gap: var(--raum-5) var(--raum-8);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .bahn { padding-inline: var(--raum-9); }
+  .reihe { grid-template-columns: var(--streifen-breite) minmax(0, 1fr); }
 }
 
-.header{ text-align:center; margin-bottom:8px; }
-h1{
-  font-size:clamp(28px, 5vw, 44px);
-  line-height:1.1;
-  margin:0 0 6px;
-  font-weight:700;
+.streifen {
+  font-family: var(--familie-meta);
+  font-size: var(--schrift-m2);
+  line-height: var(--zeile-meta);
+  color: var(--tinte-leise);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raum-3) var(--raum-5);
 }
-.tagline{
-  margin:0;
-  color:var(--muted);
-  font-weight:600;
-  letter-spacing:.2px;
-  font-size:clamp(16px, 2.8vw, 20px);
+@media (min-width: 900px) {
+  .streifen { flex-direction: column; gap: var(--raum-3); padding-top: 0.35em; }
 }
-
-/* About-Text auf der Startseite */
-.about{
-  max-width: 720px;
-  margin: 18px auto 26px;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--fg);
-  text-align: center;
+/* Dasselbe Quadrat wie im Lebenslauf, hier in der Marke des Blocks. */
+.streifen-marke::before {
+  content: ""; display: inline-block;
+  width: 0.5rem; height: 0.5rem; margin-right: var(--raum-4);
+  background: var(--marke-flaeche); vertical-align: 0.05em;
 }
 
-/* CTA-Buttons */
-.actions{
-  margin-top:22px;
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  justify-content:center;
+/* --- Kopf --------------------------------------------------------------- */
+.kopf {
+  border-bottom: var(--strich-0) solid var(--linie);
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--flaeche) 88%, transparent);
+  backdrop-filter: blur(8px);
 }
-.btn{
-  --pad: 14px 18px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:var(--pad);
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:16px;
-  border:2px solid transparent;
-  transition: transform .04s ease, background .15s ease, border-color .15s ease;
-  box-shadow: 0 0 0 0 var(--ring);
+.kopf-inhalt {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--raum-6);
+  padding-block: var(--raum-5);
 }
-.btn:active{ transform: translateY(1px); }
-.btn:focus-visible{
-  outline:none;
-  box-shadow: 0 0 0 6px var(--ring);
-}
-.btn-primary{ background:var(--accent); color:#fff; }
-.btn-primary:hover{ background:var(--accent-hover); }
-.btn-ghost{
-  background:transparent;
-  border-color:var(--accent);
-  color:var(--accent);
-}
-.btn-ghost:hover{
-  background: color-mix(in oklab, var(--accent) 9%, transparent);
-}
-
-/* Kontakt-/Meta-Zeile */
-.meta{
-  margin-top:18px;
-  color:var(--muted);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.link{
-  color:inherit;
+.marke {
+  font-family: var(--familie-display); font-weight: 600;
+  letter-spacing: var(--spur-gross);
   text-decoration: none;
-  border-bottom:1px solid color-mix(in oklab, var(--muted) 35%, transparent);
 }
-.link:hover{ color:var(--fg); border-bottom-color:var(--fg); }
-.dot{ opacity:.6 }
+.kopf-nav { display: flex; align-items: center; gap: var(--raum-6); }
+.kopf-nav a {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-gedaempft); text-decoration: none;
+}
+.kopf-nav a:hover { color: var(--akzent-text); }
+@media (max-width: 599px) { .kopf-nav .verstecken-schmal { display: none; } }
 
-.foot{
-  margin-top:26px;
-  color:var(--muted);
-  text-align:center;
-  font-size:13px;
+.thema-knopf {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-gedaempft);
+  background: none; border: var(--strich-0) solid var(--linie);
+  border-radius: 999px; padding: var(--raum-2) var(--raum-5);
+  cursor: pointer;
+  transition: border-color var(--dauer-2) var(--kurve-aus),
+              color var(--dauer-2) var(--kurve-aus);
+}
+.thema-knopf:hover { border-color: var(--linie-stark); color: var(--tinte); }
+
+/* --- Anschlag ----------------------------------------------------------- */
+.anschlag { padding-block: var(--raum-12) var(--raum-11); }
+.anschlag h1 {
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: clamp(2.125rem, 5.2vw, 3.0625rem);
+  line-height: var(--zeile-display); letter-spacing: var(--spur-display);
+  margin: 0 0 var(--raum-7);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.anschlag h1 em { font-style: normal; color: var(--marke-text); }
+.anschlag .satz {
+  font-size: var(--schrift-1); color: var(--tinte-gedaempft);
+  max-width: var(--mass-prosa-web); margin: 0;
+}
+.eigenname {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  letter-spacing: var(--spur-versal); text-transform: uppercase;
+  color: var(--tinte-leise); margin: 0 0 var(--raum-6);
 }
 
-/* ---------- Portfolio-Seite ---------- */
-
-/* Subheadline dezenter */
-.subtag{
-  margin:6px 0 0;
-  color:var(--muted);
-  font-weight:400;
-  font-size:clamp(14px, 2.4vw, 16px);
+/* Eintritt: einmalig beim Laden, nicht an Scrollen gebunden. Der Inhalt
+   existiert ohne JavaScript vollstaendig, die Bewegung ist rein additiv. */
+@media (prefers-reduced-motion: no-preference) {
+  .heben { animation: heben var(--dauer-3) var(--kurve-aus) both; }
+  .heben:nth-child(2) { animation-delay: 60ms; }
+  .heben:nth-child(3) { animation-delay: 120ms; }
+  @keyframes heben {
+    from { opacity: 0; transform: translateY(0.5rem); }
+    to   { opacity: 1; transform: none; }
+  }
 }
 
-/* Vertikale Liste der Cases mit Luft */
-.stack{
-  display:flex;
-  flex-direction:column;
-  gap:36px;
-  width:min(980px, 100%);
-  margin-top:22px;
+/* --- Abschnitte --------------------------------------------------------- */
+/* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
+   Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */
+.abschnitt { padding-block: var(--raum-11); }
+.abschnitt > .bahn > .reihe + .reihe { margin-top: var(--raum-9); }
+h2 {
+  font-family: var(--familie-meta); font-weight: 500;
+  font-size: var(--schrift-m2); letter-spacing: var(--spur-versal);
+  text-transform: uppercase; color: var(--tinte-leise);
+  margin: 0;
+}
+/* Der Balken markiert seit dem 02.09.2026 nicht mehr nur "neuer Abschnitt",
+   sondern unterscheidet die drei Saeulen von den uebrigen Abschnitten. Anlass:
+   mit dem Wegfall der Trennlinien traegt er die Gliederung allein, und er stand
+   fuenfmal in gleicher Groesse, auch ueber "Woher das kommt" und "Kontakt".
+   Die Saeulen bekommen die volle Streifenbreite, damit der Balken an der Kante
+   der Textspalte endet und die Spalte misst statt nur dort zu liegen. */
+h2::before {
+  content: ""; display: block;
+  width: var(--raum-8); height: var(--strich-0);
+  background: var(--marke-flaeche); margin-bottom: var(--raum-4);
+}
+.abschnitt.marke-eins h2::before,
+.abschnitt.marke-zwei h2::before,
+.abschnitt.marke-drei h2::before {
+  width: var(--streifen-breite); height: var(--strich-1);
+}
+h3 {
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: var(--schrift-3); line-height: var(--zeile-ueberschrift);
+  letter-spacing: var(--spur-gross);
+  margin: 0 0 var(--raum-4);
+}
+p { max-width: var(--mass-prosa-web); }
+
+/* Der Anspruch einer Faehigkeit. Er steht in der Textspalte gross, waehrend
+   der Name der Faehigkeit im Streifen steht: derselbe Bau wie im Lebenslauf,
+   Kennung links, Aussage rechts. Bis zum 01.09.2026 standen hier drei
+   nebeneinandergestellte Saeulenkaesten; sie nannten die Faehigkeit zweimal,
+   einmal als Ueberschrift und einmal im Text darunter. */
+.anspruch {
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: var(--schrift-6); line-height: var(--zeile-ueberschrift);
+  letter-spacing: var(--spur-gross);
+  margin: 0;
+  text-wrap: pretty;
+}
+/* Die Zeile, die vom Standpunkt zu den Belegen fuehrt. Sie traegt keine
+   eigene Aussage, deshalb weder Groesse noch Farbe eines Anspruchs. */
+.ueberleitung {
+  margin: var(--raum-7) 0 0;
+  color: var(--tinte-gedaempft);
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
+}
+/* Schlusszeile unter dem Kontakt. Sie sagt, wie die Seite entstanden ist,
+   und gehoert damit zur Aussage, nicht zur Fusszeile. */
+.methode {
+  margin: var(--raum-8) 0 0;
+  padding-top: var(--raum-6);
+  border-top: var(--strich-0) solid var(--linie);
+  color: var(--tinte-leise);
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  line-height: var(--zeile-meta);
 }
 
-/* Case-Karte */
-.case{
-  background:var(--card);
-  border:1px solid color-mix(in oklab, var(--muted) 18%, transparent);
-  border-radius:16px;
-  padding:20px;
-  box-shadow: 0 6px 26px rgba(0,0,0,.04);
+/* --- Arbeiten ----------------------------------------------------------- */
+.arbeit { padding-block: var(--raum-9); }
+.arbeit + .arbeit { padding-top: var(--raum-10); }
+.arbeit:first-of-type { padding-top: var(--raum-9); }
+.arbeit .untertitel {
+  color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
+  margin: calc(var(--raum-4) * -1) 0 var(--raum-6);
 }
-.case h2{ margin:0 0 6px; font-size: clamp(18px, 3.6vw, 24px); }
-.case-meta{ margin:0 0 14px; color:var(--muted); }
+.arbeit p.text { margin: 0 0 var(--raum-6); }
+.marken { display: flex; flex-wrap: wrap; gap: var(--raum-3); margin-bottom: var(--raum-6); }
+.marke-tag {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-gedaempft);
+  border: var(--strich-0) solid var(--linie);
+  padding: var(--raum-2) var(--raum-4);
+}
 
-/* Aktionen: Primary + Link */
-.case-actions{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
+/* Belege. Kein Bildplatz mehr: drei gestrichelte Kaesten auf einer Seite,
+   die live geht, lesen sich als unfertig. Solange es keine Bilder gibt,
+   tragen die verlinkten PDFs und Prototypen den Nachweis. */
+/* HIER STAND DIE AUSGABE DER PRUEFKETTE ALS BILD. Entfernt am 01.09.2026,
+   Entscheidung André: sie verraet den Zweck des Systems, naemlich dass er
+   seine eigenen Bewerbungsunterlagen baut, und eine Terminalausgabe sagt
+   ohne Erklaerung nichts. Die Regeln fuer .bild stehen im Vorgaengercommit,
+   falls je ein anderes Bild an dieselbe Stelle kommt. */
+
+/* Der kompakte Eintrag am Ende der Arbeiten. Er traegt keinen eigenen Titel
+   und keine Tags: er soll nicht mit den drei vorderen konkurrieren. */
+.ausserdem { padding-top: var(--raum-10); }
+.ausserdem .streifen {
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  letter-spacing: var(--spur-versal); text-transform: uppercase;
+  color: var(--tinte-leise);
 }
-.btn-narrow{
-  max-width:280px;
-  justify-content:center;
-}
-.link-accent{
-  color: var(--accent);
-  font-weight:600;
+.ausserdem p { font-size: var(--schrift-m1); color: var(--tinte-gedaempft); margin: 0; }
+.ausserdem b { color: var(--tinte); font-weight: 600; }
+
+.belege { display: flex; flex-wrap: wrap; gap: var(--raum-5); margin-bottom: var(--raum-6); }
+/* Alle Beleg-Buttons haben denselben Abstand nach oben, gemessen an der
+   sichtbaren Kante des Objekts darueber, nicht am Kasten. Nach den Chips
+   sind das 16px (.marken margin-bottom). Nach einem Textabsatz stehen unter
+   der Grundlinie noch 3,8px halber Durchschuss, deshalb hier 12px: 12 + 3,8
+   ergibt dieselben 16. Dieselbe Regel wie beim Quadrat im Lebenslauf, das an
+   der Tusche ausgerichtet wird und nicht am Glyphenkasten. */
+.ausserdem p + .belege { margin-top: var(--raum-5); margin-bottom: 0; }
+.beleg-link {
+  display: inline-flex; align-items: baseline; gap: var(--raum-4);
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+  border: var(--strich-0) solid var(--linie-stark);
+  padding: var(--raum-4) var(--raum-6);
+  transition: border-color var(--dauer-2) var(--kurve-aus),
+              color var(--dauer-2) var(--kurve-aus);
 }
-.link-accent:hover{
-  color: var(--accent-hover);
-  border-bottom-color: var(--accent-hover);
+.beleg-link::before {
+  content: ""; width: 0.5rem; height: 0.5rem;
+  background: var(--marke-flaeche); align-self: center;
 }
+.beleg-link:hover { border-color: var(--marke-flaeche); color: var(--marke-text); }
+.beleg-link .gewicht { color: var(--tinte-leise); font-size: var(--schrift-m2); }
 
-/* Footer zentriert auf Portfolio */
-.foot-center{ text-align:center; margin-top:32px; }
-
-/* Mobile: Buttons blockig */
-@media (max-width:480px){
-  .actions{ flex-direction:column }
-  .btn{ justify-content:center; width:100% }
+/* --- Ergebniszeile, dasselbe Muster wie im Lebenslauf ------------------- */
+.ergebnis {
+  border-left: var(--strich-1) solid var(--marke-flaeche);
+  padding-left: var(--raum-5);
+  margin: 0 0 var(--raum-6);
+  color: var(--tinte-gedaempft);
+  font-size: var(--schrift-m1);
 }
+.ergebnis b { color: var(--tinte); font-weight: 500; }
+
+/* --- Kontakt ------------------------------------------------------------ */
+.kontakt-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--raum-5); }
+.kontakt-liste a {
+  font-family: var(--familie-display); font-weight: 500;
+  font-size: var(--schrift-3); letter-spacing: var(--spur-gross);
+  text-decoration: none;
+  border-bottom: var(--strich-0) solid var(--linie-stark);
+  transition: border-color var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus);
+}
+.kontakt-liste a:hover { color: var(--marke-text); border-color: var(--marke-flaeche); }
+
+.fuss {
+  border-top: var(--strich-0) solid var(--linie);
+  padding-block: var(--raum-8);
+  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  color: var(--tinte-leise);
+}
+.fuss-inhalt { display: flex; flex-wrap: wrap; gap: var(--raum-6); justify-content: space-between; }
+.fuss a { color: var(--tinte-gedaempft); }
+/* Ueberscroll-Flaeche oben und unten in der Seitenfarbe, sonst blitzt beim
+   Ziehen der Browserhintergrund durch. */
+html { background: var(--flaeche); }

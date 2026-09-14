@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B0E12">
-  <title>Impressum – André Czupala</title>
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<!-- Browserleiste folgt der Flaeche: --weiss und --tinte-95 aus tokens.css. Zwei Literale,
+     weil ein meta-Tag keine CSS-Variable lesen kann; bin/gates.mjs prueft sie gegen das Paket. -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B0E12">
+<title>Impressum, André Czupala</title>
+<meta name="description" content="Impressum der Seite andreux.design.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="tokens.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="wrap">
-    <header class="header">
-      <h1>Impressum</h1>
-    </header>
 
-    <section class="meta">
-      <p><strong>Angaben gemäß § 5 TMG:</strong></p>
-      <p>
-        André Czupala<br>
-        Am Münzbergtor 13<br>
-        85049 Ingolstadt<br>
-        Deutschland
-      </p>
+<header class="kopf">
+  <div class="bahn kopf-inhalt">
+    <a class="marke" href="index.html">André Czupala</a>
+    <nav class="kopf-nav" aria-label="Seitenbereiche">
+      <a href="index.html">Startseite</a>
+    </nav>
+  </div>
+</header>
 
-      <p>
-        <strong>Kontakt:</strong><br>
-        E-Mail: <a href="mailto:hello@andreux.design">hello@andreux.design</a>
-      </p>
+<main id="oben">
 
-      <p>
-        Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
-        André Czupala (Adresse wie oben)
-      </p>
-    </section>
+  <section class="abschnitt" aria-labelledby="h-impressum">
+    <div class="bahn">
+      <div class="reihe">
+        <h2 id="h-impressum">Impressum</h2>
+        <div>
+          <p class="text"><b>Angaben gemäß § 5 DDG</b><br>
+          André Czupala<br>
+          Am Münzbergtor 13<br>
+          85049 Ingolstadt<br>
+          Deutschland</p>
+          <p class="text"><b>Kontakt</b><br>
+          E-Mail: <a href="mailto:hello@andreux.design">hello@andreux.design</a></p>
+          <p class="text"><b>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</b><br>
+          André Czupala, Anschrift wie oben</p>
+          <p class="text"><b>Haftung für Links</b><br>
+          Diese Seite verlinkt auf Figma und LinkedIn. Für die Inhalte der verlinkten Seiten sind deren Betreiber verantwortlich.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="foot">
-      <a href="index.html">← Zurück zur Startseite</a>
-    </footer>
-  </main>
+</main>
+
+<footer class="fuss">
+  <div class="bahn fuss-inhalt">
+    <span>&copy; <span id="jahr">2026</span> André Czupala</span>
+    <span><a href="impressum.html">Impressum</a></span>
+  </div>
+</footer>
+
 <script>
+  document.getElementById('jahr').textContent = new Date().getFullYear();
+
+  // Kein Themaknopf mehr (André, 14.09.2026): Hell und Dunkel kommen allein
+  // aus prefers-color-scheme in tokens.css; wechselt das System, wechselt die
+  // Seite mit. Eine alte gespeicherte Wahl wird entfernt.
+  try { localStorage.removeItem('thema'); sessionStorage.removeItem('thema'); } catch (e) {}
   // Safari wertet theme-color mit media nur beim Laden aus. Wechselt das
   // System waehrend des Besuchs, bleibt die Browserleiste alt, obwohl die
   // Seite schon umgestellt ist (André, 14.09.2026). Deshalb wird der Wert hier
@@ -63,5 +90,6 @@
     else if (medien.addListener) medien.addListener(nachziehen);
   })();
 </script>
+
 </body>
 </html>
