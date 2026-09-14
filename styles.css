@@ -1,7 +1,11 @@
 :root{
-  --bg: #fafafa;
-  --fg: #222;
-  --muted: #6b6b6b;
+  /* Flaeche und Tinte aus dem Tokenpaket (tokens.css wird vor dieser Datei
+     geladen), damit Impressum, Startseite und Browserleiste dieselbe Farbe
+     tragen. Seit 14.09.2026; vorher #fafafa und #111. */
+  color-scheme: light dark;
+  --bg: var(--flaeche, #fafafa);
+  --fg: var(--tinte, #222);
+  --muted: var(--tinte-gedaempft, #6b6b6b);
   --accent: #FF7262;     /* CV-Orange */
   --accent-hover:#e05b4c;
   --card:#ffffff;
@@ -10,9 +14,9 @@
 
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#111;
-    --fg:#eaeaea;
-    --muted:#b7b7b7;
+    --bg: var(--flaeche, #111);
+    --fg: var(--tinte, #eaeaea);
+    --muted: var(--tinte-gedaempft, #b7b7b7);
     --card:#161616;
     --ring: rgba(255,114,98,.5);
   }
