@@ -17,6 +17,17 @@
    Conversion. Verteilt wird ueber genau drei Klassen, .marke-eins bis -drei.
    Gemessene Kontraste stehen in tokens/farbe.json des Paketrepos, geprueft
    von dessen bin/kontrast.mjs.
+
+   LINIEN, EINE REGEL (14.09.2026, André: "wann duenne Linien, wann dicke"):
+   1px in --linie ist Struktur und traegt keine Aussage: Kopf, Fuss, Rahmen
+   der Tags und Belege, die kleinen Balken ueber Nebenabschnitten. 3px in der
+   Markenfarbe ist Aussage: der Balken ueber jeder der drei Saeulen und die
+   Ergebniszeile einer Karte. Nichts dazwischen, keine dritte Staerke.
+
+   ABSTAENDE, EIN RHYTHMUS: Abschnitt zu Abschnitt --raum-11 oben und unten
+   (auf dem Handy --raum-10), Anspruch zur ersten Karte --raum-9, Karte zu
+   Karte --raum-10, innerhalb einer Karte --raum-6. Vorher lagen zwischen zwei
+   Karten 112px und zwischen Anspruch und Karte 48px, ohne Stufe dazwischen.
 --------------------------------------------------------------------------- */
 
 :root {
@@ -99,11 +110,18 @@ a { color: inherit; }
 @media (min-width: 900px) {
   .streifen { flex-direction: column; gap: var(--raum-3); padding-top: 0.35em; }
 }
-/* Dasselbe Quadrat wie im Lebenslauf, hier in der Marke des Blocks. */
-.streifen-marke::before {
+/* Dasselbe Quadrat wie im Lebenslauf, hier in der Marke des Blocks. Es haengt
+   am ERSTEN TEXT, nicht am Streifen: der Streifen ist ein Flex-Container, und
+   ein ::before darauf wird zum eigenen Flex-Element, das ueber dem Text sitzt
+   statt daneben. Gemessen am 14.09.2026: 18px zu hoch am Desktop, 5px daneben
+   auf dem Handy (André: "nicht mittig mit dem dazugehoerigen Text").
+   vertical-align: middle setzt die Mitte des Quadrats auf die Mitte der
+   Kleinbuchstaben, dort sitzt das Auge, nicht am Zeilenkasten. */
+.streifen-marke > span:first-child::before {
   content: ""; display: inline-block;
   width: 0.5rem; height: 0.5rem; margin-right: var(--raum-4);
-  background: var(--marke-flaeche); vertical-align: 0.05em;
+  background: var(--marke-flaeche); vertical-align: middle;
+  position: relative; top: -0.05em;
 }
 
 /* --- Kopf --------------------------------------------------------------- */
@@ -187,6 +205,10 @@ a { color: inherit; }
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
    Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */
 .abschnitt { padding-block: var(--raum-11); }
+@media (max-width: 899px) {
+  .abschnitt { padding-block: var(--raum-10); }
+  .anschlag { padding-block: var(--raum-11) var(--raum-10); }
+}
 .abschnitt > .bahn > .reihe + .reihe { margin-top: var(--raum-9); }
 h2 {
   font-family: var(--familie-meta); font-weight: 500;
@@ -203,12 +225,13 @@ h2 {
 h2::before {
   content: ""; display: block;
   width: var(--raum-8); height: var(--strich-0);
-  background: var(--marke-flaeche); margin-bottom: var(--raum-4);
+  background: var(--linie-stark); margin-bottom: var(--raum-4);
 }
 .abschnitt.marke-eins h2::before,
 .abschnitt.marke-zwei h2::before,
 .abschnitt.marke-drei h2::before {
   width: var(--streifen-breite); height: var(--strich-1);
+  background: var(--marke-flaeche);
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;
@@ -225,7 +248,10 @@ p { max-width: var(--mass-prosa-web); }
    einmal als Ueberschrift und einmal im Text darunter. */
 .anspruch {
   font-family: var(--familie-display); font-weight: 600;
-  font-size: var(--schrift-6); line-height: var(--zeile-ueberschrift);
+  /* Zwischen --schrift-3 und --schrift-6, fluessig: mit 34px stand der Satz auf
+     dem Handy so gross wie der Seitentitel und nahm vier Zeilen. */
+  font-size: clamp(var(--schrift-3), 1rem + 1.6vw, var(--schrift-6));
+  line-height: var(--zeile-ueberschrift);
   letter-spacing: var(--spur-gross);
   margin: 0;
   text-wrap: pretty;
@@ -249,8 +275,8 @@ p { max-width: var(--mass-prosa-web); }
 }
 
 /* --- Arbeiten ----------------------------------------------------------- */
-.arbeit { padding-block: var(--raum-9); }
-.arbeit + .arbeit { padding-top: var(--raum-10); }
+.arbeit { padding-block: var(--raum-8); }
+.arbeit + .arbeit { padding-top: var(--raum-8); }
 .arbeit:first-of-type { padding-top: var(--raum-9); }
 .arbeit .untertitel {
   color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
@@ -276,7 +302,7 @@ p { max-width: var(--mass-prosa-web); }
 
 /* Der kompakte Eintrag am Ende der Arbeiten. Er traegt keinen eigenen Titel
    und keine Tags: er soll nicht mit den drei vorderen konkurrieren. */
-.ausserdem { padding-top: var(--raum-10); }
+.ausserdem { padding-top: var(--raum-9); }
 .ausserdem .streifen {
   font-family: var(--familie-meta); font-size: var(--schrift-m2);
   letter-spacing: var(--spur-versal); text-transform: uppercase;
