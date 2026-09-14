@@ -107,5 +107,18 @@ for (const thema of ["light", "dark"]) {
 }
 await b.close();
 
+/* ---------- Browserleiste folgt der Flaeche ---------- */
+// theme-color kann keine CSS-Variable lesen, deshalb stehen dort zwei Literale.
+// Sie muessen --weiss und --tinte-95 aus tokens.css entsprechen, sonst zeigt
+// die Browserleiste eine andere Farbe als die Seite. Seit 14.09.2026.
+{
+  const tokens = readFileSync(resolve(wurzel, "tokens.css"), "utf8");
+  const wert = (n) => (tokens.match(new RegExp(`${n}:\\s*(#[0-9A-Fa-f]{6})`)) || [])[1]?.toUpperCase();
+  const hell = (html.match(/theme-color" media="\(prefers-color-scheme: light\)" content="(#[0-9A-Fa-f]{6})"/) || [])[1]?.toUpperCase();
+  const dunkel = (html.match(/theme-color" media="\(prefers-color-scheme: dark\)" content="(#[0-9A-Fa-f]{6})"/) || [])[1]?.toUpperCase();
+  pruef(!!hell && hell === wert("--weiss") && !!dunkel && dunkel === wert("--tinte-95"),
+    "Browserleiste folgt der Flaeche", `${hell} / ${dunkel}`);
+}
+
 console.log(fehler ? `\n${fehler} Pruefung(en) gefallen.` : "\nGate gruen.");
 process.exit(fehler ? 1 : 0);

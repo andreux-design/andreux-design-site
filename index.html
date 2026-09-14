@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<!-- Browserleiste folgt der Flaeche: --weiss und --tinte-95 aus tokens.css. Zwei Literale,
+     weil ein meta-Tag keine CSS-Variable lesen kann; bin/gates.mjs prueft sie gegen das Paket. -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B0E12">
 <link rel="alternate" hreflang="de" href="https://andreux.design/">
 <link rel="alternate" hreflang="en" href="https://andreux.design/index.en.html">
 <title>André Czupala, Senior Product Designer</title>
@@ -33,6 +37,8 @@
 --------------------------------------------------------------------------- */
 
 :root {
+  /* Scrollbalken, Formulare und Systemflaechen folgen dem Modus mit. */
+  color-scheme: light dark;
   --familie-display: "Sora", system-ui, sans-serif;
   --familie-text: "IBM Plex Sans", system-ui, sans-serif;
   --familie-meta: "IBM Plex Mono", ui-monospace, monospace;
