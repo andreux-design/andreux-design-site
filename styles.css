@@ -24,6 +24,13 @@
    Markenfarbe ist Aussage: der Balken ueber jeder der drei Saeulen und die
    Ergebniszeile einer Karte. Nichts dazwischen, keine dritte Staerke.
 
+   SCHRIFT, EINE REGEL FUER ALLES ANKLICKBARE (14.09.2026): Links und Knoepfe
+   stehen nie unter --schrift-m1 (15px) und haben mindestens 44px Flaeche;
+   Kopfzeile, Belege, Kontakt und Fusszeile tragen dieselbe Stufe. --schrift-m2
+   (13px) bleibt der Beschriftung vorbehalten, die man liest und nicht drueckt:
+   Streifen, Abschnittslabel, Tags, Gewichtsangaben. Vorher stand die Kopfzeile
+   auf 13px und die Fusszeile auf 15px, und dasselbe Wort sah zweimal anders aus.
+
    ABSTAENDE, EIN RHYTHMUS: Abschnitt zu Abschnitt --raum-11 oben und unten
    (auf dem Handy --raum-10), Anspruch zur ersten Karte --raum-9, Karte zu
    Karte --raum-10, innerhalb einer Karte --raum-6. Vorher lagen zwischen zwei
@@ -143,7 +150,7 @@ a { color: inherit; }
 }
 .kopf-nav { display: flex; align-items: center; gap: var(--raum-6); }
 .kopf-nav a {
-  font-family: var(--familie-meta); font-size: var(--schrift-m2);
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
   color: var(--tinte-gedaempft); text-decoration: none;
   /* Trefferflaeche fuer den Daumen, gemessen am 14.09.2026 bei 390px: "Kontakt"
      55 x 20px, "EN" 16 x 20px, beides unter 44pt (Apple) und "EN" unter den

@@ -112,6 +112,12 @@ for (const thema of ["light", "dark"]) {
         .filter(x => x.r.width < 44 || x.r.height < 44)
         .map(x => `${x.t} ${Math.round(x.r.width)}x${Math.round(x.r.height)}`));
       pruef(klein.length === 0, "Trefferflaechen aller Links und Knoepfe mindestens 44px (390px)", klein.join(", "));
+      // Anklickbares nie unter --schrift-m1: die Kopfzeile stand auf 13px, die
+      // Fusszeile auf 15px, dasselbe Wort zweimal anders (André, 14.09.2026).
+      const winzig = await s.$$eval("a, button", els => els
+        .filter(e => e.getBoundingClientRect().width > 0 && parseFloat(getComputedStyle(e).fontSize) < 15)
+        .map(e => `${e.textContent.trim().slice(0, 20)} ${getComputedStyle(e).fontSize}`));
+      pruef(winzig.length === 0, "Anklickbares nicht unter 15px Schrift (390px)", winzig.join(", "));
     }
   }
   await ctx.close();
