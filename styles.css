@@ -127,7 +127,15 @@ a { color: inherit; }
 .kopf-nav a {
   font-family: var(--familie-meta); font-size: var(--schrift-m2);
   color: var(--tinte-gedaempft); text-decoration: none;
+  /* Trefferflaeche fuer den Daumen, gemessen am 14.09.2026 bei 390px: "Kontakt"
+     55 x 20px, "EN" 16 x 20px, beides unter 44pt (Apple) und "EN" unter den
+     24px aus WCAG 2.5.8. Der Innenabstand hebt die Flaeche auf mindestens
+     44 x 44px, der negative Aussenabstand laesst die Zeile optisch, wo sie ist. */
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px; padding: 0 var(--raum-3);
+  margin: -12px calc(-1 * var(--raum-3));
 }
+.marke { display: inline-flex; align-items: center; min-height: 44px; }
 .kopf-nav a:hover { color: var(--akzent-text); }
 @media (max-width: 599px) { .kopf-nav .verstecken-schmal { display: none; } }
 
