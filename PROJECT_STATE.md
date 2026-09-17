@@ -4,7 +4,42 @@ Letzte Aktualisierung: 2026-09-17
 
 ## Nächster Schritt
 
-**Die Fassung vom 17.09. ist auf `main`, deutsch und englisch, Gate grün**
+**Säulenzeichen und Belege-Buttons umbauen** (André, 17.09., nach zwei
+gerenderten Vorschauen mit den echten Tokens):
+
+1. **Die drei Säulen bekommen eine Zählung, 1, 2, 3, in der Textfarbe der
+   Säule, plus Farbe im Wort.** Im ATF: Sprungmarke als „1 END-TO-END-
+   PRODUKTDESIGN" in `--marke-text`, Versalien wie die H2, Meta-Schrift,
+   44px Trefferfläche bleibt; das Quadrat vor der Sprungmarke fällt weg.
+   Im Abschnitt: die Nummer groß (rund 1,6em der H2) vor der H2, H2 selbst
+   in `--marke-text` statt `--tinte-leise`, ebenfalls Versalien. Der
+   3-Pixel-Strich über den Säulen-H2 (`.abschnitt.marke-* h2::before`)
+   fällt weg, die Nummer übernimmt seine Aufgabe. Grund: die Seite hatte
+   zwei Zeichen für dieselbe Sache (Quadrat oben, Strich unten), und das
+   Quadrat ist als Positionsmarke vergeben. Nummern waren frei, tragen die
+   Reihenfolge aus dem Claim und funktionieren ohne Farbe. Oben und unten
+   derselbe Wortlaut, dieselbe Schrift, dieselben Versalien, damit die
+   Sprungmarke und die Überschrift als dasselbe Objekt gelesen werden.
+2. **Belege-Buttons ohne Quadrat, Text in `--marke-text`, Rahmen bleibt
+   1px grau.** Grund: das Quadrat heißt auf der Seite „Position"; im
+   Button war es nur ein Farbtupfer und hat die Rolle verwässert. Grauer
+   Rahmen sagt anklickbar (Linienregel: 1px Grau ist Struktur), Farbe im
+   Wort sagt Zugehörigkeit, wie beim Hover heute schon. Verworfen: Rahmen
+   in Säulenfarbe (macht Struktur zur Aussage), Rahmen und Text farbig
+   (zu viel).
+3. Rollen danach, festhalten im Kopf von `styles.css`: Quadrat markiert
+   Positionen (Streifen, Belege), 1px grauer Rahmen ist anklickbar oder
+   Tag, Farbe im Wort ist Zugehörigkeit zur Säule, Nummer ist die Säule,
+   senkrechte 3px-Linie ist Ergebnis oder Hinweis. Die Linienregel vom
+   14.09. entsprechend kürzen: der 3px-Strich als Aussage-Linie über H2
+   gibt es nicht mehr.
+4. Gate laufen lassen (Trefferflächen, Kontrast von `--marke-text` auf
+   Grund ist im Tokenrepo gemessen), beide Sprachen, dann Merge.
+
+Vorschauen: `Vorschau_Saeulen_Marken.jpg` und `_2.jpg` in Andrés iCloud
+Drive, gerendert aus `tokens.css` und `styles.css` dieses Repos.
+
+**Danach:** Die Fassung vom 17.09. ist auf `main`, deutsch und englisch, Gate grün**
 (André, 17.09.: „Merge"). Netlify liefert `main` aus, nach dem Push also live;
 Gegenprobe mit `curl` auf andreux.design steht aus. Nächster Schritt zwei aus
 dem Protokoll: GoTiger, Filo und colibre bekommen Fallstudienseiten, auf der
@@ -175,6 +210,13 @@ verschiedenen Farben auf einer Seite zu praesent).
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
 
 ## Entschieden
+
+- **Säulenzeichen ist die Zählung plus Farbe im Wort, Buttons ohne
+  Quadrat** (André, 17.09.). Siehe Nächster Schritt, Punkte 1 bis 3, mit
+  Begründung. Verworfen: Tag-Kasten in Säulenfläche (die Akzentfläche ist
+  die volle Farbe, Text darauf unlesbar; bräuchte ein neues Token „helle
+  Fläche je Akzent" im Tokenrepo), Kreis als zweiter Glyph (nur ein rundes
+  Quadrat), Rahmen plus Quadrat als Tag.
 
 **Die beiden colibre-PDFs sind aus `downloads/` entfernt** (André, 01.09.2026).
 Sie nannten "Sommersemester 2023", Lebenslauf und Seite nennen 2022. Verlinkt
