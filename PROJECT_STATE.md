@@ -4,9 +4,9 @@ Letzte Aktualisierung: 2026-09-17
 
 ## Nächster Schritt
 
-**Die Fassung vom 17.09. ist gebaut, deutsch und englisch, Gate grün, noch
-nicht auf `main`.** Zweig `claude/website-bilingual-build-w5iq1h`; André sieht
-die Netlify-Vorschau, gibt frei, dann Merge, dann live. Danach Schritt zwei aus
+**Die Fassung vom 17.09. ist auf `main`, deutsch und englisch, Gate grün**
+(André, 17.09.: „Merge"). Netlify liefert `main` aus, nach dem Push also live;
+Gegenprobe mit `curl` auf andreux.design steht aus. Nächster Schritt zwei aus
 dem Protokoll: GoTiger, Filo und colibre bekommen Fallstudienseiten, auf der
 Hauptseite bleibt je eine Kurzfassung, gemessen gegen 900 Wörter und
 Burstiness 0,50. Volkswagen-Library, Token-System und Bausteinbibliothek
@@ -143,7 +143,7 @@ verschiedenen Farben auf einer Seite zu praesent).
 
 ## Offen
 
-- [ ] **Freigabe und Merge** der Fassung vom 17.09., dann Livegang
+- [ ] Gegenprobe nach dem Deploy: `curl` auf andreux.design, Claim und Sprungmarken sichtbar
 - [ ] **Fallstudienseiten** für GoTiger, Filo, colibre, mit Kurzfassungen auf
       der Hauptseite (Schritt zwei, André 16. und 17.09.)
 - [ ] **Driftprüfung als Gate:** Seite gegen `texte/website.md` in beide
