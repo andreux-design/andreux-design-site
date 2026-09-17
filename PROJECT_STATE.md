@@ -28,7 +28,20 @@ Stylesheet, kein Markup geändert:
    im Tokenrepo gemessen, hier nicht neu.
 
 Ausschnitte (ATF und Säulenüberschrift, 1280 und 390px) hat André in der
-Sitzung gesehen und freigegeben. Offen bleibt die Gegenprobe am gerenderten
+Sitzung gesehen und freigegeben.
+
+**Zwei Befunde von André danach, behoben, im Zweig, Merge steht aus:**
+- **Sprungziel unter der Kopfzeile.** Nach dem Klick auf eine Säule lag die
+  Abschnittsoberkante bei 0px, die klebende Kopfzeile (69px) deckte sie;
+  bei 390px stand die H2 mit 64px sogar 5px unter der Kopfzeile. Jetzt
+  `scroll-margin-top: var(--kopf-hoehe)` auf `.abschnitt`, die Höhe aus den
+  Tokens gerechnet (44px plus zweimal `--raum-5` plus `--strich-0`).
+  Gemessen danach: Abschnitt oben 69px, H2 bei 165px (1280) und 133px (390).
+- **Unterstreichung nach dem Klick.** Die beiden Hover-Regeln vom Umbau
+  (Sprungmarken, Belege-Buttons) sind gestrichen; auf Touch bleibt `:hover`
+  nach dem Tippen stehen. Kein Hover-Zustand mehr an diesen Elementen, Farbe
+  im Wort und grauer Rahmen sagen anklickbar. Die übrigen Hover-Regeln
+  (Kopf, Kontakt, Fuß) wechseln nur die Farbe und bleiben. Offen bleibt die Gegenprobe am gerenderten
 Ergebnis auf andreux.design, der Proxy der Cloud-Sitzung lässt die Domain
 nicht durch.
 

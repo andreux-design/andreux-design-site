@@ -62,6 +62,14 @@
      getippt liefe sie auseinander, sobald eine der beiden sich aendert. */
   --streifen-breite: 11rem;
 
+  /* Hoehe der klebenden Kopfzeile: 44px Trefferflaeche plus zweimal
+     --raum-5 Innenabstand plus die 1px-Linie, gemessen 69px. Steht hier,
+     weil die Abschnitte sie als Scrollrand brauchen: ohne ihn landet ein
+     Sprungziel bei 0px und die Kopfzeile deckt es (André, 17.09.2026: "nach
+     dem Scroll oben abgeschnitten"; gemessen bei 390px lag die H2 5px unter
+     der Kopfzeile). Wer den Kopf aendert, aendert diese Rechnung mit. */
+  --kopf-hoehe: calc(44px + 2 * var(--raum-5) + var(--strich-0));
+
   /* Die Marke eines Blocks. Ohne Angabe traegt er den ersten Akzent. */
   --marke-text: var(--akzent-text);
   --marke-flaeche: var(--akzent-flaeche);
@@ -242,12 +250,14 @@ a { color: inherit; }
   color: var(--marke-text); text-decoration: none;
 }
 .sprungmarken a::before { content: var(--nummer); }
-.sprungmarken a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+/* Kein Hover-Zustand: Farbe im Wort sagt schon Zugehoerigkeit, und auf
+   Touch bleibt :hover nach dem Tippen stehen (André, 17.09.2026: "geklickte
+   Links bekommen eine Unterstreichung"). */
 
 /* --- Abschnitte --------------------------------------------------------- */
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
    Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */
-.abschnitt { padding-block: var(--raum-11); }
+.abschnitt { padding-block: var(--raum-11); scroll-margin-top: var(--kopf-hoehe); }
 @media (max-width: 899px) {
   .abschnitt { padding-block: var(--raum-10); }
   .anschlag { padding-block: var(--raum-11) var(--raum-10); }
@@ -389,7 +399,7 @@ p { max-width: var(--mass-prosa-web); }
   /* 44px Daumenflaeche (Apple HIG, WCAG 2.5.5); gemessen am 14.09.2026: 41px. */
   min-height: 44px;
 }
-.beleg-link:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+/* Kein Hover-Zustand, derselbe Grund wie bei den Sprungmarken. */
 .beleg-link .gewicht { color: var(--tinte-leise); font-size: var(--schrift-m2); }
 
 /* --- Ergebniszeile, dasselbe Muster wie im Lebenslauf ------------------- */
