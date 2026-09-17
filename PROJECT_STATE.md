@@ -4,40 +4,31 @@ Letzte Aktualisierung: 2026-09-17
 
 ## Nächster Schritt
 
-**Säulenzeichen und Belege-Buttons umbauen** (André, 17.09., nach zwei
-gerenderten Vorschauen mit den echten Tokens):
+**Säulenzeichen und Belege-Buttons sind umgebaut, Gate grün in beiden
+Sprachen, im Zweig `claude/website-bilingual-build-w5iq1h`; Merge nach
+Andrés Blick auf die Ausschnitte** (André, 17.09., nach zwei gerenderten
+Vorschauen mit den echten Tokens). Umgesetzt am 17.09. abends, alles im
+Stylesheet, kein Markup geändert:
 
-1. **Die drei Säulen bekommen eine Zählung, 1, 2, 3, in der Textfarbe der
-   Säule, plus Farbe im Wort.** Im ATF: Sprungmarke als „1 END-TO-END-
-   PRODUKTDESIGN" in `--marke-text`, Versalien wie die H2, Meta-Schrift,
-   44px Trefferfläche bleibt; das Quadrat vor der Sprungmarke fällt weg.
-   Im Abschnitt: die Nummer groß (rund 1,6em der H2) vor der H2, H2 selbst
-   in `--marke-text` statt `--tinte-leise`, ebenfalls Versalien. Der
-   3-Pixel-Strich über den Säulen-H2 (`.abschnitt.marke-* h2::before`)
-   fällt weg, die Nummer übernimmt seine Aufgabe. Grund: die Seite hatte
-   zwei Zeichen für dieselbe Sache (Quadrat oben, Strich unten), und das
-   Quadrat ist als Positionsmarke vergeben. Nummern waren frei, tragen die
-   Reihenfolge aus dem Claim und funktionieren ohne Farbe. Oben und unten
-   derselbe Wortlaut, dieselbe Schrift, dieselben Versalien, damit die
-   Sprungmarke und die Überschrift als dasselbe Objekt gelesen werden.
-2. **Belege-Buttons ohne Quadrat, Text in `--marke-text`, Rahmen bleibt
-   1px grau.** Grund: das Quadrat heißt auf der Seite „Position"; im
-   Button war es nur ein Farbtupfer und hat die Rolle verwässert. Grauer
-   Rahmen sagt anklickbar (Linienregel: 1px Grau ist Struktur), Farbe im
-   Wort sagt Zugehörigkeit, wie beim Hover heute schon. Verworfen: Rahmen
-   in Säulenfarbe (macht Struktur zur Aussage), Rahmen und Text farbig
-   (zu viel).
-3. Rollen danach, festhalten im Kopf von `styles.css`: Quadrat markiert
-   Positionen (Streifen, Belege), 1px grauer Rahmen ist anklickbar oder
-   Tag, Farbe im Wort ist Zugehörigkeit zur Säule, Nummer ist die Säule,
-   senkrechte 3px-Linie ist Ergebnis oder Hinweis. Die Linienregel vom
-   14.09. entsprechend kürzen: der 3px-Strich als Aussage-Linie über H2
-   gibt es nicht mehr.
-4. Gate laufen lassen (Trefferflächen, Kontrast von `--marke-text` auf
-   Grund ist im Tokenrepo gemessen), beide Sprachen, dann Merge.
+1. **Zählung plus Farbe im Wort.** `--nummer` steht in `.marke-eins` bis
+   `-drei` neben der Farbe, Sprungmarke und Säulen-H2 holen sie per
+   `::before`; oben und unten also derselbe Wortlaut, dieselbe Meta-Schrift,
+   Versalien, Farbe `--marke-text`. Sprungmarke „1 END-TO-END-PRODUKTDESIGN",
+   15px, gemessen 263x44, 151x44, 222x44, kein Quadrat. H2 als Grid, Nummer
+   1,6em (20,8px) vor dem Titel, Titel bricht neben der Nummer um, nicht
+   unter sie; der 3px-Strich über den Säulen-H2 ist weg.
+2. **Belege-Buttons** ohne Quadrat, Text in `--marke-text`
+   (rgb 191,59,0 gemessen), Rahmen 1px `--linie-stark` (rgb 142,148,157),
+   44px hoch. Hover ist eine Unterstreichung, kein farbiger Rahmen.
+3. **Rollen im Kopf von `styles.css`:** Quadrat ist Position, 1px grauer
+   Rahmen ist anklickbar oder Tag, Farbe im Wort ist Zugehörigkeit, Nummer
+   ist die Säule, senkrechte 3px-Linie ist Ergebnis oder Hinweis. Die
+   Linienregel vom 14.09. ist entsprechend gekürzt.
+4. Gate grün, drei Seiten, beide Sprachen. Kontrast von `--marke-text` ist
+   im Tokenrepo gemessen, hier nicht neu.
 
-Vorschauen: `Vorschau_Saeulen_Marken.jpg` und `_2.jpg` in Andrés iCloud
-Drive, gerendert aus `tokens.css` und `styles.css` dieses Repos.
+Ausschnitte (ATF und Säulenüberschrift, 1280 und 390px) sind André in der
+Sitzung gezeigt; nach seinem OK Merge nach `main`.
 
 **Danach:** Die Fassung vom 17.09. ist auf `main`, deutsch und englisch, Gate grün**
 (André, 17.09.: „Merge"). Netlify liefert `main` aus, nach dem Push also live;

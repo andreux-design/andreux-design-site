@@ -18,11 +18,24 @@
    Gemessene Kontraste stehen in tokens/farbe.json des Paketrepos, geprueft
    von dessen bin/kontrast.mjs.
 
-   LINIEN, EINE REGEL (14.09.2026, André: "wann duenne Linien, wann dicke"):
-   1px in --linie ist Struktur und traegt keine Aussage: Kopf, Fuss, Rahmen
-   der Tags und Belege, die kleinen Balken ueber Nebenabschnitten. 3px in der
-   Markenfarbe ist Aussage: der Balken ueber jeder der drei Saeulen und die
-   Ergebniszeile einer Karte. Nichts dazwischen, keine dritte Staerke.
+   ZEICHEN, JEDES MIT EINER ROLLE (17.09.2026, André, nach zwei gerenderten
+   Vorschauen mit den echten Tokens):
+   - Das Quadrat markiert eine Position: im Streifen einer Karte. Sonst
+     nirgends; im Belege-Button und vor der Sprungmarke war es nur ein
+     Farbtupfer und hat die Rolle verwaessert.
+   - 1px grauer Rahmen (--linie, --linie-stark) heisst anklickbar oder Tag.
+   - Farbe im Wort (--marke-text) heisst Zugehoerigkeit zur Saeule:
+     Sprungmarke, Saeulenueberschrift, Text der Belege-Buttons.
+   - Die Nummer 1, 2, 3 ist die Saeule. Sie steht vor der Sprungmarke und
+     vor der H2, traegt die Reihenfolge aus dem Claim und funktioniert ohne
+     Farbe. Sie kommt aus derselben Klasse wie die Farbe (--nummer in
+     .marke-eins bis -drei), damit oben und unten dasselbe steht.
+   - Die senkrechte 3px-Linie in der Markenfarbe ist Ergebnis oder Hinweis
+     (.ergebnis). Waagerechte Linien sind 1px grau und Struktur: Kopf, Fuss,
+     der kleine Balken ueber Nebenabschnitten. Den 3px-Strich ueber den
+     Saeulen-H2 gibt es seit dem 17.09.2026 nicht mehr, die Nummer
+     uebernimmt seine Aufgabe; vorher hatte die Seite zwei Zeichen fuer
+     dieselbe Sache (Quadrat oben, Strich unten).
 
    SCHRIFT, EINE REGEL FUER ALLES ANKLICKBARE (14.09.2026): Links und Knoepfe
    stehen nie unter --schrift-m1 (15px) und haben mindestens 44px Flaeche;
@@ -56,9 +69,9 @@
 
 /* Die drei Marken. Nur diese drei Klassen verteilen Farbe, damit sie nicht
    an dreissig Stellen einzeln gesetzt wird. */
-.marke-eins { --marke-text: var(--akzent-text);   --marke-flaeche: var(--akzent-flaeche); }
-.marke-zwei { --marke-text: var(--akzent-2-text); --marke-flaeche: var(--akzent-2-flaeche); }
-.marke-drei { --marke-text: var(--akzent-3-text); --marke-flaeche: var(--akzent-3-flaeche); }
+.marke-eins { --marke-text: var(--akzent-text);   --marke-flaeche: var(--akzent-flaeche);   --nummer: "1"; }
+.marke-zwei { --marke-text: var(--akzent-2-text); --marke-flaeche: var(--akzent-2-flaeche); --nummer: "2"; }
+.marke-drei { --marke-text: var(--akzent-3-text); --marke-flaeche: var(--akzent-3-flaeche); --nummer: "3"; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -211,26 +224,25 @@ a { color: inherit; }
 
 /* Die drei Saeulen als Sprungmarken unter dem Eroeffnungsabsatz (André,
    17.09.2026: "So machen wir es"). Wortlaut gleich den Abschnittstiteln,
-   eigene Zeile, nicht im Faktenstreifen. Jede traegt das Quadrat in ihrer
-   Marke, dasselbe Zeichen wie vor den Belegen und im Streifen der Karten;
-   so ist die Farbe der Saeule schon oben eingefuehrt. Anklickbar, also
-   --schrift-m1 und 44px Hoehe wie alles andere Anklickbare. */
+   eigene Zeile, nicht im Faktenstreifen. Seit dem 17.09.2026 abends: Nummer
+   plus Farbe im Wort, Versalien wie die H2, kein Quadrat mehr (das ist als
+   Positionsmarke vergeben). Sprungmarke und Ueberschrift sollen als dasselbe
+   Objekt gelesen werden: derselbe Wortlaut, dieselbe Schrift, dieselbe
+   Nummer aus derselben Klasse. Anklickbar, also --schrift-m1 und 44px Hoehe
+   wie alles andere Anklickbare. */
 .sprungmarken {
   list-style: none; margin: var(--raum-7) 0 0; padding: 0;
   display: flex; flex-wrap: wrap; gap: 0 var(--raum-7);
 }
 .sprungmarken a {
-  display: inline-flex; align-items: center; gap: var(--raum-4);
+  display: inline-flex; align-items: baseline; gap: var(--raum-4);
   min-height: 44px;
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
-  color: var(--tinte-gedaempft); text-decoration: none;
-  transition: color var(--dauer-2) var(--kurve-aus);
+  font-weight: 500; letter-spacing: var(--spur-versal); text-transform: uppercase;
+  color: var(--marke-text); text-decoration: none;
 }
-.sprungmarken a::before {
-  content: ""; width: 0.5rem; height: 0.5rem; flex: none;
-  background: var(--marke-flaeche);
-}
-.sprungmarken a:hover { color: var(--marke-text); }
+.sprungmarken a::before { content: var(--nummer); }
+.sprungmarken a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
 
 /* --- Abschnitte --------------------------------------------------------- */
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
@@ -258,11 +270,24 @@ h2::before {
   width: var(--raum-8); height: var(--strich-0);
   background: var(--linie-stark); margin-bottom: var(--raum-4);
 }
+/* Die Saeulen: Nummer gross vor der H2, beides in der Textfarbe der Saeule,
+   kein Strich (André, 17.09.2026). Grid statt Inline, damit der Titel neben
+   der Nummer umbricht und nicht unter sie; bei 176px Streifenbreite braucht
+   "END-TO-END-PRODUKTDESIGN" zwei Zeilen. Die Nummer ist 1,6em der H2 und
+   sitzt mit der ersten Zeile auf einer Grundlinie. */
+.abschnitt.marke-eins h2,
+.abschnitt.marke-zwei h2,
+.abschnitt.marke-drei h2 {
+  color: var(--marke-text);
+  display: grid; grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--raum-4); align-items: baseline;
+}
 .abschnitt.marke-eins h2::before,
 .abschnitt.marke-zwei h2::before,
 .abschnitt.marke-drei h2::before {
-  width: var(--streifen-breite); height: var(--strich-1);
-  background: var(--marke-flaeche);
+  content: var(--nummer);
+  width: auto; height: auto; background: none; margin: 0;
+  font-size: 1.6em; line-height: 1; letter-spacing: 0;
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;
@@ -354,18 +379,17 @@ p { max-width: var(--mass-prosa-web); }
   display: inline-flex; align-items: baseline; gap: var(--raum-4);
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
   text-decoration: none;
+  /* Rahmen 1px grau heisst anklickbar, Farbe im Wort heisst Zugehoerigkeit
+     zur Saeule (André, 17.09.2026). Kein Quadrat mehr, das markiert
+     Positionen. Verworfen: Rahmen in Saeulenfarbe (macht Struktur zur
+     Aussage), Rahmen und Text farbig (zu viel). */
+  color: var(--marke-text);
   border: var(--strich-0) solid var(--linie-stark);
   padding: var(--raum-4) var(--raum-6);
   /* 44px Daumenflaeche (Apple HIG, WCAG 2.5.5); gemessen am 14.09.2026: 41px. */
   min-height: 44px;
-  transition: border-color var(--dauer-2) var(--kurve-aus),
-              color var(--dauer-2) var(--kurve-aus);
 }
-.beleg-link::before {
-  content: ""; width: 0.5rem; height: 0.5rem;
-  background: var(--marke-flaeche); align-self: center;
-}
-.beleg-link:hover { border-color: var(--marke-flaeche); color: var(--marke-text); }
+.beleg-link:hover { text-decoration: underline; text-underline-offset: 0.25em; }
 .beleg-link .gewicht { color: var(--tinte-leise); font-size: var(--schrift-m2); }
 
 /* --- Ergebniszeile, dasselbe Muster wie im Lebenslauf ------------------- */
