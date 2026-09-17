@@ -5,9 +5,9 @@ Letzte Aktualisierung: 2026-09-17
 ## Nächster Schritt
 
 **Säulenzeichen und Belege-Buttons sind umgebaut, Gate grün in beiden
-Sprachen, im Zweig `claude/website-bilingual-build-w5iq1h`; Merge nach
-Andrés Blick auf die Ausschnitte** (André, 17.09., nach zwei gerenderten
-Vorschauen mit den echten Tokens). Umgesetzt am 17.09. abends, alles im
+Sprachen, auf `main` und damit live** (André, 17.09., nach zwei gerenderten
+Vorschauen mit den echten Tokens; Merge nach seinem Blick auf die
+Ausschnitte: „Merge"). Umgesetzt am 17.09. abends, alles im
 Stylesheet, kein Markup geändert:
 
 1. **Zählung plus Farbe im Wort.** `--nummer` steht in `.marke-eins` bis
@@ -27,8 +27,10 @@ Stylesheet, kein Markup geändert:
 4. Gate grün, drei Seiten, beide Sprachen. Kontrast von `--marke-text` ist
    im Tokenrepo gemessen, hier nicht neu.
 
-Ausschnitte (ATF und Säulenüberschrift, 1280 und 390px) sind André in der
-Sitzung gezeigt; nach seinem OK Merge nach `main`.
+Ausschnitte (ATF und Säulenüberschrift, 1280 und 390px) hat André in der
+Sitzung gesehen und freigegeben. Offen bleibt die Gegenprobe am gerenderten
+Ergebnis auf andreux.design, der Proxy der Cloud-Sitzung lässt die Domain
+nicht durch.
 
 **Danach:** Die Fassung vom 17.09. ist auf `main`, deutsch und englisch, Gate grün**
 (André, 17.09.: „Merge"). Netlify liefert `main` aus, nach dem Push also live;
