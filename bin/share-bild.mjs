@@ -18,10 +18,10 @@ const tokens = readFileSync(resolve(wurzel, "tokens.css"), "utf8");
 
 const fassungen = [
   { datei: "share.png", lang: "de", rolle: "Senior Product Designer",
-    satz: "Ich entwerfe das <em>Verfahren</em>, nicht nur das Ergebnis.",
+    satz: "Ich gestalte Produkte und die <em>Systeme</em>, auf denen sie stehen.",
     zeile: "Frankfurt am Main · Seit 2010 im Beruf · andreux.design" },
   { datei: "share.en.png", lang: "en", rolle: "Senior Product Designer",
-    satz: "I design the <em>process</em>, not just the result.",
+    satz: "I design products and the <em>systems</em> they stand on.",
     zeile: "Frankfurt am Main · Working since 2010 · andreux.design" },
 ];
 

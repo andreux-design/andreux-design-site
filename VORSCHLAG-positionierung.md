@@ -1,3 +1,8 @@
+> **Überholt seit dem 16.09.2026.** Claim, Struktur und die Rolle von colibre
+> sind anders entschieden, siehe `doku/website-protokoll.md` im Bewerbungsrepo
+> (16. und 17.09.) und `PROJECT_STATE.md` hier. Bleibt als Protokoll des
+> Vorschlags stehen, bis André löscht oder archiviert.
+
 # Vorschlag: was diese Seite zeigen soll
 
 Angelegt am 31.08.2026 auf Andrés Auftrag: „Wichtig ist für die Portfolio Seite

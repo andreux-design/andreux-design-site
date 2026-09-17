@@ -202,11 +202,35 @@ a { color: inherit; }
   .heben { animation: heben var(--dauer-3) var(--kurve-aus) both; }
   .heben:nth-child(2) { animation-delay: 60ms; }
   .heben:nth-child(3) { animation-delay: 120ms; }
+  .heben:nth-child(4) { animation-delay: 180ms; }
   @keyframes heben {
     from { opacity: 0; transform: translateY(0.5rem); }
     to   { opacity: 1; transform: none; }
   }
 }
+
+/* Die drei Saeulen als Sprungmarken unter dem Eroeffnungsabsatz (André,
+   17.09.2026: "So machen wir es"). Wortlaut gleich den Abschnittstiteln,
+   eigene Zeile, nicht im Faktenstreifen. Jede traegt das Quadrat in ihrer
+   Marke, dasselbe Zeichen wie vor den Belegen und im Streifen der Karten;
+   so ist die Farbe der Saeule schon oben eingefuehrt. Anklickbar, also
+   --schrift-m1 und 44px Hoehe wie alles andere Anklickbare. */
+.sprungmarken {
+  list-style: none; margin: var(--raum-7) 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 0 var(--raum-7);
+}
+.sprungmarken a {
+  display: inline-flex; align-items: center; gap: var(--raum-4);
+  min-height: 44px;
+  font-family: var(--familie-meta); font-size: var(--schrift-m1);
+  color: var(--tinte-gedaempft); text-decoration: none;
+  transition: color var(--dauer-2) var(--kurve-aus);
+}
+.sprungmarken a::before {
+  content: ""; width: 0.5rem; height: 0.5rem; flex: none;
+  background: var(--marke-flaeche);
+}
+.sprungmarken a:hover { color: var(--marke-text); }
 
 /* --- Abschnitte --------------------------------------------------------- */
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der

@@ -1,12 +1,78 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-09-04
+Letzte Aktualisierung: 2026-09-17
 
 ## Nächster Schritt
 
-**Noch nicht anfangen.** Das Layoutvorgehen wird zuerst im CV-Projekt geklärt,
-weil beide Projekte dieselben Tokens benutzen und die gestalterische Richtung
-dort entschieden wird. Solange sie offen ist, würde hier gebaut und verworfen.
+**Die Fassung vom 17.09. ist gebaut, deutsch und englisch, Gate grün, noch
+nicht auf `main`.** Zweig `claude/website-bilingual-build-w5iq1h`; André sieht
+die Netlify-Vorschau, gibt frei, dann Merge, dann live. Danach Schritt zwei aus
+dem Protokoll: GoTiger, Filo und colibre bekommen Fallstudienseiten, auf der
+Hauptseite bleibt je eine Kurzfassung, gemessen gegen 900 Wörter und
+Burstiness 0,50. Volkswagen-Library, Token-System und Bausteinbibliothek
+bleiben in voller Länge auf der Hauptseite (André, 17.09.). Dann Grafiken von
+André.
+
+## Umgebaut am 17.09.2026: die Langfassung als eine Seite
+
+**Quelle:** `texte/website.md` im Bewerbungsrepo, Fassung vom 17.09. (93
+Behauptungen, sechs Faktenprüfer, zwei Lektorrunden, freigegeben unter
+Auflagen, alle umgesetzt). Struktur und Entscheidungen stehen dort in
+`doku/website-protokoll.md`, Abschnitte vom 16. und 17.09.
+
+**Struktur jetzt:** Kopf mit dem Claim „Ich gestalte Produkte und die Systeme,
+auf denen sie stehen" (André, 16.09.), Eröffnungsabsatz, darunter die drei
+Säulen als Sprungmarken (André, 17.09., „So machen wir es"). Dann
+End-to-End-Produktdesign mit GoTiger, Filo, colibre; Designsysteme mit der
+Bausteinbibliothek zuerst, dann Volkswagen-Library und Token-System;
+KI-gestützte Systeme mit der Geschmacksgeschichte und der Kampagnen-Karte;
+Was ich suche; Kontakt. „Ungefragt gebaut" und „Außerdem" gibt es nicht mehr,
+colibre ist eine volle Karte in End-to-End.
+
+**Sprungmarken:** `ul.sprungmarken` unter dem Eröffnungsabsatz, Wortlaut
+gleich den Überschriften, eigene Zeile, nicht im Faktenstreifen. Jede trägt
+das Quadrat in ihrer Markenfarbe, dasselbe Zeichen wie vor den Belegen und im
+Kartenstreifen; so ist die Farbe der Säule oben schon eingeführt. Anklickbar,
+also 15px Schrift und 44px Höhe; gemessen bei 390px: 232x44, 133x44, 196x44.
+Neue Anker `#designsysteme` und `#ki-systeme`; `#koennen` bleibt auf der
+ersten Säule, weil `_redirects` dorthin zeigt. Die Überschrift steht bei
+1280px in zwei Zeilen, bei 390px in vier.
+
+**Drift gemessen, beide Richtungen:** 89 Sätze auf der Seite, 89 in der
+Textdatei, einziger Unterschied das `<em>`-Artefakt im Claim (Leerzeichen vor
+dem Komma, wenn das Tag entfernt wird), wie am 10.09. Kartentitel, Untertitel,
+Streifen, Sprungmarken und Belegknöpfe ausgenommen. Die Kartenabsätze sind an
+Satzgrenzen in Text und Ergebniszeile geteilt („Vorgehen", „Ergebnis", „Nicht
+gezeigt"), kein Wort geändert. Das Prüfskript lag im Scratchpad der Sitzung,
+nicht im Repo; ein Gate daraus ist offen.
+
+**Tag-Chips sind raus.** Die 19 Chips vom 15.09. stammten aus keiner Quelle,
+elf kamen in `texte/website.md` nicht vor, und die Regel dieser Seite
+verlangt, dass jeder Tag im gedruckten Text seines Abschnitts gedeckt ist.
+Richtige Lösung bleibt ein Feld `tags` in den Projektkarten der Quelle; bis
+dahin keine Chips. Die Regeln `.marken` und `.marke-tag` stehen noch im
+Stylesheet. Nicht von André entschieden, Befund für ihn.
+
+**Englisch:** `index.en.html` Satz für Satz aus der deutschen Fassung, Wortlaut
+in `doku/website-en.md` des Bewerbungsrepos, aus dem HTML erzeugt, Stand
+17.09. Nicht selbst geprüft, wie bisher.
+
+**Share-Bilder** mit dem neuen Claim neu erzeugt (`bin/share-bild.mjs`),
+gerendert mit Sora, am Bild geprüft.
+
+**Sprachmessung** (`npm run sprache -- texte/website.md --profil website`,
+17.09.): 12 von 16, 1.201 Wörter, Burstiness 0,42, LIX 39, Flesch 63,
+Sachtextformel 6,6, kein Satz über 30 Wörter. Außerhalb: Wörter (Grenze 900),
+Burstiness (0,50), Gegensatzsätze 5, Nutzen-Wortliste. Die Länge ist gewollt,
+die Absätze sind die künftigen Fallstudien.
+
+**Gate:** drei Seiten grün, je 17 Prüfungen. In der Cloud-Sitzung fiel „Keine
+JS-Fehler" zuerst an der Google-Fonts-Anfrage über den Proxy
+(ERR_CERT_AUTHORITY_INVALID), auch an der unveränderten Seite; behoben durch
+Eintrag des Proxy-Zertifikats in den NSS-Speicher des Browsers, nicht durch
+eine Änderung am Gate. Playwright 1.63 suchte außerdem Chromium 1243,
+installiert war 1194, per Symlink verbunden. Beides Umgebung, nichts davon im
+Repo; `package-lock.json` ist unverändert.
 
 ## Umgebaut am 04.09.2026: drei neue Saeulen
 
@@ -77,26 +143,26 @@ verschiedenen Farben auf einer Seite zu praesent).
 
 ## Offen
 
-- [ ] **Vier Entscheidungen zum Positionierungsvorschlag**, ausgeschrieben in
-      `VORSCHLAG-positionierung.md`: Problemfeld statt Rollenbezeichnung im
-      Kopf, colibre streichen, Abschnitt "Was ich verworfen habe", und wie weit
-      der Block zum eigenen System geht. Umgesetzt ist davon nichts
-- [ ] **Bilder.** Groesste Luecke der Seite und die einzige, die nur André
-      schliessen kann. Fuer das Produktionssystem waere die Ausgabe der
-      Pruefkette ein ehrliches Bild, fuer GoTiger ein Ausschnitt aus dem Prototyp
-- [ ] **Der Text ist ungemessen live gegangen.** 8 von 13 mit
-      `bin/sprache.py --profil linkedin`: 371 Woerter, LIX 57, Flesch 38, drei
-      Saetze ueber dreissig Woerter. Gekuerzt wird durch Weglassen, siehe
-      CLAUDE.md
-
+- [ ] **Freigabe und Merge** der Fassung vom 17.09., dann Livegang
+- [ ] **Fallstudienseiten** für GoTiger, Filo, colibre, mit Kurzfassungen auf
+      der Hauptseite (Schritt zwei, André 16. und 17.09.)
+- [ ] **Driftprüfung als Gate:** Seite gegen `texte/website.md` in beide
+      Richtungen, heute ein Skript im Scratchpad. Es gibt keine Leitung
+      zwischen den Repos, also braucht das Gate die Textdatei als Argument
+- [ ] **Tag-Chips:** Feld `tags` in den Projektkarten der Quelle, dann wieder
+      auf die Seite; bis dahin keine Chips (Entscheidung André ausstehend)
+- [ ] **Bilder.** Grafiken rendert André nach der Teilung in Fallstudien
+- [ ] `VORSCHLAG-positionierung.md` ist seit dem 16.09. überholt (Claim,
+      Struktur und colibre sind anders entschieden); Hinweis steht im Kopf,
+      löschen oder archivieren entscheidet André
+- [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin
+- [ ] CLAUDE.md nennt „dreizehn Prüfungen gegen index.html und
+      impressum.html"; es sind 17 je Seite über drei Seiten
 - [ ] Astro aufsetzen. `@andreux/design-tokens` ist seit dem 31.08.2026
       eingebunden, ueber package.json auf v1.1.0 und `npm run tokens`
 - [ ] Netlify-Buildeinstellungen setzen (Buildbefehl, Publish-Verzeichnis).
       Existieren heute nicht, weil die Seite ohne Build ausgeliefert wird
 - [ ] Content Collection für Fallstudien mit Zod-Schema
-- [ ] Erste Fallstudie: **Filo**, nicht das Landingpage-System.
-      Filo ist unstrittig eigene Arbeit, beim LP-System liegen die Rechte
-      laut Vertrag beim Arbeitgeber
 - [ ] Entscheiden, was von `downloads/` bleibt. Am 31.08.2026 von 23 MB und
       neun Dateien auf 13 MB und sechs geschrumpft; die Thesis allein wiegt 6 MB
 - [ ] **Historienballast, jetzt auch eine Rechtefrage.** 36 MB Historie gegen
