@@ -30,7 +30,7 @@ Stylesheet, kein Markup geändert:
 Ausschnitte (ATF und Säulenüberschrift, 1280 und 390px) hat André in der
 Sitzung gesehen und freigegeben.
 
-**Zwei Befunde von André danach, behoben, im Zweig, Merge steht aus:**
+**Zwei Befunde von André danach, behoben und auf `main` (André, 17.09.: „Merge"):**
 - **Sprungziel unter der Kopfzeile.** Nach dem Klick auf eine Säule lag die
   Abschnittsoberkante bei 0px, die klebende Kopfzeile (69px) deckte sie;
   bei 390px stand die H2 mit 64px sogar 5px unter der Kopfzeile. Jetzt
