@@ -26,6 +26,18 @@ Dateien. Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
 `index.html` und `portfolio.html` stehen im Commit `ac86f39`. **`styles.css`
 trägt weiterhin `impressum.html`**, es ist kein Rest der alten Seiten.
 
+## Livegang: Gate grün heißt Merge, ohne Rückfrage
+
+**Bei dieser Seite wird nach grünem Gate immer sofort nach `main` gemergt
+und gepusht** (André, 17.09.2026: „Einfach bei der Website immer automatisch
+mergen. Da das der einfachste Weg von unterwegs aus für mich ist zu
+prüfen"). Netlify liefert `main` aus; André prüft am Handy auf
+andreux.design, nicht an Ausschnitten in der Sitzung. Der Arbeitszweig
+bleibt der Weg dorthin, aber er wartet nicht auf ein „Merge". Was nicht
+durch das Gate kommt, bleibt im Zweig und wird gemeldet.
+
+Gilt nur hier. Im Bewerbungsrepo wird weiter nichts ohne Freigabe gepusht.
+
 ## Blockierende Gates
 
 ```

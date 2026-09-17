@@ -4,6 +4,11 @@ Letzte Aktualisierung: 2026-09-17
 
 ## Nächster Schritt
 
+**Regel seit dem 17.09.2026: Gate grün heißt Merge nach `main`, ohne
+Rückfrage** (André, von unterwegs prüft er live am Handy). Steht in
+`CLAUDE.md`, Abschnitt Livegang.
+
+
 **Säulenzeichen und Belege-Buttons sind umgebaut, Gate grün in beiden
 Sprachen, auf `main` und damit live** (André, 17.09., nach zwei gerenderten
 Vorschauen mit den echten Tokens; Merge nach seinem Blick auf die
