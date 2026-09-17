@@ -8,6 +8,12 @@ Letzte Aktualisierung: 2026-09-17
 Rückfrage** (André, von unterwegs prüft er live am Handy). Steht in
 `CLAUDE.md`, Abschnitt Livegang.
 
+**Design ruht** (André, 17.09.: „Am Design arbeiten wir noch später
+weiter"). Säulenzeichen, Buttons, Sprungziele und Hover sind live; weitere
+gestalterische Änderungen erst auf Andrés Anstoß. Offen bleibt der Inhalt:
+Fallstudienseiten für GoTiger, Filo, colibre mit Kurzfassungen auf der
+Hauptseite.
+
 
 **Säulenzeichen und Belege-Buttons sind umgebaut, Gate grün in beiden
 Sprachen, auf `main` und damit live** (André, 17.09., nach zwei gerenderten
