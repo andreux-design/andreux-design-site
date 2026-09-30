@@ -183,19 +183,23 @@ a { color: inherit; }
   letter-spacing: var(--spur-gross);
   text-decoration: none;
 }
-/* raum-8 statt raum-6: mit 16px standen "Was ich kann", "Kontakt" und "EN"
-   zu nah beieinander (André, 30.09.2026, Screenshot vom Desktop). */
-.kopf-nav { display: flex; align-items: center; gap: var(--raum-8); }
+/* Gleiche Luecke zwischen allen drei Links (André, 30.09.2026: "haben nicht
+   den gleichen Abstand"). Vorher 32 und 39, weil "EN" auf einer
+   44px-Mindestbreite zentriert war und die anderen nicht. Jetzt tragen alle
+   dasselbe Polster raum-6 je Seite, ohne Mindestbreite: "EN" kommt damit
+   auf 50px. Der negative Aussenabstand hebt das Polster optisch wieder
+   auf, die sichtbare Luecke zwischen den Texten ist also genau die
+   Flex-Luecke: raum-9, 48px, ueberall gleich. */
+.kopf-nav { display: flex; align-items: center; gap: var(--raum-9); }
 .kopf-nav a {
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
   color: var(--tinte-gedaempft); text-decoration: none;
   /* Trefferflaeche fuer den Daumen, gemessen am 14.09.2026 bei 390px: "Kontakt"
-     55 x 20px, "EN" 16 x 20px, beides unter 44pt (Apple) und "EN" unter den
-     24px aus WCAG 2.5.8. Der Innenabstand hebt die Flaeche auf mindestens
-     44 x 44px, der negative Aussenabstand laesst die Zeile optisch, wo sie ist. */
-  display: inline-flex; align-items: center; justify-content: center;
-  min-width: 44px; min-height: 44px; padding: 0 var(--raum-3);
-  margin: -12px calc(-1 * var(--raum-3));
+     55 x 20px, "EN" 16 x 20px, beides unter 44pt (Apple). Das Polster hebt
+     die Flaeche auf mindestens 44 x 44px. */
+  display: inline-flex; align-items: center;
+  min-height: 44px; padding: 0 var(--raum-6);
+  margin: -12px calc(-1 * var(--raum-6));
 }
 .marke { display: inline-flex; align-items: center; min-height: 44px; }
 .kopf-nav a:hover { color: var(--akzent-text); }

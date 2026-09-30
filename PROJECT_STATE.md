@@ -186,6 +186,12 @@ und scheiterte: nach einem Block-::before gilt es nicht mehr für den Text.
 Gemessen danach: Tinte aller Überschriften, Absätze, Striche und Nummern
 auf 16 (390) bzw. 64 und 272 (1280), keine Abweichung über 0,1px. Gate
 grün, keine JS-Fehler.
+**Kopfzeile: gleiche Lücke zwischen allen drei Links** (André, 30.09.:
+„haben nicht den gleichen Abstand"). Vorher 32 und 39, weil EN auf 44px
+Mindestbreite zentriert war. Jetzt alle mit Polster `--raum-6`, ohne
+Mindestbreite, Flex-Lücke `--raum-9`; gemessen 48 und 48 zwischen den
+Texten, Trefferflächen 140, 95 und 50 x 44, rechter Textrand auf der
+Bahnkante.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
