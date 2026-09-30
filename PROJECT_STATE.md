@@ -200,6 +200,15 @@ keinen, wie die Säulentitel. Kontaktlinks: IBM Plex Mono 500, `--schrift-0`
 (17) statt Sora 24, Unterstreichung und 44px Höhe bleiben; 17 statt der 15
 der Knöpfe, weil die Adressen der Aufruf der Seite sind, Abweichung von der
 Regel vom 14.09. bewusst.
+**Anschlag um die Kopfhöhe nach oben** (André, 30.09.: nach dem Klick auf
+den Namen rutschte die Seite auf 69px und stand dann „perfekt"; das soll
+Standard sein und der Klick nichts mehr verschieben). `.anschlag` mit
+`margin-top: -kopf-hoehe`, der Rand fällt durch `main` durch, `main#oben`
+beginnt bei 0. Gemessen: Titel bei 247 (1280) bzw. 230 (390) schon beim
+Laden, Klick auf den Namen lässt scrollY auf 0 und den Titel an Ort und
+Stelle, kein Anker in der Adresse. Anschlag endet damit bei svh minus 69,
+das Scroll-Zeichen sitzt 85px über dem unteren Rand statt 16; das ist die
+Lage, die André nach dem Klick gesehen und gebilligt hat.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

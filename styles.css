@@ -225,6 +225,13 @@ a { color: inherit; }
   min-height: calc(100svh - var(--kopf-hoehe));
   display: grid; grid-template-rows: 1fr auto;
   padding-block: var(--raum-10) var(--raum-6);
+  /* Um die Kopfhoehe nach oben gerueckt (André, 30.09.2026): nach dem Klick
+     auf den Namen stand die Seite bei 69px, der Anschlag lag mit der
+     Oberkante hinter der Kopfzeile, und genau das war die richtige Lage.
+     Jetzt ist sie bei 0 der Standard: der Rand faellt durch main durch,
+     main beginnt bei 0, und der Name fuehrt auf 0 ohne Versatz. Gemessen
+     vorher: Titel bei 316, nach dem Klick bei 247. */
+  margin-top: calc(-1 * var(--kopf-hoehe));
 }
 .anschlag > .bahn { align-self: center; width: 100%; }
 /* Am Desktop links buendig mit der Bahn, nicht in der Textspalte (André,
