@@ -290,6 +290,13 @@ ohne Aufgabe; André: „war zu voreilig". Striche bleiben grau.
 `--raum-12` und sitzt darin mittig. Gemessen 390x844: Pfeilmitte 716,
 Mitte zwischen Stats und Unterkante 711, Titel 5px höher als vorher;
 320x568: 521 zu 513. Desktop unverändert.
+**Anschlag am Handy auf `lvh`** (André, 01.10.: „Über mich soll erst nach
+dem Viewport sichtbar sein, wir gehen von Vollbild aus"). svh war die Höhe
+mit Browserleiste; im Vollbild ist der Bildschirm höher und „Über mich"
+ragte hinein. Jetzt 100lvh unter 900px, Desktop bleibt svh minus
+Kopfhöhe. Preis: bei sichtbarer Leiste liegt das Scroll-Zeichen anfangs
+teils unter ihr. In Playwright ohne dynamische Leiste: Anschlag endet bei
+844, „Über mich" bei 908.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
