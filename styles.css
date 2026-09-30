@@ -455,6 +455,10 @@ h2::before {
   text-transform: none;
   display: block;
   text-wrap: balance;
+  /* 24px zum Anspruch, wie vom Seitentitel zu den Stats: 12 Rand plus 12
+     Rasterluecke der .reihe. Vorher nur die Luecke, unter einem 70px-Titel
+     zu eng (Pruefung der Abstaende, 30.09.2026). */
+  margin-bottom: var(--raum-5);
 }
 .abschnitt.marke-eins h2::before,
 .abschnitt.marke-zwei h2::before,
@@ -488,7 +492,7 @@ h3 {
      "muss zum System passen"). 24px sind 6.154vw bei 390. */
   font-size: min(6.154vw, var(--schrift-3)); line-height: var(--zeile-display);
   letter-spacing: var(--spur-display);
-  margin: 0 0 var(--raum-4);
+  margin: 0 0 var(--raum-5);
   text-wrap: balance;
   /* Fallback fuer ein Wort, das breiter ist als die Spalte: bricht nur dann.
      "Bausteinbibliothek" stand bei 320px 34px ueber dem Rand (30.09.2026). */
@@ -510,6 +514,9 @@ p { max-width: var(--mass-prosa-web); }
   margin: 0;
   text-wrap: pretty;
 }
+/* Folgt dem Anspruch ein Absatz (dritte Saeule), 24px dazwischen statt der
+   17px Browser-Marge. */
+.anspruch + .text { margin-top: var(--raum-7); }
 /* Die Zeile, die vom Standpunkt zu den Belegen fuehrt. Sie traegt keine
    eigene Aussage, deshalb weder Groesse noch Farbe eines Anspruchs. */
 .ueberleitung {
@@ -540,9 +547,14 @@ p { max-width: var(--mass-prosa-web); }
 .arbeit .reihe > div > :last-child { margin-bottom: 0; }
 .arbeit .untertitel {
   color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
+  /* Rueckt unter den Titel: 12px Titelabstand minus 8 ergibt 4px Luft. */
   margin: calc(var(--raum-4) * -1) 0 var(--raum-6);
 }
-.arbeit p.text { margin: 0 0 var(--raum-6); }
+.text { margin: 0 0 var(--raum-6); }
+/* Das letzte Element einer Textspalte traegt keinen Unterabstand, sonst
+   kommen 17px Browser-Marge zum Abschnittsabstand dazu ("Was ich suche"
+   bis "Kontakt" stand auf 145 statt 128, Pruefung 30.09.2026). */
+.reihe > div > :last-child { margin-bottom: 0; }
 .marken { display: flex; flex-wrap: wrap; gap: var(--raum-3); margin-bottom: var(--raum-6); }
 .marke-tag {
   font-family: var(--familie-meta); font-size: var(--schrift-m2);

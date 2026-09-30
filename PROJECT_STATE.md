@@ -105,6 +105,23 @@ sein, aber es soll zum System passen"). Kartentitel am Handy 24, Desktop
 bleibt 49; damit jede dritte Stufe an beiden Breiten: 17, 24, 34, 99 und
 17, 49, 70, 141. Unter 390 proportional (6.154vw). Gemessen 320: 19,7;
 390: 24; 1280: 49.
+**Abstände durchgeprüft** (André, 30.09.: „checke nochmal die Seite durch,
+Abstände und Whitespace"). Alle Lücken an 390 und 1280 gemessen, fünf
+Befunde behoben, alle im Stylesheet:
+1. `p.text` außerhalb der Karten („Was ich suche", Absatz der dritten
+   Säule) trug die 17px-Browsermarge: h2 bis Text 29 statt 12, Text bis
+   „Kontakt" 145 statt 128. Jetzt `.text` überall 0 0 16 und das letzte
+   Element jeder Textspalte ohne Unterabstand.
+2. Säulentitel bis Anspruch 12 → 24 (12 Rand plus 12 Rasterlücke), wie
+   Seitentitel bis Stats.
+3. Anspruch bis Absatz in der dritten Säule 17 → 24; Absatz bis Karte
+   65 → 48 wie in den anderen Säulen.
+4. Kartentitel bis Text ohne Untertitel 8 → 12; mit Untertitel 4px Luft.
+5. Streifen am Desktop steht 5px unter der Oberkante des 49px-Titels,
+   gesichtet, bleibt.
+Unverändert und richtig: Rolle bis Titel 16, Titel bis Stats 24, Absatz bis
+„Inhalt" 48, Karte zu Karte 64, Abschnitte 128 und 256, Kontakt bis Fuß 64
+und 128. Gate grün, Drift null.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
