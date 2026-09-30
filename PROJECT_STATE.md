@@ -13,7 +13,7 @@ Hier gemessen nach dem Umbau:
 | | Handy 390 | Desktop 1280 |
 |---|---|---|
 | Text, Kartentitel, Seitentitel | 17, 24, 34 | 17, 34, 70 |
-| Säulennummer | 49 (Stufe 9) | 70 (Stufe 12) |
+| Säulentitel, Säulennummer | 34, 49 | 49, 70 |
 | innen, Karte zu Karte, Abschnitt zu Abschnitt | 16, 64, 128 | 16, 64, 256 |
 
 Alles Leiterwerte; 1,5em an der Nummer und die 80px zwischen Karten sind
@@ -23,10 +23,12 @@ Anschlag unten ebenso; letzte Karte ohne Unterpolster, letztes Element einer
 Karte ohne Unterabstand. Gate grün, drei Seiten, Drift null. Nebenbei:
 `package-lock.json` pinnt jetzt Playwright 1.63.0, vorher stand es nicht in
 der Sperrdatei; lokal sind Chromium 1234 als 1243 verlinkt (Umgebung).
-**Nummer in der Meta-Schrift** (André, 30.09. abends: Zahl und
-Kapitelüberschrift noch einmal unterscheiden): IBM Plex Mono, Gewicht 400,
-Stufe 9 und 12 wie zuvor; dieselbe Schrift wie die Nummer in der Sprungmarke
-oben, der Titel bleibt allein in Sora. Gemessen: Mono 400, 49 und 70px.
+**Nummer eine Stufe über dem Säulentitel** (André, 30.09. abends: Zahl
+und Kapitelüberschrift der Größe nach unterscheiden; ein Zwischenschritt in
+Mono war nicht gemeint und ist zurückgenommen). Säulentitel jetzt Stufe 6
+bis 9, Nummer 9 und 12, Seitentitel bleibt 6 bis 12. Gemessen: Handy 34,
+Nummer 49, Titel 34; Desktop h1 70, Nummer 70, Titel 49, h3 34. Sora wie
+zuvor.
 
 **Säulentitel dominant, Sprungmarken als Knöpfe** (André, 30.09.2026, am
 Handy: Sprungmarken nicht als Buttons erkennbar; in den Säulentiteln „die 1
