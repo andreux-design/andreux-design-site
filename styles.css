@@ -274,15 +274,12 @@ a { color: inherit; }
    99px-Titel war 24 knapp; 64 ist der Abstand zwischen zwei Karten, die
    Stats sind eine eigene Gruppe. 96 waere schon ein eigener Block. */
 .anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-9); padding-top: 0; margin-top: var(--raum-10); }
-/* Jeder Stat traegt den kurzen Strich darueber, dasselbe Zeichen wie ueber
-   "Inhalt", "Ueber mich" und "Kontakt": 32px, 1px, --linie-stark (André,
-   30.09.2026: "Linien ueber oder unter die Stats? Auf jeden Fall kuerzer";
-   darueber, weil eine Linie darunter als Unterstreichung liest). */
-.anschlag .stats > span::before {
-  content: ""; display: block;
-  width: var(--raum-8); height: var(--strich-0);
-  background: var(--linie-stark); margin-bottom: var(--raum-4);
-}
+/* Kein Strich mehr ueber den Stats (André, 01.10.2026, "der Schritt zur
+   Perfektion"): der 32px-Strich war das Zeichen fuer Label, und seit
+   "Inhalt" und "Ueber mich" Titel sind, stand er nur noch hier. Ein
+   Zeichen an einer Stelle ist Schmuck. Die Stats sind Fakten in Mono 13,
+   wie Zeitraum und Ort in den Karten, und brauchen kein weiteres Zeichen.
+   Keine Farbe: Farbe heisst Zugehoerigkeit zu einer Saeule. */
 @media (max-width: 899px) {
   /* Drei gleiche Spalten, oben buendig, damit die Striche auf einer Hoehe
      liegen. Der Umbruch ist nicht dem Browser ueberlassen: unter 900px
@@ -364,7 +361,7 @@ a { color: inherit; }
    Kante bleiben; die Nummer dazu ihre eigene Vorbreite. Beide Eigenschaften
    sind hier mit 0 vorbelegt, damit das Gate sie kennt. */
 h1, h2, h3, p, .stats > span { --einzug: 0px; }
-h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
+h2::before { margin-left: var(--einzug); }
 .abschnitt.marke-eins h2,
 .abschnitt.marke-zwei h2,
 .abschnitt.marke-drei h2 { --nummer-einzug: 0px; }
@@ -384,19 +381,12 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
 }
 @media (min-width: 900px) { .eigenname { font-size: var(--schrift-3); } }
 
-/* Eintritt: einmalig beim Laden, nicht an Scrollen gebunden. Der Inhalt
-   existiert ohne JavaScript vollstaendig, die Bewegung ist rein additiv. */
-@media (prefers-reduced-motion: no-preference) {
-  .heben { animation: heben var(--dauer-3) var(--kurve-aus) both; }
-  .heben:nth-child(2) { animation-delay: 60ms; }
-  .heben:nth-child(3) { animation-delay: 120ms; }
-  .heben:nth-child(4) { animation-delay: 180ms; }
-  .heben:nth-child(5) { animation-delay: 240ms; }
-  @keyframes heben {
-    from { opacity: 0; transform: translateY(0.5rem); }
-    to   { opacity: 1; transform: none; }
-  }
-}
+/* BEWEGUNG NUR ALS ANTWORT (André, 01.10.2026). Bis dahin hoben sich Rolle,
+   Titel, Stats, Einleitung und Sprungmarken beim Laden um 8px (Klasse
+   .heben, seit dem 31.08.). Das war die eine Bewegung ohne Ausloeser:
+   Auftritt statt Rueckmeldung. Jetzt bewegt sich nur, was der Nutzer
+   beruehrt oder ausloest: Hover, Druck, Loesen beim Scrollen, Ein- und
+   Ausblenden des Hoch-Knopfs, sanftes Scrollen zum Ziel. */
 
 /* Die drei Saeulen als Sprungmarken unter dem Eroeffnungsabsatz (André,
    17.09.2026: "So machen wir es"). Wortlaut gleich den Abschnittstiteln,
