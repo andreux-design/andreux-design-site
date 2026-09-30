@@ -208,7 +208,26 @@ a { color: inherit; }
 .thema-knopf:hover { border-color: var(--linie-stark); color: var(--tinte); }
 
 /* --- Anschlag ----------------------------------------------------------- */
-.anschlag { padding-block: var(--raum-12); }
+.anschlag {
+  /* Fuellt den ersten Bildschirm (André, 30.09.2026): Inhalt mittig, das
+     Scroll-Zeichen unten. svh ist die kleine Viewport-Hoehe, sie aendert
+     sich am Handy nicht mit der Browserleiste; vh als Rueckfall. */
+  min-height: calc(100vh - var(--kopf-hoehe));
+  min-height: calc(100svh - var(--kopf-hoehe));
+  display: grid; grid-template-rows: 1fr auto;
+  padding-block: var(--raum-10) var(--raum-6);
+}
+.anschlag > .bahn { align-self: center; width: 100%; }
+@media (min-width: 900px) { .anschlag .reihe > div { grid-column: 2; } }
+/* Stats unter dem Titel: nebeneinander an jeder Breite, hoechstens drei. */
+.anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-7); padding-top: 0; margin-top: var(--raum-7); }
+/* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
+.weiter {
+  justify-self: center;
+  display: grid; place-items: center; width: 48px; height: 48px;
+  color: var(--tinte-leise);
+}
+.weiter svg { display: block; }
 .anschlag h1 {
   font-family: var(--familie-display); font-weight: 600;
   /* Stufe 9 bis 12 (49 bis 70px), seit dem 30.09.2026 abends (André:
@@ -327,7 +346,7 @@ a { color: inherit; }
 /* Kein Ziehen, keine Vorschau bei festem Druck oder langem Halten, keine
    Textauswahl an Knoepfen und Navigationslinks. touch-action bleibt
    unangetastet: wer einen Knopf haelt und zieht, scrollt weiter. */
-.sprungmarken a, .beleg-link, .hoch, .kopf-nav a, .marke, .kontakt-liste a, .fuss a {
+.sprungmarken a, .beleg-link, .hoch, .weiter, .kopf-nav a, .marke, .kontakt-liste a, .fuss a {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none; user-select: none;
