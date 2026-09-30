@@ -230,6 +230,12 @@ Anschlag ist die einzige Ausnahme auf der Bahnkante bei 64. Klasse
 `einspaltig` heißt jetzt `eingereiht`. Gemessen 1280: h1 64, alles andere
 272; 390: alles 16.
 Am Gerät bestätigt (André, 01.10.: „Find ich gut").
+**Hover als Bewegung** (André, 01.10.: „was nur noch fehlt, ist die
+Hover-Animation"; Farbwechsel allein war nicht als Animation zu sehen,
+obwohl er in Chromium und WebKit griff, gemessen). Jetzt hebt sich der
+Knopf um `--raum-0` (2px), dazu Rahmen in Tinte und gehobene Fläche,
+`--dauer-2` (200ms); nicht während des Drucks, dort gilt scale(0.96).
+Gemessen: Hover matrix(1,0,0,1,0,-2), Druck matrix(0.96…), danach none.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
