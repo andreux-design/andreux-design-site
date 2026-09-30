@@ -301,7 +301,7 @@ a { color: inherit; }
    der 32px-Strich als ihr Zeichen (André, 30.09.2026, Weg 3: die kleinen
    Versalzeilen waren neben 99px-Titeln zu leise). Damit hat die Seite drei
    Stufen von Ueberschrift: Saeule 34/70, Abschnitt und Karte 24/49, Label
-   13. "Inhalt" bleibt Label, nur kraeftiger. */
+   13 (nur noch die Stats). */
 .abschnitt-titel {
   font-family: var(--familie-display); font-weight: 600;
   font-size: min(6.154vw, var(--schrift-3)); line-height: var(--zeile-display);
@@ -315,7 +315,9 @@ a { color: inherit; }
    Saeulentitel. */
 .abschnitt-titel::before { display: none; }
 @media (min-width: 900px) { .abschnitt-titel { font-size: var(--schrift-9); } }
-.inhalt-titel { color: var(--tinte-gedaempft); }
+/* "Inhalt" traegt seit dem 30.09.2026 abends denselben Bau wie "Ueber mich"
+   (André: "Ueber mich und Inhalt sind noch verschieden"); der Strich bleibt
+   nur noch ueber den Stats. */
 /* Tintenkante (André, 30.09.2026): das Seitenskript misst die Vorbreite
    der ersten Glyphe und setzt margin-left negativ und --einzug positiv.
    Striche und Nummer (::before) bekommen den Gegenwert, damit sie an der

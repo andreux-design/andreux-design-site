@@ -209,6 +209,10 @@ Laden, Klick auf den Namen lässt scrollY auf 0 und den Titel an Ort und
 Stelle, kein Anker in der Adresse. Anschlag endet damit bei svh minus 69,
 das Scroll-Zeichen sitzt 85px über dem unteren Rand statt 16; das ist die
 Lage, die André nach dem Klick gesehen und gebilligt hat.
+Am Handy dieselbe Messung: Titel bei 230 beim Laden und nach dem Klick.
+**„Inhalt" wie „Über mich"** (André, 30.09.: „sind noch verschieden"):
+`h2#h-inhalt` trägt jetzt auch `abschnitt-titel`, Sora 24/49, kein Strich.
+Der 32px-Strich steht damit nur noch über den Stats.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
