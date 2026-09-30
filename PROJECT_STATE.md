@@ -253,6 +253,12 @@ in Versalien wie ein Label; Mono 13 heißt Fakten, Versalien heißen Knopf.
 Jetzt Sora 500, Stufe 1 am Handy und 3 am Desktop, gedämpfte Tinte,
 gemischte Schreibung, 12px über dem Titel, Tinte auf 16 bzw. 64. Versalien
 mit Sperrung tragen damit nur noch die Sprungmarken.
+**Hover am iPad mit Maus** (André, 01.10., iPad Pro: „die Buttons zeigen
+nichts"). Safari auf dem iPad meldet auch mit Trackpad oder Maus
+`hover: none`, weil der Hauptzeiger der Finger bleibt; die Bedingung
+`(hover: hover) and (pointer: fine)` griff dort nie. Jetzt
+`@media (any-hover: hover)`. Chromium und WebKit am Desktop unverändert
+gemessen (Hover -2px, Druck 0,96, danach none). iPad-Probe bei André.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
