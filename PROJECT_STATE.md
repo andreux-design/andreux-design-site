@@ -59,6 +59,11 @@ nach Tipp kein Anker, Bereich 72px unter dem Rand, Position nach Neuladen
 4809px wie davor. Ein Anker von außen landet weiter richtig.
 **Gegenprobe auf dem iPhone durch André, 30.09. abends: „Läuft clean.“**
 Hoch-Knopf, Neuladen und Sprungmarken sind damit am Gerät bestätigt.
+**Vierter Befund (André, 30.09., Screenshot):** am Seitenende deckte der
+Knopf das „Impressum" ab. Der Fuß reserviert jetzt unten die Knopfhöhe plus
+Abstand (48px plus `--raum-6`, ab 900px `--raum-8`). Gemessen bei maximalem
+Scroll: keine Überdeckung, 21px zwischen Knopf und Impressum bei 390 wie
+1280. Die Desktop-Regel steht hinter `.fuss`, davor wurde sie überschrieben.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
