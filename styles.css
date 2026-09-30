@@ -197,10 +197,13 @@ a { color: inherit; }
 .thema-knopf:hover { border-color: var(--linie-stark); color: var(--tinte); }
 
 /* --- Anschlag ----------------------------------------------------------- */
-.anschlag { padding-block: var(--raum-12) var(--raum-11); }
+.anschlag { padding-block: var(--raum-12); }
 .anschlag h1 {
   font-family: var(--familie-display); font-weight: 600;
-  font-size: clamp(2.125rem, 5.2vw, 3.0625rem);
+  /* Stufe 6 bis 12 (34 bis 70px), seit dem 30.09.2026 (André, "Let's go"):
+     bis dahin endete die Leiter bei 9, und der Titel stand ab 942px Breite
+     mit 49px in einer 1152px breiten Spalte. 6vw erreicht 70px ab 1167px. */
+  font-size: clamp(var(--schrift-6), 6vw, var(--schrift-12));
   line-height: var(--zeile-display); letter-spacing: var(--spur-display);
   margin: 0 0 var(--raum-7);
   max-width: 20ch;
@@ -302,7 +305,11 @@ a { color: inherit; }
 /* --- Abschnitte --------------------------------------------------------- */
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
    Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */
-.abschnitt { padding-block: var(--raum-11); scroll-margin-top: var(--kopf-hoehe); }
+/* Raum zwischen den Ebenen, Pruefung vom 30.09.2026: innen 12 und 16,
+   Karte zu Karte 64, Abschnitt zu Abschnitt 128 am Handy und 256 am
+   Desktop. Davor lagen Karte (80) und Abschnitt (128) am Handy nur Faktor
+   1,6 auseinander. Alles Leiterwerte. */
+.abschnitt { padding-block: var(--raum-12); scroll-margin-top: var(--kopf-hoehe); }
 @media (max-width: 899px) {
   .abschnitt { padding-block: var(--raum-10); }
   .anschlag { padding-block: var(--raum-11) var(--raum-10); }
@@ -344,7 +351,7 @@ h2::before {
 .abschnitt.marke-drei h2 {
   color: var(--marke-text);
   font-family: var(--familie-display); font-weight: 600;
-  font-size: clamp(2.125rem, 5.2vw, 3.0625rem);
+  font-size: clamp(var(--schrift-6), 6vw, var(--schrift-12));
   line-height: var(--zeile-display); letter-spacing: var(--spur-display);
   text-transform: none;
   display: block;
@@ -356,12 +363,17 @@ h2::before {
   content: var(--nummer);
   display: block; width: auto; height: auto; background: none;
   margin: 0 0 var(--raum-3);
-  font-size: 1.5em; line-height: 1; letter-spacing: var(--spur-display);
+  /* Auf der Leiter statt 1,5em (51 und 73,5px): Stufe 9 am Handy, 12 am
+     Desktop, Pruefung der Typoskala vom 30.09.2026. */
+  font-size: var(--schrift-9); line-height: 1; letter-spacing: var(--spur-display);
 }
 @media (min-width: 900px) {
   .abschnitt.marke-eins h2, .abschnitt.marke-eins h2 + div,
   .abschnitt.marke-zwei h2, .abschnitt.marke-zwei h2 + div,
   .abschnitt.marke-drei h2, .abschnitt.marke-drei h2 + div { grid-column: 2; }
+  .abschnitt.marke-eins h2::before,
+  .abschnitt.marke-zwei h2::before,
+  .abschnitt.marke-drei h2::before { font-size: var(--schrift-12); }
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;
@@ -369,6 +381,9 @@ h3 {
   letter-spacing: var(--spur-gross);
   margin: 0 0 var(--raum-4);
 }
+/* Ab 900px Stufe 6: Text 17, Kartentitel 34, Seitentitel 70, jeder Schritt
+   Faktor 2 (Pruefung der Typoskala, 30.09.2026). Am Handy bleibt 17, 24, 34. */
+@media (min-width: 900px) { h3 { font-size: var(--schrift-6); } }
 p { max-width: var(--mass-prosa-web); }
 
 /* Der Anspruch einer Faehigkeit, seit dem 30.09.2026 Untertext unter der
@@ -406,6 +421,12 @@ p { max-width: var(--mass-prosa-web); }
 .arbeit { padding-block: var(--raum-8); }
 .arbeit + .arbeit { padding-top: var(--raum-8); }
 .arbeit:first-of-type { padding-top: var(--raum-9); }
+/* Die letzte Karte traegt kein Unterpolster, und das letzte Element einer
+   Karte (Belege-Zeile oder Ergebniszeile) keinen Unterabstand: sonst standen
+   16 und 32px zwischen dem Inhalt und dem Abschnittsrand, und Karte zu Karte
+   war 80 statt 64 (Pruefung der Raumskala, 30.09.2026). */
+.arbeit:last-of-type { padding-bottom: 0; }
+.arbeit .reihe > div > :last-child { margin-bottom: 0; }
 .arbeit .untertitel {
   color: var(--tinte-gedaempft); font-size: var(--schrift-m1);
   margin: calc(var(--raum-4) * -1) 0 var(--raum-6);
