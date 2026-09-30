@@ -221,7 +221,9 @@ a { color: inherit; }
   padding-block: var(--raum-10) var(--raum-6);
 }
 .anschlag > .bahn { align-self: center; width: 100%; }
-@media (min-width: 900px) { .anschlag .reihe > div { grid-column: 2; } }
+/* Am Desktop links buendig mit der Bahn, nicht in der Textspalte (André,
+   30.09.2026): der Anschlag ist eine Spalte an jeder Breite. */
+.anschlag .reihe { grid-template-columns: minmax(0, 1fr); }
 /* Stats unter dem Titel: nebeneinander an jeder Breite, hoechstens drei.
    Unter 900px drei gleiche Spalten, jeder Stat darf in sich zweizeilig
    werden (André, 30.09.2026: "die Stats koennen auch selber zweizeilig

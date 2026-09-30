@@ -146,6 +146,10 @@ als `--raum-9` benannt, 11px der Impressum-Links als `--raum-5`. Bewusst
 ohne Token: 44px Trefferflächen (Regel vom 14.09.), die Kopfzeile mit 88 %
 Fläche über Blur, `--streifen-breite` 11rem als Layoutmaß, die vw-Werte der
 Überschriften unter 390 (Stufe durch 390), Breakpoints 600 und 900.
+**Anschlag am Desktop links** (André, 30.09.): eine Spalte an jeder
+Breite, Titel und Stats beginnen bei 64px wie der Name in der Kopfzeile,
+Titel drei Zeilen bei 1280. Die übrigen Abschnitte bleiben in der
+Textspalte bei 272.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
