@@ -382,6 +382,10 @@ Ersatzschrift: Arial Bold hat für „I" 0,0675em Vorbreite, Sora 0,09, der
 Rand stand schon für Sora, also rückte die Tinte beim Tausch um 2px am
 Desktop, Ziffern bis 6px. Plex Sans und Mono weichen unter einem Pixel ab
 und bleiben auf swap. Mit Preload aus dem Cache malt Sora nie mit Ersatz.
+Am Gerät bestätigt (André, 01.10.: „Jetzt grad hüpft nichts mehr").
+**Morgen:** Cloudflare, Bot Fight Mode bzw. JS-Detections, E-Mail-
+Verschleierung und Web-Analytics-Beacon abschalten, dann Lighthouse live
+erneut messen; lokal steht die Seite bei Performance 99.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
