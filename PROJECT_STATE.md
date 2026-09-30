@@ -329,6 +329,22 @@ verschiedenen Farben auf einer Seite zu praesent).
       Stufe 12 (Desktop) und 9 (Handy), h3 ab 900px auf Stufe 6. Ergebnis
       am Desktop 17, 34, 70, jeweils Faktor 2,03; am Handy bleibt 17, 24, 34.
       Entscheidung André; die Tokenänderung gehört ins Repo `design-tokens`.
+- [ ] **Raumskala dramatisieren, Prüfung vom 30.09.2026.** Die Leiter
+      stimmt: Verdopplung alle zwei Stufen, 2 bis 128px, die Seite nutzt
+      `--raum-2` bis `-12`. Außerhalb liegen nur Trefferflächen (44, 48px)
+      und ihre Ausgleichswerte (13, 11px), begründet. Gemessen: innen 12
+      und 16px, Anspruch bis Karte 48, Karte zu Karte 80 (Handy) und 64
+      (Desktop), Abschnitt zu Abschnitt 128 (Handy) und 192 (Desktop).
+      Zwei Befunde: 80px ist kein Leiterwert (Streifen gestapelt plus
+      Rasterlücke plus Polster), und am Handy liegen Karte (80) und
+      Abschnitt (128) nur Faktor 1,6 auseinander, Karten lesen sich dort
+      fast wie Abschnitte; am Desktop Faktor 3. Der Eintrag vom 02.09.
+      (128px zwischen Projekten) stimmt nicht mehr. Vorschlag: Karte zu
+      Karte auf `--raum-10` (64) an beiden Breiten, Abschnittspolster am
+      Desktop von `--raum-11` auf `--raum-12` (256 zwischen Abschnitten).
+      Ergibt Handy 16, 64, 128 und Desktop 16, 64, 256; innen bleibt eng,
+      die Drama liegt zwischen den Ebenen. Keine Tokenänderung nötig,
+      alles im Stylesheet. Entscheidung André.
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
