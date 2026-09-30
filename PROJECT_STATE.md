@@ -236,6 +236,17 @@ obwohl er in Chromium und WebKit griff, gemessen). Jetzt hebt sich der
 Knopf um `--raum-0` (2px), dazu Rahmen in Tinte und gehobene Fläche,
 `--dauer-2` (200ms); nicht während des Drucks, dort gilt scale(0.96).
 Gemessen: Hover matrix(1,0,0,1,0,-2), Druck matrix(0.96…), danach none.
+**Sprünge als berechnete Position** (André, 01.10.: Klick auf den Namen
+scrollte hoch, ein zweiter Klick noch höher; der Pfeil nach unten landete
+je nach Startpunkt anders, „sollte immer nur eine Scrollposition geben").
+Alle Links innerhalb der Seite laufen jetzt über `zuZiel()`: `#oben` und
+der Name auf 0, jedes andere Ziel auf seine Oberkante minus seinen
+`scroll-margin-top`, `scrollTo` mit smooth bzw. auto unter reduzierter
+Bewegung; kein Anker in der Adresse; ohne Skript bleiben es Anker. Gemessen
+in Chromium und WebKit, 390 und 1280: Name zweimal 0 und 0, Pfeil von
+Start 0, 120 und 400 jeweils „Über mich" bei 117. Die Ankerursache in
+Safari (Ziel beim Klick gerechnet, Verschiebung während des sanften
+Scrollens) ist damit umgangen, nicht erklärt.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

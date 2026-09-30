@@ -400,8 +400,7 @@
     // weiter ein Anker.
     knopf.addEventListener('click', function (ev) {
       ev.preventDefault();
-      var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      oben.scrollIntoView({ block: 'start', behavior: ruhig ? 'auto' : 'smooth' });
+      zuZiel(oben);
     });
     // Sichtbar, sobald die Sprungmarken ueber dem Bild liegen. Geprueft
     // beim Scrollen, beim Laden und beim Zurueckkommen aus dem Tab-Speicher,
@@ -424,6 +423,33 @@
     window.addEventListener('pageshow', pruefen);
     pruefen();
   })();
+
+  // Alle Spruenge innerhalb der Seite als berechnete Position (André,
+  // 01.10.2026: Klick auf den Namen scrollte hoch, ein zweiter Klick noch
+  // hoeher; der Pfeil nach unten landete je nach Startpunkt anders). Ein
+  // Ankersprung mit sanftem Scrollen rechnet das Ziel beim Klick und
+  // verschiebt sich, wenn sich waehrenddessen etwas bewegt. Hier gilt:
+  // Name und #oben sind 0, jedes andere Ziel seine Oberkante minus seinen
+  // scroll-margin-top. Ohne Skript bleiben die Links Anker.
+  function zuZiel(ziel) {
+    var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var oben = 0;
+    if (ziel && ziel.id !== 'oben') {
+      oben = ziel.getBoundingClientRect().top + window.pageYOffset
+        - (parseFloat(getComputedStyle(ziel).scrollMarginTop) || 0);
+      oben = Math.max(0, Math.round(oben));
+    }
+    window.scrollTo({ top: oben, left: 0, behavior: ruhig ? 'auto' : 'smooth' });
+  }
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
+    if (!a || a.classList.contains('hoch')) return;
+    var id = a.getAttribute('href').slice(1);
+    var ziel = id ? document.getElementById(id) : null;
+    if (id && !ziel) return;
+    ev.preventDefault();
+    zuZiel(ziel);
+  });
 
   // Anker nach dem Sprung aus der Adresse nehmen (André, 30.09.2026: nach
   // dem Tipp auf eine Sprungmarke sprang die Seite beim Neuladen an den
