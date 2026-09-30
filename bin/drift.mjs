@@ -30,9 +30,13 @@ const entkoden = s => s
   .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
   .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&copy;/g, "©");
 
+/* Erst an Blockgrenzen (Zeilenumbruch) teilen, dann an Satzenden vor einem
+   Grossbuchstaben. Ein Satz, der klein beginnt, wie "filo, meine
+   Bachelorthesis" (Markenname klein, André, 30.09.2026), wuerde sonst mit dem
+   Satz davor verschmelzen, sobald beide im selben Block stehen. */
 const saetze = t => t
-  .replace(/\s+/g, " ").trim()
-  .split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ„“"0-9])/)
+  .split(/\n+/)
+  .flatMap(z => z.replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ„“"0-9])/))
   .map(s => s.trim()).filter(Boolean);
 
 /* Seite: nur der Fliesstext in main. */
@@ -44,7 +48,7 @@ const bloecke = [...main.matchAll(
   .replace(/<b>(Vorgehen|Ergebnis|Nicht gezeigt|Approach|Result|Not shown):<\/b>\s*/g, "")
   .replace(/<[^>]+>/g, "")
 );
-const aufSeite = saetze(entkoden(bloecke.join(" ")));
+const aufSeite = saetze(entkoden(bloecke.join("\n")));
 
 /* Quelle: alles nach der ersten Ueberschriftzeile, ohne weitere Ueberschriften. */
 const md = readFileSync(resolve(wurzel, quelle), "utf8")
