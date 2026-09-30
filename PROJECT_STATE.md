@@ -268,6 +268,14 @@ oder 3px. Ausgenommen margin-left (Tintenkante), die Kopfzeile (88 %
 Fläche über Blur), 44px-Trefferflächen und Summen aus Tokens (Kopfhöhe,
 Fuß mit Knopf). Gegenprobe mit 21px Schrift, 13px Polster und rgb(1,2,3)
 meldet alle drei. 21 Prüfungen je Seite, drei Seiten grün.
+**Knopftext optisch mittig** (André, 01.10.: „einige der Buttons sind noch
+nicht optisch ausgeglichen"). Pixelmessung bei 4x: Sprungmarken 0,6px
+über der Mitte, richtig; Belege-Buttons 3px zu hoch, weil die
+Grundlinienzeile aus 15px-Text und 13px-Gewicht bei min-height 44 am
+oberen Rand klebte. Jetzt beide mit Polster `--raum-5` oben und unten,
+Höhe aus Zeile plus Polster, 48,5px gleich für beide; Belege: Versalien
+1,5px über der Mitte, Unterlängen darunter, Gesamttinte 0,25 unter der
+Mitte. Kopfzeile, Hoch-Knopf und Scroll-Zeichen unverändert.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
