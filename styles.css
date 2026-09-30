@@ -183,7 +183,9 @@ a { color: inherit; }
   letter-spacing: var(--spur-gross);
   text-decoration: none;
 }
-.kopf-nav { display: flex; align-items: center; gap: var(--raum-6); }
+/* raum-8 statt raum-6: mit 16px standen "Was ich kann", "Kontakt" und "EN"
+   zu nah beieinander (André, 30.09.2026, Screenshot vom Desktop). */
+.kopf-nav { display: flex; align-items: center; gap: var(--raum-8); }
 .kopf-nav a {
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
   color: var(--tinte-gedaempft); text-decoration: none;
