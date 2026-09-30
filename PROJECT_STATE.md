@@ -282,8 +282,8 @@ Ursprung links. Gemessen: Hover rgb(191,59,0), Druck matrix 0.96.
 Am iPad bestätigt (André, 01.10.: „Geht"). Frage nach farbigen Strichen
 über den Stats: verneint, eine waagerechte farbige Linie wäre ein Zeichen
 ohne Aufgabe; André: „war zu voreilig". Striche bleiben grau.
-**Titel bis Stats 48** statt 24 (André, 01.10., „Ja" auf Empfehlung),
-`--raum-9`, beide Breiten; nebeneinander bleiben 48.
+**Titel bis Stats 64** (André, 01.10., erst 48 auf Empfehlung, dann „noch mehr"),
+`--raum-10`, beide Breiten; nebeneinander bleiben 48.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
