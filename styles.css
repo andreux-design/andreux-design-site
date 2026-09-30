@@ -371,7 +371,7 @@ a { color: inherit; }
 .hoch.sichtbar { opacity: 1; transform: none; pointer-events: auto; }
 .hoch.sichtbar.gedrueckt { transform: scale(0.96); }
 /* Einblenden und Press in einer Transition, sonst gewinnt die spaetere Regel. */
-.hoch { transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus); }
+.hoch { transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus), border-color var(--dauer-1) var(--kurve-aus); }
 .hoch svg { display: block; }
 @media (min-width: 900px) {
   .hoch { right: var(--raum-8); bottom: calc(var(--raum-8) + env(safe-area-inset-bottom, 0px)); }
@@ -397,14 +397,17 @@ a { color: inherit; }
    (17.09.2026). Dauer und Kurve aus den Tokens, unter prefers-reduced-motion
    auf 1ms. .hoch traegt seine Transition selbst, siehe dort. */
 .sprungmarken a, .beleg-link {
-  transition: transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus);
+  transition: transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus), border-color var(--dauer-1) var(--kurve-aus);
 }
 .sprungmarken a.gedrueckt, .beleg-link.gedrueckt, .hoch.gedrueckt {
   transform: scale(0.96);
   background-color: var(--flaeche-gehoben);
 }
 @media (hover: hover) and (pointer: fine) {
-  .sprungmarken a:hover, .beleg-link:hover { background-color: var(--flaeche-gehoben); }
+  /* Rahmen in Tinte plus gehobene Flaeche: die Flaeche allein war im
+     Dunkelmodus kaum zu sehen, rgb(21,24,29) auf rgb(11,14,18) (André,
+     30.09.2026: "die Hover-Animation mit der Maus fehlt noch"). */
+  .sprungmarken a:hover, .beleg-link:hover { background-color: var(--flaeche-gehoben); border-color: var(--tinte); }
   /* .hoch steht schon auf der gehobenen Flaeche, dort hebt der Hover den Rahmen. */
   .hoch:hover { border-color: var(--tinte); }
 }

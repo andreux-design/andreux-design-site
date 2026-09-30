@@ -160,6 +160,11 @@ scheiterte an einem Anführungszeichen, der Code war davon nicht betroffen.
 **Einleitung einspaltig wie der Anschlag** (André, 30.09.: „noch nicht
 einheitlich links"): „Über mich", Absatz, „Inhalt" und Knöpfe alle auf 64
 am Desktop. Ab der ersten Säule gilt wieder Streifen links, Text bei 272.
+**Hover sichtbar gemacht** (André, 30.09.: Hover mit der Maus fehlt). Er
+war da, aber nur als gehobene Fläche, im Dunkelmodus rgb(21,24,29) auf
+rgb(11,14,18). Jetzt zusätzlich Rahmen in `--tinte`, Übergang auch auf
+border-color; nur unter `(hover: hover) and (pointer: fine)`. Gemessen im
+Hover: Rahmen rgb(231,234,238) dunkel, rgb(21,24,29) hell.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
