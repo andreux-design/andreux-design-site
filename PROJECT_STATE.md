@@ -165,6 +165,27 @@ war da, aber nur als gehobene Fläche, im Dunkelmodus rgb(21,24,29) auf
 rgb(11,14,18). Jetzt zusätzlich Rahmen in `--tinte`, Übergang auch auf
 border-color; nur unter `(hover: hover) and (pointer: fine)`. Gemessen im
 Hover: Rahmen rgb(231,234,238) dunkel, rgb(21,24,29) hell.
+**Abschnittstitel nach Weg 3** (André, 30.09.: „Mach das, was du
+empfiehlst"). „Über mich", „Was ich suche", „Kontakt" tragen
+`h2.abschnitt-titel`: Sora 600, Stufe 3 am Handy, 9 am Desktop, gemischte
+Schreibung, `--tinte`, der 32px-Strich bleibt darüber; die drei Abschnitte
+sind `einspaltig` wie der Anschlag. „Inhalt" bleibt Label bei 13, jetzt
+`--tinte-gedaempft`. Drei Stufen Überschrift: Säule 34/70, Abschnitt und
+Karte 24/49, Label 13. Falls es nicht gefällt: Weg 1 (nur kräftiger) oder
+Weg 2 (15px) stehen im Gespräch vom 30.09.
+**Tintenkante** (André, 30.09.: „Trick gegen die minimalen Treppen"). Die
+Vorbreite der ersten Glyphe wächst mit der Größe: gemessen 9,1px am
+99px-Titel, 5 bis 8 an den Nummern, 6,3 am 70px-Säulentitel, 1 bis 4 an
+Kartentiteln, 1 im Fließtext. Das Seitenskript misst sie per Canvas
+(`measureText().actualBoundingBoxLeft`) in der gerenderten Schrift und
+setzt `margin-left` negativ auf h1, h2, h3, Absätze und Stats; `--einzug`
+trägt den Gegenwert für Striche (::before) und die Nummer, die dazu ihre
+eigene Vorbreite über `--nummer-einzug` bekommt. Läuft nach
+`document.fonts.ready` und bei Resize. `text-indent` war der erste Versuch
+und scheiterte: nach einem Block-::before gilt es nicht mehr für den Text.
+Gemessen danach: Tinte aller Überschriften, Absätze, Striche und Nummern
+auf 16 (390) bzw. 64 und 272 (1280), keine Abweichung über 0,1px. Gate
+grün, keine JS-Fehler.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
