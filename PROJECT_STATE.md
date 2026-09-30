@@ -1,6 +1,6 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-09-30
+Letzte Aktualisierung: 2026-10-01
 
 ## Nächster Schritt
 
@@ -229,6 +229,7 @@ Säulen; die linke Spalte bleibt leer als Kennungsspalte des Systems. Der
 Anschlag ist die einzige Ausnahme auf der Bahnkante bei 64. Klasse
 `einspaltig` heißt jetzt `eingereiht`. Gemessen 1280: h1 64, alles andere
 272; 390: alles 16.
+Am Gerät bestätigt (André, 01.10.: „Find ich gut").
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
