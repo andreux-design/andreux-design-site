@@ -4,6 +4,28 @@ Letzte Aktualisierung: 2026-09-30
 
 ## Nächster Schritt
 
+**Säulentitel dominant, Sprungmarken als Knöpfe** (André, 30.09.2026, am
+Handy: Sprungmarken nicht als Buttons erkennbar; in den Säulentiteln „die 1
+groß geschrieben, der Rest kleiner"; Vorschlag: dominante
+Abschnittsüberschriften, die bisherigen Headlines als Subtext darunter).
+Umgesetzt allein im Stylesheet, gemergt nach grünem Gate:
+
+1. **Sprungmarken** tragen den 1px-Rahmen `--linie-stark` und die Polster der
+   Belege-Buttons; gemessen 297x44 bei 390px. Auf dem Handy stehen sie
+   untereinander, drei Knöpfe.
+2. **Säulen-H2** in Display-Schrift und der Größe des Seitentitels (34px bei
+   390, 49px bei 1280), Nummer und Wort gleich groß, beides in `--marke-text`,
+   keine Versalien mehr. Ab 900px in der Textspalte wie der Seitentitel;
+   gemessen: h1, h2, Anspruch und h3 alle auf 272px links.
+3. **Anspruch** ist Untertext: `--schrift-1`, `--tinte-gedaempft`, dieselbe
+   Stufe wie der Eröffnungsabsatz. Die Hierarchie ist damit h1 = Säulen-h2
+   (34 bis 49) > h3 (24) > Anspruch (19) > Text (17).
+
+Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
+ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
+(Was ich suche, Kontakt) behalten die kleine H2 im Streifen. Gegenprobe am
+Handy auf andreux.design steht bei André.
+
 **Text auf dem Stand vom 30.09.2026, beide Sprachen, auf `main`.** Quelle ist
 `texte/website.md` im Bewerbungsrepo, Commit 06ce533, von André als Kopie
 unter `uebergabe/` abgelegt, weil das Bewerbungsrepo für Sitzungen aus diesem

@@ -240,11 +240,17 @@ a { color: inherit; }
    wie alles andere Anklickbare. */
 .sprungmarken {
   list-style: none; margin: var(--raum-7) 0 0; padding: 0;
-  display: flex; flex-wrap: wrap; gap: 0 var(--raum-7);
+  display: flex; flex-wrap: wrap; gap: var(--raum-4);
 }
+/* Rahmen wie die Belege-Buttons (André, 30.09.2026, am Handy: "Es ist nicht
+   ganz klar, dass das Buttons sind"). Der 1px graue Rahmen ist auf dieser
+   Seite das Zeichen fuer anklickbar, siehe Kopf; ohne ihn sahen die drei
+   Sprungmarken aus wie farbige Beschriftung. Dieselben Masse wie .beleg-link. */
 .sprungmarken a {
   display: inline-flex; align-items: baseline; gap: var(--raum-4);
   min-height: 44px;
+  padding: var(--raum-4) var(--raum-6);
+  border: var(--strich-0) solid var(--linie-stark);
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
   font-weight: 500; letter-spacing: var(--spur-versal); text-transform: uppercase;
   color: var(--marke-text); text-decoration: none;
@@ -280,24 +286,41 @@ h2::before {
   width: var(--raum-8); height: var(--strich-0);
   background: var(--linie-stark); margin-bottom: var(--raum-4);
 }
-/* Die Saeulen: Nummer gross vor der H2, beides in der Textfarbe der Saeule,
-   kein Strich (André, 17.09.2026). Grid statt Inline, damit der Titel neben
-   der Nummer umbricht und nicht unter sie; bei 176px Streifenbreite braucht
-   "END-TO-END-PRODUKTDESIGN" zwei Zeilen. Die Nummer ist 1,6em der H2 und
-   sitzt mit der ersten Zeile auf einer Grundlinie. */
+/* Die Saeulen: Ueberschrift dominant, in der Groesse des Seitentitels,
+   Nummer und Wort gleich gross in der Textfarbe der Saeule (André,
+   30.09.2026, am Handy: "Vielleicht braucht es richtig dominante
+   Abschnittsueberschriften, und die bisherigen Headlines quasi Subtext
+   darunter"; vorher stand die Nummer 1,6em gross neben 13px Versalien, "die
+   1 gross geschrieben, der Rest kleiner"). Die H2 spannt beide Spalten, der
+   Anspruch rueckt darunter in die Textspalte und wird Untertext. Ab 900px
+   stehen beide in der Textspalte, wie der Seitentitel im Anschlag; ueber
+   beide Spalten gespannt stand der Untertext eingerueckt unter dem Titel. Die
+   Sprungmarke oben behaelt Versalien und Meta-Schrift, weil sie ein Knopf
+   ist; Nummer, Farbe und Wortlaut sind dieselben. Grid, damit der Titel
+   neben der Nummer umbricht und nicht unter sie. */
 .abschnitt.marke-eins h2,
 .abschnitt.marke-zwei h2,
 .abschnitt.marke-drei h2 {
   color: var(--marke-text);
+  font-family: var(--familie-display); font-weight: 600;
+  font-size: clamp(2.125rem, 5.2vw, 3.0625rem);
+  line-height: var(--zeile-display); letter-spacing: var(--spur-display);
+  text-transform: none;
   display: grid; grid-template-columns: auto minmax(0, 1fr);
-  column-gap: var(--raum-4); align-items: baseline;
+  column-gap: var(--raum-5); align-items: baseline;
+  text-wrap: balance;
 }
 .abschnitt.marke-eins h2::before,
 .abschnitt.marke-zwei h2::before,
 .abschnitt.marke-drei h2::before {
   content: var(--nummer);
   width: auto; height: auto; background: none; margin: 0;
-  font-size: 1.6em; line-height: 1; letter-spacing: 0;
+  font-size: 1em; line-height: inherit; letter-spacing: inherit;
+}
+@media (min-width: 900px) {
+  .abschnitt.marke-eins h2, .abschnitt.marke-eins h2 + div,
+  .abschnitt.marke-zwei h2, .abschnitt.marke-zwei h2 + div,
+  .abschnitt.marke-drei h2, .abschnitt.marke-drei h2 + div { grid-column: 2; }
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;
@@ -307,18 +330,16 @@ h3 {
 }
 p { max-width: var(--mass-prosa-web); }
 
-/* Der Anspruch einer Faehigkeit. Er steht in der Textspalte gross, waehrend
-   der Name der Faehigkeit im Streifen steht: derselbe Bau wie im Lebenslauf,
-   Kennung links, Aussage rechts. Bis zum 01.09.2026 standen hier drei
-   nebeneinandergestellte Saeulenkaesten; sie nannten die Faehigkeit zweimal,
-   einmal als Ueberschrift und einmal im Text darunter. */
+/* Der Anspruch einer Faehigkeit, seit dem 30.09.2026 Untertext unter der
+   dominanten H2: dieselbe Stufe und Farbe wie der Eroeffnungsabsatz im
+   Anschlag, damit Seitentitel und Saeulentitel gleich gebaut sind, grosse
+   Zeile oben, gedaempfter Satz darunter. Bis dahin stand er selbst gross
+   (24 bis 34px, Display) neben einer 13px-Versalzeile im Streifen; die
+   Hierarchie war umgekehrt. Bis zum 01.09.2026 standen hier drei
+   nebeneinandergestellte Saeulenkaesten. */
 .anspruch {
-  font-family: var(--familie-display); font-weight: 600;
-  /* Zwischen --schrift-3 und --schrift-6, fluessig: mit 34px stand der Satz auf
-     dem Handy so gross wie der Seitentitel und nahm vier Zeilen. */
-  font-size: clamp(var(--schrift-3), 1rem + 1.6vw, var(--schrift-6));
-  line-height: var(--zeile-ueberschrift);
-  letter-spacing: var(--spur-gross);
+  font-size: var(--schrift-1); color: var(--tinte-gedaempft);
+  line-height: var(--zeile-text);
   margin: 0;
   text-wrap: pretty;
 }
