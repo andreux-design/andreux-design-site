@@ -305,6 +305,10 @@ unten und Tinte, beim Druck Orange und scale(0.96). Gemessen: Hover
 matrix(1,0,0,1,0,2) rgb(21,24,29), Druck rgb(191,59,0) und 0,96.
 Bestätigt (André, 01.10.: „ist nicht orange, aber passt zum Upscroll,
 gefällt mir"): Hover in Tinte bleibt, Orange nur beim Druck.
+**Hoch-Knopf gleich** (André, 01.10.): Pfeil in Ruhe `--tinte-gedaempft`,
+Hover volle Tinte plus Heben und Rahmen, Druck Orange und scale(0.96).
+Gemessen: Ruhe rgb(86,91,99), Hover rgb(21,24,29) und -2px, Druck
+rgb(191,59,0) und 0,96.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

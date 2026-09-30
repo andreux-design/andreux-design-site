@@ -461,15 +461,17 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
   width: var(--raum-9); height: var(--raum-9);
   display: grid; place-items: center;
   border: var(--strich-0) solid var(--linie-stark);
-  background: var(--flaeche-gehoben); color: var(--tinte);
+  /* Pfeil gedaempft in Ruhe, in voller Tinte beim Hover, orange beim Druck,
+     wie das Scroll-Zeichen im Anschlag (André, 01.10.2026). */
+  background: var(--flaeche-gehoben); color: var(--tinte-gedaempft);
   font-size: var(--schrift-m1);
   opacity: 0; transform: translateY(var(--raum-4)); pointer-events: none;
   transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-2) var(--kurve-aus);
 }
 .hoch.sichtbar { opacity: 1; transform: none; pointer-events: auto; }
-.hoch.sichtbar.gedrueckt { transform: scale(0.96); }
+.hoch.sichtbar.gedrueckt { transform: scale(0.96); color: var(--akzent-text); }
 /* Einblenden und Press in einer Transition, sonst gewinnt die spaetere Regel. */
-.hoch { transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus), border-color var(--dauer-1) var(--kurve-aus); }
+.hoch { transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus), border-color var(--dauer-1) var(--kurve-aus), color var(--dauer-1) var(--kurve-aus); }
 .hoch svg { display: block; }
 @media (min-width: 900px) {
   .hoch { right: var(--raum-8); bottom: calc(var(--raum-8) + env(safe-area-inset-bottom, 0px)); }
@@ -520,7 +522,7 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
   }
   /* .hoch steht schon auf der gehobenen Flaeche, dort hebt der Hover den
      Rahmen und den Knopf. */
-  .hoch.sichtbar:hover:not(.gedrueckt) { border-color: var(--tinte); transform: translateY(calc(-1 * var(--raum-0))); }
+  .hoch.sichtbar:hover:not(.gedrueckt) { border-color: var(--tinte); color: var(--tinte); transform: translateY(calc(-1 * var(--raum-0))); }
 }
 
 /* --- Abschnitte --------------------------------------------------------- */
