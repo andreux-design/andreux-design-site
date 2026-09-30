@@ -297,6 +297,9 @@ ragte hinein. Jetzt 100lvh unter 900px, Desktop bleibt svh minus
 Kopfhöhe. Preis: bei sichtbarer Leiste liegt das Scroll-Zeichen anfangs
 teils unter ihr. In Playwright ohne dynamische Leiste: Anschlag endet bei
 844, „Über mich" bei 908.
+**Name am Handy orange beim Tippen** (André, 01.10., „wie Kontakt und EN"):
+`.marke:hover` ohne any-hover-Bedingung, dazu `.gedrueckt` in `--akzent-text`;
+auf Touch bleibt der Hover nach dem Tippen stehen wie bei den Kopfzeilenlinks.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
