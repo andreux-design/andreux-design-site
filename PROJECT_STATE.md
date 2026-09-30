@@ -99,6 +99,12 @@ oder unter die Stats? Auf jeden Fall kürzer", Empfehlung darüber, „Ja").
 Derselbe kurze Strich wie über den Nebenabschnitten, 32 x 1px
 `--linie-stark`, per `::before`; Zellen oben bündig, gemessen alle drei
 auf 588 (390) und 714 (1280).
+**Kartentitel am Handy auf Stufe 3** (André, 30.09., Frage: Kapitel- und
+Kartentitel gleich groß? Ja, beide 34. „Designsysteme muss in einer Zeile
+sein, aber es soll zum System passen"). Kartentitel am Handy 24, Desktop
+bleibt 49; damit jede dritte Stufe an beiden Breiten: 17, 24, 34, 99 und
+17, 49, 70, 141. Unter 390 proportional (6.154vw). Gemessen 320: 19,7;
+390: 24; 1280: 49.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

@@ -481,10 +481,12 @@ h2::before {
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;
-  /* Stufe 6 am Handy, 9 am Desktop (André, 30.09.2026 abends: "auch die
-     Unterueberschriften wie filo koennen groesser sein"). Davor 3 und 6.
-     Display-Zeile statt Ueberschriftenzeile, ab dieser Groesse. */
-  font-size: min(8.718vw, var(--schrift-6)); line-height: var(--zeile-display);
+  /* Stufe 3 am Handy, 9 am Desktop. Am 30.09.2026 abends kurz auf 6, dann
+     stand der Kartentitel am Handy so gross wie der Saeulentitel (34), der
+     wegen "Designsysteme" in einer Zeile nicht hoeher kann. Jetzt wieder
+     jede dritte Stufe: Text 17, Karte 24, Saeule 34, Nummer 99 (André:
+     "muss zum System passen"). 24px sind 6.154vw bei 390. */
+  font-size: min(6.154vw, var(--schrift-3)); line-height: var(--zeile-display);
   letter-spacing: var(--spur-display);
   margin: 0 0 var(--raum-4);
   text-wrap: balance;
