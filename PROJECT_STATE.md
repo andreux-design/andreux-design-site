@@ -335,6 +335,21 @@ Strich), Abschnitt `eingereiht` (Titel und Text bei 272), Zwischenzeilen
 `.text b` in 500 statt synthetischem 700, Tintenkante und Druckzustand am
 Namen aus der Startseite übernommen. Gemessen: Titel und Text auf 16 bzw.
 272, Titel bis Text 24, Gate grün mit Leiterprüfung.
+**Web Vitals und Accessibility gemessen** (André, 01.10.). Lighthouse
+mobil gegen die Live-Seite: Accessibility 100, SEO 100, CLS 0, Performance
+41 mit 7,6 s Skriptzeit, davon 6,3 s Cloudflare (Bot-Challenge
+`cdn-cgi/challenge-platform`, E-Mail-Verschleierer `email-decode`,
+Analytics-Beacon) und 1,3 s das Tintenkanten-Skript mit erzwungenen
+Reflows. axe-core: eine Meldung, der Hoch-Knopf außerhalb der Landmarken;
+Konsole: 404 auf favicon.ico. Behoben hier: Skript umgebaut (erst lesen,
+dann schreiben; nur die Region um die Glyphe auslesen; Auflösung nach
+Größe; ein Lauf nach dem Schriftladen; Resize nur bei Breitenänderung),
+Hoch-Knopf in `main`, `link rel=icon href="data:,"` gegen die 404. Lokal
+ohne Cloudflare danach: Performance 99, Blockierzeit 0 ms, LCP 1,5 s,
+Skriptzeit 354 ms statt 1279. **Bei André:** im Cloudflare-Dashboard Bot
+Fight Mode bzw. JS-Detections, E-Mail-Verschleierung und ggf. Web Analytics
+abschalten; ein Favicon entscheiden. Offen, größer: Schriften selbst hosten
+mit Preload statt Google-Fonts-CSS (render-blocking, 785 ms simuliert).
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
