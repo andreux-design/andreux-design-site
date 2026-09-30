@@ -71,6 +71,10 @@ kleinen Versalzeile mit dem 32px-Strich, wie „Was ich suche" und „Kontakt";
 `ul#bereiche` trägt `aria-labelledby` darauf. Gemessen: 48px vom Absatz zum
 Titel, 12px vom Titel zu den Knöpfen, 13px Schrift, beide Breiten. Englisch
 „Contents". Fünfte Stufe der Hebe-Animation ergänzt.
+**Hoch-Knopf springt auf „Inhalt"** statt auf die Liste (André, 30.09.: der
+Abschnitt soll ganz zu sehen sein). Gemessen bei 390px nach dem Klick:
+Kopfzeile bis 69px, Strich über „Inhalt" bei 93px, Liste endet bei 282px,
+kein Anker in der Adresse.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
