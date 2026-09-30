@@ -298,6 +298,14 @@ a { color: inherit; }
   color: var(--tinte-leise);
 }
 .weiter svg { display: block; }
+/* Hover und Druck (André, 01.10.2026): bei Maus rueckt der Pfeil um 2px
+   nach unten, in seine Richtung, und wird Tinte; beim Druecken orange und
+   geschrumpft, ueber .gedrueckt aus dem Seitenskript. */
+.weiter { transition: transform var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus); }
+.weiter.gedrueckt { color: var(--akzent-text); transform: scale(0.96); }
+@media (any-hover: hover) {
+  .weiter:hover:not(.gedrueckt) { color: var(--tinte); transform: translateY(var(--raum-0)); }
+}
 .anschlag h1 {
   font-family: var(--familie-display); font-weight: 600;
   /* Stufe 9 bis 12 (49 bis 70px), seit dem 30.09.2026 abends (André:

@@ -300,6 +300,9 @@ teils unter ihr. In Playwright ohne dynamische Leiste: Anschlag endet bei
 **Name am Handy orange beim Tippen** (André, 01.10., „wie Kontakt und EN"):
 `.marke:hover` ohne any-hover-Bedingung, dazu `.gedrueckt` in `--akzent-text`;
 auf Touch bleibt der Hover nach dem Tippen stehen wie bei den Kopfzeilenlinks.
+**Scroll-Zeichen mit Hover und Druck** (André, 01.10.): bei Maus 2px nach
+unten und Tinte, beim Druck Orange und scale(0.96). Gemessen: Hover
+matrix(1,0,0,1,0,2) rgb(21,24,29), Druck rgb(191,59,0) und 0,96.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
