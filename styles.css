@@ -230,7 +230,9 @@ a { color: inherit; }
    Unter 900px drei gleiche Spalten, jeder Stat darf in sich zweizeilig
    werden (André, 30.09.2026: "die Stats koennen auch selber zweizeilig
    sein, damit sie nebeneinander passen"); ab 900px eine Zeile. */
-.anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-7); padding-top: 0; margin-top: var(--raum-7); }
+/* Luecke raum-9 (48) statt raum-7: mit 24px standen die drei am Desktop zu
+   nah (André, 30.09.2026, Screenshot). Unter 900px gilt das Raster unten. */
+.anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-9); padding-top: 0; margin-top: var(--raum-7); }
 /* Jeder Stat traegt den kurzen Strich darueber, dasselbe Zeichen wie ueber
    "Inhalt", "Ueber mich" und "Kontakt": 32px, 1px, --linie-stark (André,
    30.09.2026: "Linien ueber oder unter die Stats? Auf jeden Fall kuerzer";
