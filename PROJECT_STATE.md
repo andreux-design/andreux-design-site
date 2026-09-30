@@ -34,6 +34,14 @@ brechen. Zweiter Altbefund bei 320: „Bausteinbibliothek" im Kartentitel
 mit 34px breiter als die Spalte; weicher Trennstrich im Wort und
 `overflow-wrap: break-word` auf h3 als Fallback. Danach 320 ohne Überlauf.
 Offen: das Gate um 320px erweitern.
+**Überschriften skalieren unter 390px proportional** (André, 30.09. spät
+abends: „bei allen Bildschirmen unter dem iPhone Pro mit clamp proportional
+runter, nicht Copy oder andere Texte"). Umgesetzt mit `min(<Stufe durch
+390 in vw>, <bisheriger Wert>)` an Seitentitel, Säulennummer, Säulentitel
+und Kartentitel; Fließtext 17, Einleitung 19, Meta 13 bleiben fest.
+Gemessen: bei 320 Titel 40, Nummer 81, Säulen- und Kartentitel 28; bei 360
+45, 91, 31; ab 390 unverändert 49, 99, 34; Desktop 99, 142, 70, 49. Kein
+Überlauf bei 320, 360, 390, 430, 1280. Gate grün.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
