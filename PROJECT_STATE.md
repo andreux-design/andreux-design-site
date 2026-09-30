@@ -78,6 +78,10 @@ im Anschlag ist damit leer, der Titel bleibt ab 900px in der Textspalte
 (1280); bei 320x568 ist der Inhalt höher als der Bildschirm, 596, dann
 scrollt er. Kein Überlauf, keine JS-Fehler, Gate grün. Meine Bedenken zu
 100vh galten `vh`; `svh` ist am Handy stabil, deshalb umgesetzt.
+**Stats nebeneinander, in sich zweizeilig** (André, 30.09.): unter 900px
+drei gleiche Rasterspalten, jeder Stat bricht in sich um; gemessen bei 320
+und 390 je zwei Zeilen pro Stat, alle drei auf einer Oberkante; ab 900px
+eine Zeile. Gate grün.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
