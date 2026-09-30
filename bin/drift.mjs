@@ -42,9 +42,13 @@ const saetze = t => t
 /* Seite: nur der Fliesstext in main. */
 const html = readFileSync(resolve(wurzel, seite), "utf8");
 const main = (html.match(/<main[\s\S]*?<\/main>/) || [""])[0].replace(/<!--[\s\S]*?-->/g, "");
+// h1 ohne Klassenbedingung (die Eintrittsklasse .heben ist seit dem
+// 01.10.2026 weg), Absaetze ueber ihre eigene Klasse.
 const bloecke = [...main.matchAll(
-  /<(h1|p)[^>]*class="(?:eigenname heben|heben|satz heben|anspruch|text|ergebnis)"[^>]*>([\s\S]*?)<\/\1>/g
-)].map(m => m[2]
+  // (?=[\s>]) nach dem Tagnamen: ohne Wortgrenze traf <p auch <path im
+  // Chevron-SVG und schluckte bis zum </p> der Einleitung (01.10.2026).
+  /<(h1|p)(?=[\s>])(?:[^>]*class="(?:eigenname|satz|anspruch|text|ergebnis)")?[^>]*>([\s\S]*?)<\/\1>/g
+)].filter(m => m[1] === "h1" || /class="(?:eigenname|satz|anspruch|text|ergebnis)"/.test(m[0].split(">")[0])).map(m => m[2]
   .replace(/<b>(Vorgehen|Ergebnis|Nicht gezeigt|Approach|Result|Not shown):<\/b>\s*/g, "")
   .replace(/<[^>]+>/g, "")
 );

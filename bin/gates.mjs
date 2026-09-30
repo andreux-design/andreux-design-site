@@ -37,7 +37,9 @@ const gebunden = [...html.matchAll(/<link[^>]+href="(?!https?:)([^"]+\.css)"/g)]
   .map(f => readFileSync(f, "utf8"))
   .join("\n");
 const eigen = (html.match(/<style>([\s\S]*?)<\/style>/) || [, ""])[1];
-const stil = eigen + "\n" + gebunden;
+// Kommentare raus, bevor Regeln gesammelt werden: am 01.10.2026 zaehlte
+// ".heben" in einem Kommentar als Regel fuer eine Klasse, die keine hatte.
+const stil = (eigen + "\n" + gebunden).replace(/\/\*[\s\S]*?\*\//g, "");
 console.log(`\nGate: ${seite}\n`);
 
 /* 1. Nur Werte aus dem System. */

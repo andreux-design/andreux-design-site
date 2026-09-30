@@ -316,6 +316,19 @@ gefällt mir"): Hover in Tinte bleibt, Orange nur beim Druck.
 Hover volle Tinte plus Heben und Rahmen, Druck Orange und scale(0.96).
 Gemessen: Ruhe rgb(86,91,99), Hover rgb(21,24,29) und -2px, Druck
 rgb(191,59,0) und 0,96.
+**Bewegung nur als Antwort, Striche über den Stats weg** (André, 01.10.,
+auf meinen Einwand, „der Schritt zur Perfektion"). Die Eintrittsanimation
+`.heben` vom 31.08. (Rolle, Titel, Stats, Einleitung, Sprungmarken heben
+sich beim Laden um 8px) ist raus, Klasse und Keyframes gelöscht: die eine
+Bewegung ohne Auslöser. Regel jetzt: Hover, Druck, Lösen beim Scrollen,
+Hoch-Knopf ein und aus, sanftes Scrollen; sonst steht alles. Der 32px-
+Strich über den Stats ist raus, er war das Zeichen für Label und stand nur
+noch dort; die Stats bleiben Mono 13 ohne Farbe, Farbe heißt Säule. Zwei
+Löcher in den Prüfwegen dabei gefunden und geschlossen: das Gate zählte
+`.heben` in einem CSS-Kommentar als Regel (Kommentare werden jetzt vorher
+entfernt), und die Driftprüfung fand h1 und Absätze über die Klasse
+`heben` und traf mit `<p` auch `<path` im Chevron-SVG (jetzt Wortgrenze
+nach dem Tagnamen, Absätze über ihre eigene Klasse).
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
