@@ -1,8 +1,22 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-09-17
+Letzte Aktualisierung: 2026-09-30
 
 ## Nächster Schritt
+
+**Text auf dem Stand vom 30.09.2026, beide Sprachen, auf `main`.** Quelle ist
+`texte/website.md` im Bewerbungsrepo, Commit 06ce533, von André als Kopie
+unter `uebergabe/` abgelegt, weil das Bewerbungsrepo für Sitzungen aus diesem
+Ordner gesperrt ist. Drei Stellen nachgezogen: Token-Karte um die App „one
+conference" ergänzt, Kampagnen-Karte samt Überschrift ersetzt („Ein System
+für ganze Funnels", Wizard, Faktenprüfer: Werbekampagnen war Hochstufung),
+„ganzen" aus dem Anspruchssatz Designsysteme gestrichen (André, 30.09.).
+Driftprüfung gegen die abgelegte Datei: 94 Sätze auf der Seite, 94 in der
+Quelle, kein Unterschied. Gate grün, drei Seiten. Die englische Fassung folgt
+der Übergabe Satz für Satz, weiterhin ohne eigenen Prüfweg. Die Überschrift
+der Kampagnen-Karte steht nicht in `texte/website.md`, das ist eine Lücke im
+Prüfweg. `uebergabe/` ist nicht eingecheckt; ob der Ordner ins Repo gehört
+(dann könnte die Driftprüfung ein Gate werden), entscheidet André.
 
 **Regel seit dem 17.09.2026: Gate grün heißt Merge nach `main`, ohne
 Rückfrage** (André, von unterwegs prüft er live am Handy). Steht in
