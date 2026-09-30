@@ -13,8 +13,16 @@
    je doch vor dem Laden um, dann an denselben Stellen; der Wechsel ist dann
    ein Formwechsel, kein Sprung. */
 
+/* Sora mit block statt swap (André, 01.10.2026: "besonders der ATF springt
+   leicht nach rechts"): die Vorbreite der Ersatzglyphen weicht bei Sora
+   sichtbar ab, "I" um 0,0225em, also 2px am 99px-Titel, die Ziffern bis
+   0,04em; der Rand ist aber schon fuer Sora gesetzt, beim Tausch rueckte
+   die Tinte. Mit Preload aus dem Cache ist die Datei vor dem ersten Bild
+   da; ohne Cache bleibt die Ueberschrift bis 3 s unsichtbar statt falsch.
+   Plex Sans und Mono bleiben auf swap, dort liegt der Unterschied unter
+   einem Pixel. */
 @font-face {
-  font-family: "Sora"; font-style: normal; font-weight: 500 600; font-display: swap;
+  font-family: "Sora"; font-style: normal; font-weight: 500 600; font-display: block;
   src: url("schriften/sora.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
