@@ -258,7 +258,8 @@ nichts"). Safari auf dem iPad meldet auch mit Trackpad oder Maus
 `hover: none`, weil der Hauptzeiger der Finger bleibt; die Bedingung
 `(hover: hover) and (pointer: fine)` griff dort nie. Jetzt
 `@media (any-hover: hover)`. Chromium und WebKit am Desktop unverändert
-gemessen (Hover -2px, Druck 0,96, danach none). iPad-Probe bei André.
+gemessen (Hover -2px, Druck 0,96, danach none). Am iPad Pro bestätigt,
+auch mit dem Apple Pencil (André, 01.10.: „Oh wow, das geht").
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
