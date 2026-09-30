@@ -82,6 +82,18 @@ scrollt er. Kein Überlauf, keine JS-Fehler, Gate grün. Meine Bedenken zu
 drei gleiche Rasterspalten, jeder Stat bricht in sich um; gemessen bei 320
 und 390 je zwei Zeilen pro Stat, alle drei auf einer Oberkante; ab 900px
 eine Zeile. Gate grün.
+**Danach (André, 30.09.):** Scroll-Zeichen soll „Über mich" sichtbar
+machen: `scroll-margin-top` auf der Einleitungs-h2 (Kopf plus `--raum-9`),
+gemessen nach dem Klick Strich bei 117 unter Kopfzeile 69, kein Anker in
+der Adresse. Stats: „wenn eines bricht, müssen alle drei brechen, und alle
+dieselbe Linie darunter". Umbruch nicht mehr dem Browser überlassen: jeder
+Stat trägt `span.zeile` an der Bruchstelle (Frankfurt / am Main, Seit 2010 /
+im Beruf, B.Sc. / UX Design; englisch Working / since 2010), unter 900px
+`display: block`, darüber eine Zeile; jede Zelle 1px `--linie` darunter,
+Zellen gleich hoch. Gemessen: 320 und 390 je zwei Zeilen, Linien auf einer
+Höhe (485 bzw. 632); 1280 eine Zeile, Linien auf 741. Schriftgröße der
+Einleitung: h2 13px wie die Nebenabschnitte, Absatz 19px (`--schrift-1`),
+38 Zeichen je Zeile am Handy, 82 am Desktop.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

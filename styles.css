@@ -224,10 +224,15 @@ a { color: inherit; }
    werden (André, 30.09.2026: "die Stats koennen auch selber zweizeilig
    sein, damit sie nebeneinander passen"); ab 900px eine Zeile. */
 .anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-7); padding-top: 0; margin-top: var(--raum-7); }
+/* Jeder Stat traegt dieselbe 1px-Linie darunter (André, 30.09.2026). */
+.anschlag .stats > span { padding-bottom: var(--raum-3); border-bottom: var(--strich-0) solid var(--linie); }
 @media (max-width: 899px) {
-  .anschlag .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--raum-5); align-items: start; }
-  /* Beide Zeilen gleich lang: "Frankfurt / am Main" statt "Frankfurt am / Main". */
-  .anschlag .stats span { text-wrap: balance; }
+  /* Drei gleiche Spalten, gleich hoch, damit die Linien auf einer Hoehe
+     liegen. Der Umbruch ist nicht dem Browser ueberlassen: unter 900px
+     brechen alle drei an der markierten Stelle (.zeile) in zwei Zeilen,
+     "wenn eines bricht, muessen alle drei brechen" (André, 30.09.2026). */
+  .anschlag .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--raum-5); align-items: stretch; }
+  .anschlag .stats .zeile { display: block; }
 }
 /* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
 .weiter {
@@ -320,6 +325,9 @@ a { color: inherit; }
 /* Die Sprungmarken sind Sprungziel des Hoch-Knopfs; unter der klebenden
    Kopfzeile landen, wie die Abschnitte. */
 .sprungmarken, .inhalt-titel { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-7)); }
+/* "Ueber mich" ist Ziel des Scroll-Zeichens im Anschlag; ohne Abstand lag
+   die Ueberschrift unter der Kopfzeile (André, 30.09.2026). */
+.einleitung h2 { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-9)); }
 
 /* --- Hoch-Knopf ---------------------------------------------------------- */
 /* Schwebt unten rechts, fuehrt zurueck zu den drei Sprungmarken (André,
