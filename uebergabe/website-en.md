@@ -12,7 +12,7 @@ GoTiger delivered Asian groceries in Berlin, and I designed the delivery service
 
 I started with a survey of the target group, and later user tests in interviews were added. It wasn't highly scientific. But it was enough to see what needed improving. When a colleague left, I took over her tasks as well and from then on briefed the external development team.
 
-Filo, my bachelor's thesis, came out of everyday work. You look for a message about a project and no longer remember where it was. Did it come by email or via Slack? And the file that goes with it, was that on the drive or in some chat after all? Searching like that costs time, and when things get hectic, it turns into stress. I wanted an interface that brings everything together in one place, without everyone having to use the same tool. What surprised me was how many people feel the same.
+filo, my bachelor's thesis, came out of everyday work. You look for a message about a project and no longer remember where it was. Did it come by email or via Slack? And the file that goes with it, was that on the drive or in some chat after all? Searching like that costs time, and when things get hectic, it turns into stress. I wanted an interface that brings everything together in one place, without everyone having to use the same tool. What surprised me was how many people feel the same.
 
 I built the interface as a clickable Figma prototype that simulates its states through 271 variables without a backend. I evaluated the prototype with 23 participants in moderated online sessions. Even participants with little technical experience could handle it. That pleased me. A control panel I built for myself in my current role follows a similar idea.
 

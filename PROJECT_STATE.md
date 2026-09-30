@@ -75,6 +75,14 @@ Titel, 12px vom Titel zu den Knöpfen, 13px Schrift, beide Breiten. Englisch
 Abschnitt soll ganz zu sehen sein). Gemessen bei 390px nach dem Klick:
 Kopfzeile bis 69px, Strich über „Inhalt" bei 93px, Liste endet bei 282px,
 kein Anker in der Adresse.
+**filo klein** (André, 30.09.: „filo wird immer klein geschrieben").
+Kartentitel und Satzanfang auf beiden Seiten und in den Kopien unter
+`uebergabe/` geändert. **Die Quelle im Bewerbungsrepo schreibt noch
+„Filo"** (`texte/website.md`, vermutlich auch `cv/cv-data.json`); dort
+nachziehen, sonst kommt die Großschreibung mit der nächsten Übergabe
+zurück. Die Driftprüfung teilt jetzt erst an Blockgrenzen, dann an
+Satzenden, sonst wäre ein klein beginnender Satz mit dem davor
+verschmolzen; Zählung dadurch 96 statt 94, beidseitig gleich.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
@@ -104,7 +112,7 @@ Rückfrage** (André, von unterwegs prüft er live am Handy). Steht in
 **Design ruht** (André, 17.09.: „Am Design arbeiten wir noch später
 weiter"). Säulenzeichen, Buttons, Sprungziele und Hover sind live; weitere
 gestalterische Änderungen erst auf Andrés Anstoß. Offen bleibt der Inhalt:
-Fallstudienseiten für GoTiger, Filo, colibre mit Kurzfassungen auf der
+Fallstudienseiten für GoTiger, filo, colibre mit Kurzfassungen auf der
 Hauptseite.
 
 
@@ -152,7 +160,7 @@ nicht durch.
 **Danach:** Die Fassung vom 17.09. ist auf `main`, deutsch und englisch, Gate grün**
 (André, 17.09.: „Merge"). Netlify liefert `main` aus, nach dem Push also live;
 Gegenprobe mit `curl` auf andreux.design steht aus. Nächster Schritt zwei aus
-dem Protokoll: GoTiger, Filo und colibre bekommen Fallstudienseiten, auf der
+dem Protokoll: GoTiger, filo und colibre bekommen Fallstudienseiten, auf der
 Hauptseite bleibt je eine Kurzfassung, gemessen gegen 900 Wörter und
 Burstiness 0,50. Volkswagen-Library, Token-System und Bausteinbibliothek
 bleiben in voller Länge auf der Hauptseite (André, 17.09.). Dann Grafiken von
@@ -168,7 +176,7 @@ Auflagen, alle umgesetzt). Struktur und Entscheidungen stehen dort in
 **Struktur jetzt:** Kopf mit dem Claim „Ich gestalte Produkte und die Systeme,
 auf denen sie stehen" (André, 16.09.), Eröffnungsabsatz, darunter die drei
 Säulen als Sprungmarken (André, 17.09., „So machen wir es"). Dann
-End-to-End-Produktdesign mit GoTiger, Filo, colibre; Designsysteme mit der
+End-to-End-Produktdesign mit GoTiger, filo, colibre; Designsysteme mit der
 Bausteinbibliothek zuerst, dann Volkswagen-Library und Token-System;
 KI-gestützte Systeme mit der Geschmacksgeschichte und der Kampagnen-Karte;
 Was ich suche; Kontakt. „Ungefragt gebaut" und „Außerdem" gibt es nicht mehr,
@@ -288,7 +296,7 @@ verschiedenen Farben auf einer Seite zu praesent).
 
 ## Offen
 
-- [ ] **Fallstudienseiten** für GoTiger, Filo, colibre, mit Kurzfassungen auf
+- [ ] **Fallstudienseiten** für GoTiger, filo, colibre, mit Kurzfassungen auf
       der Hauptseite (Schritt zwei, André 16. und 17.09.)
 - [ ] **Tag-Chips:** Feld `tags` in den Projektkarten der Quelle, dann wieder
       auf die Seite; bis dahin keine Chips (Entscheidung André ausstehend)
@@ -430,7 +438,7 @@ interone-Block entfernt, die Interone-PDFs und die beiden CV-PDFs von 2025 sind
 geloescht. ACHTUNG: die geloeschten Dateien stehen weiterhin in der
 Git-Historie, Commit `2562c8f`, und sind auf GitHub darueber abrufbar. Wirklich
 weg sind sie erst durch Umschreiben der Historie. Verlinkt sind jetzt GoTiger
-mit Prototyp und PDF, Filo mit der Thesis und colibre mit dem Prototyp; das
+mit Prototyp und PDF, filo mit der Thesis und colibre mit dem Prototyp; das
 Colibre-PDF bleibt draussen, es nennt das falsche Semester. **Der Lebenslauf
 wird vorerst NICHT verlinkt** (André, 31.08.2026): die zugeschnittene Fassung
 steht noch aus, die vollstaendige braucht sieben Seiten. Das Markup dafuer
