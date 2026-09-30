@@ -51,6 +51,15 @@ sieben: select none, drag none, touch-action auto. touch-callout ist
 Safari-eigen und am Gerät zu prüfen. **Ablauffehler dabei:** der Commit
 ging vor dem Gate auf `main`, weil ein Prüfbefehl scheiterte und die
 Commit-Zeile nicht an die Kette gebunden war; Gate danach nachgeholt, grün.
+**Press-Animation** (André, 30.09.: Buttons brauchen eine Press-Animation,
+„die sich löst, sobald man scrollt, auf Desktop auch Hover"). Nicht
+`:active`, sondern Klasse `.gedrueckt` aus dem Seitenskript: pointerdown
+setzt sie, pointerup, pointercancel, pointerleave und jedes Scrollen löschen
+sie. Zustand: scale(0.96) und `--flaeche-gehoben`, Dauer `--dauer-1`. Hover
+nur unter `(hover: hover) and (pointer: fine)`: gehobene Fläche, am
+Hoch-Knopf stärkerer Rahmen. Gemessen in Chromium: gedrückt matrix 0.96
+und rgb(244,246,248), nach 40px Scroll gelöst, nach Loslassen gelöst;
+keine JS-Fehler. Gegenprobe Safari am Gerät bei André.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

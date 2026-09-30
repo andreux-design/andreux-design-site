@@ -315,6 +315,9 @@ a { color: inherit; }
   transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-2) var(--kurve-aus);
 }
 .hoch.sichtbar { opacity: 1; transform: none; pointer-events: auto; }
+.hoch.sichtbar.gedrueckt { transform: scale(0.96); }
+/* Einblenden und Press in einer Transition, sonst gewinnt die spaetere Regel. */
+.hoch { transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus); }
 .hoch svg { display: block; }
 @media (min-width: 900px) {
   .hoch { right: var(--raum-8); bottom: calc(var(--raum-8) + env(safe-area-inset-bottom, 0px)); }
@@ -328,6 +331,28 @@ a { color: inherit; }
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+/* Press-Zustand der Knoepfe (André, 30.09.2026): beim Druecken schrumpft der
+   Knopf leicht und die Flaeche hebt sich. Nicht :active, sondern die Klasse
+   .gedrueckt aus dem Seitenskript: pointerdown setzt sie, pointerup,
+   pointercancel, pointerleave und jedes Scrollen loeschen sie. So loest
+   sich der Zustand, sobald der Daumen zu scrollen beginnt (André: "die
+   sich loest, sobald man scrollt"). Am Desktop dazu ein Hover, nur fuer
+   Geraete mit Maus, weil Hover auf Touch nach dem Tippen stehen bleibt
+   (17.09.2026). Dauer und Kurve aus den Tokens, unter prefers-reduced-motion
+   auf 1ms. .hoch traegt seine Transition selbst, siehe dort. */
+.sprungmarken a, .beleg-link {
+  transition: transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus);
+}
+.sprungmarken a.gedrueckt, .beleg-link.gedrueckt, .hoch.gedrueckt {
+  transform: scale(0.96);
+  background-color: var(--flaeche-gehoben);
+}
+@media (hover: hover) and (pointer: fine) {
+  .sprungmarken a:hover, .beleg-link:hover { background-color: var(--flaeche-gehoben); }
+  /* .hoch steht schon auf der gehobenen Flaeche, dort hebt der Hover den Rahmen. */
+  .hoch:hover { border-color: var(--tinte); }
 }
 
 /* --- Abschnitte --------------------------------------------------------- */

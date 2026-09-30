@@ -282,6 +282,21 @@
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
+  // Press-Zustand der Knoepfe als Klasse (André, 30.09.2026): pointerdown
+  // setzt .gedrueckt, loslassen, Abbruch, Verlassen und jedes Scrollen
+  // loeschen sie. Der Browser schickt pointercancel, sobald ein Wisch zum
+  // Scrollen wird; der Scroll-Listener ist die Gegenprobe dazu.
+  (function () {
+    var knoepfe = document.querySelectorAll('.sprungmarken a, .beleg-link, .hoch');
+    function loslassen() { for (var i = 0; i < knoepfe.length; i++) knoepfe[i].classList.remove('gedrueckt'); }
+    for (var i = 0; i < knoepfe.length; i++) {
+      knoepfe[i].addEventListener('pointerdown', function (ev) { ev.currentTarget.classList.add('gedrueckt'); });
+      knoepfe[i].addEventListener('pointerleave', loslassen);
+    }
+    document.addEventListener('pointerup', loslassen);
+    document.addEventListener('pointercancel', loslassen);
+    window.addEventListener('scroll', loslassen, { passive: true });
+  })();
 
   // Der Hoch-Knopf erscheint, sobald die Sprungmarken ueber dem Bild liegen,
   // und verschwindet, sobald sie wieder zu sehen sind oder darunter liegen.
