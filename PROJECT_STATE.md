@@ -30,7 +30,10 @@ Säulentitel wieder Stufe 6 bis 12 (34 am Handy, 70 am Desktop), der weiche
 Trennstrich ist raus; Nummer bleibt 99 und 142. Gemessen: eine Zeile bei
 320, 390 und 1280. Nebenbei: bei 320px lief die LinkedIn-Adresse im Kontakt
 53px über den Rand, Altbefund, das Gate misst nur 390; jetzt darf sie
-brechen. Offen: das Gate um 320px erweitern.
+brechen. Zweiter Altbefund bei 320: „Bausteinbibliothek" im Kartentitel
+mit 34px breiter als die Spalte; weicher Trennstrich im Wort und
+`overflow-wrap: break-word` auf h3 als Fallback. Danach 320 ohne Überlauf.
+Offen: das Gate um 320px erweitern.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
