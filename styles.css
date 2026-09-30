@@ -262,6 +262,36 @@ a { color: inherit; }
    Touch bleibt :hover nach dem Tippen stehen (André, 17.09.2026: "geklickte
    Links bekommen eine Unterstreichung"). */
 
+/* Die Sprungmarken sind Sprungziel des Hoch-Knopfs; unter der klebenden
+   Kopfzeile landen, wie die Abschnitte. */
+.sprungmarken { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-7)); }
+
+/* --- Hoch-Knopf ---------------------------------------------------------- */
+/* Schwebt unten rechts, fuehrt zurueck zu den drei Sprungmarken (André,
+   30.09.2026). Dasselbe Zeichen wie alles Anklickbare: 1px grauer Rahmen,
+   keine Fuellfarbe, kein Schatten. 48px, also ueber der 44px-Daumenflaeche.
+   Unsichtbar und nicht anklickbar, solange die Sprungmarken im Bild oder
+   darunter sind; das Skript in der Seite setzt .sichtbar. Ein- und
+   Ausblenden laufen ueber die Bewegungstoken, unter prefers-reduced-motion
+   auf 1ms wie alles andere. */
+.hoch {
+  position: fixed; z-index: 10;
+  right: var(--raum-6);
+  bottom: calc(var(--raum-6) + env(safe-area-inset-bottom, 0px));
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border: var(--strich-0) solid var(--linie-stark);
+  background: var(--flaeche-gehoben); color: var(--tinte);
+  font-size: var(--schrift-m1);
+  opacity: 0; transform: translateY(var(--raum-4)); pointer-events: none;
+  transition: opacity var(--dauer-2) var(--kurve-aus), transform var(--dauer-2) var(--kurve-aus);
+}
+.hoch.sichtbar { opacity: 1; transform: none; pointer-events: auto; }
+.hoch svg { display: block; }
+@media (min-width: 900px) {
+  .hoch { right: var(--raum-8); bottom: calc(var(--raum-8) + env(safe-area-inset-bottom, 0px)); }
+}
+
 /* --- Abschnitte --------------------------------------------------------- */
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
    Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */

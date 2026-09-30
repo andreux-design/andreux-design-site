@@ -28,6 +28,15 @@ Knopfmitte 1013,3); die Nummer steht 1,5em groß über dem Säulentitel statt
 daneben, damit der Titel ohne hängenden Einzug umbricht (51px bei 390,
 74px bei 1280).
 
+**Hoch-Knopf** (André, 30.09., „Sieht cool aus", danach: ein FAB rechts,
+der zu den drei Sprungmarken zurückführt). `a.hoch` mit Pfeil-SVG, fester
+Platz unten rechts, 48x48, 1px grauer Rahmen wie alles Anklickbare, keine
+Füllfarbe. Ein Anker auf `#bereiche` (neue Kennung auf `ul.sprungmarken`),
+IntersectionObserver blendet ihn nur ein, wenn die Sprungmarken über dem
+Bild liegen. Gemessen bei 390px: unsichtbar oben (opacity 0, keine
+Pointer-Events), sichtbar nach 2400px Scroll, nach dem Klick liegen die
+Sprungmarken 24px unter der Kopfzeile. Keine JS-Fehler. Beide Sprachen.
+
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
 (Was ich suche, Kontakt) behalten die kleine H2 im Streifen. Gegenprobe am
