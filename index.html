@@ -261,7 +261,7 @@
      zu dem Punkt, wo man die drei Buttons klicken kann"). Ein Anker, kein
      Skript noetig; das Skript unten blendet ihn nur ein, sobald die
      Sprungmarken oben aus dem Bild sind. -->
-<a class="hoch" href="#bereiche" aria-label="Zurück zu den drei Bereichen"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="hoch" href="#h-inhalt" aria-label="Zurück zu den drei Bereichen"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 
 <footer class="fuss">
   <div class="bahn fuss-inhalt">
@@ -277,6 +277,10 @@
   // und verschwindet, sobald sie wieder zu sehen sind oder darunter liegen.
   (function () {
     var ziel = document.getElementById('bereiche');
+    // Sprungziel ist die Ueberschrift "Inhalt", damit der Abschnitt ganz zu
+    // sehen ist (André, 30.09.2026); sichtbar wird der Knopf weiter anhand
+    // der Liste.
+    var oben = document.getElementById('h-inhalt') || ziel;
     var knopf = document.querySelector('.hoch');
     if (!ziel || !knopf) return;
     // Scrollen ohne Anker in der Adresse (André, 30.09.2026: nach dem Tipp
@@ -287,7 +291,7 @@
     knopf.addEventListener('click', function (ev) {
       ev.preventDefault();
       var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      ziel.scrollIntoView({ block: 'start', behavior: ruhig ? 'auto' : 'smooth' });
+      oben.scrollIntoView({ block: 'start', behavior: ruhig ? 'auto' : 'smooth' });
     });
     // Sichtbar, sobald die Sprungmarken ueber dem Bild liegen. Geprueft
     // beim Scrollen, beim Laden und beim Zurueckkommen aus dem Tab-Speicher,

@@ -271,7 +271,7 @@ a { color: inherit; }
 
 /* Die Sprungmarken sind Sprungziel des Hoch-Knopfs; unter der klebenden
    Kopfzeile landen, wie die Abschnitte. */
-.sprungmarken { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-7)); }
+.sprungmarken, .inhalt-titel { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-7)); }
 
 /* --- Hoch-Knopf ---------------------------------------------------------- */
 /* Schwebt unten rechts, fuehrt zurueck zu den drei Sprungmarken (André,
