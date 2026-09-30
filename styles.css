@@ -331,10 +331,20 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
 .abschnitt.marke-zwei h2,
 .abschnitt.marke-drei h2 { --nummer-einzug: 0px; }
 .eigenname {
-  font-family: var(--familie-meta); font-size: var(--schrift-m2);
-  letter-spacing: var(--spur-versal); text-transform: uppercase;
-  color: var(--tinte-leise); margin: 0 0 var(--raum-6);
+  /* Die Rolle als Vorzeile des Titels, nicht als Beschriftung (André,
+     01.10.2026: "sollte Senior UX der Logik nach nicht anders formatiert
+     sein als die Stats?"). Vorher Mono 13 in Versalien wie ein Label; Mono
+     13 heisst auf der Seite Fakten (Streifen, Stats), Versalien heissen
+     seit dem 30.09. Knopf. Jetzt Display-Schrift, Stufe 1 am Handy und 3
+     am Desktop, gedaempfte Tinte, gemischte Schreibung: Teil der
+     Titelgruppe. */
+  font-family: var(--familie-display); font-weight: 500;
+  font-size: var(--schrift-1); line-height: var(--zeile-ueberschrift);
+  letter-spacing: var(--spur-gross); text-transform: none;
+  color: var(--tinte-gedaempft);
+  margin: 0 0 var(--raum-5);
 }
+@media (min-width: 900px) { .eigenname { font-size: var(--schrift-3); } }
 
 /* Eintritt: einmalig beim Laden, nicht an Scrollen gebunden. Der Inhalt
    existiert ohne JavaScript vollstaendig, die Bewegung ist rein additiv. */
