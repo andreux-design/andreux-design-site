@@ -23,6 +23,10 @@ Anschlag unten ebenso; letzte Karte ohne Unterpolster, letztes Element einer
 Karte ohne Unterabstand. Gate grün, drei Seiten, Drift null. Nebenbei:
 `package-lock.json` pinnt jetzt Playwright 1.63.0, vorher stand es nicht in
 der Sperrdatei; lokal sind Chromium 1234 als 1243 verlinkt (Umgebung).
+**Nummer in der Meta-Schrift** (André, 30.09. abends: Zahl und
+Kapitelüberschrift noch einmal unterscheiden): IBM Plex Mono, Gewicht 400,
+Stufe 9 und 12 wie zuvor; dieselbe Schrift wie die Nummer in der Sprungmarke
+oben, der Titel bleibt allein in Sora. Gemessen: Mono 400, 49 und 70px.
 
 **Säulentitel dominant, Sprungmarken als Knöpfe** (André, 30.09.2026, am
 Handy: Sprungmarken nicht als Buttons erkennbar; in den Säulentiteln „die 1
