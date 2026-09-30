@@ -285,11 +285,26 @@
       var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       ziel.scrollIntoView({ block: 'start', behavior: ruhig ? 'auto' : 'smooth' });
     });
-    if (!('IntersectionObserver' in window)) return;
-    new IntersectionObserver(function (eintraege) {
-      var e = eintraege[0];
-      knopf.classList.toggle('sichtbar', !e.isIntersecting && e.boundingClientRect.bottom < 0);
-    }).observe(ziel);
+    // Sichtbar, sobald die Sprungmarken ueber dem Bild liegen. Geprueft
+    // beim Scrollen, beim Laden und beim Zurueckkommen aus dem Tab-Speicher,
+    // nicht ueber einen IntersectionObserver: Safari auf dem iPhone stellte
+    // beim Neuladen die Position her, ohne dass der Beobachter noch einmal
+    // meldete, und der Knopf blieb weg (André, 30.09.2026).
+    var angefragt = false;
+    function pruefen() {
+      angefragt = false;
+      knopf.classList.toggle('sichtbar', ziel.getBoundingClientRect().bottom < 0);
+    }
+    function anfragen() {
+      if (angefragt) return;
+      angefragt = true;
+      requestAnimationFrame(pruefen);
+    }
+    window.addEventListener('scroll', anfragen, { passive: true });
+    window.addEventListener('resize', anfragen, { passive: true });
+    window.addEventListener('load', pruefen);
+    window.addEventListener('pageshow', pruefen);
+    pruefen();
   })();
 
   // Kein Themaknopf mehr (André, 14.09.2026): Hell und Dunkel kommen allein
