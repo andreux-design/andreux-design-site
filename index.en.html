@@ -274,7 +274,18 @@
   (function () {
     var ziel = document.getElementById('bereiche');
     var knopf = document.querySelector('.hoch');
-    if (!ziel || !knopf || !('IntersectionObserver' in window)) return;
+    if (!ziel || !knopf) return;
+    // Scrollen ohne Anker in der Adresse (André, 30.09.2026: nach dem Tipp
+    // auf den Knopf sprang die Seite beim Neuladen nach oben). Der Anker
+    // #bereiche bliebe sonst in der URL, und beim Neuladen gewinnt ein
+    // Anker gegen die gemerkte Scrollposition. Ohne Skript ist der Knopf
+    // weiter ein Anker.
+    knopf.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      ziel.scrollIntoView({ block: 'start', behavior: ruhig ? 'auto' : 'smooth' });
+    });
+    if (!('IntersectionObserver' in window)) return;
     new IntersectionObserver(function (eintraege) {
       var e = eintraege[0];
       knopf.classList.toggle('sichtbar', !e.isIntersecting && e.boundingClientRect.bottom < 0);
