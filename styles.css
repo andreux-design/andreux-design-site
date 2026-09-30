@@ -290,11 +290,13 @@ a { color: inherit; }
   font-size: var(--schrift-1); color: var(--tinte-gedaempft);
   max-width: var(--mass-prosa-web); margin: 0;
 }
-/* Einspaltige Abschnitte: Einleitung, "Was ich suche", Kontakt stehen wie
-   der Anschlag auf der Bahnkante (André, 30.09.2026: "noch nicht
-   einheitlich links"). Die Saeulen dazwischen tragen Streifen links und
-   Text bei 272, das ist ihr Einzug als Inhalt. */
-.einspaltig .reihe { grid-template-columns: minmax(0, 1fr); }
+/* Eingereihte Abschnitte: Einleitung, "Was ich suche", Kontakt stehen ab
+   900px mit Titel und Text in der Textspalte bei 272, wie die Saeulen; die
+   linke Spalte bleibt leer, sie ist die Kennungsspalte des Systems. Eine
+   Lesekante fuer alles, der Anschlag ist die einzige Ausnahme auf der
+   Bahnkante (André, 01.10.2026: "so wie es ist, ist besser" war die
+   Einreihung; vom 30.09. bis dahin standen die drei auf 64). */
+@media (min-width: 900px) { .eingereiht .reihe > h2, .eingereiht .reihe > div { grid-column: 2; } }
 
 /* Abschnittstitel der drei einspaltigen Abschnitte: der Bau der Kartentitel
    (Sora, Stufe 3 am Handy, 9 am Desktop, gemischte Schreibung), darueber
