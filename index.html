@@ -372,7 +372,7 @@
   // loeschen sie. Der Browser schickt pointercancel, sobald ein Wisch zum
   // Scrollen wird; der Scroll-Listener ist die Gegenprobe dazu.
   (function () {
-    var knoepfe = document.querySelectorAll('.sprungmarken a, .beleg-link, .hoch, .marke');
+    var knoepfe = document.querySelectorAll('.sprungmarken a, .beleg-link, .hoch, .marke, .weiter');
     function loslassen() { for (var i = 0; i < knoepfe.length; i++) knoepfe[i].classList.remove('gedrueckt'); }
     for (var i = 0; i < knoepfe.length; i++) {
       knoepfe[i].addEventListener('pointerdown', function (ev) { ev.currentTarget.classList.add('gedrueckt'); });
