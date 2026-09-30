@@ -50,6 +50,13 @@ meldet. Jetzt ohne Beobachter: Prüfung der Zielposition beim Scrollen
 (rAF-gedrosselt), bei `load`, bei `pageshow` und sofort. Chromium: oben
 unsichtbar, unten sichtbar, nach Neuladen bei 3000px sichtbar, nach Klick
 unsichtbar. Gegenprobe auf dem iPhone steht bei André.
+**Dritter Befund (André, 30.09.):** nach dem Neuladen sprang die Seite an
+den Anfang des Bereichs, in dem er war. Ursache: die Sprungmarken und die
+Kopfzeile sind Anker, nach dem Tipp steht `#designsysteme` in der Adresse.
+Jetzt nimmt ein `hashchange`-Handler den Anker per `replaceState` aus der
+Adresse, der Sprung selbst bleibt nativ (Fokus, scroll-margin). Gemessen:
+nach Tipp kein Anker, Bereich 72px unter dem Rand, Position nach Neuladen
+4809px wie davor. Ein Anker von außen landet weiter richtig.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
