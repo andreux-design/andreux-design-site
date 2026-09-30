@@ -243,6 +243,16 @@ a { color: inherit; }
   margin-top: calc(-1 * var(--kopf-hoehe));
 }
 .anschlag > .bahn { align-self: center; width: 100%; }
+/* Am Handy reicht der Anschlag bis zur Unterkante des Bildschirms, und das
+   Scroll-Zeichen bekommt eine eigene Zeile von raum-12, in der es mittig
+   sitzt: so steht es in der Mitte des freien Raums unter den Stats, und der
+   Inhalt bleibt, wo er war (André, 01.10.2026: "etwas nach unten").
+   Gemessen 390x844: Inhalt 5px hoeher als vorher, Pfeilmitte 716 statt 687,
+   Mitte des freien Raums 711. */
+@media (max-width: 899px) {
+  .anschlag { min-height: 100vh; min-height: 100svh; grid-template-rows: 1fr var(--raum-12); }
+  .anschlag > .weiter { align-self: center; }
+}
 /* Am Desktop links buendig mit der Bahn, nicht in der Textspalte (André,
    30.09.2026): der Anschlag ist eine Spalte an jeder Breite. */
 .anschlag .reihe { grid-template-columns: minmax(0, 1fr); }
