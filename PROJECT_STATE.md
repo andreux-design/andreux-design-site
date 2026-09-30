@@ -316,6 +316,19 @@ verschiedenen Farben auf einer Seite zu praesent).
       13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
+- [ ] **Typoskala dramatisieren, Prüfung vom 30.09.2026.** Die Leiter
+      stimmt: Verhältnis 1,125, Basis 17px, Webstufen -2 bis 9, Display
+      tastet jede dritte Stufe ab, also 1,42 zwischen Text (0), h3 (3), h1 (6
+      bis 9). Das ist das Verhältnis, das Referenzen für Portfolio und
+      Editorial nennen (1,414). Zwei Befunde: die Säulennummer steht mit
+      1,5em (51 und 73,5px) außerhalb der Leiter; die Leiter endet bei 9, am
+      Desktop bleibt der Titel bei 49px, obwohl die Spalte 1152px breit ist.
+      Vorschlag: im Tokenrepo Stufe 12 (70px) in die Webprojektion nehmen
+      (`medien.json`, `leiter.json` Stufen bis 12), v1.2.0 taggen, hier
+      ziehen. Dann h1 und Säulen-h2 bis Stufe 12 fließend, die Nummer auf
+      Stufe 12 (Desktop) und 9 (Handy), h3 ab 900px auf Stufe 6. Ergebnis
+      am Desktop 17, 34, 70, jeweils Faktor 2,03; am Handy bleibt 17, 24, 34.
+      Entscheidung André; die Tokenänderung gehört ins Repo `design-tokens`.
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
