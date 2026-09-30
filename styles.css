@@ -44,6 +44,14 @@
    Streifen, Abschnittslabel, Tags, Gewichtsangaben. Vorher stand die Kopfzeile
    auf 13px und die Fusszeile auf 15px, und dasselbe Wort sah zweimal anders aus.
 
+   UEBERSCHRIFTEN UNTER 390PX (André, 30.09.2026 spaet abends): Seitentitel,
+   Saeulennummer, Saeulentitel und Kartentitel skalieren unterhalb der
+   Pro-Breite proportional mit der Bildschirmbreite, Groesse mal Breite
+   geteilt durch 390. Fliesstext, Meta und Beschriftung bleiben fest. Die
+   vw-Werte sind Handystufe durch 390: 49px sind 12.564vw, 99px 25.385vw,
+   34px 8.718vw. Ueber 390px greift min() nicht, dort gilt die Stufe oder
+   der fluessige Wert zum Desktop.
+
    ABSTAENDE, EIN RHYTHMUS: Abschnitt zu Abschnitt --raum-11 oben und unten
    (auf dem Handy --raum-10), Anspruch zur ersten Karte --raum-9, Karte zu
    Karte --raum-10, innerhalb einer Karte --raum-6. Vorher lagen zwischen zwei
@@ -210,7 +218,7 @@ a { color: inherit; }
   /* Stufe 9 bis 15 (49 bis 99px) seit dem 30.09.2026 spaet abends (André:
      "der Seitentitel darf auch groesser werden"); am Handy bleiben 49,
      70 waeren dort acht Zeilen. 8vw erreicht 99px ab 1238px. */
-  font-size: clamp(var(--schrift-9), 8vw, var(--schrift-15));
+  font-size: min(12.564vw, clamp(var(--schrift-9), 8vw, var(--schrift-15)));
   line-height: var(--zeile-display); letter-spacing: var(--spur-display);
   margin: 0;
   max-width: 20ch;
@@ -365,7 +373,7 @@ h2::before {
      passen (André, 30.09.2026 spaet abends), bei 49px war es am Handy 375px
      breit und brauchte einen Trennstrich. Die Nummer steht darueber, am
      Handy 99, am Desktop 141, und darf groesser sein als der Seitentitel. */
-  font-size: clamp(var(--schrift-6), 6vw, var(--schrift-12));
+  font-size: min(8.718vw, clamp(var(--schrift-6), 6vw, var(--schrift-12)));
   line-height: var(--zeile-display); letter-spacing: var(--spur-display);
   text-transform: none;
   display: block;
@@ -384,7 +392,7 @@ h2::before {
      34 am Handy, 141 zu 70 am Desktop. Stufen 15 und 18 kamen dafuer mit v1.3.0 und v1.4.0
      ins Tokenpaket. Gleiche Schrift wie der Titel; ein Versuch in Mono war
      nicht gemeint. */
-  font-size: var(--schrift-15); line-height: 1; letter-spacing: var(--spur-display);
+  font-size: min(25.385vw, var(--schrift-15)); line-height: 1; letter-spacing: var(--spur-display);
 }
 @media (min-width: 900px) {
   .abschnitt.marke-eins h2, .abschnitt.marke-eins h2 + div,
@@ -399,7 +407,7 @@ h3 {
   /* Stufe 6 am Handy, 9 am Desktop (André, 30.09.2026 abends: "auch die
      Unterueberschriften wie filo koennen groesser sein"). Davor 3 und 6.
      Display-Zeile statt Ueberschriftenzeile, ab dieser Groesse. */
-  font-size: var(--schrift-6); line-height: var(--zeile-display);
+  font-size: min(8.718vw, var(--schrift-6)); line-height: var(--zeile-display);
   letter-spacing: var(--spur-display);
   margin: 0 0 var(--raum-4);
   text-wrap: balance;
