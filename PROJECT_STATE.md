@@ -192,6 +192,14 @@ Mindestbreite zentriert war. Jetzt alle mit Polster `--raum-6`, ohne
 Mindestbreite, Flex-Lücke `--raum-9`; gemessen 48 und 48 zwischen den
 Texten, Trefferflächen 140, 95 und 50 x 44, rechter Textrand auf der
 Bahnkante.
+**Kein Strich über den großen Abschnittstiteln, Kontaktlinks in Mono**
+(André, 30.09.: „nur so ne Mini-Line über den Überschriften", und am Handy
+hatte die Kontakt-Überschrift dieselbe Schrift wie die Links). Der
+32px-Strich bleibt Zeichen der Labels („Inhalt", Stats), große Titel tragen
+keinen, wie die Säulentitel. Kontaktlinks: IBM Plex Mono 500, `--schrift-0`
+(17) statt Sora 24, Unterstreichung und 44px Höhe bleiben; 17 statt der 15
+der Knöpfe, weil die Adressen der Aufruf der Seite sind, Abweichung von der
+Regel vom 14.09. bewusst.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
