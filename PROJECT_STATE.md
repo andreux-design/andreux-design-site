@@ -122,6 +122,16 @@ Befunde behoben, alle im Stylesheet:
 Unverändert und richtig: Rolle bis Titel 16, Titel bis Stats 24, Absatz bis
 „Inhalt" 48, Karte zu Karte 64, Abschnitte 128 und 256, Kontakt bis Fuß 64
 und 128. Gate grün, Drift null.
+**Untertitel für alle Karten** (André, 30.09.: „brauchen auch die
+Positionen ohne Sub, besonders jetzt, wo die Positionsüberschriften kleiner
+sind"). Fünf neue, Wortlaut von mir aus dem jeweiligen Kartentext, von
+André im Gespräch gebilligt, änderbar: filo „Nachrichten und Dateien an
+einer Stelle", Bausteinbibliothek „Layoutvorlagen, die zu Bausteinen
+wurden", Volkswagen „Figma-Komponenten für ID. Buzz und California", Tokens
+„Mit wenigen Klicks auf eine andere Marke", Funnels „Ein Wizard vom
+Briefing zur Landingpage"; englisch entsprechend. Untertitel sind von der
+Driftprüfung ausgenommen. **Offen:** die fünf gehören als `untertitel` in
+die Projektkarten von `cv/cv-data.json`, sonst kennt die Quelle sie nicht.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
@@ -466,6 +476,7 @@ verschiedenen Farben auf einer Seite zu praesent).
       13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
+- [ ] Fünf neue Untertitel in die Projektkarten der Quelle übernehmen (30.09.)
 - [ ] Gate um 320px erweitern (LinkedIn-Adresse lief dort über, 30.09.)
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
