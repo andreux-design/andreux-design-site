@@ -31,10 +31,12 @@
 
 <main id="oben">
 
-  <section class="abschnitt" aria-labelledby="h-impressum">
+  <!-- Seitentitel im Bau von "Ueber mich", Text in der Textspalte, wie die
+       Rahmenabschnitte der Startseite (André, 01.10.2026). -->
+  <section class="abschnitt eingereiht" aria-labelledby="h-impressum">
     <div class="bahn">
       <div class="reihe">
-        <h2 id="h-impressum">Impressum</h2>
+        <h1 class="abschnitt-titel" id="h-impressum">Impressum</h1>
         <div>
           <p class="text"><b>Angaben gemäß § 5 DDG</b><br>
           André Czupala<br>
@@ -63,6 +65,88 @@
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
+
+  // Tintenkante statt Kastenkante (André, 30.09.2026: "minimale Treppen").
+  // Jede Glyphe hat eine Vorbreite, den Abstand vom Satzanfang zur ersten
+  // Tinte, und sie waechst mit der Schriftgroesse: gemessen 9px am 99px-
+  // Titel, 6 am 70px-Saeulentitel, 1 im Fliesstext. Canvas misst die
+  // Vorbreite der ersten Glyphe in der gerenderten Schrift, ein negativer
+  // linker Rand in dieser Breite setzt die Tinte auf die Kante. Fuer die
+  // Saeulennummer (::before) geht der Wert ueber --nummer-einzug.
+  (function () {
+    var leinwand = document.createElement('canvas');
+    var messer = leinwand.getContext('2d', { willReadFrequently: true });
+    if (!messer) return;
+    var gemerkt = {};
+    // Nicht measureText().actualBoundingBoxLeft: Safari liefert dort immer 0
+    // (WebKit 26, gemessen am 01.10.2026), und die Treppen blieben. Statt-
+    // dessen wird die Glyphe gezeichnet und die erste eingefaerbte Spalte
+    // gesucht, in achtfacher Aufloesung; das geht in jedem Browser gleich.
+    // Der Zwischenspeicher gilt je Lauf: der erste Lauf misst noch die
+    // Ersatzschrift, der Lauf nach document.fonts.ready darf sie nicht erben.
+    function vorbreite(stil, text) {
+      var groesse = parseFloat(stil.fontSize), f = 8;
+      var schluessel = stil.fontWeight + '|' + groesse + '|' + stil.fontFamily + '|' + text;
+      if (schluessel in gemerkt) return gemerkt[schluessel];
+      var px = groesse * f, rand = Math.ceil(px * 0.5);
+      leinwand.width = Math.ceil(px * 2.5); leinwand.height = Math.ceil(px * 1.6);
+      messer.clearRect(0, 0, leinwand.width, leinwand.height);
+      messer.font = stil.fontWeight + ' ' + px + 'px ' + stil.fontFamily;
+      messer.textBaseline = 'alphabetic';
+      messer.fillStyle = '#000';
+      messer.fillText(text, rand, Math.ceil(px * 1.15));
+      var daten = messer.getImageData(0, 0, leinwand.width, leinwand.height).data;
+      var erste = -1;
+      for (var x = 0; x < leinwand.width && erste < 0; x++) {
+        for (var y = 0; y < leinwand.height; y++) {
+          if (daten[(y * leinwand.width + x) * 4 + 3] > 40) { erste = x; break; }
+        }
+      }
+      var v = erste < 0 ? 0 : Math.round((erste - rand) / f * 100) / 100;
+      gemerkt[schluessel] = v;
+      return v;
+    }
+    function ausrichten() {
+      gemerkt = {};
+      var ziele = document.querySelectorAll('h1, h2, h3, p.satz, p.anspruch, p.untertitel, p.text, .stats > span');
+      for (var i = 0; i < ziele.length; i++) {
+        var e = ziele[i], t = (e.textContent || '').replace(/^\s+/, '');
+        if (!t) continue;
+        // Negativer Rand am Kasten; --einzug traegt den Gegenwert, damit der
+        // Strich darueber (::before) an der Kante bleibt. text-indent ginge
+        // nicht: nach einem Block-::before gilt es nicht mehr fuer den Text.
+        var v = vorbreite(getComputedStyle(e), t.charAt(0));
+        e.style.marginLeft = (-v) + 'px';
+        e.style.setProperty('--einzug', v + 'px');
+      }
+      var saeulen = document.querySelectorAll('.abschnitt.marke-eins h2, .abschnitt.marke-zwei h2, .abschnitt.marke-drei h2');
+      for (var k = 0; k < saeulen.length; k++) {
+        var vor = getComputedStyle(saeulen[k], '::before');
+        var ziffer = vor.content.replace(/["']/g, '');
+        saeulen[k].style.setProperty('--nummer-einzug', (-vorbreite(vor, ziffer)) + 'px');
+      }
+    }
+    var warten;
+    window.addEventListener('resize', function () { clearTimeout(warten); warten = setTimeout(ausrichten, 100); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ausrichten); else ausrichten();
+    ausrichten();
+  })();
+
+  // Press-Zustand der Knoepfe als Klasse (André, 30.09.2026): pointerdown
+  // setzt .gedrueckt, loslassen, Abbruch, Verlassen und jedes Scrollen
+  // loeschen sie. Der Browser schickt pointercancel, sobald ein Wisch zum
+  // Scrollen wird; der Scroll-Listener ist die Gegenprobe dazu.
+  (function () {
+    var knoepfe = document.querySelectorAll('.marke');
+    function loslassen() { for (var i = 0; i < knoepfe.length; i++) knoepfe[i].classList.remove('gedrueckt'); }
+    for (var i = 0; i < knoepfe.length; i++) {
+      knoepfe[i].addEventListener('pointerdown', function (ev) { ev.currentTarget.classList.add('gedrueckt'); });
+      knoepfe[i].addEventListener('pointerleave', loslassen);
+    }
+    document.addEventListener('pointerup', loslassen);
+    document.addEventListener('pointercancel', loslassen);
+    window.addEventListener('scroll', loslassen, { passive: true });
+  })();
 
   // Kein Themaknopf mehr (André, 14.09.2026): Hell und Dunkel kommen allein
   // aus prefers-color-scheme in tokens.css; wechselt das System, wechselt die

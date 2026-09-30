@@ -329,6 +329,12 @@ Löcher in den Prüfwegen dabei gefunden und geschlossen: das Gate zählte
 entfernt), und die Driftprüfung fand h1 und Absätze über die Klasse
 `heben` und traf mit `<p` auch `<path` im Chevron-SVG (jetzt Wortgrenze
 nach dem Tagnamen, Absätze über ihre eigene Klasse).
+**Impressum auf das System gezogen** (André, 01.10.: „höchstens noch das
+Impressum anpassen"). Titel als `h1.abschnitt-titel` (Sora 24/49, kein
+Strich), Abschnitt `eingereiht` (Titel und Text bei 272), Zwischenzeilen
+`.text b` in 500 statt synthetischem 700, Tintenkante und Druckzustand am
+Namen aus der Startseite übernommen. Gemessen: Titel und Text auf 16 bzw.
+272, Titel bis Text 24, Gate grün mit Leiterprüfung.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
