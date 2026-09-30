@@ -460,7 +460,12 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
   transform: scale(0.96);
   background-color: var(--flaeche-gehoben);
 }
-@media (hover: hover) and (pointer: fine) {
+/* any-hover statt hover und pointer: fine (André, 01.10.2026, iPad Pro mit
+   Maus: "die Buttons zeigen nichts"). Safari auf dem iPad meldet auch mit
+   Trackpad oder Maus hover: none, weil der Hauptzeiger der Finger bleibt;
+   any-hover fragt, ob irgendein angeschlossenes Geraet hovern kann. Ohne
+   Maus bleibt any-hover: none und der Hover aus. */
+@media (any-hover: hover) {
   /* Rahmen in Tinte plus gehobene Flaeche: die Flaeche allein war im
      Dunkelmodus kaum zu sehen, rgb(21,24,29) auf rgb(11,14,18) (André,
      30.09.2026: "die Hover-Animation mit der Maus fehlt noch"). */
