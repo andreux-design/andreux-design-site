@@ -21,6 +21,13 @@ Umgesetzt allein im Stylesheet, gemergt nach grünem Gate:
    Stufe wie der Eröffnungsabsatz. Die Hierarchie ist damit h1 = Säulen-h2
    (34 bis 49) > h3 (24) > Anspruch (19) > Text (17).
 
+**Feinschliff danach (André, 30.09., am Handy, „Buttons sehen gut aus"):**
+„Produkte" im Claim ebenfalls in Säulenfarbe, beide Sprachen; Text in den
+Sprungmarken mittig statt auf der Grundlinie (gemessen: Textmitte 1012,5,
+Knopfmitte 1013,3); die Nummer steht 1,5em groß über dem Säulentitel statt
+daneben, damit der Titel ohne hängenden Einzug umbricht (51px bei 390,
+74px bei 1280).
+
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
 (Was ich suche, Kontakt) behalten die kleine H2 im Streifen. Gegenprobe am
