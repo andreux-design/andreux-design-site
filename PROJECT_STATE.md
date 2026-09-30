@@ -277,6 +277,12 @@ verschiedenen Farben auf einer Seite zu praesent).
 
 ## Entschieden
 
+- **Kein Sprung nach oben beim Neuladen** (André, 30.09.2026, nach
+  Abwägung). Der Browser stellt die Scrollposition wieder her, und das soll
+  so bleiben: wer beim Lesen neu lädt oder per Zurück vom Prototyp kommt,
+  landet an seiner Stelle. Nach oben führen der Name in der Kopfzeile und
+  der Hoch-Knopf. Anker-Links gewinnen ohnehin gegen die gemerkte Position.
+
 - **Säulenzeichen ist die Zählung plus Farbe im Wort, Buttons ohne
   Quadrat** (André, 17.09.). Siehe Nächster Schritt, Punkte 1 bis 3, mit
   Begründung. Verworfen: Tag-Kasten in Säulenfläche (die Akzentfläche ist
