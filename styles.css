@@ -250,7 +250,12 @@ a { color: inherit; }
    Gemessen 390x844: Inhalt 5px hoeher als vorher, Pfeilmitte 716 statt 687,
    Mitte des freien Raums 711. */
 @media (max-width: 899px) {
-  .anschlag { min-height: 100vh; min-height: 100svh; grid-template-rows: 1fr var(--raum-12); }
+  /* lvh, die grosse Viewport-Hoehe (André, 01.10.2026: "wir gehen davon
+     aus, dass die Seite im Vollbild angezeigt wird"). Mit svh war der
+     Anschlag so hoch wie der Bildschirm mit Browserleiste, und im Vollbild
+     ragte "Ueber mich" hinein. Preis: bei sichtbarer Leiste liegt das
+     Scroll-Zeichen anfangs teils unter ihr. */
+  .anschlag { min-height: 100vh; min-height: 100lvh; grid-template-rows: 1fr var(--raum-12); }
   .anschlag > .weiter { align-self: center; }
 }
 /* Am Desktop links buendig mit der Bahn, nicht in der Textspalte (André,
