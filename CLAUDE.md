@@ -17,8 +17,9 @@ bewusst herüberkopiert wird. **Es gibt keine Leitung zu den privaten Daten.**
 ## Stand: die neue Seite ist live (31.08.2026)
 
 `index.html` entsteht aus dem gesperrten Datensatz des CV-Projekts, dazu
-`impressum.html`, `tokens.css` aus dem Paket und `downloads/` mit sechs
-Dateien. Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
+`impressum.html`, `tokens.css` aus dem Paket, `schriften.css` mit den vier
+selbst gehosteten woff2 unter `schriften/` (seit 01.10.2026, SIL OFL) und
+`downloads/` mit sechs Dateien. Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
 `tokens.css` aus `@andreux/design-tokens`, gepinnt auf `v1.1.0`.
 
 `portfolio.html` ist ersetzt. `/portfolio` und `/portfolio.html` leiten per

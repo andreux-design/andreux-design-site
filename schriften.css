@@ -1,0 +1,48 @@
+/* Schriften, selbst gehostet seit dem 01.10.2026 (André: beim Neuladen
+   sprang die Schrift). Vorher kamen sie per CSS von Google Fonts mit
+   display=swap: Text erst in der Ersatzschrift, dann der Tausch, auch aus
+   dem Cache. Jetzt liegen die Dateien im Repo, werden vorgeladen und sind
+   beim ersten Bild da. Sora und IBM Plex stehen unter der SIL Open Font
+   License. Sora und Plex Sans sind variable Dateien, ein File je Familie;
+   Plex Mono hat zwei Schnitte. Nur der lateinische Teil, wie Google ihn
+   ausliefert, das deckt Umlaute und ß.
+
+   Die Ersatzschriften darunter sind metrisch an die Zielschrift angepasst
+   (size-adjust aus der Breite eines Probesatzes, ascent und descent aus
+   den Font-Metriken, gemessen in Chromium am 01.10.2026). Bricht die Seite
+   je doch vor dem Laden um, dann an denselben Stellen; der Wechsel ist dann
+   ein Formwechsel, kein Sprung. */
+
+@font-face {
+  font-family: "Sora"; font-style: normal; font-weight: 500 600; font-display: swap;
+  src: url("schriften/sora.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400 500; font-display: swap;
+  src: url("schriften/ibm-plex-sans.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("schriften/ibm-plex-mono-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("schriften/ibm-plex-mono-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ersatz: Arial fuer Sora und Plex Sans, Courier New fuer Plex Mono; beide
+   liegen auf macOS, iOS und Windows. Werte je Schnitt, weil Arial in 600
+   fett laeuft und breiter ist. Sora 600 mit 111 % statt der 106,5 % aus
+   dem Probesatz: die Titel bestehen aus wenigen Glyphen mit eigenem
+   Verhaeltnis (End-to-End-Produktdesign 111,4, Designsysteme 107,7), und
+   111 haelt die Saeulentitel an beiden Breiten in denselben Zeilen,
+   gemessen mit blockierten Schriftdateien. */
+@font-face { font-family: "Sora Ersatz"; font-weight: 500; src: local("Arial"); size-adjust: 112.42%; ascent-override: 86.28%; descent-override: 25.8%; line-gap-override: 0%; }
+@font-face { font-family: "Sora Ersatz"; font-weight: 600; src: local("Arial-BoldMT"), local("Arial Bold"), local("Arial"); size-adjust: 111%; ascent-override: 91.1%; descent-override: 27.24%; line-gap-override: 0%; }
+@font-face { font-family: "IBM Plex Sans Ersatz"; font-weight: 400; src: local("Arial"); size-adjust: 100.26%; ascent-override: 101.73%; descent-override: 26.93%; line-gap-override: 0%; }
+@font-face { font-family: "IBM Plex Sans Ersatz"; font-weight: 500; src: local("Arial"); size-adjust: 102.29%; ascent-override: 99.72%; descent-override: 26.4%; line-gap-override: 0%; }
+@font-face { font-family: "IBM Plex Mono Ersatz"; font-weight: 400 500; src: local("Courier New"); size-adjust: 99.98%; ascent-override: 102.02%; descent-override: 27%; line-gap-override: 0%; }

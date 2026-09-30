@@ -89,7 +89,21 @@ if (seite === "index.html") {
   pruef(zieleTot.length === 0, "Anker in _redirects vorhanden", zieleTot.join(", "));
 }
 
-/* 7. bis 10. am gerenderten Ergebnis, in beiden Themen. */
+/* 7. bis 10. am gerenderten Ergebnis, in beiden Themen. Seit dem 01.10.2026
+   ueber einen lokalen HTTP-Server statt file://: selbst gehostete Schriften
+   laedt der Browser ueber file:// nicht (CORS), das Gate meldete vier tote
+   Anfragen an Dateien, die da waren. Erst die Pruefung verdaechtigen. */
+import { createServer } from "node:http";
+const typen = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".mjs": "text/javascript", ".woff2": "font/woff2", ".png": "image/png", ".svg": "image/svg+xml", ".pdf": "application/pdf", ".ico": "image/x-icon" };
+const server = createServer((req, res) => {
+  const pfad = resolve(wurzel, "." + decodeURIComponent(req.url.split("?")[0]));
+  if (!pfad.startsWith(wurzel) || !existsSync(pfad)) { res.statusCode = 404; return res.end(); }
+  const endung = pfad.slice(pfad.lastIndexOf("."));
+  res.setHeader("Content-Type", typen[endung] || "application/octet-stream");
+  res.end(readFileSync(pfad));
+});
+await new Promise(r => server.listen(0, "127.0.0.1", r));
+const basis = `http://127.0.0.1:${server.address().port}/`;
 const b = await chromium.launch();
 for (const thema of ["light", "dark"]) {
   const ctx = await b.newContext({ colorScheme: thema, viewport: { width: 1280, height: 900 } });
@@ -98,7 +112,7 @@ for (const thema of ["light", "dark"]) {
   s.on("pageerror", e => laut.push(e.message));
   s.on("console", m => m.type() === "error" && laut.push(m.text()));
   s.on("requestfailed", r => !r.url().startsWith("https://fonts.") && kaputt.push(r.url()));
-  await s.goto("file://" + resolve(wurzel, seite), { waitUntil: "networkidle" });
+  await s.goto(basis + seite, { waitUntil: "networkidle" });
   pruef(laut.length === 0, `Keine JS-Fehler (${thema})`, laut.join(" | "));
   pruef(kaputt.length === 0, `Keine toten Anfragen (${thema})`, kaputt.join(" | "));
   // 320px seit dem 01.10.2026: dort liefen die LinkedIn-Adresse und
@@ -168,6 +182,7 @@ for (const thema of ["light", "dark"]) {
   await ctx.close();
 }
 await b.close();
+server.close();
 
 /* ---------- Browserleiste folgt der Flaeche ---------- */
 // theme-color kann keine CSS-Variable lesen, deshalb stehen dort zwei Literale.

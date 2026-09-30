@@ -23,13 +23,16 @@
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://andreux.design/share.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Kein favicon.ico auf dem Server: data:, verhindert die 404 in der Konsole,
      bis André ein Zeichen dafuer entscheidet (01.10.2026). -->
 <link rel="icon" href="data:,">
+<!-- Schriften selbst gehostet und vorgeladen, siehe schriften.css. -->
+<link rel="preload" href="schriften/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="schriften/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="schriften/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="schriften/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="schriften.css">
 <link rel="stylesheet" href="tokens.css">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
