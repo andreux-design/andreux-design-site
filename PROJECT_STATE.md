@@ -150,6 +150,9 @@ Fläche über Blur, `--streifen-breite` 11rem als Layoutmaß, die vw-Werte der
 Breite, Titel und Stats beginnen bei 64px wie der Name in der Kopfzeile,
 Titel drei Zeilen bei 1280. Die übrigen Abschnitte bleiben in der
 Textspalte bei 272.
+**Kopfzeile: Lücke zwischen den Links `--raum-8`** (André, 30.09.,
+Screenshot: „ein wenig zu nah"). Vorher 16px zwischen den Texten, jetzt 32
+und 39 (EN ist auf 44px Breite zentriert).
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
