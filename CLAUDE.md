@@ -41,7 +41,7 @@ Gilt nur hier. Im Bewerbungsrepo wird weiter nichts ohne Freigabe gepusht.
 ## Blockierende Gates
 
 ```
-npm run gates     17 Prüfungen je Seite gegen index.html, index.en.html und
+npm run gates     21 Prüfungen je Seite gegen index.html, index.en.html und
                   impressum.html, danach die Driftprüfung
 npm run drift     Sätze der Seite gegen uebergabe/website-de.md und
                   uebergabe/website-en.md, beide Richtungen
@@ -58,8 +58,11 @@ Geprüft wird am gerenderten Ergebnis, nicht am Quelltext: Systemtreue (jedes
 `var(--…)` ist definiert), jede Klasse hat eine Regel, kein toter Anker, jedes
 `aria-labelledby` zeigt auf eine Kennung, jede lokale Datei liegt da, die Ziele
 in `_redirects` zeigen auf vorhandene Anker, keine JS-Fehler, keine toten
-Anfragen, kein waagerechter Überlauf. Alles in beiden Themen und bei 1280 wie
-390 Pixeln.
+Anfragen, kein waagerechter Überlauf. Alles in beiden Themen und bei 1280, 390
+und 320 Pixeln. Dazu seit dem 01.10.2026 **alles auf der Leiter**: jede
+gerenderte Schriftgröße ist eine Stufe der Schriftleiter, jeder Rand, jedes
+Polster und jede Lücke eine Stufe der Raumleiter, jede Farbe ein Farbtoken,
+jede Linie 1 oder 3px; geprüft bei 390 und 1280.
 
 **Anlass, 01.09.2026:** im Stilblock stand `var(--schrift-2)`, eine Stufe, die
 es im Tokenpaket nicht gibt. Die Regel lief ins Leere und nichts hat gemeldet.

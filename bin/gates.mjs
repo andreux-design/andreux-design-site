@@ -98,10 +98,52 @@ for (const thema of ["light", "dark"]) {
   await s.goto("file://" + resolve(wurzel, seite), { waitUntil: "networkidle" });
   pruef(laut.length === 0, `Keine JS-Fehler (${thema})`, laut.join(" | "));
   pruef(kaputt.length === 0, `Keine toten Anfragen (${thema})`, kaputt.join(" | "));
-  for (const breite of [1280, 390]) {
+  // 320px seit dem 01.10.2026: dort liefen die LinkedIn-Adresse und
+  // "Bausteinbibliothek" ueber den Rand, das Gate mass nur 390 (30.09.).
+  for (const breite of [1280, 390, 320]) {
     await s.setViewportSize({ width: breite, height: 900 });
     const ueber = await s.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     pruef(ueber === 0, `Kein waagerechter Ueberlauf (${thema}, ${breite}px)`, `${ueber}px`);
+    // Alles auf der Leiter, seit dem 01.10.2026 (André: "Fan von Systemen").
+    // Jede gerenderte Schriftgroesse muss eine Stufe der Schriftleiter sein,
+    // jeder Rand, jedes Polster, jede Luecke eine Stufe der Raumleiter oder
+    // 0, jede Farbe ein Farbtoken, jede Linie 1 oder 3px. Nur ab 390, unter
+    // 390 skalieren die Ueberschriften proportional. Ausgenommen: margin-left
+    // (Tintenkante aus dem Seitenskript), die Kopfzeile (88 % Flaeche ueber
+    // dem Blur), 44px-Trefferflaechen und Werte, die aus Tokens gerechnet
+    // sind (Kopfhoehe, Fuss mit Knopf) und deshalb Summen von Stufen bleiben.
+    if (breite !== 320 && thema === "light") {
+      const abw = await s.evaluate(() => {
+        const rs = getComputedStyle(document.documentElement), tok = n => rs.getPropertyValue(n).trim();
+        const schrift = new Set([-2, -1, 0, 1, 3, 6, 9, 12, 15, 18].map(n => Math.round(parseFloat(tok("--schrift-" + (n < 0 ? "m" + -n : n))) * 16)));
+        const raum = Array.from({ length: 13 }, (_, i) => parseFloat(tok("--raum-" + i)) * 16);
+        const erlaubtRaum = new Set([0, ...raum, 44, 48 + 16 + 32, 44 + 24 + 1]);
+        const farben = new Set(); const probe = document.createElement("div"); document.body.appendChild(probe);
+        for (const n of ["--flaeche", "--flaeche-gehoben", "--tinte", "--tinte-gedaempft", "--tinte-leise", "--linie", "--linie-stark", "--akzent-text", "--akzent-flaeche", "--akzent-2-text", "--akzent-2-flaeche", "--akzent-3-text", "--akzent-3-flaeche"]) { probe.style.color = "var(" + n + ")"; farben.add(getComputedStyle(probe).color); }
+        probe.remove();
+        const name = e => e.tagName.toLowerCase() + (e.id ? "#" + e.id : "") + (typeof e.className === "string" && e.className ? "." + e.className.trim().split(/\s+/).join(".") : "");
+        const out = [];
+        for (const e of document.querySelectorAll("body *")) {
+          if (e.closest("script, svg, header.kopf")) continue;
+          const cs = getComputedStyle(e), r = e.getBoundingClientRect(); if (r.width === 0 && r.height === 0) continue;
+          const fs = Math.round(parseFloat(cs.fontSize));
+          if (e.textContent.trim() && !schrift.has(fs)) out.push(`${name(e)} Schrift ${cs.fontSize}`);
+          for (const prop of ["marginTop", "marginBottom", "paddingTop", "paddingBottom", "paddingLeft", "paddingRight", "rowGap", "columnGap"]) {
+            const v = cs[prop]; if (v === "normal") continue;
+            const z = Math.round(Math.abs(parseFloat(v)) * 10) / 10;
+            if (!erlaubtRaum.has(z)) out.push(`${name(e)} ${prop} ${v}`);
+          }
+          for (const prop of ["color", "backgroundColor", "borderTopColor", "borderBottomColor", "borderLeftColor", "borderRightColor"]) {
+            const v = cs[prop]; if (v === "rgba(0, 0, 0, 0)") continue;
+            if (prop.startsWith("border") && cs[prop.replace("Color", "Width")] === "0px") continue;
+            if (!farben.has(v)) out.push(`${name(e)} ${prop} ${v}`);
+          }
+          for (const prop of ["borderTopWidth", "borderBottomWidth", "borderLeftWidth", "borderRightWidth"]) { const w = parseFloat(cs[prop]); if (w && w !== 1 && w !== 3) out.push(`${name(e)} ${prop} ${cs[prop]}`); }
+        }
+        return [...new Set(out)];
+      });
+      pruef(abw.length === 0, `Alles auf der Leiter (${breite}px)`, abw.length ? abw.slice(0, 6).join(", ") + (abw.length > 6 ? ` … ${abw.length} gesamt` : "") : "Schrift, Raum, Farbe, Linien");
+    }
     // Trefferflaechen aller Links und Knoepfe, nur schmal und nur einmal: 44px ist die
     // Daumenflaeche nach Apple, 24px das Minimum aus WCAG 2.5.8. Gemessen am
     // 14.09.2026 vor der Korrektur: "EN" 16 x 20px, "Kontakt" 55 x 20px.

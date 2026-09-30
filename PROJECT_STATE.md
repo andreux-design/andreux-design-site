@@ -260,6 +260,14 @@ nichts"). Safari auf dem iPad meldet auch mit Trackpad oder Maus
 `@media (any-hover: hover)`. Chromium und WebKit am Desktop unverändert
 gemessen (Hover -2px, Druck 0,96, danach none). Am iPad Pro bestätigt,
 auch mit dem Apple Pencil (André, 01.10.: „Oh wow, das geht").
+**Gate erweitert** (André, 01.10.: „Beides"). Überlauf jetzt auch bei
+320px, beide Themen. Neue Prüfung „Alles auf der Leiter" bei 390 und 1280:
+jede gerenderte Schriftgröße gegen die Schriftleiter, Ränder, Polster und
+Lücken gegen die Raumleiter oder 0, Farben gegen die Farbtoken, Linien 1
+oder 3px. Ausgenommen margin-left (Tintenkante), die Kopfzeile (88 %
+Fläche über Blur), 44px-Trefferflächen und Summen aus Tokens (Kopfhöhe,
+Fuß mit Knopf). Gegenprobe mit 21px Schrift, 13px Polster und rgb(1,2,3)
+meldet alle drei. 21 Prüfungen je Seite, drei Seiten grün.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
@@ -605,7 +613,6 @@ verschiedenen Farben auf einer Seite zu praesent).
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
 - [ ] Fünf neue Untertitel in die Projektkarten der Quelle übernehmen (30.09.)
-- [ ] Gate um 320px erweitern (LinkedIn-Adresse lief dort über, 30.09.)
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
