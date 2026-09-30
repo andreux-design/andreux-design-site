@@ -387,7 +387,10 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
      oben im Kasten (André, 30.09.2026). */
   display: inline-flex; align-items: center; gap: var(--raum-4);
   min-height: 44px;
-  padding: var(--raum-4) var(--raum-6);
+  /* raum-5 statt raum-4 oben und unten: die Hoehe kommt aus Zeile plus
+     Polster (22,5 plus 24), nicht aus min-height, damit die Zeile mittig
+     sitzt; dieselbe Hoehe wie die Belege-Buttons (André, 01.10.2026). */
+  padding: var(--raum-5) var(--raum-6);
   border: var(--strich-0) solid var(--linie-stark);
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
   font-weight: 500; letter-spacing: var(--spur-versal); text-transform: uppercase;
@@ -686,7 +689,11 @@ p { max-width: var(--mass-prosa-web); }
      Aussage), Rahmen und Text farbig (zu viel). */
   color: var(--marke-text);
   border: var(--strich-0) solid var(--linie-stark);
-  padding: var(--raum-4) var(--raum-6);
+  /* raum-5 oben und unten: mit raum-4 und min-height 44 klebte die
+     Grundlinienzeile aus 15px-Text und 13px-Gewicht am oberen Rand, die
+     Versalien sassen 3px zu hoch (André, 01.10.2026, gemessen am Pixel).
+     Jetzt kommt die Hoehe aus Zeile plus Polster, 46,5px, symmetrisch. */
+  padding: var(--raum-5) var(--raum-6);
   /* 44px Daumenflaeche (Apple HIG, WCAG 2.5.5); gemessen am 14.09.2026: 41px. */
   min-height: 44px;
 }
