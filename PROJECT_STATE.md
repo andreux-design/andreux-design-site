@@ -222,6 +222,13 @@ Auflösung, Zwischenspeicher je Lauf (der erste Lauf misst noch die
 Ersatzschrift). Pixelmessung bei 390 und 3x: Chromium Titel, Untertitel,
 Text und Seitentitel auf 16,0; WebKit auf 15,67 bis 16,0. Vorher WebKit
 17 bis 20,3. Playwright-WebKit ist lokal installiert (Umgebung).
+**Eine Lesekante** (André, 01.10.2026, auf meine Empfehlung: „so wie es
+ist, ist besser" = einreihen). Einleitung, „Was ich suche" und „Kontakt"
+stehen ab 900px mit Titel und Text in der Textspalte bei 272, wie die
+Säulen; die linke Spalte bleibt leer als Kennungsspalte des Systems. Der
+Anschlag ist die einzige Ausnahme auf der Bahnkante bei 64. Klasse
+`einspaltig` heißt jetzt `eingereiht`. Gemessen 1280: h1 64, alles andere
+272; 390: alles 16.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
