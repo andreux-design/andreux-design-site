@@ -65,7 +65,7 @@
           <p class="satz heben">I like to accompany a product from research through concept to implementation. Along the way I see where work repeats itself, and I build the system for it, out of components, tokens, rules and checks. At first that is extra effort. As soon as several people work on one product, it pays off. Everyone builds on the same foundation, the result stays consistent, and a change in one place applies everywhere. It started more than ten years ago, long before AI tools like Claude Code, with a report that came out of an input form at the push of a button. Today I build such systems with AI models that I brief like employees, and my knowledge of software development helps me with that.</p>
           <!-- Die drei Saeulen als Sprungmarken, Wortlaut gleich den
                Ueberschriften (André, 17.09.2026). -->
-          <ul class="sprungmarken heben" aria-label="The three sections of this page">
+          <ul class="sprungmarken heben" id="bereiche" aria-label="The three sections of this page">
             <li class="marke-eins"><a href="#koennen">End-to-end product design</a></li>
             <li class="marke-zwei"><a href="#designsysteme">Design systems</a></li>
             <li class="marke-drei"><a href="#ki-systeme">AI-supported systems</a></li>
@@ -252,6 +252,13 @@
 
 </main>
 
+<!-- Schwebender Knopf zurueck zu den drei Sprungmarken (André, 30.09.2026:
+     "Wenn man runterscrollt, bräuchte ich einen FAB, der wieder hochscrollt
+     zu dem Punkt, wo man die drei Buttons klicken kann"). Ein Anker, kein
+     Skript noetig; das Skript unten blendet ihn nur ein, sobald die
+     Sprungmarken oben aus dem Bild sind. -->
+<a class="hoch" href="#bereiche" aria-label="Back to the three sections"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
 <footer class="fuss">
   <div class="bahn fuss-inhalt">
     <span>&copy; <span id="jahr">2026</span> André Czupala</span>
@@ -261,6 +268,18 @@
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
+
+  // Der Hoch-Knopf erscheint, sobald die Sprungmarken ueber dem Bild liegen,
+  // und verschwindet, sobald sie wieder zu sehen sind oder darunter liegen.
+  (function () {
+    var ziel = document.getElementById('bereiche');
+    var knopf = document.querySelector('.hoch');
+    if (!ziel || !knopf || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (eintraege) {
+      var e = eintraege[0];
+      knopf.classList.toggle('sichtbar', !e.isIntersecting && e.boundingClientRect.bottom < 0);
+    }).observe(ziel);
+  })();
 
   // Kein Themaknopf mehr (André, 14.09.2026): Hell und Dunkel kommen allein
   // aus prefers-color-scheme in tokens.css; wechselt das System, wechselt die
