@@ -364,6 +364,18 @@ Seitentitel und Sprungmarken mit und ohne Schrift gleich hoch. Lighthouse
 lokal: Performance 99, CLS 0,002, Blockierzeit 0. Das Gate lädt die Seiten
 seit heute über einen lokalen HTTP-Server statt file://, weil Fonts über
 file:// nicht laden (CORS). Lizenz: SIL OFL für Sora und IBM Plex.
+**Tintenkante aus Tabelle, sofort beim Parsen** (André, 01.10.: „minimal
+hüpft die Schrift beim Reload noch"). Das war das Skript: Es wartete auf
+`fonts.ready` und rückte dann den Seitentitel um 4,5px. Die Vorbreite in
+em ist eine feste Eigenschaft der Schrift; einmal in Chromium bei 400px
+für jede Anfangsglyphe der drei Seiten gemessen (Sora 600, Plex Sans 400,
+Plex Mono 400 samt Ziffern) und als Tabelle im Skript. Ränder stehen jetzt
+beim Parsen vor dem ersten Bild; die Canvas-Messung läuft nur noch für
+Glyphen, die nicht in der Tabelle stehen, nach dem Schriftladen. Gemessen
+lokal: Ränder bei DOMContentLoaded gesetzt, alle Ziele abgedeckt, CLS 0.
+Neue Anfangsglyphen (Fallstudien!) laufen über den Rückfall; die Tabelle
+mit `scratchpad/tabelle.mjs`-Logik nachmessen wäre sauberer, dazu ein
+offener Punkt.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
@@ -709,6 +721,7 @@ verschiedenen Farben auf einer Seite zu praesent).
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
 - [ ] Fünf neue Untertitel in die Projektkarten der Quelle übernehmen (30.09.)
+- [ ] Tintenkanten-Tabelle im Seitenskript nachmessen, wenn neue Anfangsglyphen dazukommen (Fallstudien); Messlogik: Canvas bei 400px, erste eingefärbte Spalte, in em
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
