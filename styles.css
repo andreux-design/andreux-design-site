@@ -209,8 +209,11 @@ a { color: inherit; }
   transition: color var(--dauer-2) var(--kurve-aus), transform var(--dauer-1) var(--kurve-aus);
   transform-origin: left center;
 }
+/* Farbe wie bei "Kontakt" und "EN", ohne Hover-Bedingung: auf Touch bleibt
+   :hover nach dem Tippen stehen, und genau das will André am Handy auch
+   fuer den Namen (01.10.2026); beim Druck sofort orange. */
+.marke:hover, .marke.gedrueckt { color: var(--akzent-text); }
 .marke.gedrueckt { transform: scale(0.96); }
-@media (any-hover: hover) { .marke:hover:not(.gedrueckt) { color: var(--akzent-text); } }
 .kopf-nav a:hover { color: var(--akzent-text); }
 @media (max-width: 599px) { .kopf-nav .verstecken-schmal { display: none; } }
 
