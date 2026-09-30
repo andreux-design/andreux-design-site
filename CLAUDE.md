@@ -41,9 +41,18 @@ Gilt nur hier. Im Bewerbungsrepo wird weiter nichts ohne Freigabe gepusht.
 ## Blockierende Gates
 
 ```
-npm run gates     dreizehn Prüfungen gegen index.html und impressum.html
+npm run gates     17 Prüfungen je Seite gegen index.html, index.en.html und
+                  impressum.html, danach die Driftprüfung
+npm run drift     Sätze der Seite gegen uebergabe/website-de.md und
+                  uebergabe/website-en.md, beide Richtungen
 npm run tokens    tokens.css aus @andreux/design-tokens erneuern
 ```
+
+**Driftprüfung, seit 30.09.2026:** die Kopie des freigegebenen Texts liegt in
+`uebergabe/` (Wortlaut aus `texte/website.md` im Bewerbungsrepo, von Hand
+herübergelegt, weil das Bewerbungsrepo für Sitzungen aus diesem Ordner
+gesperrt ist). Wer Text ändert, legt zuerst die neue Kopie ab, dann die Seite
+nach. Ein Satz, der nur auf einer Seite steht, lässt das Gate fallen.
 
 Geprüft wird am gerenderten Ergebnis, nicht am Quelltext: Systemtreue (jedes
 `var(--…)` ist definiert), jede Klasse hat eine Regel, kein toter Anker, jedes
