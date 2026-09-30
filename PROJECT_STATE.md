@@ -4,6 +4,13 @@ Letzte Aktualisierung: 2026-10-01
 
 ## Nächster Schritt
 
+**Stand 01.10.2026, Ende der Sitzung:** Design steht (André: „grafisch und
+aus UX-Sicht höchst minimalistisch, aber ansprechend"). Alles unten
+Beschriebene ist auf `main` und live. Nächster Inhalt sind die
+Fallstudienseiten für GoTiger, filo und colibre; dafür braucht es Text von
+André über `uebergabe/`. Im Bewerbungsrepo nachzuziehen: „filo" klein und
+die fünf neuen Untertitel in den Projektkarten.
+
 **Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
 größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
 meiner Beratung: keine Viewport-Rechnung mit 100vh, weil die Browserleiste
