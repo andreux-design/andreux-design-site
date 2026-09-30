@@ -42,6 +42,14 @@ Neuladen gegen die gemerkte Position gewinnt; reproduziert (906px statt
 3000px). Jetzt scrollt der Knopf per Skript ohne Adressänderung, unter
 prefers-reduced-motion ohne Animation; ohne Skript bleibt er ein Anker.
 Gemessen danach: kein Anker in der Adresse, Position nach Neuladen 3000px.
+**Zweiter Befund (André, 30.09.):** nach dem Neuladen unten auf der Seite
+blieb der Knopf weg, auf dem iPhone. In Chromium nicht reproduzierbar,
+WebKit ist in der Umgebung nicht installiert. Ursache nach Lage: Safari
+stellt die Position her, ohne dass der IntersectionObserver noch einmal
+meldet. Jetzt ohne Beobachter: Prüfung der Zielposition beim Scrollen
+(rAF-gedrosselt), bei `load`, bei `pageshow` und sofort. Chromium: oben
+unsichtbar, unten sichtbar, nach Neuladen bei 3000px sichtbar, nach Klick
+unsichtbar. Gegenprobe auf dem iPhone steht bei André.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
