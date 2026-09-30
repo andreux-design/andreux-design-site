@@ -42,6 +42,15 @@ und Kartentitel; Fließtext 17, Einleitung 19, Meta 13 bleiben fest.
 Gemessen: bei 320 Titel 40, Nummer 81, Säulen- und Kartentitel 28; bei 360
 45, 91, 31; ab 390 unverändert 49, 99, 34; Desktop 99, 142, 70, 49. Kein
 Überlauf bei 320, 360, 390, 430, 1280. Gate grün.
+**Touch-Verhalten der Knöpfe** (André, 30.09.): kein Drag and Drop, keine
+Aktivierung per Force Touch oder langem Halten, Scrollen beim Halten muss
+gehen. Auf Sprungmarken, Belege, Hoch-Knopf, Kopf, Name, Kontakt, Fuß:
+`-webkit-user-drag: none`, `-webkit-touch-callout: none`, `user-select:
+none`; `touch-action` bewusst nicht gesetzt. Gemessen in Chromium an allen
+sieben: select none, drag none, touch-action auto. touch-callout ist
+Safari-eigen und am Gerät zu prüfen. **Ablauffehler dabei:** der Commit
+ging vor dem Gate auf `main`, weil ein Prüfbefehl scheiterte und die
+Commit-Zeile nicht an die Kette gebunden war; Gate danach nachgeholt, grün.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
