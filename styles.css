@@ -444,7 +444,7 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
    (17.09.2026). Dauer und Kurve aus den Tokens, unter prefers-reduced-motion
    auf 1ms. .hoch traegt seine Transition selbst, siehe dort. */
 .sprungmarken a, .beleg-link {
-  transition: transform var(--dauer-1) var(--kurve-aus), background-color var(--dauer-1) var(--kurve-aus), border-color var(--dauer-1) var(--kurve-aus);
+  transition: transform var(--dauer-2) var(--kurve-aus), background-color var(--dauer-2) var(--kurve-aus), border-color var(--dauer-2) var(--kurve-aus);
 }
 .sprungmarken a.gedrueckt, .beleg-link.gedrueckt, .hoch.gedrueckt {
   transform: scale(0.96);
@@ -454,9 +454,17 @@ h2::before, .anschlag .stats > span::before { margin-left: var(--einzug); }
   /* Rahmen in Tinte plus gehobene Flaeche: die Flaeche allein war im
      Dunkelmodus kaum zu sehen, rgb(21,24,29) auf rgb(11,14,18) (André,
      30.09.2026: "die Hover-Animation mit der Maus fehlt noch"). */
-  .sprungmarken a:hover, .beleg-link:hover { background-color: var(--flaeche-gehoben); border-color: var(--tinte); }
-  /* .hoch steht schon auf der gehobenen Flaeche, dort hebt der Hover den Rahmen. */
-  .hoch:hover { border-color: var(--tinte); }
+  /* Dazu eine Bewegung: der Knopf hebt sich um 2px (André, 01.10.2026:
+     "was nur noch fehlt, ist die Hover-Animation"; Farbe allein war ihm
+     nicht als Animation zu sehen). Nicht waehrend des Drucks, dort gilt
+     das Schrumpfen. */
+  .sprungmarken a:hover:not(.gedrueckt), .beleg-link:hover:not(.gedrueckt) {
+    background-color: var(--flaeche-gehoben); border-color: var(--tinte);
+    transform: translateY(calc(-1 * var(--raum-0)));
+  }
+  /* .hoch steht schon auf der gehobenen Flaeche, dort hebt der Hover den
+     Rahmen und den Knopf. */
+  .hoch.sichtbar:hover:not(.gedrueckt) { border-color: var(--tinte); transform: translateY(calc(-1 * var(--raum-0))); }
 }
 
 /* --- Abschnitte --------------------------------------------------------- */
