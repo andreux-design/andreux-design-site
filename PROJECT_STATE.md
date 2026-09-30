@@ -284,6 +284,12 @@ Am iPad bestätigt (André, 01.10.: „Geht"). Frage nach farbigen Strichen
 ohne Aufgabe; André: „war zu voreilig". Striche bleiben grau.
 **Titel bis Stats 64** (André, 01.10., erst 48 auf Empfehlung, dann „noch mehr"),
 `--raum-10`, beide Breiten; nebeneinander bleiben 48.
+**Scroll-Zeichen am Handy in der Mitte des freien Raums** (André, 01.10.:
+„etwas nach unten"). Unter 900px reicht der Anschlag bis zur Unterkante
+(100svh statt minus Kopfhöhe), das Zeichen hat eine eigene Rasterzeile von
+`--raum-12` und sitzt darin mittig. Gemessen 390x844: Pfeilmitte 716,
+Mitte zwischen Stats und Unterkante 711, Titel 5px höher als vorher;
+320x568: 521 zu 513. Desktop unverändert.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
