@@ -219,8 +219,14 @@ a { color: inherit; }
 }
 .anschlag > .bahn { align-self: center; width: 100%; }
 @media (min-width: 900px) { .anschlag .reihe > div { grid-column: 2; } }
-/* Stats unter dem Titel: nebeneinander an jeder Breite, hoechstens drei. */
+/* Stats unter dem Titel: nebeneinander an jeder Breite, hoechstens drei.
+   Unter 900px drei gleiche Spalten, jeder Stat darf in sich zweizeilig
+   werden (André, 30.09.2026: "die Stats koennen auch selber zweizeilig
+   sein, damit sie nebeneinander passen"); ab 900px eine Zeile. */
 .anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-7); padding-top: 0; margin-top: var(--raum-7); }
+@media (max-width: 899px) {
+  .anschlag .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--raum-5); align-items: start; }
+}
 /* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
 .weiter {
   justify-self: center;
