@@ -350,6 +350,20 @@ Skriptzeit 354 ms statt 1279. **Bei André:** im Cloudflare-Dashboard Bot
 Fight Mode bzw. JS-Detections, E-Mail-Verschleierung und ggf. Web Analytics
 abschalten; ein Favicon entscheiden. Offen, größer: Schriften selbst hosten
 mit Preload statt Google-Fonts-CSS (render-blocking, 785 ms simuliert).
+**Schriften selbst gehostet** (André, 01.10.: „beim Neuladen springt die
+Schrift", Ursache Font-Swap von Google Fonts mit display=swap). Vier
+woff2 unter `schriften/` (Sora und Plex Sans als variable Dateien, Plex
+Mono 400 und 500, nur der lateinische Teil, 110 KB), `schriften.css` mit
+Font-Face und vier Preloads in allen drei Seiten, Google-Links raus.
+Ersatzschriften metrisch angepasst (`size-adjust`, `ascent-` und
+`descent-override`, Arial bzw. Courier New), gemessen in Chromium; Sora
+600 auf 111 % statt 106,5 % aus dem Probesatz, damit die Säulentitel bei
+blockierten Schriften dieselben Zeilen halten. Gemessen lokal: Schriften
+beim `load` geladen, CLS 0 kalt und warm; Text, Einleitung, Ergebnis,
+Seitentitel und Sprungmarken mit und ohne Schrift gleich hoch. Lighthouse
+lokal: Performance 99, CLS 0,002, Blockierzeit 0. Das Gate lädt die Seiten
+seit heute über einen lokalen HTTP-Server statt file://, weil Fonts über
+file:// nicht laden (CORS). Lizenz: SIL OFL für Sora und IBM Plex.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

@@ -61,9 +61,11 @@
 :root {
   /* Scrollbalken, Formulare und Systemflaechen folgen dem Modus mit. */
   color-scheme: light dark;
-  --familie-display: "Sora", system-ui, sans-serif;
-  --familie-text: "IBM Plex Sans", system-ui, sans-serif;
-  --familie-meta: "IBM Plex Mono", ui-monospace, monospace;
+  /* Die Ersatzfamilien sind in schriften.css metrisch an die Zielschrift
+     angepasst, damit der Text vor dem Laden an denselben Stellen umbricht. */
+  --familie-display: "Sora", "Sora Ersatz", system-ui, sans-serif;
+  --familie-text: "IBM Plex Sans", "IBM Plex Sans Ersatz", system-ui, sans-serif;
+  --familie-meta: "IBM Plex Mono", "IBM Plex Mono Ersatz", ui-monospace, monospace;
 
   /* Die Breite des linken Streifens. Steht hier, weil sie an zwei Stellen
      gebraucht wird: im Raster und als Laenge des Saeulenbalkens. Zweimal
