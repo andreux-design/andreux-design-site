@@ -15,8 +15,10 @@ Driftprüfung gegen die abgelegte Datei: 94 Sätze auf der Seite, 94 in der
 Quelle, kein Unterschied. Gate grün, drei Seiten. Die englische Fassung folgt
 der Übergabe Satz für Satz, weiterhin ohne eigenen Prüfweg. Die Überschrift
 der Kampagnen-Karte steht nicht in `texte/website.md`, das ist eine Lücke im
-Prüfweg. `uebergabe/` ist nicht eingecheckt; ob der Ordner ins Repo gehört
-(dann könnte die Driftprüfung ein Gate werden), entscheidet André.
+Prüfweg. `uebergabe/` ist eingecheckt und die Driftprüfung ist ein Gate
+(`bin/drift.mjs`, in `npm run gates`), Gegenprobe mit verfälschtem Satz
+schlägt an. `website-en.md` ist aus `index.en.html` erzeugt und dokumentiert
+den Wortlaut, ein Prüfweg für Englisch ist das nicht.
 
 **Regel seit dem 17.09.2026: Gate grün heißt Merge nach `main`, ohne
 Rückfrage** (André, von unterwegs prüft er live am Handy). Steht in
@@ -209,12 +211,8 @@ verschiedenen Farben auf einer Seite zu praesent).
 
 ## Offen
 
-- [ ] Gegenprobe nach dem Deploy: `curl` auf andreux.design, Claim und Sprungmarken sichtbar
 - [ ] **Fallstudienseiten** für GoTiger, Filo, colibre, mit Kurzfassungen auf
       der Hauptseite (Schritt zwei, André 16. und 17.09.)
-- [ ] **Driftprüfung als Gate:** Seite gegen `texte/website.md` in beide
-      Richtungen, heute ein Skript im Scratchpad. Es gibt keine Leitung
-      zwischen den Repos, also braucht das Gate die Textdatei als Argument
 - [ ] **Tag-Chips:** Feld `tags` in den Projektkarten der Quelle, dann wieder
       auf die Seite; bis dahin keine Chips (Entscheidung André ausstehend)
 - [ ] **Bilder.** Grafiken rendert André nach der Teilung in Fallstudien
@@ -222,8 +220,6 @@ verschiedenen Farben auf einer Seite zu praesent).
       Struktur und colibre sind anders entschieden); Hinweis steht im Kopf,
       löschen oder archivieren entscheidet André
 - [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin
-- [ ] CLAUDE.md nennt „dreizehn Prüfungen gegen index.html und
-      impressum.html"; es sind 17 je Seite über drei Seiten
 - [ ] Astro aufsetzen. `@andreux/design-tokens` ist seit dem 31.08.2026
       eingebunden, ueber package.json auf v1.1.0 und `npm run tokens`
 - [ ] Netlify-Buildeinstellungen setzen (Buildbefehl, Publish-Verzeichnis).
@@ -236,6 +232,7 @@ verschiedenen Farben auf einer Seite zu praesent).
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
+- [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
       nicht als Skill installieren: der holt seine Regeln zur Laufzeit per
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
