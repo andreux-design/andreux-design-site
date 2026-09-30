@@ -66,6 +66,18 @@ auch eine Art Headline, vielleicht Über mich"). `h2#h-ueber` im Bau von
 der linken Spalte neben dem Absatz (gemessen h2 bei 64, Absatz bei 272,
 beide auf 916 oben); am Handy darüber. Englisch „About me". Abschnitt trägt
 `aria-labelledby`. Gate grün, Drift null.
+**Anschlag füllt den Bildschirm** (André, 30.09.: „der ATF soll den ganzen
+Viewport einnehmen, unten ein Scroll-Icon, unter der Head Stats, max drei,
+horizontal"). `min-height: calc(100svh - --kopf-hoehe)` mit vh-Rückfall,
+Inhalt mittig (Rolle, Titel, Stats), unten `a.weiter` mit Chevron auf
+`#h-ueber`, 48px, trägt die Touch-Regeln. Die drei Stats stehen als
+`.streifen.stats` unter dem Titel, an jeder Breite nebeneinander, 24px
+unter dem Titel; am Handy brechen sie in zwei Zeilen. Der linke Streifen
+im Anschlag ist damit leer, der Titel bleibt ab 900px in der Textspalte
+(272px). Gemessen: Anschlag endet bei 844 von 844 (390) und 900 von 900
+(1280); bei 320x568 ist der Inhalt höher als der Bildschirm, 596, dann
+scrollt er. Kein Überlauf, keine JS-Fehler, Gate grün. Meine Bedenken zu
+100vh galten `vh`; `svh` ist am Handy stabil, deshalb umgesetzt.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
