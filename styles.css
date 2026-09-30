@@ -403,6 +403,9 @@ h3 {
   letter-spacing: var(--spur-display);
   margin: 0 0 var(--raum-4);
   text-wrap: balance;
+  /* Fallback fuer ein Wort, das breiter ist als die Spalte: bricht nur dann.
+     "Bausteinbibliothek" stand bei 320px 34px ueber dem Rand (30.09.2026). */
+  overflow-wrap: break-word;
 }
 @media (min-width: 900px) { h3 { font-size: var(--schrift-9); } }
 p { max-width: var(--mass-prosa-web); }
