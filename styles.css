@@ -247,7 +247,9 @@ a { color: inherit; }
    Seite das Zeichen fuer anklickbar, siehe Kopf; ohne ihn sahen die drei
    Sprungmarken aus wie farbige Beschriftung. Dieselben Masse wie .beleg-link. */
 .sprungmarken a {
-  display: inline-flex; align-items: baseline; gap: var(--raum-4);
+  /* Mittig statt Grundlinie: mit min-height 44px und baseline stand der Text
+     oben im Kasten (André, 30.09.2026). */
+  display: inline-flex; align-items: center; gap: var(--raum-4);
   min-height: 44px;
   padding: var(--raum-4) var(--raum-6);
   border: var(--strich-0) solid var(--linie-stark);
@@ -296,8 +298,10 @@ h2::before {
    stehen beide in der Textspalte, wie der Seitentitel im Anschlag; ueber
    beide Spalten gespannt stand der Untertext eingerueckt unter dem Titel. Die
    Sprungmarke oben behaelt Versalien und Meta-Schrift, weil sie ein Knopf
-   ist; Nummer, Farbe und Wortlaut sind dieselben. Grid, damit der Titel
-   neben der Nummer umbricht und nicht unter sie. */
+   ist; Nummer, Farbe und Wortlaut sind dieselben. Die Nummer steht seit dem
+   30.09.2026 abends groesser ueber dem Titel statt daneben: neben der Nummer
+   brach der Titel mit haengendem Einzug um und liess links eine Luecke
+   (André, am Handy). */
 .abschnitt.marke-eins h2,
 .abschnitt.marke-zwei h2,
 .abschnitt.marke-drei h2 {
@@ -306,16 +310,16 @@ h2::before {
   font-size: clamp(2.125rem, 5.2vw, 3.0625rem);
   line-height: var(--zeile-display); letter-spacing: var(--spur-display);
   text-transform: none;
-  display: grid; grid-template-columns: auto minmax(0, 1fr);
-  column-gap: var(--raum-5); align-items: baseline;
+  display: block;
   text-wrap: balance;
 }
 .abschnitt.marke-eins h2::before,
 .abschnitt.marke-zwei h2::before,
 .abschnitt.marke-drei h2::before {
   content: var(--nummer);
-  width: auto; height: auto; background: none; margin: 0;
-  font-size: 1em; line-height: inherit; letter-spacing: inherit;
+  display: block; width: auto; height: auto; background: none;
+  margin: 0 0 var(--raum-3);
+  font-size: 1.5em; line-height: 1; letter-spacing: var(--spur-display);
 }
 @media (min-width: 900px) {
   .abschnitt.marke-eins h2, .abschnitt.marke-eins h2 + div,
