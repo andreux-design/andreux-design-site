@@ -279,7 +279,10 @@ a { color: inherit; }
   font-size: var(--schrift-1); color: var(--tinte-gedaempft);
   max-width: var(--mass-prosa-web); margin: 0;
 }
-@media (min-width: 900px) { .einleitung .reihe > div { grid-column: 2; } }
+/* Wie der Anschlag eine Spalte an jeder Breite, alles auf der Bahnkante
+   (André, 30.09.2026: "noch nicht einheitlich links"). Vorher stand
+   "Ueber mich" bei 64 und der Absatz bei 272. */
+.einleitung .reihe { grid-template-columns: minmax(0, 1fr); }
 .eigenname {
   font-family: var(--familie-meta); font-size: var(--schrift-m2);
   letter-spacing: var(--spur-versal); text-transform: uppercase;

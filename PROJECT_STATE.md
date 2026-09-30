@@ -153,6 +153,13 @@ Textspalte bei 272.
 **Kopfzeile: Lücke zwischen den Links `--raum-8`** (André, 30.09.,
 Screenshot: „ein wenig zu nah"). Vorher 16px zwischen den Texten, jetzt 32
 und 39 (EN ist auf 44px Breite zentriert).
+**Stats am Desktop: Lücke `--raum-9`** (André, 30.09., Screenshot: zu
+nah). Vorher 24, jetzt 48px zwischen den drei; unter 900px bleibt das
+Dreierraster. Der Stand-Eintrag kam einen Commit später, das Skript dafür
+scheiterte an einem Anführungszeichen, der Code war davon nicht betroffen.
+**Einleitung einspaltig wie der Anschlag** (André, 30.09.: „noch nicht
+einheitlich links"): „Über mich", Absatz, „Inhalt" und Knöpfe alle auf 64
+am Desktop. Ab der ersten Säule gilt wieder Streifen links, Text bei 272.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
