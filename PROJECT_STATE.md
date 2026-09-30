@@ -6,14 +6,14 @@ Letzte Aktualisierung: 2026-09-30
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
-**v1.2.0**: Stufe 12 in Leiter und Webprojektion, `--schrift-12` = 4.375rem
-= 70px, 43 Leiterprüfungen und Kontrast grün, getaggt und gepusht.
+**v1.2.0**, danach v1.3.0: Stufen 12 und 15 in Leiter und Webprojektion,
+70 und 99px, Leiterprüfungen und Kontrast grün, getaggt und gepusht.
 Hier gemessen nach dem Umbau:
 
 | | Handy 390 | Desktop 1280 |
 |---|---|---|
-| Text, Kartentitel, Seitentitel | 17, 24, 34 | 17, 34, 70 |
-| Säulentitel, Säulennummer | 34, 49 | 49, 70 |
+| Text, Kartentitel, Seitentitel | 17, 34, 49 | 17, 49, 70 |
+| Säulentitel, Säulennummer | 49, 70 | 70, 99 |
 | innen, Karte zu Karte, Abschnitt zu Abschnitt | 16, 64, 128 | 16, 64, 256 |
 
 Alles Leiterwerte; 1,5em an der Nummer und die 80px zwischen Karten sind
@@ -23,12 +23,17 @@ Anschlag unten ebenso; letzte Karte ohne Unterpolster, letztes Element einer
 Karte ohne Unterabstand. Gate grün, drei Seiten, Drift null. Nebenbei:
 `package-lock.json` pinnt jetzt Playwright 1.63.0, vorher stand es nicht in
 der Sperrdatei; lokal sind Chromium 1234 als 1243 verlinkt (Umgebung).
-**Nummer eine Stufe über dem Säulentitel** (André, 30.09. abends: Zahl
-und Kapitelüberschrift der Größe nach unterscheiden; ein Zwischenschritt in
-Mono war nicht gemeint und ist zurückgenommen). Säulentitel jetzt Stufe 6
-bis 9, Nummer 9 und 12, Seitentitel bleibt 6 bis 12. Gemessen: Handy 34,
-Nummer 49, Titel 34; Desktop h1 70, Nummer 70, Titel 49, h3 34. Sora wie
-zuvor.
+**„Wirklich dramatisch"** (André, 30.09. abends: Zahl richtig groß, dann
+recht groß die Headline, auch die Kartentitel größer; ein Zwischenschritt in
+Mono war nicht gemeint und ist zurückgenommen). Tokenpaket auf **v1.3.0**,
+Stufe 15 = 99px, 44 Leiterprüfungen grün. Jetzt: Seitentitel und
+Säulentitel Stufe 9 bis 12 (49 bis 70), Nummer 12 und 15 (70 und 99),
+Kartentitel 6 und 9 (34 und 49) mit Display-Zeile, Text 17. Seitentitel am
+Handy fünf Zeilen, Kartentitel höchstens vier. Gate fiel zuerst mit 1px
+Überlauf bei 390px: „Designsysteme" ist bei 49px 375px breit, die Spalte
+358, und `1fr` (Minimum auto) ließ die Spur wachsen. Behoben mit `&shy;`
+im Wort (nur deutsch, die h2 steht nicht in der Driftprüfung) und
+`minmax(0, 1fr)` im Raster. Danach grün, Drift null.
 
 **Säulentitel dominant, Sprungmarken als Knöpfe** (André, 30.09.2026, am
 Handy: Sprungmarken nicht als Buttons erkennbar; in den Säulentiteln „die 1
