@@ -247,6 +247,12 @@ in Chromium und WebKit, 390 und 1280: Name zweimal 0 und 0, Pfeil von
 Start 0, 120 und 400 jeweils „Über mich" bei 117. Die Ankerursache in
 Safari (Ziel beim Klick gerechnet, Verschiebung während des sanften
 Scrollens) ist damit umgangen, nicht erklärt.
+**Rolle als Vorzeile** (André, 01.10.: „sollte Senior UX der Logik nach
+nicht anders formatiert sein als die Stats?", ja). `.eigenname` war Mono 13
+in Versalien wie ein Label; Mono 13 heißt Fakten, Versalien heißen Knopf.
+Jetzt Sora 500, Stufe 1 am Handy und 3 am Desktop, gedämpfte Tinte,
+gemischte Schreibung, 12px über dem Titel, Tinte auf 16 bzw. 64. Versalien
+mit Sperrung tragen damit nur noch die Sprungmarken.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
