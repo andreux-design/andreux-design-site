@@ -376,6 +376,12 @@ lokal: Ränder bei DOMContentLoaded gesetzt, alle Ziele abgedeckt, CLS 0.
 Neue Anfangsglyphen (Fallstudien!) laufen über den Rückfall; die Tabelle
 mit `scratchpad/tabelle.mjs`-Logik nachmessen wäre sauberer, dazu ein
 offener Punkt.
+**Sora mit `font-display: block`** (André, 01.10.: „besonders der ATF
+springt leicht nach rechts"). Rest des Springens war der Tausch von der
+Ersatzschrift: Arial Bold hat für „I" 0,0675em Vorbreite, Sora 0,09, der
+Rand stand schon für Sora, also rückte die Tinte beim Tausch um 2px am
+Desktop, Ziffern bis 6px. Plex Sans und Mono weichen unter einem Pixel ab
+und bleiben auf swap. Mit Preload aus dem Cache malt Sora nie mit Ersatz.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
