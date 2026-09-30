@@ -74,35 +74,40 @@
 
   // Tintenkante statt Kastenkante (André, 30.09.2026: "minimale Treppen").
   // Jede Glyphe hat eine Vorbreite, den Abstand vom Satzanfang zur ersten
-  // Tinte, und sie waechst mit der Schriftgroesse: gemessen 9px am 99px-
-  // Titel, 6 am 70px-Saeulentitel, 1 im Fliesstext. Die Glyphe wird auf
-  // eine Canvas gezeichnet und die erste eingefaerbte Spalte gesucht (Safari
-  // liefert keine Tintengrenzen aus measureText); ein negativer linker Rand
-  // in dieser Breite setzt die Tinte auf die Kante, --einzug traegt den
-  // Gegenwert fuer Striche und Nummer (::before).
-  // Umgebaut am 01.10.2026 nach Lighthouse (1,3 s Skriptzeit, erzwungene
-  // Reflows): erst alle Werte lesen, dann alle schreiben; nur die Region
-  // um die Glyphe auslesen; Aufloesung nach Groesse, so dass die
-  // gezeichnete Glyphe hoechstens rund 400px misst; ein Lauf, sobald die
-  // Schriften geladen sind; Resize nur bei geaenderter Breite.
+  // Tinte; sie waechst mit der Schriftgroesse, in em ist sie eine feste
+  // Eigenschaft der Schrift. Ein negativer linker Rand in dieser Breite
+  // setzt die Tinte auf die Kante, --einzug traegt den Gegenwert fuer
+  // Striche und Nummer (::before).
+  // Seit dem 01.10.2026 abends kommt der Wert aus einer Tabelle, gemessen
+  // in Chromium bei 400px fuer jede Anfangsglyphe der drei Seiten: das
+  // Skript setzt die Raender sofort beim Parsen, vor dem ersten Bild, ohne
+  // auf die Schrift zu warten. Vorher lief die Messung nach dem
+  // Schriftladen, und der Seitentitel rueckte sichtbar um 4,5px (André:
+  // "minimal huepft die Schrift beim Reload noch"). Steht eine Glyphe nicht
+  // in der Tabelle, misst die Canvas sie nach dem Schriftladen nach.
   (function () {
+    var tabelle = {"Sora|600":{"1":0.035,"2":0.055,"3":0.0375,"I":0.09,"Ü":0.075,"E":0.09,"G":0.045,"f":0.0225,"c":0.0425,"D":0.09,"K":0.09,"W":0.0225,"A":0.0175,"C":0.045},"IBM Plex Mono|400":{"F":0.09,"S":0.045,"B":0.0875,"W":0.035},"IBM Plex Sans|400":{"2":0.0675,"I":0.06,"R":0.0925,"S":0.0425,"G":0.0575,"N":0.0925,"f":0.0275,"M":0.0925,"c":0.045,"L":0.0925,"Z":0.035,"F":0.0925,"B":0.0925,"D":0.0925,"E":0.0925,"A":0.0225,"W":0.02,"T":0.02,"O":0.0575,"K":0.0925,"V":0.02,"H":0.0925}};
     var leinwand = document.createElement('canvas');
     var messer = leinwand.getContext('2d', { willReadFrequently: true });
-    if (!messer) return;
-    var gemerkt;
-    function vorbreite(gewicht, groesse, familie, text) {
-      var schluessel = gewicht + '|' + groesse + '|' + familie + '|' + text;
+    var gemerkt = {};
+    function familie(fontFamily) { return fontFamily.split(',')[0].replace(/"/g, '').trim(); }
+    function ausTabelle(gewicht, fontFamily, text) {
+      var zeile = tabelle[familie(fontFamily) + '|' + gewicht];
+      return zeile && (text in zeile) ? zeile[text] : null;
+    }
+    function messen(gewicht, groesse, fontFamily, text) {
+      if (!messer) return 0;
+      var schluessel = gewicht + '|' + groesse + '|' + fontFamily + '|' + text;
       if (schluessel in gemerkt) return gemerkt[schluessel];
       var f = Math.max(1, Math.min(8, Math.floor(400 / groesse)));
       var px = groesse * f, rand = Math.ceil(px * 0.5);
       var breite = Math.ceil(px * 1.2), hoehe = Math.ceil(px * 1.5);
       if (leinwand.width !== breite || leinwand.height !== hoehe) { leinwand.width = breite; leinwand.height = hoehe; }
       messer.clearRect(0, 0, breite, hoehe);
-      messer.font = gewicht + ' ' + px + 'px ' + familie;
+      messer.font = gewicht + ' ' + px + 'px ' + fontFamily;
       messer.textBaseline = 'alphabetic';
       messer.fillStyle = '#000';
       messer.fillText(text, rand, Math.ceil(px * 1.1));
-      // Nur die Spalten ab dem Rand bis 0,4em dahinter, dort liegt jede Vorbreite.
       var von = Math.max(0, rand - 2), bis = Math.min(breite, rand + Math.ceil(px * 0.4));
       var daten = messer.getImageData(von, 0, bis - von, hoehe).data, spalten = bis - von;
       var erste = -1;
@@ -115,37 +120,44 @@
       gemerkt[schluessel] = v;
       return v;
     }
-    function ausrichten() {
+    // sofort: nur Tabelle; spaeter (nach Schriftladen): Canvas fuer den Rest.
+    function ausrichten(mitCanvas) {
       gemerkt = {};
       var ziele = document.querySelectorAll('h1, h2, h3, p.satz, p.anspruch, p.untertitel, p.text, .stats > span');
       var saeulen = document.querySelectorAll('.abschnitt.marke-eins h2, .abschnitt.marke-zwei h2, .abschnitt.marke-drei h2');
-      // Lesen.
-      var werte = [], i, e, t, cs;
+      var werte = [], nummern = [], i, e, t, cs, groesse, em, v, offen = false;
       for (i = 0; i < ziele.length; i++) {
         e = ziele[i]; t = (e.textContent || '').replace(/^\s+/, '');
         if (!t) continue;
-        cs = getComputedStyle(e);
-        werte.push([e, vorbreite(cs.fontWeight, parseFloat(cs.fontSize), cs.fontFamily, t.charAt(0))]);
+        cs = getComputedStyle(e); groesse = parseFloat(cs.fontSize);
+        em = ausTabelle(cs.fontWeight, cs.fontFamily, t.charAt(0));
+        if (em !== null) v = Math.round(em * groesse * 100) / 100;
+        else if (mitCanvas) v = messen(cs.fontWeight, groesse, cs.fontFamily, t.charAt(0));
+        else { offen = true; continue; }
+        werte.push([e, v]);
       }
-      var nummern = [];
       for (i = 0; i < saeulen.length; i++) {
-        cs = getComputedStyle(saeulen[i], '::before');
-        nummern.push([saeulen[i], vorbreite(cs.fontWeight, parseFloat(cs.fontSize), cs.fontFamily, cs.content.replace(/["']/g, ''))]);
+        cs = getComputedStyle(saeulen[i], '::before'); groesse = parseFloat(cs.fontSize); t = cs.content.replace(/["']/g, '');
+        em = ausTabelle(cs.fontWeight, cs.fontFamily, t);
+        if (em !== null) v = Math.round(em * groesse * 100) / 100;
+        else if (mitCanvas) v = messen(cs.fontWeight, groesse, cs.fontFamily, t);
+        else { offen = true; continue; }
+        nummern.push([saeulen[i], v]);
       }
-      // Schreiben.
       for (i = 0; i < werte.length; i++) {
         werte[i][0].style.marginLeft = (-werte[i][1]) + 'px';
         werte[i][0].style.setProperty('--einzug', werte[i][1] + 'px');
       }
       for (i = 0; i < nummern.length; i++) nummern[i][0].style.setProperty('--nummer-einzug', (-nummern[i][1]) + 'px');
+      return offen;
     }
     var breite = window.innerWidth, warten;
     window.addEventListener('resize', function () {
       if (window.innerWidth === breite) return;
       breite = window.innerWidth;
-      clearTimeout(warten); warten = setTimeout(ausrichten, 100);
+      clearTimeout(warten); warten = setTimeout(function () { ausrichten(true); }, 100);
     });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ausrichten); else ausrichten();
+    if (ausrichten(false) && document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ausrichten(true); });
   })();
 
   // Press-Zustand der Knoepfe als Klasse (André, 30.09.2026): pointerdown
