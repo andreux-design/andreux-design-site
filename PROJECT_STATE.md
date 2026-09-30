@@ -94,6 +94,11 @@ Zellen gleich hoch. Gemessen: 320 und 390 je zwei Zeilen, Linien auf einer
 Höhe (485 bzw. 632); 1280 eine Zeile, Linien auf 741. Schriftgröße der
 Einleitung: h2 13px wie die Nebenabschnitte, Absatz 19px (`--schrift-1`),
 38 Zeichen je Zeile am Handy, 82 am Desktop.
+**Strich über den Stats statt Linie darunter** (André, 30.09.: „Linien über
+oder unter die Stats? Auf jeden Fall kürzer", Empfehlung darüber, „Ja").
+Derselbe kurze Strich wie über den Nebenabschnitten, 32 x 1px
+`--linie-stark`, per `::before`; Zellen oben bündig, gemessen alle drei
+auf 588 (390) und 714 (1280).
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
