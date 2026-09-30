@@ -132,6 +132,20 @@ wurden", Volkswagen „Figma-Komponenten für ID. Buzz und California", Tokens
 Briefing zur Landingpage"; englisch entsprechend. Untertitel sind von der
 Driftprüfung ausgenommen. **Offen:** die fünf gehören als `untertitel` in
 die Projektkarten von `cv/cv-data.json`, sonst kennt die Quelle sie nicht.
+**Systemprüfung am gerenderten Ergebnis** (André, 30.09.: „Check, ob wir
+auf einer Scale sind und ein einheitliches System haben"). Skript in der
+Sitzung: jede Schriftgröße, jeder Rand, jedes Polster, jede Lücke, jede
+Farbe und jede Linienstärke aller Elemente bei 390 und 1280 gegen
+Schriftleiter (13 bis 142), Raumleiter (2 bis 128), Farbtoken und Striche 1
+und 3. Ergebnis vor der Korrektur: Schrift, Farbe, Linien ohne Abweichung;
+im Raum drei: Streifen-Polster 0,35em (4,6px), Kontaktlink-Polster 13px,
+Fußpolster 112 am Desktop. Danach: Streifen `--raum-4` (Versalhöhen von
+Streifen und 49px-Titel auf einer Linie, gesichtet), Kontaktlink
+`--raum-5`, Fuß `--raum-12`; dazu 48px des Hoch-Knopfs und Scroll-Zeichens
+als `--raum-9` benannt, 11px der Impressum-Links als `--raum-5`. Bewusst
+ohne Token: 44px Trefferflächen (Regel vom 14.09.), die Kopfzeile mit 88 %
+Fläche über Blur, `--streifen-breite` 11rem als Layoutmaß, die vw-Werte der
+Überschriften unter 390 (Stufe durch 390), Breakpoints 600 und 900.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf

@@ -147,7 +147,10 @@ a { color: inherit; }
   gap: var(--raum-3) var(--raum-5);
 }
 @media (min-width: 900px) {
-  .streifen { flex-direction: column; gap: var(--raum-3); padding-top: 0.35em; }
+  /* raum-4 statt 0.35em (4,6px): mit dem 49px-Kartentitel liegen so die
+     Versalhoehen von Streifen und Titel auf einer Linie, und der Wert steht
+     auf der Leiter (Systempruefung, 30.09.2026). */
+  .streifen { flex-direction: column; gap: var(--raum-3); padding-top: var(--raum-4); }
 }
 /* Dasselbe Quadrat wie im Lebenslauf, hier in der Marke des Blocks. Es haengt
    am ERSTEN TEXT, nicht am Streifen: der Streifen ist ein Flex-Container, und
@@ -244,7 +247,7 @@ a { color: inherit; }
 /* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
 .weiter {
   justify-self: center;
-  display: grid; place-items: center; width: 48px; height: 48px;
+  display: grid; place-items: center; width: var(--raum-9); height: var(--raum-9);
   color: var(--tinte-leise);
 }
 .weiter svg { display: block; }
@@ -339,7 +342,7 @@ a { color: inherit; }
 /* --- Hoch-Knopf ---------------------------------------------------------- */
 /* Schwebt unten rechts, fuehrt zurueck zu den drei Sprungmarken (André,
    30.09.2026). Dasselbe Zeichen wie alles Anklickbare: 1px grauer Rahmen,
-   keine Fuellfarbe, kein Schatten. 48px, also ueber der 44px-Daumenflaeche.
+   keine Fuellfarbe, kein Schatten. --raum-9 (48px), also ueber der 44px-Daumenflaeche.
    Unsichtbar und nicht anklickbar, solange die Sprungmarken im Bild oder
    darunter sind; das Skript in der Seite setzt .sichtbar. Ein- und
    Ausblenden laufen ueber die Bewegungstoken, unter prefers-reduced-motion
@@ -348,7 +351,7 @@ a { color: inherit; }
   position: fixed; z-index: 10;
   right: var(--raum-6);
   bottom: calc(var(--raum-6) + env(safe-area-inset-bottom, 0px));
-  width: 48px; height: 48px;
+  width: var(--raum-9); height: var(--raum-9);
   display: grid; place-items: center;
   border: var(--strich-0) solid var(--linie-stark);
   background: var(--flaeche-gehoben); color: var(--tinte);
@@ -629,7 +632,7 @@ p { max-width: var(--mass-prosa-web); }
   text-decoration: none;
   /* Trefferflaeche 44px, gemessen vorher 31px. Der Innenabstand oben haelt die
      Unterstreichung an der Grundlinie, der Abstand der Liste bleibt raum-5. */
-  display: inline-block; padding-top: 13px; min-height: 44px;
+  display: inline-block; padding-top: var(--raum-5); min-height: 44px;
   border-bottom: var(--strich-0) solid var(--linie-stark);
   transition: border-color var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus);
 }
@@ -641,7 +644,7 @@ p { max-width: var(--mass-prosa-web); }
      Hoch-Knopf (48px, unten rechts) das "Impressum" ab (André, am Handy).
      Der Fuss reserviert die Hoehe des Knopfs plus seinen Abstand, dann
      steht der Knopf bei maximalem Scroll unter der Zeile, nicht darauf. */
-  padding-block: var(--raum-8) calc(var(--raum-8) + 48px + var(--raum-6) + env(safe-area-inset-bottom, 0px));
+  padding-block: var(--raum-8) calc(var(--raum-8) + var(--raum-9) + var(--raum-6) + env(safe-area-inset-bottom, 0px));
   /* --schrift-m1 statt -m2 seit dem 14.09.2026 (André): die Fusszeile ist der
      einzige Weg zum Impressum und soll lesbar sein, nicht nur antippbar. */
   font-family: var(--familie-meta); font-size: var(--schrift-m1);
@@ -651,7 +654,9 @@ p { max-width: var(--mass-prosa-web); }
    Luft. Steht hinter .fuss, weil gleiche Spezifitaet nach Reihenfolge
    entscheidet. */
 @media (min-width: 900px) {
-  .fuss { padding-bottom: calc(var(--raum-8) + 48px + var(--raum-8) + env(safe-area-inset-bottom, 0px)); }
+  /* raum-12 (128) statt 32 + 48 + 32 = 112: Leiterwert, und 48px ueber dem
+     Knopf bleiben frei (Systempruefung, 30.09.2026). */
+  .fuss { padding-bottom: calc(var(--raum-12) + env(safe-area-inset-bottom, 0px)); }
 }
 .fuss-inhalt { display: flex; flex-wrap: wrap; gap: var(--raum-6); justify-content: space-between; }
 .fuss a {
@@ -667,7 +672,7 @@ p { max-width: var(--mass-prosa-web); }
 /* Links im Fliesstext (nur das Impressum hat welche): dieselbe Flaeche, ohne
    dass die Zeile hoeher wird. */
 .fuss a:hover { color: var(--akzent-text); }
-main p a { display: inline-block; padding: 11px 0; margin: -11px 0; }
+main p a { display: inline-block; padding: var(--raum-5) 0; margin: calc(-1 * var(--raum-5)) 0; }
 /* Ueberscroll-Flaeche oben und unten in der Seitenfarbe, sonst blitzt beim
    Ziehen der Browserhintergrund durch. */
 html { background: var(--flaeche); }
