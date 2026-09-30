@@ -60,6 +60,12 @@ nur unter `(hover: hover) and (pointer: fine)`: gehobene Fläche, am
 Hoch-Knopf stärkerer Rahmen. Gemessen in Chromium: gedrückt matrix 0.96
 und rgb(244,246,248), nach 40px Scroll gelöst, nach Loslassen gelöst;
 keine JS-Fehler. Gegenprobe Safari am Gerät bei André.
+**„Über mich" über der Einleitung** (André, 30.09.: „die Einleitung braucht
+auch eine Art Headline, vielleicht Über mich"). `h2#h-ueber` im Bau von
+„Was ich suche" und „Kontakt", kleine Versalzeile mit Strich, ab 900px in
+der linken Spalte neben dem Absatz (gemessen h2 bei 64, Absatz bei 272,
+beide auf 916 oben); am Handy darüber. Englisch „About me". Abschnitt trägt
+`aria-labelledby`. Gate grün, Drift null.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
