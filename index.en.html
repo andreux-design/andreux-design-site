@@ -306,14 +306,40 @@
   // linker Rand in dieser Breite setzt die Tinte auf die Kante. Fuer die
   // Saeulennummer (::before) geht der Wert ueber --nummer-einzug.
   (function () {
-    var messer = document.createElement('canvas').getContext('2d');
-    if (!messer || !messer.measureText) return;
+    var leinwand = document.createElement('canvas');
+    var messer = leinwand.getContext('2d', { willReadFrequently: true });
+    if (!messer) return;
+    var gemerkt = {};
+    // Nicht measureText().actualBoundingBoxLeft: Safari liefert dort immer 0
+    // (WebKit 26, gemessen am 01.10.2026), und die Treppen blieben. Statt-
+    // dessen wird die Glyphe gezeichnet und die erste eingefaerbte Spalte
+    // gesucht, in achtfacher Aufloesung; das geht in jedem Browser gleich.
+    // Der Zwischenspeicher gilt je Lauf: der erste Lauf misst noch die
+    // Ersatzschrift, der Lauf nach document.fonts.ready darf sie nicht erben.
     function vorbreite(stil, text) {
-      messer.font = stil.fontWeight + ' ' + stil.fontSize + ' ' + stil.fontFamily;
-      var m = messer.measureText(text);
-      return Math.round(-m.actualBoundingBoxLeft * 100) / 100;
+      var groesse = parseFloat(stil.fontSize), f = 8;
+      var schluessel = stil.fontWeight + '|' + groesse + '|' + stil.fontFamily + '|' + text;
+      if (schluessel in gemerkt) return gemerkt[schluessel];
+      var px = groesse * f, rand = Math.ceil(px * 0.5);
+      leinwand.width = Math.ceil(px * 2.5); leinwand.height = Math.ceil(px * 1.6);
+      messer.clearRect(0, 0, leinwand.width, leinwand.height);
+      messer.font = stil.fontWeight + ' ' + px + 'px ' + stil.fontFamily;
+      messer.textBaseline = 'alphabetic';
+      messer.fillStyle = '#000';
+      messer.fillText(text, rand, Math.ceil(px * 1.15));
+      var daten = messer.getImageData(0, 0, leinwand.width, leinwand.height).data;
+      var erste = -1;
+      for (var x = 0; x < leinwand.width && erste < 0; x++) {
+        for (var y = 0; y < leinwand.height; y++) {
+          if (daten[(y * leinwand.width + x) * 4 + 3] > 40) { erste = x; break; }
+        }
+      }
+      var v = erste < 0 ? 0 : Math.round((erste - rand) / f * 100) / 100;
+      gemerkt[schluessel] = v;
+      return v;
     }
     function ausrichten() {
+      gemerkt = {};
       var ziele = document.querySelectorAll('h1, h2, h3, p.satz, p.anspruch, p.untertitel, p.text, .stats > span');
       for (var i = 0; i < ziele.length; i++) {
         var e = ziele[i], t = (e.textContent || '').replace(/^\s+/, '');

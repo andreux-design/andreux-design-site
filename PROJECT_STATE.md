@@ -213,6 +213,15 @@ Am Handy dieselbe Messung: Titel bei 230 beim Laden und nach dem Klick.
 **„Inhalt" wie „Über mich"** (André, 30.09.: „sind noch verschieden"):
 `h2#h-inhalt` trägt jetzt auch `abschnitt-titel`, Sora 24/49, kein Strich.
 Der 32px-Strich steht damit nur noch über den Stats.
+**Tintenkante auch in Safari** (André, 30.09. spät, Zoom-Screenshot der
+Token-Karte: Titel, Untertitel und Text nicht auf einer Kante). Ursache,
+gemessen am 01.10. mit Playwright-WebKit 26: `actualBoundingBoxLeft` liefert
+dort immer 0, das Skript setzte in Safari nichts. Jetzt wird die Glyphe auf
+eine Canvas gezeichnet und die erste eingefärbte Spalte gesucht, achtfache
+Auflösung, Zwischenspeicher je Lauf (der erste Lauf misst noch die
+Ersatzschrift). Pixelmessung bei 390 und 3x: Chromium Titel, Untertitel,
+Text und Seitentitel auf 16,0; WebKit auf 15,67 bis 16,0. Vorher WebKit
+17 bis 20,3. Playwright-WebKit ist lokal installiert (Umgebung).
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
