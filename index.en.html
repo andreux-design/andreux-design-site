@@ -25,6 +25,9 @@
 <meta name="twitter:image" content="https://andreux.design/share.en.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Kein favicon.ico auf dem Server: data:, verhindert die 404 in der Konsole,
+     bis André ein Zeichen dafuer entscheidet (01.10.2026). -->
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="tokens.css">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
@@ -279,14 +282,15 @@
     </div>
   </section>
 
-</main>
-
 <!-- Schwebender Knopf zurueck zu den drei Sprungmarken (André, 30.09.2026:
      "Wenn man runterscrollt, bräuchte ich einen FAB, der wieder hochscrollt
      zu dem Punkt, wo man die drei Buttons klicken kann"). Ein Anker, kein
      Skript noetig; das Skript unten blendet ihn nur ein, sobald die
      Sprungmarken oben aus dem Bild sind. -->
 <a class="hoch" href="#h-inhalt" aria-label="Back to the three sections"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+</main>
+
 
 <footer class="fuss">
   <div class="bahn fuss-inhalt">
@@ -301,37 +305,40 @@
   // Tintenkante statt Kastenkante (André, 30.09.2026: "minimale Treppen").
   // Jede Glyphe hat eine Vorbreite, den Abstand vom Satzanfang zur ersten
   // Tinte, und sie waechst mit der Schriftgroesse: gemessen 9px am 99px-
-  // Titel, 6 am 70px-Saeulentitel, 1 im Fliesstext. Canvas misst die
-  // Vorbreite der ersten Glyphe in der gerenderten Schrift, ein negativer
-  // linker Rand in dieser Breite setzt die Tinte auf die Kante. Fuer die
-  // Saeulennummer (::before) geht der Wert ueber --nummer-einzug.
+  // Titel, 6 am 70px-Saeulentitel, 1 im Fliesstext. Die Glyphe wird auf
+  // eine Canvas gezeichnet und die erste eingefaerbte Spalte gesucht (Safari
+  // liefert keine Tintengrenzen aus measureText); ein negativer linker Rand
+  // in dieser Breite setzt die Tinte auf die Kante, --einzug traegt den
+  // Gegenwert fuer Striche und Nummer (::before).
+  // Umgebaut am 01.10.2026 nach Lighthouse (1,3 s Skriptzeit, erzwungene
+  // Reflows): erst alle Werte lesen, dann alle schreiben; nur die Region
+  // um die Glyphe auslesen; Aufloesung nach Groesse, so dass die
+  // gezeichnete Glyphe hoechstens rund 400px misst; ein Lauf, sobald die
+  // Schriften geladen sind; Resize nur bei geaenderter Breite.
   (function () {
     var leinwand = document.createElement('canvas');
     var messer = leinwand.getContext('2d', { willReadFrequently: true });
     if (!messer) return;
-    var gemerkt = {};
-    // Nicht measureText().actualBoundingBoxLeft: Safari liefert dort immer 0
-    // (WebKit 26, gemessen am 01.10.2026), und die Treppen blieben. Statt-
-    // dessen wird die Glyphe gezeichnet und die erste eingefaerbte Spalte
-    // gesucht, in achtfacher Aufloesung; das geht in jedem Browser gleich.
-    // Der Zwischenspeicher gilt je Lauf: der erste Lauf misst noch die
-    // Ersatzschrift, der Lauf nach document.fonts.ready darf sie nicht erben.
-    function vorbreite(stil, text) {
-      var groesse = parseFloat(stil.fontSize), f = 8;
-      var schluessel = stil.fontWeight + '|' + groesse + '|' + stil.fontFamily + '|' + text;
+    var gemerkt;
+    function vorbreite(gewicht, groesse, familie, text) {
+      var schluessel = gewicht + '|' + groesse + '|' + familie + '|' + text;
       if (schluessel in gemerkt) return gemerkt[schluessel];
+      var f = Math.max(1, Math.min(8, Math.floor(400 / groesse)));
       var px = groesse * f, rand = Math.ceil(px * 0.5);
-      leinwand.width = Math.ceil(px * 2.5); leinwand.height = Math.ceil(px * 1.6);
-      messer.clearRect(0, 0, leinwand.width, leinwand.height);
-      messer.font = stil.fontWeight + ' ' + px + 'px ' + stil.fontFamily;
+      var breite = Math.ceil(px * 1.2), hoehe = Math.ceil(px * 1.5);
+      if (leinwand.width !== breite || leinwand.height !== hoehe) { leinwand.width = breite; leinwand.height = hoehe; }
+      messer.clearRect(0, 0, breite, hoehe);
+      messer.font = gewicht + ' ' + px + 'px ' + familie;
       messer.textBaseline = 'alphabetic';
       messer.fillStyle = '#000';
-      messer.fillText(text, rand, Math.ceil(px * 1.15));
-      var daten = messer.getImageData(0, 0, leinwand.width, leinwand.height).data;
+      messer.fillText(text, rand, Math.ceil(px * 1.1));
+      // Nur die Spalten ab dem Rand bis 0,4em dahinter, dort liegt jede Vorbreite.
+      var von = Math.max(0, rand - 2), bis = Math.min(breite, rand + Math.ceil(px * 0.4));
+      var daten = messer.getImageData(von, 0, bis - von, hoehe).data, spalten = bis - von;
       var erste = -1;
-      for (var x = 0; x < leinwand.width && erste < 0; x++) {
-        for (var y = 0; y < leinwand.height; y++) {
-          if (daten[(y * leinwand.width + x) * 4 + 3] > 40) { erste = x; break; }
+      for (var x = 0; x < spalten && erste < 0; x++) {
+        for (var y = 0; y < hoehe; y++) {
+          if (daten[(y * spalten + x) * 4 + 3] > 40) { erste = von + x; break; }
         }
       }
       var v = erste < 0 ? 0 : Math.round((erste - rand) / f * 100) / 100;
@@ -341,27 +348,34 @@
     function ausrichten() {
       gemerkt = {};
       var ziele = document.querySelectorAll('h1, h2, h3, p.satz, p.anspruch, p.untertitel, p.text, .stats > span');
-      for (var i = 0; i < ziele.length; i++) {
-        var e = ziele[i], t = (e.textContent || '').replace(/^\s+/, '');
-        if (!t) continue;
-        // Negativer Rand am Kasten; --einzug traegt den Gegenwert, damit der
-        // Strich darueber (::before) an der Kante bleibt. text-indent ginge
-        // nicht: nach einem Block-::before gilt es nicht mehr fuer den Text.
-        var v = vorbreite(getComputedStyle(e), t.charAt(0));
-        e.style.marginLeft = (-v) + 'px';
-        e.style.setProperty('--einzug', v + 'px');
-      }
       var saeulen = document.querySelectorAll('.abschnitt.marke-eins h2, .abschnitt.marke-zwei h2, .abschnitt.marke-drei h2');
-      for (var k = 0; k < saeulen.length; k++) {
-        var vor = getComputedStyle(saeulen[k], '::before');
-        var ziffer = vor.content.replace(/["']/g, '');
-        saeulen[k].style.setProperty('--nummer-einzug', (-vorbreite(vor, ziffer)) + 'px');
+      // Lesen.
+      var werte = [], i, e, t, cs;
+      for (i = 0; i < ziele.length; i++) {
+        e = ziele[i]; t = (e.textContent || '').replace(/^\s+/, '');
+        if (!t) continue;
+        cs = getComputedStyle(e);
+        werte.push([e, vorbreite(cs.fontWeight, parseFloat(cs.fontSize), cs.fontFamily, t.charAt(0))]);
       }
+      var nummern = [];
+      for (i = 0; i < saeulen.length; i++) {
+        cs = getComputedStyle(saeulen[i], '::before');
+        nummern.push([saeulen[i], vorbreite(cs.fontWeight, parseFloat(cs.fontSize), cs.fontFamily, cs.content.replace(/["']/g, ''))]);
+      }
+      // Schreiben.
+      for (i = 0; i < werte.length; i++) {
+        werte[i][0].style.marginLeft = (-werte[i][1]) + 'px';
+        werte[i][0].style.setProperty('--einzug', werte[i][1] + 'px');
+      }
+      for (i = 0; i < nummern.length; i++) nummern[i][0].style.setProperty('--nummer-einzug', (-nummern[i][1]) + 'px');
     }
-    var warten;
-    window.addEventListener('resize', function () { clearTimeout(warten); warten = setTimeout(ausrichten, 100); });
+    var breite = window.innerWidth, warten;
+    window.addEventListener('resize', function () {
+      if (window.innerWidth === breite) return;
+      breite = window.innerWidth;
+      clearTimeout(warten); warten = setTimeout(ausrichten, 100);
+    });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(ausrichten); else ausrichten();
-    ausrichten();
   })();
   // Press-Zustand der Knoepfe als Klasse (André, 30.09.2026): pointerdown
   // setzt .gedrueckt, loslassen, Abbruch, Verlassen und jedes Scrollen

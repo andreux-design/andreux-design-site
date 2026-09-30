@@ -70,7 +70,8 @@ const labels = [...new Set([...html.matchAll(/aria-labelledby="([^"]+)"/g)].map(
 pruef(labels.length === 0, "aria-labelledby zeigt auf vorhandene Kennung", labels.join(", "));
 
 /* 5. Jede lokale Datei, die die Seite anfordert, liegt auch da. */
-const lokal = [...html.matchAll(/(?:href|src)="(?!https?:|#|mailto:)([^"]+)"/g)].map(m => m[1]);
+// data: ausgenommen seit dem 01.10.2026: das leere Favicon (data:,) ist keine Datei.
+const lokal = [...html.matchAll(/(?:href|src)="(?!https?:|#|mailto:|data:)([^"]+)"/g)].map(m => m[1]);
 const weg = lokal.filter(p => !existsSync(resolve(wurzel, p.split("?")[0])));
 pruef(weg.length === 0, "Alle lokalen Dateien vorhanden", weg.join(", ") || `${lokal.length} geprueft`);
 
