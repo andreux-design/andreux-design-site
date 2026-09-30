@@ -24,6 +24,13 @@ Gemessen: Titel endet bei 519 (Handy) und 660 (Desktop), Einleitung beginnt
 bei 647 und 916, also am Desktop unter der Falz von 900. Gate grün, drei
 Seiten, Drift 96 zu 96. Die Share-Bilder sind unverändert, sie tragen nur
 den Claim.
+**Danach (André, 30.09., Nachricht während des Baus):** „Designsysteme" muss
+in eine Zeile passen, die Nummer darf größer sein als der Seitentitel.
+Säulentitel wieder Stufe 6 bis 12 (34 am Handy, 70 am Desktop), der weiche
+Trennstrich ist raus; Nummer bleibt 99 und 142. Gemessen: eine Zeile bei
+320, 390 und 1280. Nebenbei: bei 320px lief die LinkedIn-Adresse im Kontakt
+53px über den Rand, Altbefund, das Gate misst nur 390; jetzt darf sie
+brechen. Offen: das Gate um 320px erweitern.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
@@ -368,6 +375,7 @@ verschiedenen Farben auf einer Seite zu praesent).
       13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
+- [ ] Gate um 320px erweitern (LinkedIn-Adresse lief dort über, 30.09.)
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
