@@ -78,12 +78,12 @@
        dem ersten Bildschirm, der nur Streifen, Rolle und Titel traegt
        (André: "der Viewport im ATF nur die Headline und Stats, die Sub
        wird zu einer Art Einleitung"). -->
-  <section class="abschnitt einleitung" aria-labelledby="h-ueber">
+  <section class="abschnitt einleitung einspaltig" aria-labelledby="h-ueber">
     <div class="bahn">
       <div class="reihe">
         <!-- Ueberschrift wie bei "Was ich suche" und "Kontakt" (André,
              30.09.2026: "die Einleitung braucht auch eine Art Headline"). -->
-        <h2 id="h-ueber">About me</h2>
+        <h2 class="abschnitt-titel" id="h-ueber">About me</h2>
         <div>
           <p class="satz heben">I like to accompany a product from research through concept to implementation. Along the way I see where work repeats itself, and I build the system for it, out of components, tokens, rules and checks. At first that is extra effort. As soon as several people work on one product, it pays off. Everyone builds on the same foundation, the result stays consistent, and a change in one place applies everywhere. It started more than ten years ago, long before AI tools like Claude Code, with a report that came out of an input form at the push of a button. Today I build such systems with AI models that I brief like employees, and my knowledge of software development helps me with that.</p>
           <!-- Die drei Saeulen als Sprungmarken, Wortlaut gleich den
@@ -253,10 +253,10 @@
   </section>
 
   <!-- What I am looking for --------------------------------------------------- -->
-  <section class="abschnitt" aria-labelledby="h-suche">
+  <section class="abschnitt einspaltig" aria-labelledby="h-suche">
     <div class="bahn">
       <div class="reihe">
-        <h2 id="h-suche">What I'm looking for</h2>
+        <h2 class="abschnitt-titel" id="h-suche">What I'm looking for</h2>
         <div>
           <p class="text">What I'm looking for is an environment with knowledgeable people, where work is done thoroughly and not just quickly and superficially. I'm looking for something long-lived, where care pays off, and a field in which my work matters. I like having the whole process in view, and doing that with a team, preferably on site, though I'm used to remote work as well. Pure execution is not what I'm after. When I have freedom and the necessary resources and can decide for myself, the work usually turns out well. I gladly take advice and criticism when they're constructive. In study projects I have led teams, and I can assess people and put them to good use. Senior in my field or a first step into leadership, either suits me. Leadership is something I want to learn properly. And more about AI.</p>
         </div>
@@ -265,10 +265,10 @@
   </section>
 
   <!-- Kontakt --------------------------------------------------------------- -->
-  <section class="abschnitt" id="kontakt" aria-labelledby="h-kontakt">
+  <section class="abschnitt einspaltig" id="kontakt" aria-labelledby="h-kontakt">
     <div class="bahn">
       <div class="reihe">
-        <h2 id="h-kontakt">Contact</h2>
+        <h2 class="abschnitt-titel" id="h-kontakt">Contact</h2>
         <div>
           <ul class="kontakt-liste">
             <li><a href="mailto:hello@andreux.design">hello@andreux.design</a></li>
@@ -297,6 +297,46 @@
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
+
+  // Tintenkante statt Kastenkante (André, 30.09.2026: "minimale Treppen").
+  // Jede Glyphe hat eine Vorbreite, den Abstand vom Satzanfang zur ersten
+  // Tinte, und sie waechst mit der Schriftgroesse: gemessen 9px am 99px-
+  // Titel, 6 am 70px-Saeulentitel, 1 im Fliesstext. Canvas misst die
+  // Vorbreite der ersten Glyphe in der gerenderten Schrift, ein negativer
+  // linker Rand in dieser Breite setzt die Tinte auf die Kante. Fuer die
+  // Saeulennummer (::before) geht der Wert ueber --nummer-einzug.
+  (function () {
+    var messer = document.createElement('canvas').getContext('2d');
+    if (!messer || !messer.measureText) return;
+    function vorbreite(stil, text) {
+      messer.font = stil.fontWeight + ' ' + stil.fontSize + ' ' + stil.fontFamily;
+      var m = messer.measureText(text);
+      return Math.round(-m.actualBoundingBoxLeft * 100) / 100;
+    }
+    function ausrichten() {
+      var ziele = document.querySelectorAll('h1, h2, h3, p.satz, p.anspruch, p.untertitel, p.text, .stats > span');
+      for (var i = 0; i < ziele.length; i++) {
+        var e = ziele[i], t = (e.textContent || '').replace(/^\s+/, '');
+        if (!t) continue;
+        // Negativer Rand am Kasten; --einzug traegt den Gegenwert, damit der
+        // Strich darueber (::before) an der Kante bleibt. text-indent ginge
+        // nicht: nach einem Block-::before gilt es nicht mehr fuer den Text.
+        var v = vorbreite(getComputedStyle(e), t.charAt(0));
+        e.style.marginLeft = (-v) + 'px';
+        e.style.setProperty('--einzug', v + 'px');
+      }
+      var saeulen = document.querySelectorAll('.abschnitt.marke-eins h2, .abschnitt.marke-zwei h2, .abschnitt.marke-drei h2');
+      for (var k = 0; k < saeulen.length; k++) {
+        var vor = getComputedStyle(saeulen[k], '::before');
+        var ziffer = vor.content.replace(/["']/g, '');
+        saeulen[k].style.setProperty('--nummer-einzug', (-vorbreite(vor, ziffer)) + 'px');
+      }
+    }
+    var warten;
+    window.addEventListener('resize', function () { clearTimeout(warten); warten = setTimeout(ausrichten, 100); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ausrichten); else ausrichten();
+    ausrichten();
+  })();
   // Press-Zustand der Knoepfe als Klasse (André, 30.09.2026): pointerdown
   // setzt .gedrueckt, loslassen, Abbruch, Verlassen und jedes Scrollen
   // loeschen sie. Der Browser schickt pointercancel, sobald ein Wisch zum
