@@ -36,6 +36,12 @@ IntersectionObserver blendet ihn nur ein, wenn die Sprungmarken über dem
 Bild liegen. Gemessen bei 390px: unsichtbar oben (opacity 0, keine
 Pointer-Events), sichtbar nach 2400px Scroll, nach dem Klick liegen die
 Sprungmarken 24px unter der Kopfzeile. Keine JS-Fehler. Beide Sprachen.
+**Befund von André danach:** nach dem Tipp sprang die Seite beim Neuladen
+nach oben. Ursache war der Anker `#bereiche` in der Adresse, der beim
+Neuladen gegen die gemerkte Position gewinnt; reproduziert (906px statt
+3000px). Jetzt scrollt der Knopf per Skript ohne Adressänderung, unter
+prefers-reduced-motion ohne Animation; ohne Skript bleibt er ein Anker.
+Gemessen danach: kein Anker in der Adresse, Position nach Neuladen 3000px.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
