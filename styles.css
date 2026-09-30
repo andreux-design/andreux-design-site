@@ -320,6 +320,16 @@ a { color: inherit; }
   .hoch { right: var(--raum-8); bottom: calc(var(--raum-8) + env(safe-area-inset-bottom, 0px)); }
 }
 
+/* --- Anklickbares auf Touch (André, 30.09.2026) --------------------------- */
+/* Kein Ziehen, keine Vorschau bei festem Druck oder langem Halten, keine
+   Textauswahl an Knoepfen und Navigationslinks. touch-action bleibt
+   unangetastet: wer einen Knopf haelt und zieht, scrollt weiter. */
+.sprungmarken a, .beleg-link, .hoch, .kopf-nav a, .marke, .kontakt-liste a, .fuss a {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; user-select: none;
+}
+
 /* --- Abschnitte --------------------------------------------------------- */
 /* Keine Trennlinien, wie im Lebenslauf. Der Weissraum trennt, der
    Streifentitel links markiert den Anfang. Entscheidung André, 02.09.2026. */
