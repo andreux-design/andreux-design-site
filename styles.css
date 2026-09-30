@@ -224,6 +224,7 @@ a { color: inherit; }
   .heben:nth-child(2) { animation-delay: 60ms; }
   .heben:nth-child(3) { animation-delay: 120ms; }
   .heben:nth-child(4) { animation-delay: 180ms; }
+  .heben:nth-child(5) { animation-delay: 240ms; }
   @keyframes heben {
     from { opacity: 0; transform: translateY(0.5rem); }
     to   { opacity: 1; transform: none; }
@@ -238,8 +239,14 @@ a { color: inherit; }
    Objekt gelesen werden: derselbe Wortlaut, dieselbe Schrift, dieselbe
    Nummer aus derselben Klasse. Anklickbar, also --schrift-m1 und 44px Hoehe
    wie alles andere Anklickbare. */
+/* "Inhalt" ueber den Knoepfen (André, 30.09.2026: eine Trennung zum
+   Absatz davor, "bin ja gegen Linien, aber vielleicht helfen die", und eine
+   Ueberschrift wie Inhalt). Kein neues Zeichen: dieselbe kleine Versalzeile
+   mit dem 32px-Strich, die "Was ich suche" und "Kontakt" tragen. Der Strich
+   ist Struktur, keine Linie quer durch die Spalte. */
+.inhalt-titel { margin-top: var(--raum-9); }
 .sprungmarken {
-  list-style: none; margin: var(--raum-7) 0 0; padding: 0;
+  list-style: none; margin: var(--raum-5) 0 0; padding: 0;
   display: flex; flex-wrap: wrap; gap: var(--raum-4);
 }
 /* Rahmen wie die Belege-Buttons (André, 30.09.2026, am Handy: "Es ist nicht

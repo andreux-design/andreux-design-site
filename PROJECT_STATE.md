@@ -64,6 +64,13 @@ Knopf das „Impressum" ab. Der Fuß reserviert jetzt unten die Knopfhöhe plus
 Abstand (48px plus `--raum-6`, ab 900px `--raum-8`). Gemessen bei maximalem
 Scroll: keine Überdeckung, 21px zwischen Knopf und Impressum bei 390 wie
 1280. Die Desktop-Regel steht hinter `.fuss`, davor wurde sie überschrieben.
+**„Inhalt" über den Sprungmarken** (André, 30.09.: eine Trennung zum
+Absatz, „bin ja gegen Linien, aber vielleicht helfen die", und eine
+Überschrift wie Inhalt). Kein neues Zeichen: `h2.inhalt-titel` in der
+kleinen Versalzeile mit dem 32px-Strich, wie „Was ich suche" und „Kontakt";
+`ul#bereiche` trägt `aria-labelledby` darauf. Gemessen: 48px vom Absatz zum
+Titel, 12px vom Titel zu den Knöpfen, 13px Schrift, beide Breiten. Englisch
+„Contents". Fünfte Stufe der Hebe-Animation ergänzt.
 
 Die Sprungmarke oben bleibt Meta-Schrift in Versalien, weil sie ein Knopf
 ist; Nummer, Farbe und Wortlaut sind mit der H2 gleich. Nebenabschnitte
