@@ -279,6 +279,9 @@ Mitte. Kopfzeile, Hoch-Knopf und Scroll-Zeichen unverändert.
 **Name mit Hover und Druck** (André, 01.10.): `.marke` wechselt bei Maus
 in `--akzent-text` (200ms), beim Drücken scale(0.96) über `.gedrueckt`,
 Ursprung links. Gemessen: Hover rgb(191,59,0), Druck matrix 0.96.
+Am iPad bestätigt (André, 01.10.: „Geht"). Frage nach farbigen Strichen
+über den Stats: verneint, eine waagerechte farbige Linie wäre ein Zeichen
+ohne Aufgabe; André: „war zu voreilig". Striche bleiben grau.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
