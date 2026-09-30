@@ -207,17 +207,23 @@ a { color: inherit; }
      "wirklich dramatisch"). Davor 6 bis 12, davor endete die Leiter bei 9
      und der Titel stand ab 942px mit 49px in einer 1152px breiten Spalte.
      6vw erreicht 70px ab 1167px. */
-  font-size: clamp(var(--schrift-9), 6vw, var(--schrift-12));
+  /* Stufe 9 bis 15 (49 bis 99px) seit dem 30.09.2026 spaet abends (André:
+     "der Seitentitel darf auch groesser werden"); am Handy bleiben 49,
+     70 waeren dort acht Zeilen. 8vw erreicht 99px ab 1238px. */
+  font-size: clamp(var(--schrift-9), 8vw, var(--schrift-15));
   line-height: var(--zeile-display); letter-spacing: var(--spur-display);
-  margin: 0 0 var(--raum-7);
+  margin: 0;
   max-width: 20ch;
   text-wrap: balance;
 }
 .anschlag h1 em { font-style: normal; color: var(--marke-text); }
-.anschlag .satz {
+/* Die Einleitung: der Absatz unter dem ersten Bildschirm, ab 900px in der
+   Textspalte wie der Titel darueber. */
+.einleitung .satz {
   font-size: var(--schrift-1); color: var(--tinte-gedaempft);
   max-width: var(--mass-prosa-web); margin: 0;
 }
+@media (min-width: 900px) { .einleitung .reihe > div { grid-column: 2; } }
 .eigenname {
   font-family: var(--familie-meta); font-size: var(--schrift-m2);
   letter-spacing: var(--spur-versal); text-transform: uppercase;
@@ -372,11 +378,12 @@ h2::before {
   margin: 0 0 var(--raum-3);
   /* Auf der Leiter statt 1,5em (51 und 73,5px): Stufe 9 am Handy, 12 am
      Desktop, Pruefung der Typoskala vom 30.09.2026. */
-  /* Eine Display-Stufe ueber dem Saeulentitel (André, 30.09.2026 abends):
-     70 zu 49 am Handy, 99 zu 70 am Desktop. Stufe 15 kam dafuer mit v1.3.0
+  /* Zwei Display-Stufen ueber dem Saeulentitel (André, 30.09.2026 spaet
+     abends: "Zahl darf noch etwas groesser sein"): 99 zu 49 am Handy, 141 zu
+     70 am Desktop. Stufen 15 und 18 kamen dafuer mit v1.3.0 und v1.4.0
      ins Tokenpaket. Gleiche Schrift wie der Titel; ein Versuch in Mono war
      nicht gemeint. */
-  font-size: var(--schrift-12); line-height: 1; letter-spacing: var(--spur-display);
+  font-size: var(--schrift-15); line-height: 1; letter-spacing: var(--spur-display);
 }
 @media (min-width: 900px) {
   .abschnitt.marke-eins h2, .abschnitt.marke-eins h2 + div,
@@ -384,7 +391,7 @@ h2::before {
   .abschnitt.marke-drei h2, .abschnitt.marke-drei h2 + div { grid-column: 2; }
   .abschnitt.marke-eins h2::before,
   .abschnitt.marke-zwei h2::before,
-  .abschnitt.marke-drei h2::before { font-size: var(--schrift-15); }
+  .abschnitt.marke-drei h2::before { font-size: var(--schrift-18); }
 }
 h3 {
   font-family: var(--familie-display); font-weight: 600;

@@ -4,6 +4,27 @@ Letzte Aktualisierung: 2026-09-30
 
 ## Nächster Schritt
 
+**Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
+größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
+meiner Beratung: keine Viewport-Rechnung mit 100vh, weil die Browserleiste
+am Handy die Höhe ändert; der Abschnittsabstand setzt die Einleitung an die
+Falz). Markup beider Sprachen: `.anschlag` trägt Streifen, Rolle und h1;
+neu `section.abschnitt.einleitung` mit Absatz, „Inhalt" und Sprungmarken,
+ab 900px in der Textspalte. Tokenpaket auf **v1.4.0**, Stufe 18 = 141px,
+45 Leiterprüfungen grün. Größen jetzt:
+
+| | Handy 390 | Desktop 1280 |
+|---|---|---|
+| Seitentitel | 49, fünf Zeilen | 99, vier Zeilen |
+| Säulennummer | 99 | 142 |
+| Säulentitel | 49 | 70 |
+| Kartentitel | 34 | 49 |
+
+Gemessen: Titel endet bei 519 (Handy) und 660 (Desktop), Einleitung beginnt
+bei 647 und 916, also am Desktop unter der Falz von 900. Gate grün, drei
+Seiten, Drift 96 zu 96. Die Share-Bilder sind unverändert, sie tragen nur
+den Claim.
+
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
 **v1.2.0**, danach v1.3.0: Stufen 12 und 15 in Leiter und Webprojektion,
