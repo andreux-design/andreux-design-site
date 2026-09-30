@@ -226,6 +226,8 @@ a { color: inherit; }
 .anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-7); padding-top: 0; margin-top: var(--raum-7); }
 @media (max-width: 899px) {
   .anschlag .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--raum-5); align-items: start; }
+  /* Beide Zeilen gleich lang: "Frankfurt / am Main" statt "Frankfurt am / Main". */
+  .anschlag .stats span { text-wrap: balance; }
 }
 /* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
 .weiter {
