@@ -331,7 +331,7 @@ a { color: inherit; }
    Lesekante fuer alles, der Anschlag ist die einzige Ausnahme auf der
    Bahnkante (André, 01.10.2026: "so wie es ist, ist besser" war die
    Einreihung; vom 30.09. bis dahin standen die drei auf 64). */
-@media (min-width: 900px) { .eingereiht .reihe > h2, .eingereiht .reihe > div { grid-column: 2; } }
+@media (min-width: 900px) { .eingereiht .reihe > h1, .eingereiht .reihe > h2, .eingereiht .reihe > div { grid-column: 2; } }
 
 /* Abschnittstitel der drei einspaltigen Abschnitte: der Bau der Kartentitel
    (Sora, Stufe 3 am Handy, 9 am Desktop, gemischte Schreibung), darueber
@@ -344,7 +344,8 @@ a { color: inherit; }
   font-size: min(6.154vw, var(--schrift-3)); line-height: var(--zeile-display);
   letter-spacing: var(--spur-display); text-transform: none;
   color: var(--tinte);
-  margin-bottom: var(--raum-5);
+  /* margin-top 0 auch fuer ein h1 (Impressum): der Browser gaebe 0,67em. */
+  margin: 0 0 var(--raum-5);
 }
 /* Kein Strich ueber den grossen Abschnittstiteln (André, 30.09.2026: "nur
    so ne Mini-Line"): der 32px-Strich ist das Zeichen der Labels, "Inhalt"
@@ -739,6 +740,9 @@ p { max-width: var(--mass-prosa-web); }
   font-size: var(--schrift-m1);
 }
 .ergebnis b { color: var(--tinte); font-weight: 500; }
+/* Zwischenzeilen im Impressum: 500 wie "Ergebnis", nicht 700; die Seite
+   laedt Plex Sans nur in 400 und 500, 700 waere synthetisch (01.10.2026). */
+.text b { color: var(--tinte); font-weight: 500; }
 
 /* --- Kontakt ------------------------------------------------------------ */
 .kontakt-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--raum-5); }
