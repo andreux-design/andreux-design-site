@@ -307,6 +307,18 @@
     pruefen();
   })();
 
+  // Anker nach dem Sprung aus der Adresse nehmen (André, 30.09.2026: nach
+  // dem Tipp auf eine Sprungmarke sprang die Seite beim Neuladen an den
+  // Anfang des Bereichs). Der Link springt nativ, mit Fokus und
+  // scroll-margin; nur die Adresse behaelt den Anker nicht, damit beim
+  // Neuladen die gemerkte Position gilt. Ein Anker, mit dem die Seite von
+  // aussen geoeffnet wird, bleibt stehen, bis der erste Sprung erfolgt.
+  window.addEventListener('hashchange', function () {
+    if (location.hash && history.replaceState) {
+      history.replaceState(history.state, '', location.pathname + location.search);
+    }
+  });
+
   // Kein Themaknopf mehr (André, 14.09.2026): Hell und Dunkel kommen allein
   // aus prefers-color-scheme in tokens.css; wechselt das System, wechselt die
   // Seite mit. Eine alte gespeicherte Wahl wird entfernt.
