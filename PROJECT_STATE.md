@@ -398,6 +398,12 @@ Am Gerät bestätigt (André, 01.10.: „Jetzt grad hüpft nichts mehr").
 **Morgen:** Cloudflare, Bot Fight Mode bzw. JS-Detections, E-Mail-
 Verschleierung und Web-Analytics-Beacon abschalten, dann Lighthouse live
 erneut messen; lokal steht die Seite bei Performance 99.
+**Share-Bilder neu gerendert** (André, 01.10.: „Ist das Share-Pic hell und
+dunkel fähig?" Nein, ein og:image ist eine Datei, kein Thema; die Karten
+der Plattformen sind hell). `bin/share-bild.mjs` nachgezogen: „Produkte"
+bzw. „products" hervorgehoben wie auf der Seite, Rolle als Vorzeile in
+Sora 500 statt Mono-Versalien, Schriften aus `schriften/` als Daten-URI
+statt von Google. share.png und share.en.png neu, am Bild geprüft.
 
 **Typo- und Raumskala dramatisiert, auf `main`** (André, 30.09. abends,
 „Let's go" nach zwei Prüfungen, siehe Entschieden). Tokenpaket auf
