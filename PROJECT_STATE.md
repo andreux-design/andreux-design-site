@@ -4,12 +4,24 @@ Letzte Aktualisierung: 2026-10-01
 
 ## Nächster Schritt
 
-**Stand 01.10.2026, Ende der Sitzung:** Design steht (André: „grafisch und
-aus UX-Sicht höchst minimalistisch, aber ansprechend"). Alles unten
-Beschriebene ist auf `main` und live. Nächster Inhalt sind die
-Fallstudienseiten für GoTiger, filo und colibre; dafür braucht es Text von
-André über `uebergabe/`. Im Bewerbungsrepo nachzuziehen: „filo" klein und
-die fünf neuen Untertitel in den Projektkarten.
+**Stand 01.10.2026, Ende der Sitzung (Sitzungslimit erreicht).** Design
+steht, André: „an Perfektion sind wir nahe dran". Alles unten Beschriebene
+ist auf `main` und live, Gate grün mit 21 Prüfungen je Seite plus Drift,
+Lighthouse lokal 99/100/100/100. Was fehlt, nach Gewicht:
+
+1. **Cloudflare** (André, morgen): Bot Fight Mode bzw. JS-Detections,
+   E-Mail-Verschleierung, Analytics-Beacon abschalten; danach Lighthouse
+   live messen, Ziel die 99 von lokal (heute 64, 6,4 s Skriptzeit davon).
+2. **Fallstudien** GoTiger, filo, colibre: Text von André über
+   `uebergabe/`, Seiten bauen, Kurzfassungen auf der Hauptseite (900
+   Wörter, Burstiness 0,50); Tintenkanten-Tabelle um neue Anfangsglyphen
+   ergänzen.
+3. **Bilder** zu den Fallstudien, rendert André.
+4. **Quelle im Bewerbungsrepo:** „filo" klein, fünf Untertitel in die
+   Projektkarten, sonst holt die nächste Übergabe die alten Fassungen.
+5. **Favicon** entscheiden; heute ein leerer Link gegen die 404.
+6. Kleineres unter Offen: Tag-Chips, `VORSCHLAG-positionierung.md`,
+   `downloads/`, Interone-PDFs in der Historie, Prüfweg Englisch, Astro.
 
 **Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
 größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
