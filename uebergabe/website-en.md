@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 01.10.2026 (Satz fuer Satz aus website-de.md; erzeugt aus index.en.html samt ###- und ####-Zeilen, nicht selbst geprueft)
+# Seitentext EN, Stand 02.10.2026 (Satz fuer Satz aus website-de.md; erzeugt aus index.en.html samt ###- und ####-Zeilen, nicht selbst geprueft; Absatz „What I'm looking for“ ist die Uebersetzung aus bewerbungen-2026 zu Commit 7834543, nicht lektoriert)
 
 Senior Product Designer
 
@@ -72,4 +72,4 @@ By hand, as I remember it, the first build of a page alone took half a day to a 
 
 The rights belong to my employer, so I can't show any of it.
 
-What I'm looking for is an environment with knowledgeable people, where work is done thoroughly and not just quickly and superficially. I'm looking for something long-lived, where care pays off, and a field in which my work matters. I like having the whole process in view, and doing that with a team, preferably on site, though I'm used to remote work as well. Pure execution is not what I'm after. In study projects I have led teams, and I can assess people and put them to good use. I've never learned leadership as a discipline, though, and I'd like to catch up on that. A senior position in my field or a first leadership role, I can see myself in either. And I want to learn more about AI.
+What I'm looking for is an environment with knowledgeable people, where work is done thoroughly and not just quickly and superficially. On site is what I like best, though I'm used to remote work as well. I want to work on something long-lived, where care pays off, and in a field in which my work matters. Pure execution is not what I'm after, I like having the whole process in view. Today I lead a design department, but I'm the only one in it. From here on I'd like to work in a team. A senior position in product design or a first leadership role with a team of my own, I can see myself in either. So far I have led teams in projects during my studies and my vocational training, and I can assess people and put them to good use. I've never learned leadership as a discipline, and I'd like to catch up on that. And I want to learn more about AI.
