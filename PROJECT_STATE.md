@@ -758,6 +758,11 @@ verschiedenen Farben auf einer Seite zu praesent).
 
 ## Entschieden
 
+- **Zwei Orangewerte im hellen Thema bleiben** (André, 01.10.2026, „Lassen
+  wir"). Fläche #FF4F00 (3,3:1 auf Weiß, reicht für Flächen), Text #BF3B00
+  (5,5:1, nötig für AA); im Dunkeln ein Wert. Ein Orange für beides ginge
+  nur über die Flächen, dann wäre International Orange im Hellen weg.
+
 - **Skala ausreizen statt Verhältnis ändern** (André, 30.09.2026). Die
   Leiter bleibt 1,125 mit Display auf jeder dritten Stufe (1,42); dramatischer
   wird sie, indem der Titel bis Stufe 12 geht und die Ebenen des Raums
