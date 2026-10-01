@@ -57,6 +57,9 @@ gesperrt ist). Wer Text ändert, legt zuerst die neue Kopie ab, dann die Seite
 nach. Ein Satz, der nur auf einer Seite steht, lässt das Gate fallen.
 Seit dem 01.10.2026 gilt dasselbe für Kartentitel (`### ` in der Textdatei
 gegen `h3`) und Untertitel (`#### ` gegen `p.untertitel`).
+**Herübergelegt wird die bereinigte `website-de.md`, nie `texte/website.md`
+selbst:** deren Behauptungsliste enthält interne Kennungen, und dieses Repo
+ist öffentlich (Bewerbungsrepo, 01.10.2026).
 
 Geprüft wird am gerenderten Ergebnis, nicht am Quelltext: Systemtreue (jedes
 `var(--…)` ist definiert), jede Klasse hat eine Regel, kein toter Anker, jedes
