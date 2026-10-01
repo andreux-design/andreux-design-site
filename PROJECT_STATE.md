@@ -17,11 +17,35 @@ Lighthouse lokal 99/100/100/100. Was fehlt, nach Gewicht:
    Wörter, Burstiness 0,50); Tintenkanten-Tabelle um neue Anfangsglyphen
    ergänzen.
 3. **Bilder** zu den Fallstudien, rendert André.
-4. **Quelle im Bewerbungsrepo:** „filo" klein, fünf Untertitel in die
-   Projektkarten, sonst holt die nächste Übergabe die alten Fassungen.
+4. **Kopie der Textdatei herüberlegen** (André): `texte/website.md` von
+   `main` des Bewerbungsrepos nach `uebergabe/website-de.md`. Die ###- und
+   ####-Zeilen der Kopie sind am 01.10. aus `index.html` erzeugt, weil die
+   Datei nicht herüberkam und das Bewerbungsrepo gesperrt ist; erst mit der
+   echten Kopie prüft das Gate die Titel gegen die Quelle. Vorher dort den
+   Satz zum unzureichenden Designsystem eintragen (Wortlaut im Abschnitt
+   darunter), sonst fällt das Gate an ihm.
 5. **Favicon** entscheiden; heute ein leerer Link gegen die 404.
 6. Kleineres unter Offen: Tag-Chips, `VORSCHLAG-positionierung.md`,
    `downloads/`, Interone-PDFs in der Historie, Prüfweg Englisch, Astro.
+
+**Übergabe aus dem Bewerbungsrepo, 01.10.2026, auf `main`.** Laut Übergabe
+führt `texte/website.md` dort jetzt die sieben Kartentitel als ###-Zeilen
+und die sieben Untertitel als ####-Zeilen, „filo" klein; die Untertitel
+liegen in der Textdatei statt in `cv/cv-data.json`, Begründung in
+`doku/website-protokoll.md` dort. Hier nicht gelesen, das Repo ist gesperrt.
+`bin/drift.mjs` prüft seitdem drei Zeilenarten in beide Richtungen: Sätze
+wie bisher, ###-Zeilen gegen `h3`, ####-Zeilen gegen `p.untertitel`, als
+ganze Zeilen, `&shy;` entfernt; fehlen die Zeilen in der Textdatei, fällt
+das Gate. Gegenprobe mit vier verfälschten Kopien (Titel „Filo", Untertitel
+gekürzt, Titel gelöscht, Satz geändert) schlägt jedes Mal an, Exit 1.
+**Ein Satz geändert, hier verfasst, geht in die Quelle zurück:** „Hat ein
+Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht es heute
+beim Projektstart nach Regeln und wird auf die Bausteine angewandt."
+(Quelle `bfp.bausteine-designsysteme`: „wenn noch keines oder nur ein
+unzureichendes existiert"). Englisch: „If a client has no design system
+yet, or only an inadequate one, one is now created at project start
+according to rules and applied to the building blocks." Nicht gemessen,
+`bin/sprache.py` liegt im Bewerbungsrepo.
 
 **Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
 größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
@@ -149,8 +173,8 @@ einer Stelle", Bausteinbibliothek „Layoutvorlagen, die zu Bausteinen
 wurden", Volkswagen „Figma-Komponenten für ID. Buzz und California", Tokens
 „Mit wenigen Klicks auf eine andere Marke", Funnels „Ein Wizard vom
 Briefing zur Landingpage"; englisch entsprechend. Untertitel sind von der
-Driftprüfung ausgenommen. **Offen:** die fünf gehören als `untertitel` in
-die Projektkarten von `cv/cv-data.json`, sonst kennt die Quelle sie nicht.
+Driftprüfung ausgenommen. Seit dem 01.10. stehen sie als ####-Zeilen in
+`texte/website.md` und werden geprüft, siehe oben.
 **Systemprüfung am gerenderten Ergebnis** (André, 30.09.: „Check, ob wir
 auf einer Scale sind und ein einheitliches System haben"). Skript in der
 Sitzung: jede Schriftgröße, jeder Rand, jedes Polster, jede Lücke, jede
@@ -509,10 +533,8 @@ Kopfzeile bis 69px, Strich über „Inhalt" bei 93px, Liste endet bei 282px,
 kein Anker in der Adresse.
 **filo klein** (André, 30.09.: „filo wird immer klein geschrieben").
 Kartentitel und Satzanfang auf beiden Seiten und in den Kopien unter
-`uebergabe/` geändert. **Die Quelle im Bewerbungsrepo schreibt noch
-„Filo"** (`texte/website.md`, vermutlich auch `cv/cv-data.json`); dort
-nachziehen, sonst kommt die Großschreibung mit der nächsten Übergabe
-zurück. Die Driftprüfung teilt jetzt erst an Blockgrenzen, dann an
+`uebergabe/` geändert. In `texte/website.md` laut Übergabe vom 01.10.
+nachgezogen. Die Driftprüfung teilt jetzt erst an Blockgrenzen, dann an
 Satzenden, sonst wäre ein klein beginnender Satz mit dem davor
 verschmolzen; Zählung dadurch 96 statt 94, beidseitig gleich.
 
@@ -748,10 +770,13 @@ verschiedenen Farben auf einer Seite zu praesent).
       13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
-- [ ] Fünf neue Untertitel in die Projektkarten der Quelle übernehmen (30.09.)
+- [ ] Echte Kopie von `texte/website.md` (main, 01.10.) nach
+      `uebergabe/website-de.md`; bis dahin stammen die ###- und ####-Zeilen
+      der Kopie aus `index.html` und prüfen die Titel nur gegen sich selbst
+- [ ] Satz zum unzureichenden Designsystem in `texte/website.md` eintragen
+      und dort messen (`bin/sprache.py`)
 - [ ] Tintenkanten-Tabelle im Seitenskript nachmessen, wenn neue Anfangsglyphen dazukommen (Fallstudien); Messlogik: Canvas bei 400px, erste eingefärbte Spalte, in em
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
-- [ ] Überschrift der Kampagnen-Karte steht nicht in `texte/website.md`, Lücke im Prüfweg (Übergabe 30.09.)
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
       nicht als Skill installieren: der holt seine Regeln zur Laufzeit per
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
@@ -869,10 +894,16 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Magenta `#CD0B72` auf Weiss / `#F4369C` auf `#0B0E12` | 5,40:1 / 5,40:1 |
 | Blau `#0967D3` auf Weiss / `#2687F6` auf `#0B0E12` | 5,41:1 / 5,40:1 |
 | Flaechen `#FF4F00`, `#E8007D`, `#0A84FF`, Minimum ueber beide Gruende | 3,30 / 4,35 / 3,65 |
+| Drift 01.10.2026, je Sprache, Seite zu Kopie | 96 zu 96 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
+
+**2026-10-01** Übergabe aus dem Bewerbungsrepo umgesetzt: Die Driftprüfung
+vergleicht jetzt auch Kartentitel und Untertitel, und der Satz zum
+Designsystem des Kunden nennt den Fall „unzureichend". Die Kopie der
+Textdatei kam nicht mit, ihre Titelzeilen sind aus der Seite erzeugt.
 
 **2026-08-31** Die alte Startseite ist ersetzt, nicht repariert. Anlass war
 Andrés Einwand, warum eine Seite angepasst wird, die ohnehin ersetzt werden
