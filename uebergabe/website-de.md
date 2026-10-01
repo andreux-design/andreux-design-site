@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 01.10.2026 (Sätze: bewerbungen-2026/texte/website.md, Commit 06ce533; der Satz zum unzureichenden Designsystem ist am 01.10. hier verfasst und geht in die Quelle zurück; die ###- und ####-Zeilen sind aus index.html erzeugt, der Abgleich mit texte/website.md auf main vom 01.10. steht aus)
+# Seitentext DE, Stand 01.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit fb17947)
 
 Senior Product Designer
 
