@@ -46,7 +46,7 @@ Im selben Jahr habe ich auf eigene Initiative ein Designsystem aus Design Tokens
 
 #### Layoutvorlagen, die zu Bausteinen wurden
 
-Zurzeit arbeite ich in einer Performance-Marketing-Agentur und verantworte dort als einziger Designer den Bau der Funnels für die Kunden: Landingpages mit ihren Texten, Lead-Magnet-PDFs und Anzeigenmotive. Zuerst habe ich dort Layoutvorlagen von Hand angelegt. Jeder Kunde bekam ein kleines Designsystem in Figma, nur so weit, wie er es brauchte. Aus diesen Vorlagen sind 26 Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht es heute beim Projektstart nach Regeln und wird auf die Bausteine angewandt. Was ich von Hand gebaut hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
+Zurzeit arbeite ich in einer Performance-Marketing-Agentur und verantworte dort als einziger Designer den Bau der Funnels für die Kunden: Landingpages mit ihren Texten, Lead-Magnet-PDFs und Anzeigenmotive. Zuerst habe ich dort Layoutvorlagen von Hand angelegt. Jeder Kunde bekam ein kleines Designsystem in Figma, nur so weit, wie er es brauchte. Aus diesen Vorlagen sind 26 Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich von Hand gebaut hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
 
 Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln und Prüfstufen schreiben, der das Fach kennt.
 

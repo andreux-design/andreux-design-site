@@ -17,13 +17,15 @@ Lighthouse lokal 99/100/100/100. Was fehlt, nach Gewicht:
    Wörter, Burstiness 0,50); Tintenkanten-Tabelle um neue Anfangsglyphen
    ergänzen.
 3. **Bilder** zu den Fallstudien, rendert André.
-4. **Kopie der Textdatei herüberlegen** (André): `texte/website.md` von
-   `main` des Bewerbungsrepos nach `uebergabe/website-de.md`. Die ###- und
-   ####-Zeilen der Kopie sind am 01.10. aus `index.html` erzeugt, weil die
-   Datei nicht herüberkam und das Bewerbungsrepo gesperrt ist; erst mit der
-   echten Kopie prüft das Gate die Titel gegen die Quelle. Vorher dort den
-   Satz zum unzureichenden Designsystem eintragen (Wortlaut im Abschnitt
-   darunter), sonst fällt das Gate an ihm.
+4. **Kopie der Textdatei herüberlegen** (André, angekündigt am 01.10.):
+   `website-de.md` aus iCloud (Bewerbung 2026/Website) nach
+   `uebergabe/website-de.md`, dann `npm run gates`. **Nie `texte/website.md`
+   selbst einchecken**, die Behauptungsliste dort enthält interne
+   Kennungen. Die ###- und ####-Zeilen der heutigen Kopie sind aus
+   `index.html` erzeugt; erst mit der echten Kopie prüft das Gate die
+   Titel gegen die Quelle. Laut Bewerbungsrepo ist die neue Datei gegen
+   `drift.mjs` gemessen und wich nur im Designsystem-Satz ab, der hier
+   inzwischen getauscht ist.
 5. **Favicon** entscheiden; heute ein leerer Link gegen die 404.
 6. Kleineres unter Offen: Tag-Chips, `VORSCHLAG-positionierung.md`,
    `downloads/`, Interone-PDFs in der Historie, Prüfweg Englisch, Astro.
@@ -38,14 +40,14 @@ wie bisher, ###-Zeilen gegen `h3`, ####-Zeilen gegen `p.untertitel`, als
 ganze Zeilen, `&shy;` entfernt; fehlen die Zeilen in der Textdatei, fällt
 das Gate. Gegenprobe mit vier verfälschten Kopien (Titel „Filo", Untertitel
 gekürzt, Titel gelöscht, Satz geändert) schlägt jedes Mal an, Exit 1.
-**Ein Satz geändert, hier verfasst, geht in die Quelle zurück:** „Hat ein
-Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht es heute
-beim Projektstart nach Regeln und wird auf die Bausteine angewandt."
-(Quelle `bfp.bausteine-designsysteme`: „wenn noch keines oder nur ein
-unzureichendes existiert"). Englisch: „If a client has no design system
-yet, or only an inadequate one, one is now created at project start
-according to rules and applied to the building blocks." Nicht gemessen,
-`bin/sprache.py` liegt im Bewerbungsrepo.
+**Ein Satz geändert**, Wortlaut nach Lektorbefund aus dem Bewerbungsrepo
+(Commit fb17947; die erste Fassung von hier, „entsteht es heute", ist
+ersetzt): „Hat ein Kunde noch kein Designsystem oder nur ein
+unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird
+auf die Bausteine angewandt." (Quelle `bfp.bausteine-designsysteme`: „wenn
+noch keines oder nur ein unzureichendes existiert"). Englisch: „If a client
+has no design system yet, or only an inadequate one, a new one is created
+at project start according to rules and applied to the building blocks."
 
 **Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
 größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
@@ -770,11 +772,9 @@ verschiedenen Farben auf einer Seite zu praesent).
       13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
-- [ ] Echte Kopie von `texte/website.md` (main, 01.10.) nach
-      `uebergabe/website-de.md`; bis dahin stammen die ###- und ####-Zeilen
-      der Kopie aus `index.html` und prüfen die Titel nur gegen sich selbst
-- [ ] Satz zum unzureichenden Designsystem in `texte/website.md` eintragen
-      und dort messen (`bin/sprache.py`)
+- [ ] Echte Kopie `website-de.md` aus iCloud nach `uebergabe/website-de.md`
+      (André); bis dahin stammen die ###- und ####-Zeilen der Kopie aus
+      `index.html` und prüfen die Titel nur gegen sich selbst
 - [ ] Tintenkanten-Tabelle im Seitenskript nachmessen, wenn neue Anfangsglyphen dazukommen (Fallstudien); Messlogik: Canvas bei 400px, erste eingefärbte Spalte, in em
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
@@ -902,8 +902,9 @@ Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 **2026-10-01** Übergabe aus dem Bewerbungsrepo umgesetzt: Die Driftprüfung
 vergleicht jetzt auch Kartentitel und Untertitel, und der Satz zum
-Designsystem des Kunden nennt den Fall „unzureichend". Die Kopie der
-Textdatei kam nicht mit, ihre Titelzeilen sind aus der Seite erzeugt.
+Designsystem des Kunden nennt den Fall „unzureichend", im Wortlaut des
+Lektors aus dem Bewerbungsrepo (fb17947). Die Kopie der Textdatei kam noch
+nicht mit, ihre Titelzeilen sind aus der Seite erzeugt.
 
 **2026-08-31** Die alte Startseite ist ersetzt, nicht repariert. Anlass war
 Andrés Einwand, warum eine Seite angepasst wird, die ohnehin ersetzt werden
