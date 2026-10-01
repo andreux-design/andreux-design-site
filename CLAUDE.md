@@ -44,8 +44,9 @@ Gilt nur hier. Im Bewerbungsrepo wird weiter nichts ohne Freigabe gepusht.
 ```
 npm run gates     21 Prüfungen je Seite gegen index.html, index.en.html und
                   impressum.html, danach die Driftprüfung
-npm run drift     Sätze der Seite gegen uebergabe/website-de.md und
-                  uebergabe/website-en.md, beide Richtungen
+npm run drift     Sätze, Kartentitel und Untertitel der Seite gegen
+                  uebergabe/website-de.md und uebergabe/website-en.md,
+                  beide Richtungen
 npm run tokens    tokens.css aus @andreux/design-tokens erneuern
 ```
 
@@ -54,6 +55,8 @@ npm run tokens    tokens.css aus @andreux/design-tokens erneuern
 herübergelegt, weil das Bewerbungsrepo für Sitzungen aus diesem Ordner
 gesperrt ist). Wer Text ändert, legt zuerst die neue Kopie ab, dann die Seite
 nach. Ein Satz, der nur auf einer Seite steht, lässt das Gate fallen.
+Seit dem 01.10.2026 gilt dasselbe für Kartentitel (`### ` in der Textdatei
+gegen `h3`) und Untertitel (`#### ` gegen `p.untertitel`).
 
 Geprüft wird am gerenderten Ergebnis, nicht am Quelltext: Systemtreue (jedes
 `var(--…)` ist definiert), jede Klasse hat eine Regel, kein toter Anker, jedes

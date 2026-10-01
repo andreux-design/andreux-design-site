@@ -10,8 +10,15 @@
  * die Saetze des Fliesstexts der Seite gegen die Saetze der Textdatei, in
  * beide Richtungen. Ein Satz, der nur auf einer Seite steht, ist Drift.
  *
- * Nicht verglichen: Kartentitel, Untertitel, Streifen, Sprungmarken,
- * Belegknoepfe, Kopf und Fuss. Die stehen nicht in der Textdatei. Die
+ * KARTENTITEL UND UNTERTITEL, seit 01.10.2026. Die Textdatei fuehrt die
+ * Kartentitel als "### "-Zeilen und die Untertitel als "#### "-Zeilen. Sie
+ * werden als ganze Zeilen gegen h3 und p.untertitel der Seite verglichen,
+ * ebenfalls in beide Richtungen, nicht in Saetze geteilt ("ID. Buzz" waere
+ * sonst ein Satzende). Der weiche Trennstrich im Kartentitel ist Markup und
+ * wird entfernt. Fehlen die Zeilen in der Textdatei, faellt das Gate.
+ *
+ * Nicht verglichen: Streifen, Sprungmarken, Belegknoepfe, Kopf und Fuss,
+ * dazu alle uebrigen Ueberschriftzeilen der Textdatei ("#", "##"). Die
  * Labels "Vorgehen", "Ergebnis", "Nicht gezeigt" sind Markup und werden
  * abgezogen. Das <em> im Claim wird entfernt, ohne Leerzeichen einzufuegen.
  */
@@ -27,6 +34,7 @@ if (!seite || !quelle) {
 }
 
 const entkoden = s => s
+  .replace(/&shy;|­/g, "")
   .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
   .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&copy;/g, "©");
 
@@ -54,19 +62,39 @@ const bloecke = [...main.matchAll(
 );
 const aufSeite = saetze(entkoden(bloecke.join("\n")));
 
-/* Quelle: alles nach der ersten Ueberschriftzeile, ohne weitere Ueberschriften. */
-const md = readFileSync(resolve(wurzel, quelle), "utf8")
-  .split("\n").filter(z => !z.startsWith("#")).join("\n");
-const inQuelle = saetze(md);
+/* Seite: Kartentitel und Untertitel als ganze Zeilen. */
+const zeilenSeite = re => [...main.matchAll(re)]
+  .map(m => entkoden(m[1].replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim());
+const titelSeite = zeilenSeite(/<h3(?=[\s>])[^>]*>([\s\S]*?)<\/h3>/g);
+const unterSeite = zeilenSeite(/<p(?=[\s>])[^>]*class="untertitel"[^>]*>([\s\S]*?)<\/p>/g);
 
-const q = new Set(inQuelle), s = new Set(aufSeite);
-const nurSeite = aufSeite.filter(x => !q.has(x));
-const nurQuelle = inQuelle.filter(x => !s.has(x));
+/* Quelle: Saetze aus allem, was keine Ueberschriftzeile ist; Kartentitel aus
+   den "### "-Zeilen, Untertitel aus den "#### "-Zeilen. */
+const mdZeilen = readFileSync(resolve(wurzel, quelle), "utf8").split("\n");
+const inQuelle = saetze(mdZeilen.filter(z => !z.startsWith("#")).join("\n"));
+const zeilenQuelle = praefix => mdZeilen
+  .filter(z => z.startsWith(praefix + " "))
+  .map(z => z.slice(praefix.length).replace(/\s+/g, " ").trim());
+const titelQuelle = zeilenQuelle("###");
+const unterQuelle = zeilenQuelle("####");
 
 console.log(`\nDrift: ${seite} gegen ${quelle}\n`);
-console.log(`  Saetze auf der Seite ${aufSeite.length}, in der Quelle ${inQuelle.length}`);
-for (const x of nurSeite) console.log(`  nur Seite:   ${x}`);
-for (const x of nurQuelle) console.log(`  nur Quelle:  ${x}`);
-const ok = nurSeite.length === 0 && nurQuelle.length === 0 && aufSeite.length > 0;
-console.log(ok ? "\nKeine Drift." : `\n${nurSeite.length + nurQuelle.length} Satz/Saetze abweichend.`);
+let abweichend = 0, leer = false;
+for (const [art, a, b] of [
+  ["Saetze", aufSeite, inQuelle],
+  ["Kartentitel", titelSeite, titelQuelle],
+  ["Untertitel", unterSeite, unterQuelle],
+]) {
+  const q = new Set(b), s = new Set(a);
+  const nurSeite = a.filter(x => !q.has(x));
+  const nurQuelle = b.filter(x => !s.has(x));
+  console.log(`  ${art} auf der Seite ${a.length}, in der Quelle ${b.length}`);
+  for (const x of nurSeite) console.log(`  nur Seite:   ${x}`);
+  for (const x of nurQuelle) console.log(`  nur Quelle:  ${x}`);
+  abweichend += nurSeite.length + nurQuelle.length;
+  // Nichts gefunden heisst: die Suche greift nicht, nicht: alles gleich.
+  if (a.length === 0) { leer = true; console.log(`  ${art}: auf der Seite nichts gefunden`); }
+}
+const ok = abweichend === 0 && !leer;
+console.log(ok ? "\nKeine Drift." : `\n${abweichend} Abweichung(en)${leer ? ", eine Zeilenart leer" : ""}.`);
 process.exit(ok ? 0 : 1);
