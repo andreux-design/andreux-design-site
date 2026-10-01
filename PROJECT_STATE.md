@@ -17,17 +17,8 @@ Lighthouse lokal 99/100/100/100. Was fehlt, nach Gewicht:
    Wörter, Burstiness 0,50); Tintenkanten-Tabelle um neue Anfangsglyphen
    ergänzen.
 3. **Bilder** zu den Fallstudien, rendert André.
-4. **Kopie der Textdatei herüberlegen** (André, angekündigt am 01.10.):
-   `website-de.md` aus iCloud (Bewerbung 2026/Website) nach
-   `uebergabe/website-de.md`, dann `npm run gates`. **Nie `texte/website.md`
-   selbst einchecken**, die Behauptungsliste dort enthält interne
-   Kennungen. Die ###- und ####-Zeilen der heutigen Kopie sind aus
-   `index.html` erzeugt; erst mit der echten Kopie prüft das Gate die
-   Titel gegen die Quelle. Laut Bewerbungsrepo ist die neue Datei gegen
-   `drift.mjs` gemessen und wich nur im Designsystem-Satz ab, der hier
-   inzwischen getauscht ist.
-5. **Favicon** entscheiden; heute ein leerer Link gegen die 404.
-6. Kleineres unter Offen: Tag-Chips, `VORSCHLAG-positionierung.md`,
+4. **Favicon** entscheiden; heute ein leerer Link gegen die 404.
+5. Kleineres unter Offen: Tag-Chips, `VORSCHLAG-positionierung.md`,
    `downloads/`, Interone-PDFs in der Historie, Prüfweg Englisch, Astro.
 
 **Übergabe aus dem Bewerbungsrepo, 01.10.2026, auf `main`.** Laut Übergabe
@@ -48,6 +39,14 @@ auf die Bausteine angewandt." (Quelle `bfp.bausteine-designsysteme`: „wenn
 noch keines oder nur ein unzureichendes existiert"). Englisch: „If a client
 has no design system yet, or only an inadequate one, a new one is created
 at project start according to rules and applied to the building blocks."
+**Die Kopie ist seit dem 01.10. abends die echte:** `uebergabe/website-de.md`
+aus `texte/website.md`, Commit fb17947, von der Sitzung im Bewerbungsrepo
+auf Andrés Bitte aus iCloud hereingelegt. Gegen die Fassung, deren
+Titelzeilen ich aus `index.html` erzeugt hatte, weicht nur die Kopfzeile ab.
+Hier gelesen: Kopfzeile, sieben ###-, sieben ####-Zeilen und Textabsätze,
+keine Kennungen. **Nie `texte/website.md` selbst einchecken**, deren
+Behauptungsliste enthält interne Kennungen. Die englische Kopie bleibt aus
+`index.en.html` erzeugt.
 
 **Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
 größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
@@ -772,9 +771,6 @@ verschiedenen Farben auf einer Seite zu praesent).
       13 MB Arbeitsverzeichnis. Die am 31.08.2026 geloeschten Interone-PDFs
       stehen weiter in Commit `2562c8f` und sind auf GitHub abrufbar. Wirklich
       weg sind sie erst durch Umschreiben der Historie
-- [ ] Echte Kopie `website-de.md` aus iCloud nach `uebergabe/website-de.md`
-      (André); bis dahin stammen die ###- und ####-Zeilen der Kopie aus
-      `index.html` und prüfen die Titel nur gegen sich selbst
 - [ ] Tintenkanten-Tabelle im Seitenskript nachmessen, wenn neue Anfangsglyphen dazukommen (Fallstudien); Messlogik: Canvas bei 400px, erste eingefärbte Spalte, in em
 - [ ] Skills `fallstudie-schreiben` und `seite-pruefen`
 - [ ] `vercel-labs/web-interface-guidelines` als Referenzdatei einlagern,
@@ -894,7 +890,7 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Magenta `#CD0B72` auf Weiss / `#F4369C` auf `#0B0E12` | 5,40:1 / 5,40:1 |
 | Blau `#0967D3` auf Weiss / `#2687F6` auf `#0B0E12` | 5,41:1 / 5,40:1 |
 | Flaechen `#FF4F00`, `#E8007D`, `#0A84FF`, Minimum ueber beide Gruende | 3,30 / 4,35 / 3,65 |
-| Drift 01.10.2026, je Sprache, Seite zu Kopie | 96 zu 96 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
+| Drift 01.10.2026, je Sprache, Seite zu Kopie (deutsch: fb17947) | 96 zu 96 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
@@ -903,8 +899,8 @@ Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 **2026-10-01** Übergabe aus dem Bewerbungsrepo umgesetzt: Die Driftprüfung
 vergleicht jetzt auch Kartentitel und Untertitel, und der Satz zum
 Designsystem des Kunden nennt den Fall „unzureichend", im Wortlaut des
-Lektors aus dem Bewerbungsrepo (fb17947). Die Kopie der Textdatei kam noch
-nicht mit, ihre Titelzeilen sind aus der Seite erzeugt.
+Lektors aus dem Bewerbungsrepo (fb17947). Die echte Kopie der Textdatei kam
+am Abend und weicht von der Seite nicht ab.
 
 **2026-08-31** Die alte Startseite ist ersetzt, nicht repariert. Anlass war
 Andrés Einwand, warum eine Seite angepasst wird, die ohnehin ersetzt werden
