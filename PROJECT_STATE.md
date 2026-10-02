@@ -1,6 +1,6 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-10-01
+Letzte Aktualisierung: 2026-10-02
 
 ## Nächster Schritt
 
@@ -47,6 +47,17 @@ Hier gelesen: Kopfzeile, sieben ###-, sieben ####-Zeilen und Textabsätze,
 keine Kennungen. **Nie `texte/website.md` selbst einchecken**, deren
 Behauptungsliste enthält interne Kennungen. Die englische Kopie bleibt aus
 `index.en.html` erzeugt.
+
+**„Was ich suche" neu, 02.10.2026, auf `main`.** Vier Übergaben aus dem
+Bewerbungsrepo (29f7d46, 4d6926f, 7834543, 035d79d), von André dort
+abgenommen; die Kopie aus iCloud (Bewerbung 2026/Website/website-de.md,
+Kopfzeile 035d79d) liegt in `uebergabe/`. Sie wich von meiner von Hand
+nachgezogenen Fassung nur in der Kopfzeile ab. Der Absatz nennt jetzt Vor
+Ort vor Remote, den Designbereich, in dem André der Einzige ist, die
+Senior-Position im Produktdesign mit Richtung Führung und einen KI-Satz mit
+Inhalt. **Englisch ist die Übersetzung der Sitzung im Bewerbungsrepo, nicht
+lektoriert, von André vor dem Livegang nicht gelesen.** Seit dem 02.10.
+hole ich die Kopie selbst aus iCloud, wenn André Text übergibt.
 
 **Erster Bildschirm nur Titel, Einleitung darunter, Titel und Nummer noch
 größer** (André, 30.09. spät abends; Vorschlag von ihm, Umsetzung nach
@@ -895,6 +906,10 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
+
+**2026-10-02** Der Absatz „Was ich suche" ist in vier Runden aus dem
+Bewerbungsrepo neu gefasst und live; die englische Fassung ist nicht
+lektoriert.
 
 **2026-10-01** Übergabe aus dem Bewerbungsrepo umgesetzt: Die Driftprüfung
 vergleicht jetzt auch Kartentitel und Untertitel, und der Satz zum

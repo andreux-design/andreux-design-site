@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 02.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit fb17947; Absatz „Was ich suche“ nach der Übergabe zu Commit 035d79d hier von Hand getauscht, die Kopie aus 035d79d steht aus)
+# Seitentext DE, Stand 02.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit 035d79d)
 
 Senior Product Designer
 
