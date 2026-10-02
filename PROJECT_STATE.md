@@ -770,7 +770,14 @@ verschiedenen Farben auf einer Seite zu praesent).
 - [ ] `VORSCHLAG-positionierung.md` ist seit dem 16.09. überholt (Claim,
       Struktur und colibre sind anders entschieden); Hinweis steht im Kopf,
       löschen oder archivieren entscheidet André
-- [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin
+- [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin. Englisch wird
+      nur übersetzt, kein Lektor; die Kopie `website-en.md` ist aus
+      `index.en.html` erzeugt, die Drift prüft Englisch also gegen sich
+      selbst. Vorschlag vom 02.10., beides im Bewerbungsrepo: Satzpaare
+      DE/EN mit Prüfung, die anschlägt, wenn nur der deutsche Satz sich
+      ändert; ein englischer Lektor, der nur liest. Danach eine echte
+      `website-en.md` über iCloud, hier ändert sich nichts. André, 02.10.:
+      gemerkt, keine Priorität
 - [ ] Astro aufsetzen. `@andreux/design-tokens` ist seit dem 31.08.2026
       eingebunden, ueber package.json auf v1.1.0 und `npm run tokens`
 - [ ] Netlify-Buildeinstellungen setzen (Buildbefehl, Publish-Verzeichnis).
