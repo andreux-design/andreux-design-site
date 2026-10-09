@@ -7,3 +7,9 @@
 # prueft bin/gates.mjs auch die Ziele dieser Datei.
 /portfolio       /#koennen  301
 /portfolio.html  /#koennen  301
+
+# /en zeigt auf die englische Fassung (09.10.2026, André: in englischen
+# Bewerbungen soll der Link direkt auf Englisch landen). 200 ist ein Rewrite,
+# die Adresse bleibt in der Leiste stehen; index.en.html bleibt erreichbar.
+/en   /index.en.html  200
+/en/  /index.en.html  200
