@@ -38,7 +38,7 @@ I build design systems, from design tokens across several layers to nested compo
 
 #### Layout templates that became building blocks
 
-At the moment I work at a performance marketing agency, where I am the only designer and responsible for building the funnels for our clients: landing pages with their copy, lead magnet PDFs and ad creatives. There, I first set up layout templates by hand. Each client got a small design system in Figma, only as far as they needed it.
+At the moment I work at a performance marketing agency, where I am the only designer and responsible for building the funnels for our clients: landing pages with their copy, lead magnet PDFs and ad creatives. There, I first set up layout templates by hand. Each client got a small design system in Figma, so that I could design consistently myself.
 
 Those templates have become 26 building blocks, from which pages are now generated automatically. If a client has no design system yet, or only an inadequate one, a new one is created at project start according to rules and applied to the building blocks. What I had built by hand has thus become the foundation of machine production.
 
