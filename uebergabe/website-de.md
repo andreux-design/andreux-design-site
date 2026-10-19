@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 19.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit 03b0842; danach gestrichen: „Hochwissenschaftlich war das nicht.", André über die Bewerbungssitzung, 19.10.)
+# Seitentext DE, Stand 19.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit 5c6a908; bereinigt: ohne Kopfdaten und Behauptungsliste, „Aus dem Studium" als ##, weil es ein Abschnitts- und kein Kartentitel ist)
 
 Senior Product Designer
 
@@ -14,21 +14,7 @@ Research, Konzept, Prototyp, Übergabe an die Entwicklung, Betreuung bis zum Liv
 
 GoTiger lieferte asiatische Lebensmittel in Berlin aus, und ich gestaltete die App des Lieferdienstes. Ein Problem lag außerhalb der App. Asiatische Supermärkte sind oft chaotisch, und ohne Vorkenntnisse weiß man nicht, was man dort überhaupt kaufen kann. Also erklärte jede Produktdetailseite das Produkt, und Rezepte legten die Zutaten passend zur Portionsgröße mit einem Klick in den Warenkorb. Was man schon zu Hause hatte, wählte man ab. Außerdem gab es ein Swipe-Spiel, über das sich das passende Rezept finden ließ. Das ist alles live gegangen.
 
-Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Interview hinzu. Es reichte aber, um zu sehen, was zu verbessern war. Als eine Kollegin ausschied, übernahm ich ihre Aufgaben mit und briefte von da an das externe Entwicklungsteam.
-
-### filo
-
-#### Nachrichten und Dateien an einer Stelle
-
-filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht zu einem Projekt und weiß nicht mehr, wo sie war. Kam sie per E-Mail oder über Slack? Und die Datei dazu, lag die auf dem Drive oder doch in irgendeinem Chat? Wer so sucht, verliert Zeit, und wenn es hektisch wird, wird daraus Stress. Ich wollte eine Oberfläche, die alles an einer Stelle bündelt, ohne dass alle dasselbe Werkzeug nutzen müssen. Überrascht hat mich, wie vielen es genauso geht. Gebaut habe ich die Oberfläche als klickbaren Figma-Prototyp, der seine Zustände über 271 Variablen ohne Backend simuliert. Den Prototyp habe ich mit 23 Teilnehmenden in moderierten Online-Sitzungen evaluiert. Auch Teilnehmende mit wenig Technikerfahrung kamen damit zurecht. Das hat mich gefreut. Eine Bedienoberfläche, die ich mir in meiner heutigen Rolle gebaut habe, folgt einem ähnlichen Gedanken.
-
-### colibre
-
-#### Marke und App-Prototyp
-
-colibre war ein Studienprojekt im Sommersemester 2022, im Fach Brand Design Development. Zuerst kam die Marke, ein Markenkompass mit den drei Achsen Lifestyle, Innovation und Connection und mit Werten, an denen sich jede weitere Entscheidung messen ließ. Dann kam das Produkt. Wir im Team wanderten alle gern, also fragten wir uns, was uns dabei fehlte. So entstand das Konzept einer Outdoor-App mit Karte, Routen, einem Shop für Ausrüstung und einem Chat mit Leuten, die dieselbe Route gegangen sind. Der Colispot, der Knopf in der Mitte der Navigation, war der Kern. Damit konnte man einen schönen Ort auf der Karte markieren und teilen. Die drei Achsen fanden sich in der App wieder, der Shop als Lifestyle, der Colispot als Innovation, der Chat als Connection. Und die schräge Kante des Logos lief durch Buttons, Schalter und Preisschilder, so blieb die Marke bis in die Bedienung sichtbar. Als Erfahrenster im dreiköpfigen Team verteilte ich die Aufgaben nach Können und baute den Prototyp selbst, interaktiv in Figma. Weiter ging es nicht, es war ein Studienprojekt.
-
-Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu verschachtelten Komponenten und Flows, mit allem, was Figma dafür hergibt.
+Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Interview hinzu. Es reichte, um zu sehen, was zu verbessern war. Als eine Kollegin ausschied, übernahm ich ihre Aufgaben mit und briefte von da an das externe Entwicklungsteam.
 
 ### Eine Library für Volkswagen
 
@@ -57,5 +43,22 @@ Die Regeln haben einen alten Anlass. Ich habe erlebt, wie Projekte nach Geschmac
 #### Ein Wizard vom Briefing zur Landingpage
 
 Auf diesen Regeln steht heute ein mit Claude Code gebautes System, das ganze Funnels produziert. Für einen Kunden wird ein Briefing hinterlegt, und daraus baut das System eine Seite mit passenden Sektionen und Text. Sichtbar wird sie in einem Wizard, den ich entworfen und gebaut habe. Damit soll jeder im Team mit wenigen Klicks eine Landingpage erzeugen können. Links stehen die Texte als Formular, rechts steht die Vorschau der Seite, umschaltbar auf die mobile Ansicht. Wer mehr Mühe hineinstecken will, kann Sektionen hinzufügen, entfernen oder verschieben. Das allgemeine Layout ist durch ein Template festgelegt. Accessibility ist Bedingung für die Freigabe, nicht Nacharbeit. Von Hand brauchte nach meiner Erinnerung allein der erste Aufbau einer Seite einen halben bis einen ganzen Tag, ohne Text und ohne mobile Fassung. Mit dem Wizard steht die erste Fassung mit Text nach rund fünf Minuten, Korrekturen kommen obendrauf. Der Wizard ist fertig gebaut und läuft noch lokal bei mir, die Übernahme ins gemeinsame System steht aus. Die Rechte liegen beim Arbeitgeber, zeigen kann ich davon also nichts.
+
+
+## Aus dem Studium
+
+### filo
+
+#### Nachrichten und Dateien an einer Stelle
+
+filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht zu einem Projekt und weiß nicht mehr, wo sie war. Kam sie per E-Mail oder über Slack? Und die Datei dazu, lag die auf dem Drive oder doch in irgendeinem Chat? Wer so sucht, verliert Zeit, und wenn es hektisch wird, wird daraus Stress. Ich wollte eine Oberfläche, die alles an einer Stelle bündelt, ohne dass alle dasselbe Werkzeug nutzen müssen. Überrascht hat mich, wie vielen es genauso geht. Gebaut habe ich die Oberfläche als klickbaren Figma-Prototyp, der seine Zustände über 271 Variablen ohne Backend simuliert. Den Prototyp habe ich mit 23 Teilnehmenden in moderierten Online-Sitzungen evaluiert. Auch Teilnehmende mit wenig Technikerfahrung kamen damit zurecht. Das hat mich gefreut. Eine Bedienoberfläche, die ich mir in meiner heutigen Rolle gebaut habe, folgt einem ähnlichen Gedanken.
+
+### colibre
+
+#### Marke und App-Prototyp
+
+colibre war ein Studienprojekt im Sommersemester 2022, im Fach Brand Design Development. Zuerst kam die Marke, ein Markenkompass mit den drei Achsen Lifestyle, Innovation und Connection und mit Werten, an denen sich jede weitere Entscheidung messen ließ. Dann kam das Produkt. Wir im Team wanderten alle gern, also fragten wir uns, was uns dabei fehlte. So entstand das Konzept einer Outdoor-App mit Karte, Routen, einem Shop für Ausrüstung und einem Chat mit Leuten, die dieselbe Route gegangen sind. Der Colispot, der Knopf in der Mitte der Navigation, war der Kern. Damit konnte man einen schönen Ort auf der Karte markieren und teilen. Die drei Achsen fanden sich in der App wieder, der Shop als Lifestyle, der Colispot als Innovation, der Chat als Connection. Und die schräge Kante des Logos lief durch Buttons, Schalter und Preisschilder, so blieb die Marke bis in die Bedienung sichtbar. Als Erfahrenster im dreiköpfigen Team verteilte ich die Aufgaben nach Können und baute den Prototyp selbst, interaktiv in Figma. Weiter ging es nicht, es war ein Studienprojekt.
+
+Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu verschachtelten Komponenten und Flows, mit allem, was Figma dafür hergibt.
 
 Was ich suche, ist ein Umfeld mit fachkundigen Leuten, in dem gründlich gearbeitet wird und nicht nur schnell und oberflächlich. Vor Ort ist mir am liebsten, Remote-Arbeit bin ich aber auch gewohnt. Arbeiten möchte ich an etwas Langlebigem, an dem sich Sorgfalt lohnt, und in einem Feld, in dem es auf meine Arbeit ankommt. Reine Umsetzung suche ich nicht, ich mag es, den ganzen Prozess im Blick zu haben. Heute leite ich einen Designbereich, bin dort aber der Einzige. Künftig möchte ich in einem Team arbeiten, in einer Senior-Position im Produktdesign. Aus dieser Rolle heraus will ich mich in Richtung Führung bewegen. Teams geführt habe ich bisher in Projekten während Studium und Ausbildung. Als Fach gelernt habe ich Führung nie, das möchte ich nachholen. Und über KI will ich mehr lernen, vom Innenleben der Modelle bis zu der Frage, wie Gestaltung und Text mit ihnen gut werden.
