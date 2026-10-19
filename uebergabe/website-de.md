@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 19.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit nach 5c6a908, bereinigte Kopie aus iCloud; „Aus dem Studium" als ##, Abschnitts- und kein Kartentitel)
+# Seitentext DE, Stand 19.10.2026 abends (Quelle: bewerbungen-2026/texte/website.md, bereinigte Kopie aus iCloud; „Aus dem Studium" und „Wie ich arbeite" als ##, Abschnitts- und keine Kartentitel)
 
 Senior Product Designer
 
@@ -61,4 +61,6 @@ filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht z
 
 colibre war ein Studienprojekt im Sommersemester 2022, im Fach Brand Design Development. Zuerst kam die Marke, ein Markenkompass mit den drei Achsen Lifestyle, Innovation und Connection und mit Werten, an denen sich jede weitere Entscheidung messen ließ. Dann kam das Produkt. Wir im Team wanderten alle gern, also fragten wir uns, was uns dabei fehlte. So entstand das Konzept einer Outdoor-App mit Karte, Routen, einem Shop für Ausrüstung und einem Chat mit Leuten, die dieselbe Route gegangen sind. Der Colispot, der Knopf in der Mitte der Navigation, war der Kern. Damit konnte man einen schönen Ort auf der Karte markieren und teilen. Die drei Achsen fanden sich in der App wieder, der Shop als Lifestyle, der Colispot als Innovation, der Chat als Connection. Und die schräge Kante des Logos lief durch Buttons, Schalter und Preisschilder, so blieb die Marke bis in die Bedienung sichtbar. Als Erfahrenster im dreiköpfigen Team verteilte ich die Aufgaben nach Können und baute den Prototyp selbst, interaktiv in Figma. Weiter ging es nicht, es war ein Studienprojekt.
 
-Was ich suche, ist ein Umfeld mit fachkundigen Leuten, in dem gründlich gearbeitet wird und nicht nur schnell und oberflächlich. Vor Ort ist mir am liebsten, Remote-Arbeit bin ich aber auch gewohnt. Arbeiten möchte ich an etwas Langlebigem, an dem sich Sorgfalt lohnt, und in einem Feld, in dem es auf meine Arbeit ankommt. Reine Umsetzung suche ich nicht, ich mag es, den ganzen Prozess im Blick zu haben. Heute leite ich einen Designbereich, bin dort aber der Einzige. Künftig möchte ich in einem Team arbeiten, in einer Senior-Position im Produktdesign. Aus dieser Rolle heraus will ich mich in Richtung Führung bewegen. Teams geführt habe ich bisher in Projekten während Studium und Ausbildung. Als Fach gelernt habe ich Führung nie, das möchte ich nachholen. Und über KI will ich mehr lernen, vom Innenleben der Modelle bis zu der Frage, wie Gestaltung und Text mit ihnen gut werden.
+## Wie ich arbeite
+
+Ich behalte gern den ganzen Weg im Blick, vom Research bis zum Livegang, und arbeite gründlich, weil sich Sorgfalt bei langlebigen Produkten lohnt. Über KI will ich mehr lernen, vom Innenleben der Modelle bis zu der Frage, wie Gestaltung und Text mit ihnen gut werden.
