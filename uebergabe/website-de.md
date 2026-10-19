@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit 03b0842)
+# Seitentext DE, Stand 19.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Commit 03b0842; danach gestrichen: „Hochwissenschaftlich war das nicht.", André über die Bewerbungssitzung, 19.10.)
 
 Senior Product Designer
 
@@ -14,7 +14,7 @@ Research, Konzept, Prototyp, Übergabe an die Entwicklung, Betreuung bis zum Liv
 
 GoTiger lieferte asiatische Lebensmittel in Berlin aus, und ich gestaltete die App des Lieferdienstes. Ein Problem lag außerhalb der App. Asiatische Supermärkte sind oft chaotisch, und ohne Vorkenntnisse weiß man nicht, was man dort überhaupt kaufen kann. Also erklärte jede Produktdetailseite das Produkt, und Rezepte legten die Zutaten passend zur Portionsgröße mit einem Klick in den Warenkorb. Was man schon zu Hause hatte, wählte man ab. Außerdem gab es ein Swipe-Spiel, über das sich das passende Rezept finden ließ. Das ist alles live gegangen.
 
-Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Interview hinzu. Hochwissenschaftlich war das nicht. Es reichte aber, um zu sehen, was zu verbessern war. Als eine Kollegin ausschied, übernahm ich ihre Aufgaben mit und briefte von da an das externe Entwicklungsteam.
+Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Interview hinzu. Es reichte aber, um zu sehen, was zu verbessern war. Als eine Kollegin ausschied, übernahm ich ihre Aufgaben mit und briefte von da an das externe Entwicklungsteam.
 
 ### filo
 
