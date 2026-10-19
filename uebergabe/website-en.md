@@ -14,7 +14,7 @@ Research, concept, prototype, handover to development, support through to launch
 
 GoTiger delivered Asian groceries in Berlin, and I designed the delivery service's app. One problem lay outside the app. Asian supermarkets are often chaotic, and without prior knowledge you don't know what you can even buy there. So every product detail page explained the product, and recipes put the ingredients into the basket with one click, matched to the portion size. What you already had at home, you deselected. There was also a swipe game for finding the right recipe. All of it went live.
 
-I started with a survey of the target group, and later user tests in interviews were added. But it was enough to see what needed improving. When a colleague left, I took over her tasks as well and from then on briefed the external development team.
+I started with a survey of the target group, and later user tests in interviews were added. It was enough to see what needed improving. When a colleague left, I took over her tasks as well and from then on briefed the external development team.
 
 ### filo
 
