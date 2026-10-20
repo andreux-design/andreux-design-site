@@ -495,6 +495,13 @@ h2::before { margin-left: var(--einzug); }
 .sprungmarken a.gedrueckt, .beleg-link.gedrueckt, .hoch.gedrueckt {
   transform: scale(0.96);
   background-color: var(--flaeche-gehoben);
+  /* Rahmen in der Farbe des Labels oder Pfeils (André, 20.10.2026): auf
+     Touch ist der Druck die einzige Rueckmeldung, und die gehobene Flaeche
+     allein war im Dunkelmodus kaum zu sehen. currentColor ist die Marke
+     der Sprungmarke, der Akzent des Beleg-Links und beim Hoch-Knopf das
+     Orange, das der Pfeil beim Druck schon traegt. Hover bleibt Tinte:
+     Tinte heisst "koennte", Marke heisst "tue". */
+  border-color: currentColor;
 }
 /* any-hover statt hover und pointer: fine (André, 01.10.2026, iPad Pro mit
    Maus: "die Buttons zeigen nichts"). Safari auf dem iPad meldet auch mit
