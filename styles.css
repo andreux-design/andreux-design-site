@@ -294,7 +294,10 @@ a { color: inherit; }
 .weiter {
   justify-self: center;
   display: grid; place-items: center; width: var(--raum-9); height: var(--raum-9);
-  color: var(--tinte-leise);
+  /* Gedaempft statt leise (André, 20.10.2026: "der Pfeil ist an sich schon
+     unscheinbar"): dieselbe Stufe wie der Hoch-Knopf, der dasselbe Zeichen
+     in Gegenrichtung ist. */
+  color: var(--tinte-gedaempft);
 }
 .weiter svg { display: block; }
 /* Hover und Druck (André, 01.10.2026): bei Maus rueckt der Pfeil um 2px
@@ -302,6 +305,25 @@ a { color: inherit; }
    geschrumpft, ueber .gedrueckt aus dem Seitenskript. */
 .weiter { transition: transform var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus); }
 .weiter.gedrueckt { color: var(--akzent-text); transform: scale(0.96); }
+/* Das Zeichen winkt, bis gescrollt wird (André, 20.10.2026: "subtil
+   animiert"). Die einzige Bewegung der Seite ohne Eingabe, deshalb mit
+   Ende: drei Durchlaeufe, und sobald die Seite scrollt, setzt das Skript
+   .gescrollt und die Animation ist aus. Sie liegt auf dem SVG, nicht auf
+   dem Anker: dort laufen Hover und Druck ueber transform, und zwei
+   Transforms auf einem Element ueberschreiben sich. Weg 8px (raum-4), am
+   20.10.2026 von 3px hochgesetzt: "die Animation sieht man kaum" (André,
+   am Handy). Unter prefers-reduced-motion greift der Block oben:
+   1ms, ein Durchlauf.
+   VORLAEUFIG: die Dauer ist aus dauer-3 gerechnet, 1920ms, weil das Paket
+   keine Stufe fuer einen langsamen Takt hat. Auf main seit dem 20.10.2026
+   auf Andrés Wort; die Stufe folgt als Tag aus design-tokens (Leiter 120,
+   200, 320, dann 520, 840, 1360, 2200), danach steht hier der Token. */
+@keyframes winken {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(var(--raum-4)); }
+}
+.weiter svg { animation: winken calc(6 * var(--dauer-3)) var(--kurve-ein-aus) var(--dauer-3) 3; }
+.weiter.gescrollt svg { animation: none; }
 @media (any-hover: hover) {
   .weiter:hover:not(.gedrueckt) { color: var(--tinte); transform: translateY(var(--raum-0)); }
 }
