@@ -91,6 +91,10 @@
   --dauer-1: 120ms;
   --dauer-2: 200ms;
   --dauer-3: 320ms;
+  --dauer-4: 520ms;
+  --dauer-5: 840ms;
+  --dauer-6: 1360ms;
+  --dauer-7: 2200ms;
   --kurve-aus: cubic-bezier(0.2, 0, 0, 1);
   --kurve-ein-aus: cubic-bezier(0.4, 0, 0.6, 1);
 
@@ -163,6 +167,10 @@
   --duration-1: var(--dauer-1);
   --duration-2: var(--dauer-2);
   --duration-3: var(--dauer-3);
+  --duration-4: var(--dauer-4);
+  --duration-5: var(--dauer-5);
+  --duration-6: var(--dauer-6);
+  --duration-7: var(--dauer-7);
   --easing-aus: var(--kurve-aus);
   --easing-ein-aus: var(--kurve-ein-aus);
 }

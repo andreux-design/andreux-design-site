@@ -20,7 +20,7 @@ bewusst herüberkopiert wird. **Es gibt keine Leitung zu den privaten Daten.**
 `impressum.html`, `tokens.css` aus dem Paket, `schriften.css` mit den vier
 selbst gehosteten woff2 unter `schriften/` (seit 01.10.2026, SIL OFL) und
 `downloads/` mit vier PDFs (eines davon der nicht verlinkte, per `_headers` nicht indexierte Lebenslauf vom 15.10.2026; gezählt am 15.10.2026, vorher stand hier „sechs"). Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
-`tokens.css` aus `@andreux/design-tokens`, gepinnt auf `v1.1.0`.
+`tokens.css` aus `@andreux/design-tokens`, gepinnt auf `v1.5.0`.
 
 `portfolio.html` ist ersetzt. `/portfolio` und `/portfolio.html` leiten per
 `_redirects` auf `#koennen` der Startseite. Die alten Fassungen von

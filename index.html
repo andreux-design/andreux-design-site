@@ -486,12 +486,9 @@
   // Safari und Chrome verschieden, und keine Dauer. Deshalb scrollt das
   // Skript selbst: Kurve ist --kurve-aus aus dem Tokenpaket, gelesen und
   // als Bezier geloest; die Dauer waechst mit der Strecke, von dauer-3 bei
-  // einem kurzen Sprung bis zur Obergrenze ab drei Bildschirmhoehen.
-  // VORLAEUFIG: die Obergrenze ist nach der Regel der Leiter gerechnet
-  // (jede Stufe die Summe der beiden davor: 120, 200, 320, 520, 840), weil
-  // das Paket oberhalb von dauer-3 keine Stufe hat. Auf main seit dem
-  // 20.10.2026 auf Andrés Wort; kommt --dauer-5 aus design-tokens, liest
-  // das Skript den Token statt zu rechnen.
+  // einem kurzen Sprung bis dauer-5 (840ms) ab drei Bildschirmhoehen,
+  // beide aus dem Tokenpaket (v1.5.0; einen Tag lang war die Obergrenze
+  // hier aus dauer-2 und dauer-3 nach der Leiterregel gerechnet).
   // Bricht ab, sobald der Leser selbst eingreift (Rad, Finger, Taste),
   // sonst kaempft die Animation mit dem Daumen. Waehrend des Laufs steht
   // scroll-behavior auf auto, sonst glaettet der Browser jeden Schritt
@@ -539,8 +536,7 @@
       window.scrollTo({ top: oben, left: 0, behavior: 'auto' });
       return;
     }
-    var d2 = tokenMs('--dauer-2'), d3 = tokenMs('--dauer-3');
-    var d4 = d2 + d3, d5 = d3 + d4;
+    var d3 = tokenMs('--dauer-3'), d5 = tokenMs('--dauer-5');
     var anteil = Math.min(1, Math.abs(strecke) / (3 * window.innerHeight));
     var dauer = d3 + (d5 - d3) * anteil;
     var kurve = bezier('--kurve-aus');

@@ -314,15 +314,13 @@ a { color: inherit; }
    20.10.2026 von 3px hochgesetzt: "die Animation sieht man kaum" (André,
    am Handy). Unter prefers-reduced-motion greift der Block oben:
    1ms, ein Durchlauf.
-   VORLAEUFIG: die Dauer ist aus dauer-3 gerechnet, 1920ms, weil das Paket
-   keine Stufe fuer einen langsamen Takt hat. Auf main seit dem 20.10.2026
-   auf Andrés Wort; die Stufe folgt als Tag aus design-tokens (Leiter 120,
-   200, 320, dann 520, 840, 1360, 2200), danach steht hier der Token. */
+   Takt ist dauer-7 (2200ms) aus dem Tokenpaket v1.5.0; bis dahin stand
+   hier fuer einen Tag eine aus dauer-3 gerechnete Dauer (1920ms). */
 @keyframes winken {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(var(--raum-4)); }
 }
-.weiter svg { animation: winken calc(6 * var(--dauer-3)) var(--kurve-ein-aus) var(--dauer-3) 3; }
+.weiter svg { animation: winken var(--dauer-7) var(--kurve-ein-aus) var(--dauer-3) 3; }
 .weiter.gescrollt svg { animation: none; }
 @media (any-hover: hover) {
   .weiter:hover:not(.gedrueckt) { color: var(--tinte); transform: translateY(var(--raum-0)); }
