@@ -558,6 +558,16 @@ h2::before { margin-left: var(--einzug); }
 @media (max-width: 899px) {
   .abschnitt { padding-block: var(--raum-10); }
   .anschlag { padding-block: var(--raum-11) var(--raum-10); }
+  /* Das Zeichen ueber Safaris Leiste (André, 20.10.2026: "man sieht es
+     kaum"). Der Anschlag ist 100lvh hoch, die Hoehe im Vollbild; beim
+     Laden ist die Leiste da, und das Zeichen (80px ueber der Unterkante)
+     lag unter ihr (Leiste rund 90px). Das Unterpolster waechst um die
+     Differenz aus grosser und kleiner Viewport-Hoehe, also um die Leiste;
+     im Vollbild ist die Differenz 0 und nichts aendert sich. Eine Summe
+     aus Token und Viewport wie die Kopfhoehe, keine Leiterstufe; in
+     Chromium ohne Leiste misst sie --raum-10 wie zuvor. Steht hier und
+     nicht im Block oben, weil diese Zeile sonst gewinnt. */
+  .anschlag { padding-bottom: calc(var(--raum-10) + 100lvh - 100svh); }
 }
 .abschnitt > .bahn > .reihe + .reihe { margin-top: var(--raum-9); }
 h2 {
