@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 02.10.2026 (Satz fuer Satz aus website-de.md; erzeugt aus index.en.html samt ###- und ####-Zeilen, nicht selbst geprueft; Absatz „What I'm looking for“ ist die Uebersetzung aus bewerbungen-2026 zu Commit 035d79d, nicht lektoriert); seit 19.10.2026 abends „How I work“ statt „What I'm looking for“, Übersetzung aus bewerbungen-2026
+# Seitentext EN, Stand 02.10.2026 (Satz fuer Satz aus website-de.md; erzeugt aus index.en.html samt ###- und ####-Zeilen, nicht selbst geprueft; Absatz „What I'm looking for“ ist die Uebersetzung aus bewerbungen-2026 zu Commit 035d79d, nicht lektoriert); seit 19.10.2026 abends „How I work“ statt „What I'm looking for“, Übersetzung aus bewerbungen-2026; Absatz „How I work“ seit 20.10.2026 abends in der Fassung aus bewerbungen-2026 (Recruiterin, Faktenprüfer, Lektor)
 
 Senior Product Designer
 
@@ -74,4 +74,4 @@ The rights belong to my employer, so I can't show any of it.
 
 ## How I work
 
-I like to keep the whole process in view, from research to launch, and I work thoroughly because care pays off for long-lived products. I want to learn more about AI, from the inner workings of the models to the question of how design and writing can turn out well with them.
+My focus is UX, and the interface is the part of it you can see. Long-lived products matter to me because that is where care pays off. I love reducing complexity and making things simpler for the people who use them.
