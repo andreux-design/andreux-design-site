@@ -106,8 +106,9 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
      gehobene Fläche allein war im Dunkelmodus kaum zu sehen. Hover bleibt
      Tinte: Tinte heißt „könnte", Marke heißt „tue". Der am 17.09.
      verworfene farbige Rahmen galt dem Ruhezustand, nicht dem Druck.
-  2. *Das Scroll-Zeichen winkt* dreimal (Takt `--dauer-7`, 8px Weg, Kurve
-     ein-aus) und ist nach dem ersten Scrollen still: die einzige Bewegung
+  2. *Das Scroll-Zeichen winkt* endlos (Takt `--dauer-7`, 8px Weg, Kurve
+     ein-aus; bis zum Abend des 20.10. dreimal) und ist nach dem ersten
+     Scrollen still: die einzige Bewegung
      ohne Eingabe, deshalb mit Ende. Zuerst 3px und `--tinte-leise`, am
      Handy kaum zu sehen; jetzt `--tinte-gedaempft` wie der Hoch-Knopf.
      Animation auf dem SVG, weil Hover und Druck auf dem Anker schon
@@ -267,7 +268,7 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Drift 01.10.2026, je Sprache, Seite zu Kopie (deutsch: fb17947) | 96 zu 96 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
 | Drift 20.10.2026, je Sprache, Seite zu Kopie | 88 zu 88 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
 | Druckrahmen = Textfarbe, hell (Magenta, Orange) | rgb(205,11,114), rgb(191,59,0); dunkel rgb(244,54,156), rgb(255,79,0); Ruhe rgb(142,148,157) / rgb(108,114,128) |
-| Scroll-Zeichen | winken 2,2 s x3, Verzögerung 0,32 s, Weg 8px, Ruhe rgb(86,91,99); Reduced Motion 0,001 s x1 |
+| Scroll-Zeichen | winken 2,2 s endlos (bis 20.10. abends x3), Verzögerung 0,32 s, Weg 8px, Ruhe rgb(86,91,99); Reduced Motion 0,001 s x1 |
 | Sprung Pfeil nach Einleitung (390x800) | Ziel 747 = Landung 747, ca. 474 ms, Schritte 9, 38, 80, 103 … 3, 2, 2, 1 |
 | Sprung Hoch-Knopf vom Ende (8554px) | ca. 829 ms, Landung 48px unter dem Kopf |
 | Kontakt-Ziel hinter dem Seitenende, vor der Begrenzung | 301 / 162 / 215 px (390x800, 390x660, 1280x900); letzte Schritte 61, 57, 51, 38 |
