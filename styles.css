@@ -318,11 +318,20 @@ a { color: inherit; }
    1ms, ein Durchlauf.
    Takt ist dauer-7 (2200ms) aus dem Tokenpaket v1.5.0; bis dahin stand
    hier fuer einen Tag eine aus dauer-3 gerechnete Dauer (1920ms). */
+/* Geste statt Metronom (André, 20.10.2026 abends, nach der Frage, was ein
+   Senior Interaction Designer sagen wuerde): zuegig runter in den ersten
+   30 % des Takts (Kurve aus), langsam zurueck bis 60 % (Kurve ein-aus),
+   dann Ruhe bis zum naechsten Takt. Ein Pfeil, der "hier runter" sagt,
+   nicht einer, der tickt; symmetrisches Wippen blendet das Auge nach zwei
+   Takten aus. Erststart nach dauer-6 (1360ms) statt dauer-3: das Auge
+   reagiert auf Veraenderung, und die soll kommen, wenn der Titel gelesen
+   ist, nicht waehrenddessen. */
 @keyframes winken {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(var(--raum-4)); }
+  0% { transform: translateY(0); animation-timing-function: var(--kurve-aus); }
+  30% { transform: translateY(var(--raum-4)); animation-timing-function: var(--kurve-ein-aus); }
+  60%, 100% { transform: translateY(0); }
 }
-.weiter svg { animation: winken var(--dauer-7) var(--kurve-ein-aus) var(--dauer-3) infinite; }
+.weiter svg { animation: winken var(--dauer-7) var(--dauer-6) infinite; }
 .weiter.gescrollt svg { animation: none; }
 @media (any-hover: hover) {
   .weiter:hover:not(.gedrueckt) { color: var(--tinte); transform: translateY(var(--raum-0)); }
@@ -558,6 +567,16 @@ h2::before { margin-left: var(--einzug); }
 @media (max-width: 899px) {
   .abschnitt { padding-block: var(--raum-10); }
   .anschlag { padding-block: var(--raum-11) var(--raum-10); }
+  /* Das Zeichen ueber Safaris Leiste (André, 20.10.2026: "man sieht es
+     kaum"). Der Anschlag ist 100lvh hoch, die Hoehe im Vollbild; beim
+     Laden ist die Leiste da, und das Zeichen (80px ueber der Unterkante)
+     lag unter ihr (Leiste rund 90px). Das Unterpolster waechst um die
+     Differenz aus grosser und kleiner Viewport-Hoehe, also um die Leiste;
+     im Vollbild ist die Differenz 0 und nichts aendert sich. Eine Summe
+     aus Token und Viewport wie die Kopfhoehe, keine Leiterstufe; in
+     Chromium ohne Leiste misst sie --raum-10 wie zuvor. Steht hier und
+     nicht im Block oben, weil diese Zeile sonst gewinnt. */
+  .anschlag { padding-bottom: calc(var(--raum-10) + 100lvh - 100svh); }
 }
 .abschnitt > .bahn > .reihe + .reihe { margin-top: var(--raum-9); }
 h2 {
