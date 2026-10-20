@@ -315,8 +315,9 @@ a { color: inherit; }
    am Handy). Unter prefers-reduced-motion greift der Block oben:
    1ms, ein Durchlauf.
    VORLAEUFIG: die Dauer ist aus dauer-3 gerechnet, 1920ms, weil das Paket
-   keine Stufe fuer einen langsamen Takt hat. Wird --dauer-4 aus
-   design-tokens, bevor das auf main geht. */
+   keine Stufe fuer einen langsamen Takt hat. Auf main seit dem 20.10.2026
+   auf Andrés Wort; die Stufe folgt als Tag aus design-tokens (Leiter 120,
+   200, 320, dann 520, 840, 1360, 2200), danach steht hier der Token. */
 @keyframes winken {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(var(--raum-4)); }
