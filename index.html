@@ -481,6 +481,43 @@
   // verschiebt sich, wenn sich waehrenddessen etwas bewegt. Hier gilt:
   // Name und #oben sind 0, jedes andere Ziel seine Oberkante minus seinen
   // scroll-margin-top. Ohne Skript bleiben die Links Anker.
+  // Abfedern (André, 20.10.2026: "der Auto-Scroll koennte sanft abfedern").
+  // Der Browser kennt fuer behavior: smooth nur seine eigene Kurve, in
+  // Safari und Chrome verschieden, und keine Dauer. Deshalb scrollt das
+  // Skript selbst: Kurve ist --kurve-aus aus dem Tokenpaket, gelesen und
+  // als Bezier geloest; die Dauer waechst mit der Strecke, von dauer-3 bei
+  // einem kurzen Sprung bis zur Obergrenze ab drei Bildschirmhoehen.
+  // VORLAEUFIG: die Obergrenze ist nach der Regel der Leiter gerechnet
+  // (jede Stufe die Summe der beiden davor: 120, 200, 320, 520, 840), weil
+  // das Paket oberhalb von dauer-3 keine Stufe hat. Wird --dauer-5 aus
+  // design-tokens, dann liest das Skript den Token statt zu rechnen.
+  // Bricht ab, sobald der Leser selbst eingreift (Rad, Finger, Taste),
+  // sonst kaempft die Animation mit dem Daumen. Waehrend des Laufs steht
+  // scroll-behavior auf auto, sonst glaettet der Browser jeden Schritt
+  // noch einmal. Unter prefers-reduced-motion ein Sprung ohne Weg.
+  var scrollLauf = null;
+  function tokenMs(name) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return /s$/.test(v) && !/ms$/.test(v) ? parseFloat(v) * 1000 : parseFloat(v);
+  }
+  function bezier(name) {
+    var m = /cubic-bezier\(([^)]*)\)/.exec(getComputedStyle(document.documentElement).getPropertyValue(name));
+    var p = m ? m[1].split(',').map(parseFloat) : [0.2, 0, 0, 1];
+    var x1 = p[0], y1 = p[1], x2 = p[2], y2 = p[3];
+    function achse(t, a, b) { return 3 * a * t * (1 - t) * (1 - t) + 3 * b * t * t * (1 - t) + t * t * t; }
+    return function (x) {
+      var lo = 0, hi = 1, t = x, i;
+      for (i = 0; i < 24; i++) { t = (lo + hi) / 2; if (achse(t, x1, x2) < x) lo = t; else hi = t; }
+      return achse(t, y1, y2);
+    };
+  }
+  function scrollAbbrechen() {
+    if (!scrollLauf) return;
+    cancelAnimationFrame(scrollLauf.rahmen);
+    scrollLauf.loesen();
+    document.documentElement.style.scrollBehavior = '';
+    scrollLauf = null;
+  }
   function zuZiel(ziel) {
     var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var oben = 0;
@@ -489,7 +526,31 @@
         - (parseFloat(getComputedStyle(ziel).scrollMarginTop) || 0);
       oben = Math.max(0, Math.round(oben));
     }
-    window.scrollTo({ top: oben, left: 0, behavior: ruhig ? 'auto' : 'smooth' });
+    scrollAbbrechen();
+    var start = window.pageYOffset, strecke = oben - start;
+    if (ruhig || !strecke || !window.requestAnimationFrame) {
+      window.scrollTo({ top: oben, left: 0, behavior: 'auto' });
+      return;
+    }
+    var d2 = tokenMs('--dauer-2'), d3 = tokenMs('--dauer-3');
+    var d4 = d2 + d3, d5 = d3 + d4;
+    var anteil = Math.min(1, Math.abs(strecke) / (3 * window.innerHeight));
+    var dauer = d3 + (d5 - d3) * anteil;
+    var kurve = bezier('--kurve-aus');
+    var t0 = null;
+    var ereignisse = ['wheel', 'touchstart', 'pointerdown', 'keydown'];
+    function eingriff() { scrollAbbrechen(); }
+    function loesen() { for (var i = 0; i < ereignisse.length; i++) window.removeEventListener(ereignisse[i], eingriff); }
+    for (var i = 0; i < ereignisse.length; i++) window.addEventListener(ereignisse[i], eingriff, { passive: true });
+    document.documentElement.style.scrollBehavior = 'auto';
+    function schritt(jetzt) {
+      if (t0 === null) t0 = jetzt;
+      var x = Math.min(1, (jetzt - t0) / dauer);
+      window.scrollTo(0, Math.round(start + strecke * kurve(x)));
+      if (x < 1) scrollLauf.rahmen = requestAnimationFrame(schritt);
+      else scrollAbbrechen();
+    }
+    scrollLauf = { rahmen: requestAnimationFrame(schritt), loesen: loesen };
   }
   document.addEventListener('click', function (ev) {
     var a = ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
