@@ -1,6 +1,6 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-10-20
+Letzte Aktualisierung: 2026-10-21
 
 ## Nächster Schritt
 
@@ -106,14 +106,22 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
      gehobene Fläche allein war im Dunkelmodus kaum zu sehen. Hover bleibt
      Tinte: Tinte heißt „könnte", Marke heißt „tue". Der am 17.09.
      verworfene farbige Rahmen galt dem Ruhezustand, nicht dem Druck.
-  2. *Das Scroll-Zeichen winkt* endlos (Takt `--dauer-7`, 8px Weg, Kurve
-     ein-aus; bis zum Abend des 20.10. dreimal) und ist nach dem ersten
-     Scrollen still: die einzige Bewegung
+  2. *Das Scroll-Zeichen winkt* endlos als Geste (Takt `--dauer-7`, 8px
+     Weg: zügig runter bis 30 %, langsam zurück bis 60 %, dann Ruhe;
+     Erststart nach `--dauer-6`, weil das Auge auf Veränderung reagiert
+     und die nach dem Lesen des Titels kommen soll; bis zum 20.10. abends
+     symmetrisch und dreimal) und ist nach dem ersten Scrollen still: die einzige Bewegung
      ohne Eingabe, deshalb mit Ende. Zuerst 3px und `--tinte-leise`, am
      Handy kaum zu sehen; jetzt `--tinte-gedaempft` wie der Hoch-Knopf.
      Animation auf dem SVG, weil Hover und Druck auf dem Anker schon
      `transform` tragen. Kein Schriftzug dazu: der erste Bildschirm bleibt
      leer, Mono-Versalien heißen Fakt, das aria-label trägt das Wort.
+     *Unter 900px sitzt es über Safaris Leiste* (21.10.): der Anschlag ist
+     100lvh hoch, beim Laden lag das Zeichen (80px über der Unterkante)
+     unter der rund 90px hohen Leiste, deshalb „man sieht es kaum". Das
+     Unterpolster wächst um `100lvh - 100svh`, im Vollbild um 0. Chevron
+     unten und Pfeil im Hoch-Knopf bleiben verschieden: Hinweis gegen
+     Handlung, dieselbe Familie (20px, Strich 1,75, runde Enden).
   3. *Sprünge federn ab:* die Seite scrollt selbst, Kurve `--kurve-aus` aus
      dem Token gelesen und als Bezier gelöst, Dauer nach Strecke von
      `--dauer-3` bis `--dauer-5` ab drei Bildschirmhöhen, Abbruch bei Rad,
@@ -268,7 +276,7 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Drift 01.10.2026, je Sprache, Seite zu Kopie (deutsch: fb17947) | 96 zu 96 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
 | Drift 20.10.2026, je Sprache, Seite zu Kopie | 88 zu 88 Sätze, 7 zu 7 Kartentitel, 7 zu 7 Untertitel |
 | Druckrahmen = Textfarbe, hell (Magenta, Orange) | rgb(205,11,114), rgb(191,59,0); dunkel rgb(244,54,156), rgb(255,79,0); Ruhe rgb(142,148,157) / rgb(108,114,128) |
-| Scroll-Zeichen | winken 2,2 s endlos (bis 20.10. abends x3), Verzögerung 0,32 s, Weg 8px, Ruhe rgb(86,91,99); Reduced Motion 0,001 s x1 |
+| Scroll-Zeichen | winken 2,2 s endlos, Start nach 1,36 s, Maximum 8px nach 550 ms, zurück nach 1,1 s (bis 20.10. abends x3 symmetrisch), Verzögerung 0,32 s, Weg 8px, Ruhe rgb(86,91,99); Reduced Motion 0,001 s x1 |
 | Sprung Pfeil nach Einleitung (390x800) | Ziel 747 = Landung 747, ca. 474 ms, Schritte 9, 38, 80, 103 … 3, 2, 2, 1 |
 | Sprung Hoch-Knopf vom Ende (8554px) | ca. 829 ms, Landung 48px unter dem Kopf |
 | Kontakt-Ziel hinter dem Seitenende, vor der Begrenzung | 301 / 162 / 215 px (390x800, 390x660, 1280x900); letzte Schritte 61, 57, 51, 38 |
@@ -280,11 +288,16 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Tokenpaket v1.5.0, dauer-4 bis 7 | 520, 840, 1360, 2200 ms; dist ändert sich nur um diese Zeilen |
 | Versteckter Lebenslauf, live | 200, application/pdf, X-Robots-Tag noindex, nofollow, noarchive; Cache-Control no-store; 2 Seiten, kein Telefonmuster |
 | `downloads/` | 4 PDFs plus `test.gitkeep` (CLAUDE.md sagte „sechs", dann „sieben") |
+| Viewport-Calc `calc(var(--raum-10) + 100lvh - 100svh)` | geparst in Chromium und WebKit; Probe mit 50svh ergibt 486px wie gerechnet |
 | Netlify | Deploy-Preview eines PR nach unter 1 Minute; Zweig-URL ohne PR nach 6 Minuten 404 |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
+
+**2026-10-21** Scroll-Zeichen über Safaris Leiste gehoben und als Geste
+getaktet, nach Vorschau am Handy auf `main`. Chevron und Pfeil bleiben
+verschieden.
 
 **2026-10-20** Kopf-Link auf „Inhalt". Bewegung nach Andrés Vorschlägen:
 Druck färbt den Rahmen, das Scroll-Zeichen winkt bis zum ersten Scrollen,
