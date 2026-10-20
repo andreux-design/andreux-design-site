@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 19.10.2026 abends (Quelle: bewerbungen-2026/texte/website.md, bereinigte Kopie aus iCloud; „Aus dem Studium" und „Wie ich arbeite" als ##, Abschnitts- und keine Kartentitel)
+# Seitentext DE, Stand 20.10.2026 abends (Quelle: bewerbungen-2026/texte/website.md, bereinigte Kopie aus iCloud; „Aus dem Studium" und „Wie ich arbeite" als ##, Abschnitts- und keine Kartentitel)
 
 Senior Product Designer
 
@@ -63,4 +63,4 @@ colibre war ein Studienprojekt im Sommersemester 2022, im Fach Brand Design Deve
 
 ## Wie ich arbeite
 
-Ich behalte gern den ganzen Weg im Blick, vom Research bis zum Livegang, und arbeite gründlich, weil sich Sorgfalt bei langlebigen Produkten lohnt. Über KI will ich mehr lernen, vom Innenleben der Modelle bis zu der Frage, wie Gestaltung und Text mit ihnen gut werden.
+Mein Schwerpunkt ist UX, und die Oberfläche ist der Teil davon, den man sieht. Mir sind langlebige Produkte wichtig, weil sich Sorgfalt dort lohnt. Ich liebe es, Komplexität zu verringern und Dinge für die Menschen, die sie nutzen, einfacher zu machen.
