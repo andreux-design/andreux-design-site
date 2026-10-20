@@ -423,6 +423,10 @@
     document.addEventListener('pointerup', loslassen);
     document.addEventListener('pointercancel', loslassen);
     window.addEventListener('scroll', loslassen, { passive: true });
+    // Das Scroll-Zeichen hoert auf zu winken, sobald die Seite einmal
+    // gescrollt hat (André, 20.10.2026); danach ist der Hinweis erfuellt.
+    var zeichen = document.querySelector('.weiter');
+    if (zeichen) window.addEventListener('scroll', function () { zeichen.classList.add('gescrollt'); }, { passive: true, once: true });
   })();
 
   // Der Hoch-Knopf erscheint, sobald die Sprungmarken ueber dem Bild liegen,
