@@ -306,9 +306,11 @@ a { color: inherit; }
 .weiter { transition: transform var(--dauer-2) var(--kurve-aus), color var(--dauer-2) var(--kurve-aus); }
 .weiter.gedrueckt { color: var(--akzent-text); transform: scale(0.96); }
 /* Das Zeichen winkt, bis gescrollt wird (André, 20.10.2026: "subtil
-   animiert"). Die einzige Bewegung der Seite ohne Eingabe, deshalb mit
-   Ende: drei Durchlaeufe, und sobald die Seite scrollt, setzt das Skript
-   .gescrollt und die Animation ist aus. Sie liegt auf dem SVG, nicht auf
+   animiert", abends: "so lange pulsieren, bis man scrollt"). Die einzige
+   Bewegung der Seite ohne Eingabe, deshalb mit Ende: sobald die Seite
+   scrollt, setzt das Skript .gescrollt und die Animation ist aus. Bis zum
+   Abend waren es drei Durchlaeufe; wer liest, ohne zu scrollen, soll das
+   Zeichen weiter sehen. Sie liegt auf dem SVG, nicht auf
    dem Anker: dort laufen Hover und Druck ueber transform, und zwei
    Transforms auf einem Element ueberschreiben sich. Weg 8px (raum-4), am
    20.10.2026 von 3px hochgesetzt: "die Animation sieht man kaum" (André,
@@ -320,7 +322,7 @@ a { color: inherit; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(var(--raum-4)); }
 }
-.weiter svg { animation: winken var(--dauer-7) var(--kurve-ein-aus) var(--dauer-3) 3; }
+.weiter svg { animation: winken var(--dauer-7) var(--kurve-ein-aus) var(--dauer-3) infinite; }
 .weiter.gescrollt svg { animation: none; }
 @media (any-hover: hover) {
   .weiter:hover:not(.gedrueckt) { color: var(--tinte); transform: translateY(var(--raum-0)); }
