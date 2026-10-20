@@ -526,6 +526,12 @@
         - (parseFloat(getComputedStyle(ziel).scrollMarginTop) || 0);
       oben = Math.max(0, Math.round(oben));
     }
+    // Nicht weiter als die Seite reicht (André, 20.10.2026: "Kontakt ist
+    // noch nicht so weich wie der Rest"): Kontakt liegt am Ende, das
+    // berechnete Ziel 160 bis 300px dahinter, und der Browser stoppte am
+    // Seitenende mit 35 bis 60px pro Frame, waehrend die Kurve noch lief.
+    // Mit dem echten Ende als Ziel klingt sie dort aus.
+    oben = Math.min(oben, Math.max(0, document.documentElement.scrollHeight - window.innerHeight));
     scrollAbbrechen();
     var start = window.pageYOffset, strecke = oben - start;
     if (ruhig || !strecke || !window.requestAnimationFrame) {
