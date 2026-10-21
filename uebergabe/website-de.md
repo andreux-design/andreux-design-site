@@ -1,10 +1,14 @@
-# Seitentext DE, Stand 21.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Lesergremium, drei Faktenprüfer und Lektor; bereinigte Kopie website-de-neu-2026-10-21.md aus iCloud ohne Kopfdaten; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 21.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Lesergremium, drei Faktenprüfer und Lektor; bereinigte Kopie website-de-neu-2026-10-21.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
 Ich gestalte Produkte und die Systeme, auf denen sie stehen.
 
+## Über mich
+
 Angefangen habe ich 2010 in der Druckvorstufe. Seit 2011 gestalte ich, seit 2019 arbeite ich im UX Design. Ich begleite ein Produkt gern vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens, Regeln und Prüfstufen. Am Anfang ist das Mehraufwand. Sobald mehrere an einem Produkt arbeiten, zahlt er sich aus, weil alle dieselbe Grundlage nutzen und eine Änderung an einer Stelle überall gilt. Heute baue ich solche Systeme mit KI-Modellen, die ich briefe wie Mitarbeiter.
+
+## End-to-End-Produktdesign
 
 Research, Konzept, Prototyp, Übergabe an die Entwicklung, Betreuung bis zum Livegang.
 
@@ -22,6 +26,8 @@ Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Int
 
 In einer Münchner Digitalagentur habe ich 2024 die interne Konferenz-App „one conference“ für Mobilgeräte und Desktop neu gestaltet und um Funktionen erweitert. In Figma baute ich dazu einen Prototyp mit Tokens und Variablen, der die Abläufe mitführte, und übergab ihn an die internen Entwickler. Bei der jährlichen Konferenz lief meine Fassung.
 
+## Designsysteme
+
 Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu verschachtelten Komponenten und Flows, mit dem, was Figma dafür hergibt.
 
 ### Eine Library für Volkswagen
@@ -35,6 +41,8 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 #### Mit wenigen Klicks auf andere Marken
 
 Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Als ich es vorstellte, waren erst einmal alle verblüfft, und wie es technisch funktionierte, war nicht sofort klar. Also zeigte ich mit einer Demo-Library, was das System bewirkte. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen. Die Demo-Library blieb bei der Agentur. Ob das System heute im Einsatz ist, weiß ich nicht.
+
+## KI-gestützte Systeme
 
 Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln und Prüfstufen schreiben, der das Fach kennt.
 
@@ -74,3 +82,4 @@ Mein Schwerpunkt ist UX, und die Oberfläche ist der Teil davon, den man sieht. 
 ## Kontakt
 
 Über Produktdesign, Designsysteme und KI tausche ich mich gern aus.
+
