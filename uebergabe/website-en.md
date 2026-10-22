@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 21.10.2026 (neu geschrieben im Bewerbungsrepo, einmal lektoriert; Kopie website-en-neu-2026-10-21.md aus iCloud; gleiche Struktur wie DE)
+# Seitentext EN, Stand 22.10.2026 (neu geschrieben im Bewerbungsrepo, lektoriert; Kopie website-en-neu-2026-10-22.md aus iCloud; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -40,7 +40,7 @@ In 2024, at a digital agency in Munich, I built the websites for two Volkswagen 
 
 #### Switchable to other brands in a few clicks
 
-On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. When I presented it, everyone was astonished at first, and it was not immediately clear how it worked technically. So I used a demo library to show what the system did. Afterwards, the people in charge spoke with me one on one to understand it in detail. The demo library stayed with the agency. I don't know whether the system is in use today.
+On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. I don't know whether it is in use today. When I presented it, everyone was astonished at first, and it was not immediately clear how it worked technically. So I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
 
 ## AI-assisted systems
 
