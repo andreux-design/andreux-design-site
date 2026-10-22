@@ -772,6 +772,11 @@ p { max-width: var(--mass-prosa-web); }
 .arbeit { padding-block: var(--raum-8); }
 .arbeit + .arbeit { padding-top: var(--raum-8); }
 .arbeit:first-of-type { padding-top: var(--raum-9); }
+/* Saeule 3 hat unter dem Anspruch einen Absatz in Textgroesse und Tinte, der
+   sich vom Kartentext nicht unterschied (Review 22.10.2026). Statt ihn grau
+   zu setzen, er ist eine Kernaussage, bekommt die erste Karte dort 64 statt
+   48, die Kartenstufe; der Kopf bleibt als Gruppe erkennbar. */
+#ki-systeme .arbeit:first-of-type { padding-top: var(--raum-10); }
 /* Die letzte Karte traegt kein Unterpolster, und das letzte Element einer
    Karte (Belege-Zeile oder Ergebniszeile) keinen Unterabstand: sonst standen
    16 und 32px zwischen dem Inhalt und dem Abschnittsrand, und Karte zu Karte
