@@ -94,7 +94,10 @@
    Angabe traegt ein Block den ersten Akzent, und der Nebenabschnitt sah aus
    wie Saeule 1. Quadrat leise, Beleg-Links gedaempft; Hover hebt sie wie
    ueberall auf Tinte. */
-#studium { --marke-text: var(--tinte-gedaempft); --marke-flaeche: var(--tinte-leise); }
+/* Seit dem 22.10.2026 nur noch das Quadrat (Lesergremium: graue Beleg-Links
+   lasen sich als deaktiviert); die Links tragen den ersten Akzent wie die
+   Berufsprojekte, die Daempfung bleibt in Titel und Quadrat. */
+#studium { --marke-quadrat: var(--tinte-leise); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -169,7 +172,13 @@ a { color: inherit; }
 .streifen-marke > span:first-child::before {
   content: ""; display: inline-block;
   width: 0.5rem; height: 0.5rem; margin-right: var(--raum-4);
-  background: var(--marke-flaeche); vertical-align: middle;
+  /* Im Ton des Saeulentitels, nicht der Flaeche (Lesergremium, 22.10.2026:
+     helles Orange und helleres Blau gegen Rost und Blau der Titel lasen
+     sich als zwei Reihen). Die Textwerte sind auf 5,4:1 abgeglichen und
+     wirken als eine Reihe; die Flaechenwerte nur auf 3:1. --marke-quadrat
+     mit Rueckfall auf --marke-text, damit "Aus dem Studium" das Quadrat
+     allein grau setzen kann, ohne die Links zu daempfen. */
+  background: var(--marke-quadrat, var(--marke-text)); vertical-align: middle;
   position: relative; top: -0.05em;
 }
 
@@ -281,6 +290,10 @@ a { color: inherit; }
    99px-Titel war 24 knapp; 64 ist der Abstand zwischen zwei Karten, die
    Stats sind eine eigene Gruppe. 96 waere schon ein eigener Block. */
 .anschlag .stats { flex-direction: row; flex-wrap: wrap; gap: var(--raum-3) var(--raum-9); padding-top: 0; margin-top: var(--raum-10); }
+/* Eine Stufe groesser und gedaempft statt leise (Lesergremium, 22.10.2026:
+   zu klein, zu wenig Kontrast). m1 (15) wie die Beleg-Links, Farbe wie die
+   Rolle ueber dem Titel. */
+.anschlag .stats { font-size: var(--schrift-m1); color: var(--tinte-gedaempft); }
 /* Kein Strich mehr ueber den Stats (André, 01.10.2026, "der Schritt zur
    Perfektion"): der 32px-Strich war das Zeichen fuer Label, und seit
    "Inhalt" und "Ueber mich" Titel sind, stand er nur noch hier. Ein
@@ -293,7 +306,13 @@ a { color: inherit; }
      brechen alle drei an der markierten Stelle (.zeile) in zwei Zeilen,
      "wenn eines bricht, muessen alle drei brechen" (André, 30.09.2026). */
   .anschlag .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--raum-5); align-items: start; }
-  .anschlag .stats .zeile { display: block; }
+  /* Seit dem 22.10.2026 kein erzwungener Umbruch mehr: die Stats stehen in
+     einer Zeile je Zelle (Lesergremium: "B.Sc. / UX Design" brach gequetscht),
+     drei Spalten ab 600px, darunter untereinander. */
+  .anschlag .stats .zeile { display: inline; }
+}
+@media (max-width: 599px) {
+  .anschlag .stats { grid-template-columns: 1fr; gap: var(--raum-3); }
 }
 /* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
 .weiter {
@@ -400,7 +419,11 @@ a { color: inherit; }
    sich wie ein vierter Abschnitt ohne Nummer). Groesse wie die anderen
    Abschnitte, nur die Farbe sagt Nebenabschnitt, passend zu Quadrat und
    Beleg-Links in Grau. */
-#studium .abschnitt-titel { color: var(--tinte-gedaempft); }
+#studium .abschnitt-titel { color: var(--tinte-gedaempft); font-size: min(6.154vw, var(--schrift-3)); }
+/* Eine Stufe kleiner als "Wie ich arbeite" und "Kontakt" (Lesergremium,
+   22.10.2026 nachmittags: gleich gross las sich als vierter Hauptabschnitt),
+   also 3/9 wie die Karten darunter; Farbe und Quadrat tragen den Rest. */
+@media (min-width: 900px) { #studium .abschnitt-titel { font-size: var(--schrift-9); } }
 /* "Inhalt" traegt seit dem 30.09.2026 abends denselben Bau wie "Ueber mich"
    (André: "Ueber mich und Inhalt sind noch verschieden"); der Strich bleibt
    nur noch ueber den Stats. */
@@ -804,10 +827,15 @@ p { max-width: var(--mass-prosa-web); }
    kein Balken, Stufe 0 in Tinte. Das Label in 500 bleibt das Zeichen.
    Vorher: 3px-Balken in Saeulenfarbe, 24px eingerueckt, Stufe m1 gedaempft. */
 .ergebnis {
-  margin: 0 0 var(--raum-6);
+  /* 32 darueber statt 16 (Lesergremium, 22.10.2026, "eigene Stufe"): der
+     Absatz setzt sich durch Luft ab, nicht durch Einzug, damit die Lesekante
+     bleibt; zwischen zwei Ergebnis-Absaetzen (Ergebnis, Nicht gezeigt)
+     bleiben 16. */
+  margin: var(--raum-8) 0 var(--raum-6);
   color: var(--tinte);
   font-size: var(--schrift-0);
 }
+.ergebnis + .ergebnis { margin-top: 0; }
 .ergebnis b { color: var(--tinte); font-weight: 500; }
 /* Zwischenzeilen im Impressum: 500 wie "Ergebnis", nicht 700; die Seite
    laedt Plex Sans nur in 400 und 500, 700 waere synthetisch (01.10.2026). */
