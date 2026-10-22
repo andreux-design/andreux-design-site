@@ -72,6 +72,48 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
 
 ## Entschieden
 
+- **Abstände nach dem Review eines Senior Web Designers** (André, 22.10.2026
+  abends: „nochmal überarbeiten und die Seite von einem Senior Web Designer
+  anschauen", dann „wenn es was zu optimieren gibt: ja"). Ein unabhängiger
+  Prüfer (Subagent in der Rolle, Pixelmessungen auf Kasten und Tinte bei
+  390, 768, 1280; Skripte und Rohdaten in `/tmp/review-2026-10-22/skripte/`,
+  nicht im Repo) lieferte acht Befunde. Umgesetzt, nur CSS und Pfeilgröße,
+  vorhandene Tokens: (1) Nebenabschnitte Studium, Wie ich arbeite, Kontakt
+  ab 900px `--raum-11` statt `--raum-12`, weil 256 vor einem 70px-Titel
+  ohne Nummer als Leere lasen, vor der 142px-Nummer tragen; jetzt 224,
+  192, 192, Säule zu Säule bleibt 256, Handy unverändert; der
+  Kopfkommentar im Stylesheet nannte schon `raum-11`, der Code `raum-12`,
+  jetzt stimmen beide. (2) Einleitung: „Schwerpunkte" zu Knöpfen 24 statt
+  36 (kein Leiterwert), Knöpfe zu „Über mich" 64 statt 48, ein
+  Abschnittstitel bekam weniger Luft als eine Karte. (3) „Aus dem Studium"
+  unter 900px wieder 34 grau statt 24: mit 24 war es so groß wie „filo"
+  darunter und schwächer; am Desktop bleibt 49 gegen 70; 48 zur ersten
+  Karte statt 60. (4) Streifen am Desktop `--raum-2` statt `--raum-4`:
+  die Versalkante lag gemessen 4px unter der des Kartentitels, trotz
+  gegenteiligem Kommentar vom 30.09.; jetzt 1px. (5) Stats bei 600 bis
+  899 als Zeile mit `--raum-9` statt drei Rasterspalten mit 85 bis 95px
+  Leerlauf; das Raster war für den erzwungenen Umbruch gebaut, der seit
+  dem 22.10. weg ist. (6) Scroll-Zeichen 24 statt 20px, zentriert bleibt
+  es (Seiten-UI, Konvention). (7) Säule 3: erste Karte 64 statt 48 unter
+  dem Kopfabsatz, statt ihn grau zu setzen, er ist eine Kernaussage.
+  Nicht geändert: Weißraum rechts (laut Prüfer die Bühne für die Bilder,
+  Spalte nicht verbreitern), Zeilenlänge (80 Zeichen im Mittel am
+  Desktop, über 75, unter 90: nicht mehr wachsen lassen), Vorschlag B
+  „Schwerpunkte" auf 49 (am Handy keine Stufe). Vorschau über PR 4, Merge
+  2eee5d8. Was der Prüfer als Rückgrat nennt: die Lesekante 272 mit
+  Metaspalte, die dichte Kopfgruppe der Säulen, die Kartenkette mit den
+  49px-Knöpfen, die die Sprungmarken wiederholen.
+
+- **Anmeldung von Claude Code geprüft** (André, 22.10.2026: „war irgendwie
+  mit dem API angemeldet, den ich nie gesetzt habe"). Kein API-Schlüssel in
+  Umgebung, Shell-Profilen, launchd, Einstellungen, Konfiguration oder den
+  laufenden Prozessen; Status: claude.ai, Abo Max, firstParty.
+  Schlüsselbund-Anmeldedaten neu vom 22.10. 21:36, also frische Anmeldung;
+  „Einrichtung nicht abgeschlossen" in der Konfiguration ist Folge des
+  Abmeldens, harmlos. „Claude Key" im Schlüsselbund ist der Schlüssel der
+  Desktop-App vom 25.07. Das Nicht-Hineinkommen war das Sitzungslimit des
+  Abos (Reset 18:40).
+
 - **Gestaltung nach dem Nachtest, Runde 3** (André, 22.10.2026 14:05, nach
   Kritiker und visuellem Design Lead). Nur CSS, vorhandene Tokens. Das
   Marker-Quadrat der Karten trägt den Ton des Säulentitels
@@ -375,11 +417,17 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Drift 22.10.2026 nach Runde 2, je Sprache | 79 zu 79 Sätze, 8 zu 8 Kartentitel und Untertitel |
 | Titelgrößen nach Runde 2 (390 / 320 / 1280) | Abschnitt 34 / 27,9 / 70; Säule 34 / 27,9 / 70; Karte 24 / 19,7 / 49; alle Abschnittstitel einzeilig, Überlauf 0 |
 | Runde 3 (390 / 768 / 1280) | Titel = Quadrat je Säule rgb(191,59,0), rgb(205,11,114), rgb(9,103,211); Studium-Quadrat rgb(108,114,128), Studium-Links rgb(191,59,0); Ergebnis-Luft 32, Ergebnis zu Nicht gezeigt 16; Studium-Titel 24/24/49 gegen Kontakt 34/34/70; Stats 15px rgb(86,91,99), Spalten 1/3/Zeile, je 1 Zeile; Überlauf 0 |
+| Review 22.10. (1280, Kasten) | Säule 3 zu Studium 224, Studium zu Wie ich arbeite 192, zu Kontakt 192, Einleitung zu Säule 1 256; Schwerpunkte zu Knöpfen 24, Knöpfe zu Über mich 64; Studium-Titel zu Karte 48; Streifen und h3 oben 2114 = 2114, Tinte 2121 zu 2120; Säule 3 Absatz zu Karte 64 |
+| Review 22.10. (390 / 768) | Abschnitte 128; Studium-Titel 34 grau; Stats 390 untereinander, 768 Zeile bei 15, 215, 424; Überlauf 0 |
+| Zeilenlänge Fließtext am Desktop (Prüfer) | 74 bis 86 Zeichen, Mittel 80, Spalte 694px = 68ch |
+| Erster Bildschirm, Inhaltsanteil (Prüfer) | 390: 52 %, 768: 31 %, 1280: 54 % |
 | Netlify | Deploy-Preview eines PR nach unter 1 Minute; Zweig-URL ohne PR nach 6 Minuten 404 |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
+
+**2026-10-22, spät** Abstände nach dem Review eines Senior Web Designers live, sieben Änderungen, nach Vorschau am Handy. Anmeldung von Claude Code geprüft, kein API-Schlüssel.
 
 **2026-10-22, nachmittags** Gestaltung Runde 3 live: Quadrat im Ton des Säulentitels, Studium-Links wie überall, Ergebnis mit Luft, Studium-Titel kleiner, Stats größer und mobil untereinander.
 
