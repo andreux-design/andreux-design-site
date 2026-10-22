@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 21.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Lesergremium, drei Faktenprüfer und Lektor; bereinigte Kopie website-de-neu-2026-10-21.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 22.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Lesergremium plus Nachtest; bereinigte Kopie website-de-neu-2026-10-22.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -40,7 +40,7 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 
 #### Mit wenigen Klicks auf andere Marken
 
-Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Als ich es vorstellte, waren erst einmal alle verblüfft, und wie es technisch funktionierte, war nicht sofort klar. Also zeigte ich mit einer Demo-Library, was das System bewirkte. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen. Die Demo-Library blieb bei der Agentur. Ob das System heute im Einsatz ist, weiß ich nicht.
+Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Ob es heute im Einsatz ist, weiß ich nicht. Als ich es vorstellte, waren erst einmal alle verblüfft, und wie es technisch funktionierte, war nicht sofort klar. Also zeigte ich mit einer Demo-Library, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
 
 ## KI-gestützte Systeme
 
@@ -82,4 +82,3 @@ Mein Schwerpunkt ist UX, und die Oberfläche ist der Teil davon, den man sieht. 
 ## Kontakt
 
 Über Produktdesign, Designsysteme und KI tausche ich mich gern aus.
-

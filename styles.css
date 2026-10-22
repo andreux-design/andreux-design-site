@@ -374,12 +374,17 @@ a { color: inherit; }
 /* Abschnittstitel der drei einspaltigen Abschnitte: der Bau der Kartentitel
    (Sora, Stufe 3 am Handy, 9 am Desktop, gemischte Schreibung), darueber
    der 32px-Strich als ihr Zeichen (André, 30.09.2026, Weg 3: die kleinen
-   Versalzeilen waren neben 99px-Titeln zu leise). Damit hat die Seite drei
-   Stufen von Ueberschrift: Saeule 34/70, Abschnitt und Karte 24/49, Label
-   13 (nur noch die Stats). */
+   Versalzeilen waren neben 99px-Titeln zu leise). Bis zum 22.10.2026 lagen
+   Abschnitt und Karte beide auf 24/49; der Kritiker des Lesergremiums fand
+   sie zu nah, André entschied "eine Stufe". Die Leiter hat zwischen 3 und 6
+   keinen Token, und Karten auf Stufe 1 (19px) waeren neben 17px Text kein
+   Titel mehr; deshalb gehen die Abschnitte hinauf auf 6/12 (34/70), die
+   Groesse der Saeulentitel, die dazu Nummer und Farbe tragen. Vier Stufen
+   von Ueberschrift: Saeule 34/70 mit Nummer, Abschnitt 34/70, Karte 24/49,
+   Label 13. 34px sind 8.718vw bei 390. */
 .abschnitt-titel {
   font-family: var(--familie-display); font-weight: 600;
-  font-size: min(6.154vw, var(--schrift-3)); line-height: var(--zeile-display);
+  font-size: min(8.718vw, var(--schrift-6)); line-height: var(--zeile-display);
   letter-spacing: var(--spur-display); text-transform: none;
   color: var(--tinte);
   /* margin-top 0 auch fuer ein h1 (Impressum): der Browser gaebe 0,67em. */
@@ -390,7 +395,12 @@ a { color: inherit; }
    und die Stats behalten ihn; grosse Titel tragen keinen, wie die
    Saeulentitel. */
 .abschnitt-titel::before { display: none; }
-@media (min-width: 900px) { .abschnitt-titel { font-size: var(--schrift-9); } }
+@media (min-width: 900px) { .abschnitt-titel { font-size: var(--schrift-12); } }
+/* "Aus dem Studium" in gedaempfter Tinte (Lesergremium, 22.10.2026: las
+   sich wie ein vierter Abschnitt ohne Nummer). Groesse wie die anderen
+   Abschnitte, nur die Farbe sagt Nebenabschnitt, passend zu Quadrat und
+   Beleg-Links in Grau. */
+#studium .abschnitt-titel { color: var(--tinte-gedaempft); }
 /* "Inhalt" traegt seit dem 30.09.2026 abends denselben Bau wie "Ueber mich"
    (André: "Ueber mich und Inhalt sind noch verschieden"); der Strich bleibt
    nur noch ueber den Stats. */
