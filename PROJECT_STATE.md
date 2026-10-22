@@ -31,7 +31,8 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
       eingefärbte Spalte, in em)
 - [ ] **Bilder.** Grafiken rendert André selbst; vorbereitet werden laut
       Spezifikation vom 21.10. GoTiger und colibre, filo bleibt ohne Bild,
-      one conference ohne Bild und Link
+      one conference ohne Bild und Link. Kommt als eigene Runde über die
+      Bewerbungssitzung, sobald André Figma-Links liefert (22.10.)
 - [ ] **Favicon** entscheiden; heute `href="data:,"` gegen die 404
 - [ ] **Lighthouse live** nach Cloudflare messen (siehe Nächster Schritt)
 - [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin. Englisch wird
@@ -70,6 +71,26 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
 
 ## Entschieden
+
+- **Gestaltung nach dem Nachtest, Runde 3** (André, 22.10.2026 14:05, nach
+  Kritiker und visuellem Design Lead). Nur CSS, vorhandene Tokens. Das
+  Marker-Quadrat der Karten trägt den Ton des Säulentitels
+  (`--marke-text`) statt der Fläche: helles Orange und helleres Blau neben
+  Rost und Blau lasen sich als zwei Reihen; die Textwerte sind auf 5,4:1
+  abgeglichen, die Flächen nur auf 3:1. Dafür `--marke-quadrat` mit
+  Rückfall auf `--marke-text`, damit „Aus dem Studium" nur das Quadrat
+  grau setzt: dessen Beleg-Links waren grau und lasen sich als
+  deaktiviert, jetzt erster Akzent wie überall, Dämpfung nur in Titel und
+  Quadrat. Ergebnis-Absatz mit 32 Luft darüber statt 16 („eigene Stufe"),
+  kein Einzug, die Lesekante bleibt; zwischen Ergebnis und Nicht gezeigt
+  16. „Aus dem Studium" eine Stufe unter „Wie ich arbeite" und „Kontakt",
+  also 3/9 wie die Karten, sonst las es sich als vierter Hauptabschnitt.
+  Stats im Anschlag m1 (15) gedämpft statt m2 (13) leise, unter 600px
+  untereinander, 600 bis 899 drei Spalten, kein erzwungener Umbruch mehr
+  (der Umbruch „wenn eines bricht, brechen alle" vom 30.09. ist damit
+  hinfällig). Nicht angefasst auf Andrés Wort: Säulenabstände, Weißraum
+  rechts, Hero-Pfeil, Zeilenlängen. Merge 46dbbde. Bilder kommen als
+  eigene Runde, sobald André Figma-Links liefert.
 
 - **Runde nach dem Nachtest** (André, 22.10.2026, über die
   Bewerbungssitzung). Die Tokens-Karte endet nicht mehr mit der
@@ -353,13 +374,16 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Seitenhöhe vor dem Umbau (Screenshots fürs Gremium) | DE 8247 / 9398, EN 7978 / 9076 (1440 / 390) |
 | Drift 22.10.2026 nach Runde 2, je Sprache | 79 zu 79 Sätze, 8 zu 8 Kartentitel und Untertitel |
 | Titelgrößen nach Runde 2 (390 / 320 / 1280) | Abschnitt 34 / 27,9 / 70; Säule 34 / 27,9 / 70; Karte 24 / 19,7 / 49; alle Abschnittstitel einzeilig, Überlauf 0 |
+| Runde 3 (390 / 768 / 1280) | Titel = Quadrat je Säule rgb(191,59,0), rgb(205,11,114), rgb(9,103,211); Studium-Quadrat rgb(108,114,128), Studium-Links rgb(191,59,0); Ergebnis-Luft 32, Ergebnis zu Nicht gezeigt 16; Studium-Titel 24/24/49 gegen Kontakt 34/34/70; Stats 15px rgb(86,91,99), Spalten 1/3/Zeile, je 1 Zeile; Überlauf 0 |
 | Netlify | Deploy-Preview eines PR nach unter 1 Minute; Zweig-URL ohne PR nach 6 Minuten 404 |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
 
-**2026-10-22, abends** Nachtest durch, Runde 2 live: Tokens-Karte umgestellt, Abschnittstitel auf 34/70, „Aus dem Studium" grau. iCloud-Kopien auf dem Stand vom 22.10.
+**2026-10-22, nachmittags** Gestaltung Runde 3 live: Quadrat im Ton des Säulentitels, Studium-Links wie überall, Ergebnis mit Luft, Studium-Titel kleiner, Stats größer und mobil untereinander.
+
+**2026-10-22, mittags** Nachtest durch, Runde 2 live: Tokens-Karte umgestellt, Abschnittstitel auf 34/70, „Aus dem Studium" grau. iCloud-Kopien auf dem Stand vom 22.10.
 
 **2026-10-22** Umbau nach dem Lesergremium auf `main`: Schwerpunkte vor
 „Über mich", acht Karten in neuer Verteilung, Ergebnis gleichrangig,
