@@ -1,6 +1,6 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-10-21
+Letzte Aktualisierung: 2026-10-22
 
 ## Nächster Schritt
 
@@ -9,7 +9,10 @@ E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
 gegen die Live-Seite messen. Ziel ist die 99 von lokal; live stand die
 Performance am 01.10. bei 41 bis 64, und 6,3 der 7,6 Sekunden Skriptzeit
 kamen von Cloudflare. Es ist der einzige messbare Mangel, der nicht auf
-Text oder eine Entscheidung wartet. Alles andere unter Offen.
+Text oder eine Entscheidung wartet. Dazu kommt seit dem 22.10. der
+Nachtest des Lesergremiums im Bewerbungsrepo auf der Live-Seite; wenn
+Änderungswünsche kommen, dann als Satzliste von dort, nicht als Prosa.
+Alles andere unter Offen.
 
 Der Verlauf vom 31.08. bis 02.10.2026 (Umbauten, Feinschliff, Messungen,
 mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
@@ -26,7 +29,11 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
       `uebergabe/`; Tintenkanten-Tabelle im Seitenskript um neue
       Anfangsglyphen ergänzen (Messlogik: Canvas bei 400px, erste
       eingefärbte Spalte, in em)
-- [ ] **Bilder.** Grafiken rendert André nach der Teilung in Fallstudien
+- [ ] **Bilder.** Grafiken rendert André selbst; vorbereitet werden laut
+      Spezifikation vom 21.10. GoTiger und colibre, filo bleibt ohne Bild,
+      one conference ohne Bild und Link
+- [ ] **Nachtest des Lesergremiums** (Bewerbungsrepo, ab 22.10.) auf der
+      Live-Seite; Ergebnis kommt als Satzliste über die Bewerbungssitzung
 - [ ] **Favicon** entscheiden; heute `href="data:,"` gegen die 404
 - [ ] **Lighthouse live** nach Cloudflare messen (siehe Nächster Schritt)
 - [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin. Englisch wird
@@ -65,6 +72,40 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
 
 ## Entschieden
+
+- **Umbau nach dem Lesergremium** (André, 21.10.2026 „Alle sieben", 22.10.
+  „Passt, mergen" nach der Vorschau am Handy). Vier Textleser (Design Lead,
+  Bank-Recruiterin, UX Writer, Arbeitgeber-Sicht), ein visueller und ein
+  englischer Leser im Bewerbungsrepo, dann Widersprecher und Zusammenführung;
+  Spezifikation `umbau-spezifikation-2026-10-21.md` in iCloud. Umgesetzt:
+  Schwerpunkte mit den Sprungmarken vor „Über mich" (der Absatz nennt jetzt
+  2010, 2011 und 2019); Säule 1 bekommt „one conference" (ohne Bild, ohne
+  Link, Streifen wie VW); die Bausteinbibliothek wandert von Säule 2 nach 3,
+  weil sie mit dem Wizard ein System ist; Wizard-Karte heißt „Ein Wizard für
+  Landingpages", erster Satz neu, Absatz eingefroren; der Geschmack-Absatz
+  entfällt, dafür „Systeme, die wiederkehrende Arbeit übernehmen"; „Aus dem
+  Studium" ohne Säulenfarbe (Quadrat `--tinte-leise`, Links
+  `--tinte-gedaempft`), damit es nicht wie Säule 1 aussieht; filo und colibre
+  gekürzt; Kontaktsatz als ruhige Einladung statt CTA. **Ergebnis-Absätze
+  gleichrangig** zum Fließtext (Stufe 0, Tinte, gleiche Breite, kein Balken,
+  Label in 500 bleibt): der Balken mit Einrückung und m1 gedämpft las sich
+  als Fußnote, dabei stehen dort die Belege. Teilung der Absätze in Text und
+  Ergebnis nach dem alten Muster, von der Bewerbungssitzung bestätigt; bei
+  den Tokens bleibt „Ob das System heute im Einsatz ist, weiß ich nicht" im
+  Ergebnis. Das Scroll-Zeichen springt auf `#h-inhalt` statt `#h-ueber`,
+  sonst landete es unter den Sprungmarken. Englisch ist im Bewerbungsrepo
+  neu geschrieben und einmal lektoriert, die erste englische Fassung mit
+  Prüfweg. `.inhalt-titel` heißt jetzt `.folge-titel` (zweiter Titel in der
+  Einleitung). Vorschau über PR 3, Merge 96a8407.
+
+- **Quelldateien aus iCloud vor dem Übernehmen auf Größe prüfen** (22.10.,
+  eigener Fehler). Eine 0-Byte-Datei (die Bewerbungssitzung hatte sie mit
+  sed geleert) lief durch `sed`, und weil ein Prüfbefehl davor die
+  &&-Kette brach, blieb der Zweigwechsel aus und die Umleitung überschrieb
+  die Kopie auf `main`. Das Gate fiel, nichts war committet. Regel: erst
+  Zweig prüfen (`git rev-parse --abbrev-ref HEAD`), dann Größe, dann
+  schreiben; keine Umleitung in eine Repo-Datei hinter einem Befehl, der
+  die Kette brechen kann.
 
 - **Reihenfolge nach der Recruiter-Sicht** (André, 19.10.2026, „Ja, an die
   Website-Sitzung geben"). Eine Senior-Recruiter-Sicht im Bewerbungsrepo
@@ -289,11 +330,28 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Versteckter Lebenslauf, live | 200, application/pdf, X-Robots-Tag noindex, nofollow, noarchive; Cache-Control no-store; 2 Seiten, kein Telefonmuster |
 | `downloads/` | 4 PDFs plus `test.gitkeep` (CLAUDE.md sagte „sechs", dann „sieben") |
 | Viewport-Calc `calc(var(--raum-10) + 100lvh - 100svh)` | geparst in Chromium und WebKit; Probe mit 50svh ergibt 486px wie gerechnet |
+| Drift 22.10.2026 nach dem Umbau, je Sprache | 80 zu 80 Sätze, 8 zu 8 Kartentitel, 8 zu 8 Untertitel |
+| Ergebnis-Absatz nach dem Umbau | 17px, rgb(21,24,29), Breite 694 = Fließtext (1280), 358 zu 359 (390); Einrückung 0, Balken 0 |
+| „Aus dem Studium" | Quadrat rgb(108,114,128), Beleg-Link rgb(86,91,99); Säule 1 bleibt rgb(255,79,0) |
+| Scroll-Zeichen nach „Schwerpunkte" | 48px unter dem Kopf (390 und 1280); „Über mich" 48px unter der Liste |
+| Neue Anfangsglyphen (Canvas 400px) | Sora 600: S 0,0375, F 0,09, T 0,0225; Plex Sans 400: Ü 0,0875, C 0,0575, Q 0,0575 |
+| Mail-Link live | curl: /cdn-cgi/l/email-protection; im Browser nach Skript wieder mailto:hello@andreux.design |
+| Seitenhöhe vor dem Umbau (Screenshots fürs Gremium) | DE 8247 / 9398, EN 7978 / 9076 (1440 / 390) |
 | Netlify | Deploy-Preview eines PR nach unter 1 Minute; Zweig-URL ohne PR nach 6 Minuten 404 |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
+
+**2026-10-22** Umbau nach dem Lesergremium auf `main`: Schwerpunkte vor
+„Über mich", acht Karten in neuer Verteilung, Ergebnis gleichrangig,
+Kontaktsatz, Englisch neu; Freigabe nach der Vorschau am Handy. iCloud
+trägt jetzt beide Textkopien. Beim Übernehmen einer leeren Quelldatei die
+Kopie auf `main` kurz überschrieben, vom Gate gefangen, wiederhergestellt.
+
+**2026-10-21** Screenshots, technischer Rahmen und fünf eigene Punkte für
+das Lesergremium an die Bewerbungssitzung; abends die Spezifikation
+umgesetzt und als Vorschau bereitgestellt.
 
 **2026-10-21** Scroll-Zeichen über Safaris Leiste gehoben und als Geste
 getaktet, nach Vorschau am Handy auf `main`. Chevron und Pfeil bleiben
