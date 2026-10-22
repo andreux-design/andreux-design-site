@@ -90,6 +90,11 @@
 .marke-eins { --marke-text: var(--akzent-text);   --marke-flaeche: var(--akzent-flaeche);   --nummer: "1"; }
 .marke-zwei { --marke-text: var(--akzent-2-text); --marke-flaeche: var(--akzent-2-flaeche); --nummer: "2"; }
 .marke-drei { --marke-text: var(--akzent-3-text); --marke-flaeche: var(--akzent-3-flaeche); --nummer: "3"; }
+/* "Aus dem Studium" ohne Saeulenfarbe (Lesergremium, 21.10.2026): ohne
+   Angabe traegt ein Block den ersten Akzent, und der Nebenabschnitt sah aus
+   wie Saeule 1. Quadrat leise, Beleg-Links gedaempft; Hover hebt sie wie
+   ueberall auf Tinte. */
+#studium { --marke-text: var(--tinte-gedaempft); --marke-flaeche: var(--tinte-leise); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -435,7 +440,9 @@ h2::before { margin-left: var(--einzug); }
    Ueberschrift wie Inhalt). Kein neues Zeichen: dieselbe kleine Versalzeile
    mit dem 32px-Strich, die "Was ich suche" und "Kontakt" tragen. Der Strich
    ist Struktur, keine Linie quer durch die Spalte. */
-.inhalt-titel { margin-top: var(--raum-9); }
+/* Zweiter Titel in der Einleitung, seit dem 21.10.2026 "Ueber mich"
+   unter den Sprungmarken (vorher "Inhalt" unter dem Absatz). */
+.folge-titel { margin-top: var(--raum-9); }
 .sprungmarken {
   list-style: none; margin: var(--raum-5) 0 0; padding: 0;
   display: flex; flex-wrap: wrap; gap: var(--raum-4);
@@ -465,7 +472,7 @@ h2::before { margin-left: var(--einzug); }
 
 /* Die Sprungmarken sind Sprungziel des Hoch-Knopfs; unter der klebenden
    Kopfzeile landen, wie die Abschnitte. */
-.sprungmarken, .inhalt-titel { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-7)); }
+.sprungmarken, .folge-titel { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-7)); }
 /* "Ueber mich" ist Ziel des Scroll-Zeichens im Anschlag; ohne Abstand lag
    die Ueberschrift unter der Kopfzeile (André, 30.09.2026). */
 .einleitung h2 { scroll-margin-top: calc(var(--kopf-hoehe) + var(--raum-9)); }
@@ -782,12 +789,14 @@ p { max-width: var(--mass-prosa-web); }
 .beleg-link .gewicht { color: var(--tinte-leise); font-size: var(--schrift-m2); }
 
 /* --- Ergebniszeile, dasselbe Muster wie im Lebenslauf ------------------- */
+/* Gleichrangig zum Fliesstext seit dem 21.10.2026 (Lesergremium, Freigabe
+   André: "gleiche Breite, gleicher Grad, nicht grauer"): keine Einrueckung,
+   kein Balken, Stufe 0 in Tinte. Das Label in 500 bleibt das Zeichen.
+   Vorher: 3px-Balken in Saeulenfarbe, 24px eingerueckt, Stufe m1 gedaempft. */
 .ergebnis {
-  border-left: var(--strich-1) solid var(--marke-flaeche);
-  padding-left: var(--raum-5);
   margin: 0 0 var(--raum-6);
-  color: var(--tinte-gedaempft);
-  font-size: var(--schrift-m1);
+  color: var(--tinte);
+  font-size: var(--schrift-0);
 }
 .ergebnis b { color: var(--tinte); font-weight: 500; }
 /* Zwischenzeilen im Impressum: 500 wie "Ergebnis", nicht 700; die Seite
