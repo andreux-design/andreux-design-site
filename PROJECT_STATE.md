@@ -9,10 +9,10 @@ E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
 gegen die Live-Seite messen. Ziel ist die 99 von lokal; live stand die
 Performance am 01.10. bei 41 bis 64, und 6,3 der 7,6 Sekunden Skriptzeit
 kamen von Cloudflare. Es ist der einzige messbare Mangel, der nicht auf
-Text oder eine Entscheidung wartet. Dazu kommt seit dem 22.10. der
-Nachtest des Lesergremiums im Bewerbungsrepo auf der Live-Seite; wenn
-Änderungswünsche kommen, dann als Satzliste von dort, nicht als Prosa.
-Alles andere unter Offen.
+Text oder eine Entscheidung wartet. Der Nachtest des Lesergremiums ist
+durch (22.10.: alle vier Leser lesen Product Designer, drei von vier laden
+ein; Tabelle in `doku/website-gremium-2026-10-21.md` im Bewerbungsrepo),
+die Runde danach ist live. Alles andere unter Offen.
 
 Der Verlauf vom 31.08. bis 02.10.2026 (Umbauten, Feinschliff, Messungen,
 mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
@@ -32,8 +32,6 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
 - [ ] **Bilder.** Grafiken rendert André selbst; vorbereitet werden laut
       Spezifikation vom 21.10. GoTiger und colibre, filo bleibt ohne Bild,
       one conference ohne Bild und Link
-- [ ] **Nachtest des Lesergremiums** (Bewerbungsrepo, ab 22.10.) auf der
-      Live-Seite; Ergebnis kommt als Satzliste über die Bewerbungssitzung
 - [ ] **Favicon** entscheiden; heute `href="data:,"` gegen die 404
 - [ ] **Lighthouse live** nach Cloudflare messen (siehe Nächster Schritt)
 - [ ] Ein Prüfweg für die englische Fassung fehlt weiterhin. Englisch wird
@@ -72,6 +70,22 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
       WebFetch, das taugt nicht für reproduzierbare Ausgabe
 
 ## Entschieden
+
+- **Runde nach dem Nachtest** (André, 22.10.2026, über die
+  Bewerbungssitzung). Die Tokens-Karte endet nicht mehr mit der
+  Einschränkung: „Ob es heute im Einsatz ist, weiß ich nicht" steht jetzt
+  als dritter Satz im Text, das Ergebnis endet mit den Verantwortlichen;
+  ein Satz weniger durch ein Semikolon (79 statt 80). **Abschnittstitel
+  eine Leiterstufe über den Kartentiteln:** der Kritiker fand h2 und h3
+  gleich groß (beide 24/49). Die Leiter hat zwischen Stufe 3 und 6 keinen
+  Token, und Karten auf Stufe 1 (19px) wären neben 17px Text kein Titel
+  mehr; deshalb gehen die Abschnitte hinauf auf 6/12 (34/70), die Größe
+  der Säulentitel, die dazu Nummer und Farbe tragen. Vier Stufen:
+  Säule 34/70 mit Nummer, Abschnitt 34/70, Karte 24/49, Label 13. „Aus dem
+  Studium" in `--tinte-gedaempft`, Größe wie die anderen, nur die Farbe
+  sagt Nebenabschnitt (vorher las es sich wie ein vierter Abschnitt ohne
+  Nummer). Unverändert auf Andrés Wort: „Wie ich arbeite" am Ende,
+  colibre gekürzt, Wizard-Absatz eingefroren. Merge 435a4fa.
 
 - **Umbau nach dem Lesergremium** (André, 21.10.2026 „Alle sieben", 22.10.
   „Passt, mergen" nach der Vorschau am Handy). Vier Textleser (Design Lead,
@@ -337,11 +351,15 @@ es sie zweimal. Zu erledigen im Repo `design-tokens`, nicht hier.
 | Neue Anfangsglyphen (Canvas 400px) | Sora 600: S 0,0375, F 0,09, T 0,0225; Plex Sans 400: Ü 0,0875, C 0,0575, Q 0,0575 |
 | Mail-Link live | curl: /cdn-cgi/l/email-protection; im Browser nach Skript wieder mailto:hello@andreux.design |
 | Seitenhöhe vor dem Umbau (Screenshots fürs Gremium) | DE 8247 / 9398, EN 7978 / 9076 (1440 / 390) |
+| Drift 22.10.2026 nach Runde 2, je Sprache | 79 zu 79 Sätze, 8 zu 8 Kartentitel und Untertitel |
+| Titelgrößen nach Runde 2 (390 / 320 / 1280) | Abschnitt 34 / 27,9 / 70; Säule 34 / 27,9 / 70; Karte 24 / 19,7 / 49; alle Abschnittstitel einzeilig, Überlauf 0 |
 | Netlify | Deploy-Preview eines PR nach unter 1 Minute; Zweig-URL ohne PR nach 6 Minuten 404 |
 
 Die Akzentfarbe `#FF7262` ist Figmas eigene Markenfarbe.
 
 ## Log
+
+**2026-10-22, abends** Nachtest durch, Runde 2 live: Tokens-Karte umgestellt, Abschnittstitel auf 34/70, „Aus dem Studium" grau. iCloud-Kopien auf dem Stand vom 22.10.
 
 **2026-10-22** Umbau nach dem Lesergremium auf `main`: Schwerpunkte vor
 „Über mich", acht Karten in neuer Verteilung, Ergebnis gleichrangig,
