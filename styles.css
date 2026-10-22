@@ -52,9 +52,11 @@
    34px 8.718vw. Ueber 390px greift min() nicht, dort gilt die Stufe oder
    der fluessige Wert zum Desktop.
 
-   ABSTAENDE, EIN RHYTHMUS: Abschnitt zu Abschnitt --raum-11 oben und unten
-   (auf dem Handy --raum-10), Anspruch zur ersten Karte --raum-9, Karte zu
-   Karte --raum-10, innerhalb einer Karte --raum-6. Vorher lagen zwischen zwei
+   ABSTAENDE, EIN RHYTHMUS: Saeule zu Saeule --raum-12 oben und unten (auf
+   dem Handy --raum-10), die Nebenabschnitte Studium, Wie ich arbeite und
+   Kontakt ab 900px --raum-11 (Review 22.10.2026: 256px vor einem Titel ohne
+   Nummer trugen nicht), Anspruch zur ersten Karte --raum-9, Karte zu Karte
+   --raum-10, innerhalb einer Karte --raum-6. Vorher lagen zwischen zwei
    Karten 112px und zwischen Anspruch und Karte 48px, ohne Stufe dazwischen.
 --------------------------------------------------------------------------- */
 
@@ -157,10 +159,11 @@ a { color: inherit; }
   gap: var(--raum-3) var(--raum-5);
 }
 @media (min-width: 900px) {
-  /* raum-4 statt 0.35em (4,6px): mit dem 49px-Kartentitel liegen so die
-     Versalhoehen von Streifen und Titel auf einer Linie, und der Wert steht
-     auf der Leiter (Systempruefung, 30.09.2026). */
-  .streifen { flex-direction: column; gap: var(--raum-3); padding-top: var(--raum-4); }
+  /* raum-2 (4px): Versalkante des Streifens auf der des 49px-Kartentitels.
+     Mit raum-4 (8px, seit dem 30.09.2026) lag sie gemessen 4 bis 5px tiefer
+     (Review 22.10.2026, Tintenmessung: 2121 gegen 2117); mit 4px 2117 zu
+     2117. Das Quadrat sitzt davon unberuehrt auf der Grundlinie. */
+  .streifen { flex-direction: column; gap: var(--raum-3); padding-top: var(--raum-2); }
 }
 /* Dasselbe Quadrat wie im Lebenslauf, hier in der Marke des Blocks. Es haengt
    am ERSTEN TEXT, nicht am Streifen: der Streifen ist ein Flex-Container, und
@@ -305,14 +308,17 @@ a { color: inherit; }
      liegen. Der Umbruch ist nicht dem Browser ueberlassen: unter 900px
      brechen alle drei an der markierten Stelle (.zeile) in zwei Zeilen,
      "wenn eines bricht, muessen alle drei brechen" (André, 30.09.2026). */
-  .anschlag .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--raum-5); align-items: start; }
   /* Seit dem 22.10.2026 kein erzwungener Umbruch mehr: die Stats stehen in
      einer Zeile je Zelle (Lesergremium: "B.Sc. / UX Design" brach gequetscht),
      drei Spalten ab 600px, darunter untereinander. */
   .anschlag .stats .zeile { display: inline; }
 }
+/* Drei Rasterspalten gab es fuer den erzwungenen Umbruch; seit der weg ist
+   (22.10.), standen die Stats bei 600 bis 899 mit 85 bis 95px Leerlauf
+   zwischen den Zellen (Review 22.10.2026). Jetzt dort die Desktop-Zeile mit
+   Luecke raum-9, untereinander nur unter 600px. */
 @media (max-width: 599px) {
-  .anschlag .stats { grid-template-columns: 1fr; gap: var(--raum-3); }
+  .anschlag .stats { display: grid; grid-template-columns: 1fr; gap: var(--raum-3); }
 }
 /* Scroll-Zeichen unten, ein Anker auf die Einleitung; 48px Flaeche. */
 .weiter {
@@ -419,7 +425,12 @@ a { color: inherit; }
    sich wie ein vierter Abschnitt ohne Nummer). Groesse wie die anderen
    Abschnitte, nur die Farbe sagt Nebenabschnitt, passend zu Quadrat und
    Beleg-Links in Grau. */
-#studium .abschnitt-titel { color: var(--tinte-gedaempft); font-size: min(6.154vw, var(--schrift-3)); }
+#studium .abschnitt-titel { color: var(--tinte-gedaempft); margin-bottom: 0; }
+/* Unter 900px wieder 34 wie die anderen Abschnitte, nur grau (Review
+   22.10.2026): mit 24 war der Abschnittstitel so gross wie "filo" und
+   "colibre" darunter und schwaecher, die Hierarchie kippte im eigenen
+   Abschnitt. Am Desktop bleibt 49 gegen 70, dort traegt die Luft. Ohne
+   Unterrand: 48 zur ersten Karte wie bei den Saeulen, vorher 60. */
 /* Eine Stufe kleiner als "Wie ich arbeite" und "Kontakt" (Lesergremium,
    22.10.2026 nachmittags: gleich gross las sich als vierter Hauptabschnitt),
    also 3/9 wie die Karten darunter; Farbe und Quadrat tragen den Rest. */
@@ -475,9 +486,14 @@ h2::before { margin-left: var(--einzug); }
    ist Struktur, keine Linie quer durch die Spalte. */
 /* Zweiter Titel in der Einleitung, seit dem 21.10.2026 "Ueber mich"
    unter den Sprungmarken (vorher "Inhalt" unter dem Absatz). */
-.folge-titel { margin-top: var(--raum-9); }
+/* 64 statt 48 (Review 22.10.2026): ein Titel in Abschnittsgroesse bekam
+   weniger Luft als eine Karte (Karte zu Karte 64). */
+.folge-titel { margin-top: var(--raum-10); }
 .sprungmarken {
-  list-style: none; margin: var(--raum-5) 0 0; padding: 0;
+  /* Kein eigener Rand oben (Review 22.10.2026): mit 12 lagen zwischen
+     "Schwerpunkte" und den Knoepfen 36px, kein Leiterwert; jetzt 24 wie
+     von jedem anderen Titel zum Inhalt. */
+  list-style: none; margin: 0; padding: 0;
   display: flex; flex-wrap: wrap; gap: var(--raum-4);
 }
 /* Rahmen wie die Belege-Buttons (André, 30.09.2026, am Handy: "Es ist nicht
@@ -604,6 +620,14 @@ h2::before { margin-left: var(--einzug); }
    Desktop. Davor lagen Karte (80) und Abschnitt (128) am Handy nur Faktor
    1,6 auseinander. Alles Leiterwerte. */
 .abschnitt { padding-block: var(--raum-12); scroll-margin-top: var(--kopf-hoehe); }
+/* Nebenabschnitte ohne Nummer (Review eines Senior Web Designers,
+   22.10.2026): 256px vor einem 70px-Titel ohne Gegengewicht lasen sich als
+   Leere, vor der 142px-Nummer tragen sie. Ab 900px 96 statt 128: Saeule 3
+   zu Studium 224, Studium zu Wie ich arbeite 192, zu Kontakt 192; Saeule
+   zu Saeule bleibt 256. Am Handy unveraendert 64/64. */
+@media (min-width: 900px) {
+  #studium, [aria-labelledby="h-suche"], #kontakt { padding-block: var(--raum-11); }
+}
 @media (max-width: 899px) {
   .abschnitt { padding-block: var(--raum-10); }
   .anschlag { padding-block: var(--raum-11) var(--raum-10); }
