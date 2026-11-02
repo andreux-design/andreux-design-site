@@ -265,7 +265,7 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
   Vorschau heißt im Titel „noch nicht mergen" und schließt sich beim
   Git-Merge nach `main` selbst.
 
-- **Versteckter Lebenslauf-Link** (André, 15.10.2026, über die
+- **Versteckter Lebenslauf-Link, entfernt 02.11.2026** (André über die Bewerbungssitzung: „Dieser cv kann entfernt werden. Benutzen wir eigentlich nicht.“; Datei und `_headers` gelöscht). Vorher: (André, 15.10.2026, über die
   Bewerbungssitzung). `downloads/cv-a02d94e90aaefeb1291ce053.pdf`,
   öffentliche Zwei-Seiten-Fassung, Ort statt Anschrift, ohne Telefon;
   nicht verlinkt, über `_headers` noindex und no-store. Gepflegt aus dem

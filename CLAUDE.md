@@ -19,7 +19,7 @@ bewusst herüberkopiert wird. **Es gibt keine Leitung zu den privaten Daten.**
 `index.html` entsteht aus dem gesperrten Datensatz des CV-Projekts, dazu
 `impressum.html`, `tokens.css` aus dem Paket, `schriften.css` mit den vier
 selbst gehosteten woff2 unter `schriften/` (seit 01.10.2026, SIL OFL) und
-`downloads/` mit vier PDFs (eines davon der nicht verlinkte, per `_headers` nicht indexierte Lebenslauf vom 15.10.2026; gezählt am 15.10.2026, vorher stand hier „sechs"). Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
+`downloads/` mit drei PDFs (gezählt am 02.11.2026; der versteckte Lebenslauf vom 15.10.2026 und `_headers` sind seit 02.11. entfernt, André: „Dieser cv kann entfernt werden. Benutzen wir eigentlich nicht."). Kein Build, aber eine echte Abhängigkeit: `npm run tokens` erneuert
 `tokens.css` aus `@andreux/design-tokens`, gepinnt auf `v1.5.0`.
 
 `portfolio.html` ist ersetzt. `/portfolio` und `/portfolio.html` leiten per
