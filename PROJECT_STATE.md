@@ -18,7 +18,15 @@ André: „Sicher dass das Ergebnis zuerst da stehen sollte ? Wirkt etwas
 komisch." Die VW-Karte hat kein Ergebnis mehr. Etikett „Ergebnis:" nur bei echtem
 Ergebnis (André 10.11.): bei Tokens und filo entfernt, beide Absätze sind
 jetzt `p.text` mit unverändertem Wortlaut; „Ergebnis:" bleibt bei one
-conference, Bausteine und Oberfläche. Danach weiter mit Cloudflare:
+conference, Bausteine und Oberfläche. Stand 10.11. spät (Kopien 18:57): Oberflächenkarte
+ohne ersten Satz, beginnt mit „Jede Änderung …", Statussatz „Seit Anfang
+November 2026 … veröffentlicht und wird genutzt"; der Absatz „Systeme, die
+wiederkehrende Arbeit übernehmen …" steht als Schluss hinter den Karten
+von Säule 3 (`.eingereiht.schluss`, 64 nach der letzten Karte, gemessen
+390 und 1280), die Sonderregel 64 zur ersten Karte ist entfernt; colibre
+ist von der Startseite entfernt, „Aus dem Studium" trägt nur filo
+(Fallstudie colibre bleibt späterer Auftrag). Tintenkanten-Tabelle um „J"
+(IBM Plex Sans 400, 0,0275 em). 59 Sätze, 7 Kartentitel je Sprache. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse

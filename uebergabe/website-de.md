@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 10.11.2026 abends (Quelle: bewerbungen-2026 Commit 0b63b2e, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 10.11.2026 spät (Quelle: bewerbungen-2026, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud, 18:57; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -46,8 +46,6 @@ Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, w
 
 Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln und Prüfstufen schreiben, der das Fach kennt.
 
-Systeme, die wiederkehrende Arbeit übernehmen, baue ich schon lange. Ein frühes Beispiel liegt über zehn Jahre zurück, vor KI-Werkzeugen wie Claude Code. Für einen wiederkehrenden Bericht baute ich eine Eingabemaske, dahinter lagen Berechnung und Diagramme, und der fertige Bericht entstand auf Knopfdruck.
-
 ### Eine Bausteinbibliothek für automatisierte Seiten
 
 #### Vorlagen, die zu Bausteinen wurden
@@ -58,7 +56,9 @@ Zurzeit verantworte ich in einer anderen Agentur Landingpages mit Konzept, Gesta
 
 #### Account Manager sollen Landingpages selbst einrichten können
 
-In dieser Agentur verantworte ich die Landingpages für die Kunden, von der Gestaltung über den Text bis zur Technik, von der Domain bis zum Tracking. Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit November 2026 ist die Oberfläche Teil des internen Systems der Agentur, der Einsatz im Team steht bevor. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
+Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit Anfang November 2026 ist die Oberfläche im internen System der Agentur veröffentlicht und wird genutzt. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
+
+Systeme, die wiederkehrende Arbeit übernehmen, baue ich schon lange. Ein frühes Beispiel liegt über zehn Jahre zurück, vor KI-Werkzeugen wie Claude Code. Für einen wiederkehrenden Bericht baute ich eine Eingabemaske, dahinter lagen Berechnung und Diagramme, und der fertige Bericht entstand auf Knopfdruck.
 
 ## Aus dem Studium
 
@@ -67,12 +67,6 @@ In dieser Agentur verantworte ich die Landingpages für die Kunden, von der Gest
 #### Nachrichten und Dateien an einer Stelle
 
 filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht zu einem Projekt und weiß nicht mehr, wo sie war. Kam sie per E-Mail oder über Slack? Und die Datei dazu, lag die auf dem Drive oder doch in irgendeinem Chat? Wer so sucht, verliert Zeit, und wenn es hektisch wird, wird daraus Stress. Ich wollte eine Oberfläche, die alles an einer Stelle bündelt, ohne dass alle dasselbe Werkzeug nutzen müssen. Überrascht hat mich, wie vielen es genauso geht. Gebaut habe ich die Oberfläche als klickbaren Figma-Prototyp, der seine Zustände über 271 Variablen ohne Backend simuliert. Den Prototyp habe ich mit 23 Teilnehmenden in moderierten Online-Sitzungen evaluiert. Auch Teilnehmende mit wenig Technikerfahrung kamen damit zurecht. Das hat mich gefreut.
-
-### colibre
-
-#### Konzept und App-Prototyp
-
-colibre war ein Studienprojekt im Sommersemester 2022, zu dritt. Wir wanderten alle gern, also fragten wir uns, was uns dabei fehlte. So entstand das Konzept einer Outdoor-App mit Karte, Routen, einem Shop für Ausrüstung und einem Chat mit Leuten, die dieselbe Route gegangen sind. Der Colispot, der Knopf in der Mitte der Navigation, war der Kern. Damit konnte man einen schönen Ort auf der Karte markieren und teilen. Als Erfahrenster im Team verteilte ich die Aufgaben nach Können und baute den Prototyp selbst, interaktiv in Figma.
 
 ## Kontakt
 

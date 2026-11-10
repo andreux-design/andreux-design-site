@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 10.11.2026 abends (Quelle: bewerbungen-2026 Commit 0b63b2e; Kopie website-en-neu-2026-11-10.md aus iCloud; gleiche Struktur wie DE)
+# Seitentext EN, Stand 10.11.2026 spät (Kopie website-en-neu-2026-11-10.md aus iCloud, 18:57; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -46,8 +46,6 @@ On my own initiative, I built a token-based design system in 2024, because the a
 
 In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules and review steps.
 
-For a long time now, I have been building systems that handle recurring work. An early example goes back more than ten years, before AI tools like Claude Code. For a recurring report, I built an input form with the calculations and charts behind it, and the finished report came out at the push of a button.
-
 ### A library of building blocks for automated pages
 
 #### Layouts that became building blocks
@@ -58,7 +56,9 @@ At the moment I am responsible for landing pages at another agency, concept, des
 
 #### Account managers should be able to set up landing pages themselves
 
-At this agency I am responsible for the landing pages for our clients, from design and copy to the technical side, from the domain to tracking. Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since November 2026 the interface has been part of the agency's internal system, and the team is about to start using it. I can't show the interface itself; the rights to it belong to my employer.
+Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since early November 2026 the interface has been live in the agency's internal system and is in use. I can't show the interface itself; the rights to it belong to my employer.
+
+For a long time now, I have been building systems that handle recurring work. An early example goes back more than ten years, before AI tools like Claude Code. For a recurring report, I built an input form with the calculations and charts behind it, and the finished report came out at the push of a button.
 
 ## From university
 
@@ -67,12 +67,6 @@ At this agency I am responsible for the landing pages for our clients, from desi
 #### Messages and files in one place
 
 filo, my bachelor's thesis, came out of everyday work. You look for a message about a project and can't remember where it was. Did it come by email or via Slack? And the file that went with it, was it on the drive or somewhere in a chat? Searching like that costs time, and when things get hectic, it turns into stress. I wanted an interface that brings everything together in one place without everyone having to use the same tool. I was surprised how many people feel the same way. I built the interface as a clickable Figma prototype that simulates its states with 271 variables and no backend. I evaluated the prototype with 23 participants in moderated online sessions. Participants with little technical experience managed it too. I was pleased about that.
-
-### colibre
-
-#### Concept and app prototype
-
-colibre was a university project in the summer term of 2022, in a team of three. We all liked hiking, so we asked ourselves what we were missing out there. That led to the concept of an outdoor app with a map, routes, a shop for gear and a chat with people who had walked the same route. The Colispot, the button in the middle of the navigation, was the core. With it you could mark a beautiful spot on the map and share it. As the most experienced member of the team, I divided the tasks by skill and built the interactive Figma prototype myself.
 
 ## Contact
 
