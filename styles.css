@@ -772,11 +772,6 @@ p { max-width: var(--mass-prosa-web); }
 .arbeit { padding-block: var(--raum-8); }
 .arbeit + .arbeit { padding-top: var(--raum-8); }
 .arbeit:first-of-type { padding-top: var(--raum-9); }
-/* Saeule 3 hatte vom 22.10. bis 10.11.2026 unter dem Anspruch einen Absatz
-   und deshalb 64 statt 48 zur ersten Karte. Seit dem 10.11. (André) steht
-   der Absatz als Schluss hinter den Karten, in der Textspalte, mit dem
-   Kartenabstand 64 davor; der Kopf ist wieder wie bei den anderen Saeulen. */
-.schluss { padding-top: var(--raum-10); }
 /* Die letzte Karte traegt kein Unterpolster, und das letzte Element einer
    Karte (Belege-Zeile oder Ergebniszeile) keinen Unterabstand: sonst standen
    16 und 32px zwischen dem Inhalt und dem Abschnittsrand, und Karte zu Karte

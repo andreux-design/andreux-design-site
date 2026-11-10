@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 10.11.2026 spät (Kopie website-en-neu-2026-11-10.md aus iCloud, 18:57; gleiche Struktur wie DE)
+# Seitentext EN, Stand 10.11.2026 nachts (Kopie website-en-neu-2026-11-10.md aus iCloud, 20:47; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -6,7 +6,7 @@ I design products and the systems they stand on.
 
 ## About me
 
-I started in prepress in 2010. I have been designing since 2011, and working in UX design since 2019. I like to follow a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens, rules and review steps. At first that is extra work. Once several people work on the same product, the effort pays off, because everyone uses the same foundation and a change in one place applies everywhere. Today I build systems like that with AI models, which I brief like team members.
+Today I am the only designer responsible for an agency's entire production: design, copy and system. I follow a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens, rules and review steps. Today I build systems like that with AI models, which I brief like team members. I started in prepress in 2010 and have been designing since 2011.
 
 ## End-to-end product design
 
@@ -30,17 +30,13 @@ In 2024, at a digital agency in Munich, I redesigned the internal conference app
 
 I build design systems, from design tokens through several layers to nested components and flows, with what Figma provides.
 
-### A library for Volkswagen
+### Two systems for a digital agency in Munich
 
-#### Figma components for the Volkswagen pages
-
-In 2024, at a digital agency in Munich, I built the websites for two Volkswagen Commercial Vehicles models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again. 
-
-### A token-based design system
-
-#### Switchable to other brands in a few clicks
+#### A token-based design system, a library for Volkswagen
 
 On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
+
+In 2024, at a digital agency in Munich, I built the websites for two Volkswagen Commercial Vehicles models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again.
 
 ## AI-assisted systems
 
@@ -58,15 +54,13 @@ At the moment I am responsible for landing pages at another agency, concept, des
 
 Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since early November 2026 the interface has been live in the agency's internal system and is in use. I can't show the interface itself; the rights to it belong to my employer.
 
-For a long time now, I have been building systems that handle recurring work. An early example goes back more than ten years, before AI tools like Claude Code. For a recurring report, I built an input form with the calculations and charts behind it, and the finished report came out at the push of a button.
-
 ## From university
 
 ### filo
 
 #### Messages and files in one place
 
-filo, my bachelor's thesis, came out of everyday work. You look for a message about a project and can't remember where it was. Did it come by email or via Slack? And the file that went with it, was it on the drive or somewhere in a chat? Searching like that costs time, and when things get hectic, it turns into stress. I wanted an interface that brings everything together in one place without everyone having to use the same tool. I was surprised how many people feel the same way. I built the interface as a clickable Figma prototype that simulates its states with 271 variables and no backend. I evaluated the prototype with 23 participants in moderated online sessions. Participants with little technical experience managed it too. I was pleased about that.
+filo, my bachelor's thesis, came out of everyday work. You look for a message about a project and can't remember where it was. I wanted an interface that brings everything together in one place without everyone having to use the same tool. I built the interface as a clickable Figma prototype that simulates its states with 271 variables and no backend. I evaluated the prototype with 23 participants in moderated online sessions. Participants with little technical experience managed it too.
 
 ## Contact
 

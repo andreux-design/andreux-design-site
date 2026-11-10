@@ -26,7 +26,13 @@ von Säule 3 (`.eingereiht.schluss`, 64 nach der letzten Karte, gemessen
 390 und 1280), die Sonderregel 64 zur ersten Karte ist entfernt; colibre
 ist von der Startseite entfernt, „Aus dem Studium" trägt nur filo
 (Fallstudie colibre bleibt späterer Auftrag). Tintenkanten-Tabelle um „J"
-(IBM Plex Sans 400, 0,0275 em). 59 Sätze, 7 Kartentitel je Sprache. Danach weiter mit Cloudflare:
+(IBM Plex Sans 400, 0,0275 em). Stand 10.11. nachts (Kopien 20:47): Über mich neu
+(„Heute verantworte ich als einziger Designer …", ohne „seit 2019" und
+Mehraufwand); filo gekürzt; der Schlussabsatz von Säule 3 entfällt samt
+Regel `.schluss`; Volkswagen und Tokens sind eine Karte „Zwei Systeme für
+eine Münchner Digitalagentur", Token-Absätze zuerst, dann Volkswagen.
+Tintenkanten-Tabelle um „J" (IBM Plex Sans 400, 0,0275 em) und „Z" (Sora
+600, 0,045 em). 49 Sätze, 6 Kartentitel je Sprache. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse

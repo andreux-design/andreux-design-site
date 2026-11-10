@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 10.11.2026 spät (Quelle: bewerbungen-2026, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud, 18:57; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 10.11.2026 nachts (Quelle: bewerbungen-2026, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud, 20:47; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -6,7 +6,7 @@ Ich gestalte Produkte und die Systeme, auf denen sie stehen.
 
 ## Über mich
 
-Angefangen habe ich 2010 in der Druckvorstufe. Seit 2011 gestalte ich, seit 2019 arbeite ich im UX Design. Ich begleite ein Produkt gern vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens, Regeln und Prüfstufen. Am Anfang ist das Mehraufwand. Sobald mehrere an einem Produkt arbeiten, zahlt er sich aus, weil alle dieselbe Grundlage nutzen und eine Änderung an einer Stelle überall gilt. Heute baue ich solche Systeme mit KI-Modellen, die ich briefe wie Mitarbeiter.
+Heute verantworte ich als einziger Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens, Regeln und Prüfstufen. Heute baue ich solche Systeme mit KI-Modellen, die ich briefe wie Mitarbeiter. Angefangen habe ich 2010 in der Druckvorstufe, seit 2011 gestalte ich.
 
 ## End-to-End-Produktdesign
 
@@ -30,17 +30,13 @@ In einer Münchner Digitalagentur habe ich 2024 die interne Konferenz-App „one
 
 Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu verschachtelten Komponenten und Flows, mit dem, was Figma dafür hergibt.
 
-### Eine Library für Volkswagen
+### Zwei Systeme für eine Münchner Digitalagentur
 
-#### Figma-Komponenten für die Volkswagen-Seiten
-
-2024 habe ich in einer Münchner Digitalagentur die Websites für zwei Modelle von Volkswagen Nutzfahrzeuge gebaut, den ID. Buzz und den California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut. 
-
-### Ein Designsystem aus Tokens
-
-#### Mit wenigen Klicks auf andere Marken
+#### Ein Designsystem aus Tokens, eine Library für Volkswagen
 
 Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
+
+2024 habe ich in einer Münchner Digitalagentur die Websites für zwei Modelle von Volkswagen Nutzfahrzeuge gebaut, den ID. Buzz und den California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut.
 
 ## KI-gestützte Systeme
 
@@ -58,15 +54,13 @@ Zurzeit verantworte ich in einer anderen Agentur Landingpages mit Konzept, Gesta
 
 Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit Anfang November 2026 ist die Oberfläche im internen System der Agentur veröffentlicht und wird genutzt. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
 
-Systeme, die wiederkehrende Arbeit übernehmen, baue ich schon lange. Ein frühes Beispiel liegt über zehn Jahre zurück, vor KI-Werkzeugen wie Claude Code. Für einen wiederkehrenden Bericht baute ich eine Eingabemaske, dahinter lagen Berechnung und Diagramme, und der fertige Bericht entstand auf Knopfdruck.
-
 ## Aus dem Studium
 
 ### filo
 
 #### Nachrichten und Dateien an einer Stelle
 
-filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht zu einem Projekt und weiß nicht mehr, wo sie war. Kam sie per E-Mail oder über Slack? Und die Datei dazu, lag die auf dem Drive oder doch in irgendeinem Chat? Wer so sucht, verliert Zeit, und wenn es hektisch wird, wird daraus Stress. Ich wollte eine Oberfläche, die alles an einer Stelle bündelt, ohne dass alle dasselbe Werkzeug nutzen müssen. Überrascht hat mich, wie vielen es genauso geht. Gebaut habe ich die Oberfläche als klickbaren Figma-Prototyp, der seine Zustände über 271 Variablen ohne Backend simuliert. Den Prototyp habe ich mit 23 Teilnehmenden in moderierten Online-Sitzungen evaluiert. Auch Teilnehmende mit wenig Technikerfahrung kamen damit zurecht. Das hat mich gefreut.
+filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht zu einem Projekt und weiß nicht mehr, wo sie war. Ich wollte eine Oberfläche, die alles an einer Stelle bündelt, ohne dass alle dasselbe Werkzeug nutzen müssen. Gebaut habe ich die Oberfläche als klickbaren Figma-Prototyp, der seine Zustände über 271 Variablen ohne Backend simuliert. Den Prototyp habe ich mit 23 Teilnehmenden in moderierten Online-Sitzungen evaluiert. Auch Teilnehmende mit wenig Technikerfahrung kamen damit zurecht.
 
 ## Kontakt
 
