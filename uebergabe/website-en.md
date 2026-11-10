@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 10.11.2026 (Quelle: bewerbungen-2026 Commit 1d88256; Kopie website-en-neu-2026-11-10.md aus iCloud; gleiche Struktur wie DE)
+# Seitentext EN, Stand 10.11.2026 abends (Quelle: bewerbungen-2026 Commit e67dc86; Kopie website-en-neu-2026-11-10.md aus iCloud; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -34,13 +34,13 @@ I build design systems, from design tokens through several layers to nested comp
 
 #### Figma components for the Volkswagen pages
 
-In 2024, at a digital agency in Munich, I built the websites for two Volkswagen Commercial Vehicles models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again. My colleagues building the other Volkswagen pages wondered why they hadn't thought of it themselves, and they were grateful.
+In 2024, at a digital agency in Munich, I built the websites for two Volkswagen Commercial Vehicles models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again. 
 
 ### A token-based design system
 
 #### Switchable to other brands in a few clicks
 
-On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. When I presented it, everyone was astonished at first, and it was not immediately clear how it worked technically. So I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
+On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. So I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
 
 ## AI-assisted systems
 
@@ -58,8 +58,7 @@ At the moment I am responsible for landing pages at another agency, concept, des
 
 #### Account managers should be able to set up landing pages themselves
 
-At this agency I am responsible for the landing pages for our clients, from design and copy to the technical side, from the domain to tracking. Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. Three assistants lead the way. The first collects the brief on three short cards, and an overview then shows what to do next. The page's copy and structure are generated automatically, and in the editor you adjust them, with the form on the left and the preview on the right. After the first review, the second assistant moves the page into the client's account, and the third takes you step by step through the technical setup, after which the domain is set up. Finally the page goes live, and a test enquiry is sent through. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since November 2026 the interface has been part of the agency's internal system, and the team is about to start using it. I can't show the interface itself; the rights to it belong to my employer.
-
+At this agency I am responsible for the landing pages for our clients, from design and copy to the technical side, from the domain to tracking. Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since November 2026 the interface has been part of the agency's internal system, and the team is about to start using it. I can't show the interface itself; the rights to it belong to my employer.
 
 ## From university
 
@@ -74,10 +73,6 @@ filo, my bachelor's thesis, came out of everyday work. You look for a message ab
 #### Concept and app prototype
 
 colibre was a university project in the summer term of 2022, in a team of three. We all liked hiking, so we asked ourselves what we were missing out there. That led to the concept of an outdoor app with a map, routes, a shop for gear and a chat with people who had walked the same route. The Colispot, the button in the middle of the navigation, was the core. With it you could mark a beautiful spot on the map and share it. As the most experienced member of the team, I divided the tasks by skill and built the interactive Figma prototype myself.
-
-## How I work
-
-My focus is UX, and the interface is the part of it you can see. Long-lived products matter to me, because that is where care is rewarded. I love reducing complexity and making things simpler for the people who use them.
 
 ## Contact
 

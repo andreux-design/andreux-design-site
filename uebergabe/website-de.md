@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 10.11.2026 (Quelle: bewerbungen-2026 Commit 1d88256, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 10.11.2026 abends (Quelle: bewerbungen-2026 Commit e67dc86, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -34,13 +34,13 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 
 #### Figma-Komponenten für die Volkswagen-Seiten
 
-2024 habe ich in einer Münchner Digitalagentur die Websites für zwei Modelle von Volkswagen Nutzfahrzeuge gebaut, den ID. Buzz und den California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut. Meine Kollegen, die die anderen Volkswagen-Seiten bauten, meinten, darauf hätten sie auch selbst kommen können, und waren dankbar.
+2024 habe ich in einer Münchner Digitalagentur die Websites für zwei Modelle von Volkswagen Nutzfahrzeuge gebaut, den ID. Buzz und den California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut. 
 
 ### Ein Designsystem aus Tokens
 
 #### Mit wenigen Klicks auf andere Marken
 
-Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Als ich es vorstellte, waren erst einmal alle verblüfft, und wie es technisch funktionierte, war nicht sofort klar. Also zeigte ich mit einer Demo-Library, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
+Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Also zeigte ich mit einer Demo-Library, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
 
 ## KI-gestützte Systeme
 
@@ -58,8 +58,7 @@ Zurzeit verantworte ich in einer anderen Agentur Landingpages mit Konzept, Gesta
 
 #### Account Manager sollen Landingpages selbst einrichten können
 
-In dieser Agentur verantworte ich die Landingpages für die Kunden, von der Gestaltung über den Text bis zur Technik, von der Domain bis zum Tracking. Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. Drei Assistenten führen durch den Weg. Der erste fragt auf drei kurzen Karten das Briefing ab, danach zeigt eine Übersicht, was als Nächstes zu tun ist. Text und Struktur der Seite entstehen automatisch, im Editor passt man sie an, das Formular links, die Vorschau rechts. Nach dem ersten Review zieht der zweite Assistent die Seite in den Account des Kunden um, der dritte führt Schritt für Schritt durch die technische Einrichtung, danach wird die Domain eingerichtet. Am Ende geht die Seite live, und eine Testanfrage läuft durch. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit November 2026 ist die Oberfläche Teil des internen Systems der Agentur, der Einsatz im Team steht bevor. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
-
+In dieser Agentur verantworte ich die Landingpages für die Kunden, von der Gestaltung über den Text bis zur Technik, von der Domain bis zum Tracking. Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit November 2026 ist die Oberfläche Teil des internen Systems der Agentur, der Einsatz im Team steht bevor. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
 
 ## Aus dem Studium
 
@@ -74,10 +73,6 @@ filo, meine Bachelorthesis, kam aus dem Berufsalltag. Man sucht eine Nachricht z
 #### Konzept und App-Prototyp
 
 colibre war ein Studienprojekt im Sommersemester 2022, zu dritt. Wir wanderten alle gern, also fragten wir uns, was uns dabei fehlte. So entstand das Konzept einer Outdoor-App mit Karte, Routen, einem Shop für Ausrüstung und einem Chat mit Leuten, die dieselbe Route gegangen sind. Der Colispot, der Knopf in der Mitte der Navigation, war der Kern. Damit konnte man einen schönen Ort auf der Karte markieren und teilen. Als Erfahrenster im Team verteilte ich die Aufgaben nach Können und baute den Prototyp selbst, interaktiv in Figma.
-
-## Wie ich arbeite
-
-Mein Schwerpunkt ist UX, und die Oberfläche ist der Teil davon, den man sieht. Mir sind langlebige Produkte wichtig, weil sich Sorgfalt dort lohnt. Ich liebe es, Komplexität zu verringern und Dinge für die Menschen, die sie nutzen, einfacher zu machen.
 
 ## Kontakt
 
