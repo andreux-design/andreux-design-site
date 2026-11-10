@@ -865,6 +865,10 @@ p { max-width: var(--mass-prosa-web); }
   font-size: var(--schrift-0);
 }
 .ergebnis + .ergebnis { margin-top: 0; }
+/* Vergleich "Ergebnis oben" (André, 10.11.2026, als Vorschau): steht das
+   Ergebnis direkt unter dem Untertitel, nimmt es dessen 16 auf, und die
+   32 Luft wandern unter das Ergebnis, vor die Beschreibung. */
+.untertitel + .ergebnis { margin-top: 0; margin-bottom: var(--raum-8); }
 .ergebnis b { color: var(--tinte); font-weight: 500; }
 /* Zwischenzeilen im Impressum: 500 wie "Ergebnis", nicht 700; die Seite
    laedt Plex Sans nur in 400 und 500, 700 waere synthetisch (01.10.2026). */
