@@ -16,9 +16,10 @@ Sprache. Zwei Pull Requests, beide Gate grün, keine Drift:
   Ergebnis-Absatz steht auf fünf Karten direkt unter dem Untertitel
   (16 darüber, 32 darunter, Regel `.untertitel + .ergebnis`).
 Nach Andrés Wahl genau einen nach `main` mergen, den anderen schließen;
-vorher nichts live. Offen zur Wahl: Token-Ergebnis beginnt jetzt mit
-„Also zeigte ich …", ohne den gestrichenen Satz davor; mit Ergebnis oben
-fehlt den Rückverweisen („Also", „damit") erst recht der Bezug. Die
+vorher nichts live (André 10.11.: „Erst ansehen", beide PRs offen). Das
+„Also" der Token-Karte ist gestrichen (0b63b2e: „Mit einer Demo-Library
+zeigte ich …"). Das „damit" der Bausteine-Karte bleibt; Thema nur, falls
+André „Ergebnis oben" wählt. Die
 VW-Karte hat kein Ergebnis mehr. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
