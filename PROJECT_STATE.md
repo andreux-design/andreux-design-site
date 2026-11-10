@@ -4,15 +4,22 @@ Letzte Aktualisierung: 2026-11-10
 
 ## Nächster Schritt
 
-**Freigabe der Vorschau durch André (10.11.2026).** Textstand 10.11. aus
-bewerbungen-2026 (Commit 1d88256) liegt im Zweig `startseite-2026-11-10`,
-PR #5, Vorschau `deploy-preview-5--andreux-design.netlify.app`. Gate grün,
-keine Drift. Nach seinem „ok" nach `main` mergen und pushen; vorher nicht
-(Auftrag ausdrücklich „live erst nach Freigabe"). Aufteilung der neuen
-Funnel-Karte, weil der Quelltext ein Absatz ist: Beschreibung als Text,
-„Seit November 2026 …" als Ergebnis, der Rechtesatz als Nicht gezeigt.
-Tintenkanten-Tabelle um „O" (Sora 600, 0,045 em) ergänzt. Danach weiter
-mit Cloudflare:
+**Freigabe der Vorschau durch André (10.11.2026), zwei Varianten.**
+Textstand 10.11. abends aus bewerbungen-2026 (Commit e67dc86, nach dem
+Gremium): VW-Satz „Meine Kollegen … dankbar", Token-Satz „verblüfft", der
+Ablauf der Funnel-Karte und „Wie ich arbeite" gestrichen; 66 Sätze je
+Sprache. Zwei Pull Requests, beide Gate grün, keine Drift:
+- PR #5, Zweig `startseite-2026-11-10`, Vorschau
+  `deploy-preview-5--andreux-design.netlify.app`: bisherige Anordnung.
+- PR #6 (Entwurf), Zweig `startseite-2026-11-10-ergebnis-oben`, Vorschau
+  `deploy-preview-6--andreux-design.netlify.app`: baut auf #5 auf, der
+  Ergebnis-Absatz steht auf fünf Karten direkt unter dem Untertitel
+  (16 darüber, 32 darunter, Regel `.untertitel + .ergebnis`).
+Nach Andrés Wahl genau einen nach `main` mergen, den anderen schließen;
+vorher nichts live. Offen zur Wahl: Token-Ergebnis beginnt jetzt mit
+„Also zeigte ich …", ohne den gestrichenen Satz davor; mit Ergebnis oben
+fehlt den Rückverweisen („Also", „damit") erst recht der Bezug. Die
+VW-Karte hat kein Ergebnis mehr. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse

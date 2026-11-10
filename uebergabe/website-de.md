@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 10.11.2026 abends (Quelle: bewerbungen-2026 Commit e67dc86, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 10.11.2026 abends (Quelle: bewerbungen-2026 Commit 0b63b2e, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -40,7 +40,7 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 
 #### Mit wenigen Klicks auf andere Marken
 
-Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Also zeigte ich mit einer Demo-Library, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
+Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
 
 ## KI-gestützte Systeme
 
