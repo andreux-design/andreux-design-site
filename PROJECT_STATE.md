@@ -1,8 +1,18 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-10-22
+Letzte Aktualisierung: 2026-11-10
 
 ## Nächster Schritt
+
+**Freigabe der Vorschau durch André (10.11.2026).** Textstand 10.11. aus
+bewerbungen-2026 (Commit 1d88256) liegt im Zweig `startseite-2026-11-10`,
+PR #5, Vorschau `deploy-preview-5--andreux-design.netlify.app`. Gate grün,
+keine Drift. Nach seinem „ok" nach `main` mergen und pushen; vorher nicht
+(Auftrag ausdrücklich „live erst nach Freigabe"). Aufteilung der neuen
+Funnel-Karte, weil der Quelltext ein Absatz ist: Beschreibung als Text,
+„Seit November 2026 …" als Ergebnis, der Rechtesatz als Nicht gezeigt.
+Tintenkanten-Tabelle um „O" (Sora 600, 0,045 em) ergänzt. Danach weiter
+mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
@@ -19,13 +29,12 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
 
 ## Offen
 
-- [ ] **Wizard-Satz und „fünf Minuten"** in der Funnel-Karte sind
-      eingefroren. André, 19.10.: der Wizard zieht bis Ende Oktober in ein
-      internes System um, rund 30 Minuten im Erstaufbau. Das wird im
-      Bewerbungsrepo geklärt und kommt als eigener Auftrag; bis dahin nichts
-      daran ändern
+- [x] **Wizard-Satz und „fünf Minuten"** erledigt: Funnel-Karte ist mit
+      dem Textstand 10.11. neu (PR #5, wartet auf Freigabe)
 - [ ] **Fallstudienseiten** für GoTiger, filo, colibre, mit Kurzfassungen auf
-      der Hauptseite (Schritt zwei, André 16. und 17.09.). Text kommt über
+      der Hauptseite (Schritt zwei, André 16. und 17.09.; laut Auftrag
+      10.11. GoTiger zuerst, erst wenn die Bilder da sind, jetzt nicht
+      bauen; Texte in bewerbungen-2026 `texte/fallstudie-*.md`). Text kommt über
       `uebergabe/`; Tintenkanten-Tabelle im Seitenskript um neue
       Anfangsglyphen ergänzen (Messlogik: Canvas bei 400px, erste
       eingefärbte Spalte, in em)
