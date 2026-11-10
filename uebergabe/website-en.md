@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 22.10.2026 (neu geschrieben im Bewerbungsrepo, lektoriert; Kopie website-en-neu-2026-10-22.md aus iCloud; gleiche Struktur wie DE)
+# Seitentext EN, Stand 10.11.2026 (Quelle: bewerbungen-2026 Commit 1d88256; Kopie website-en-neu-2026-11-10.md aus iCloud; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -14,11 +14,11 @@ Research, concept, prototype, handover to development, support through to launch
 
 ### GoTiger App
 
-#### Quick-commerce delivery for Asian groceries
+#### Delivery service for Asian groceries
 
 GoTiger delivered Asian groceries in Berlin, and I designed the app for the service. One problem lay outside the app. Without prior knowledge, you don't know what you could actually buy in an Asian supermarket. So every product detail page explained the product, and recipes added the ingredients to the basket with one tap, scaled to the portion size. You deselected whatever you already had at home. There was also a swipe game for finding the right recipe. All of it went live.
 
-I started with a survey of the target group, and later user tests in interviews followed. That was enough to see what needed improving. When a colleague left, I took over her tasks as well and briefed the external development team from then on.
+I started with a survey of the target group, and later user tests in interviews followed. When a colleague left, I took over her tasks as well and briefed the external development team from then on.
 
 ### The “one conference” app
 
@@ -40,7 +40,7 @@ In 2024, at a digital agency in Munich, I built the websites for two Volkswagen 
 
 #### Switchable to other brands in a few clicks
 
-On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. I don't know whether it is in use today. When I presented it, everyone was astonished at first, and it was not immediately clear how it worked technically. So I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
+On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. When I presented it, everyone was astonished at first, and it was not immediately clear how it worked technically. So I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
 
 ## AI-assisted systems
 
@@ -54,11 +54,12 @@ For a long time now, I have been building systems that handle recurring work. An
 
 At the moment I am responsible for landing pages at another agency, concept, design and copy included. I began there by building page layouts by hand and writing my own rules for copy and design as the basis for evaluation. Back then I set up a small design system in Figma for each client so that I could design consistently myself. Those layouts have become 26 building blocks, and pages are now generated from them automatically. If a client has no design system yet, or only an inadequate one, a new one is created at the start of the project according to rules and applied to the building blocks. What I had built by hand as layouts has become the basis of automated production.
 
-### A wizard for landing pages
+### One interface from brief to launch
 
-#### From a stored brief to a finished page
+#### Account managers should be able to set up landing pages themselves
 
-The building blocks and the rules I wrote have since become the basis of a system, built with Claude Code, that produces landing pages, copy included. A brief is stored for a client, and from it the system builds a page with suitable sections and copy. The page appears in a wizard that I designed and built. The idea is that anyone on the team can create a landing page in a few clicks. The copy sits on the left as a form, the page preview on the right, switchable to the mobile view. Anyone who wants to put in more effort can add, remove or move sections. The overall layout is set by a template. Accessibility is a condition for sign-off, not something fixed afterwards. By hand, as I remember it, the first build of a page alone took half a day to a full day, without copy and without the mobile version. With the wizard, the first version including copy is ready in about five minutes; corrections are extra. The wizard is finished and still runs locally on my machine, and the move into the shared setup is pending. The rights belong to my employer, so I can't show any of it.
+At this agency I am responsible for the landing pages for our clients, from design and copy to the technical side, from the domain to tracking. Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. Three assistants lead the way. The first collects the brief on three short cards, and an overview then shows what to do next. The page's copy and structure are generated automatically, and in the editor you adjust them, with the form on the left and the preview on the right. After the first review, the second assistant moves the page into the client's account, and the third takes you step by step through the technical setup, after which the domain is set up. Finally the page goes live, and a test enquiry is sent through. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since November 2026 the interface has been part of the agency's internal system, and the team is about to start using it. I can't show the interface itself; the rights to it belong to my employer.
+
 
 ## From university
 
@@ -81,3 +82,4 @@ My focus is UX, and the interface is the part of it you can see. Long-lived prod
 ## Contact
 
 I'm happy to talk about product design, design systems and AI.
+

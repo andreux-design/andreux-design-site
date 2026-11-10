@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 22.10.2026 (Quelle: bewerbungen-2026/texte/website.md, Lesergremium plus Nachtest; bereinigte Kopie website-de-neu-2026-10-22.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 10.11.2026 (Quelle: bewerbungen-2026 Commit 1d88256, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -14,11 +14,11 @@ Research, Konzept, Prototyp, Übergabe an die Entwicklung, Betreuung bis zum Liv
 
 ### GoTiger App
 
-#### Schnelllieferdienst für asiatische Lebensmittel
+#### Lieferdienst für asiatische Lebensmittel
 
 GoTiger lieferte asiatische Lebensmittel in Berlin aus, und ich gestaltete die App des Lieferdienstes. Ein Problem lag außerhalb der App. Ohne Vorkenntnisse weiß man in einem asiatischen Supermarkt nicht, was man überhaupt kaufen kann. Also erklärte jede Produktdetailseite das Produkt, und Rezepte legten die Zutaten passend zur Portionsgröße mit einem Klick in den Warenkorb. Was man schon zu Hause hatte, wählte man ab. Außerdem gab es ein Swipe-Spiel, über das sich das passende Rezept finden ließ. Das ist alles live gegangen.
 
-Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Interview hinzu. Das reichte, um zu sehen, was zu verbessern war. Als eine Kollegin ausschied, übernahm ich ihre Aufgaben mit und briefte von da an das externe Entwicklungsteam.
+Ich begann mit einer Umfrage in der Zielgruppe, später kamen Nutzertests im Interview hinzu. Als eine Kollegin ausschied, übernahm ich ihre Aufgaben mit und briefte von da an das externe Entwicklungsteam.
 
 ### Die App „one conference“
 
@@ -40,7 +40,7 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 
 #### Mit wenigen Klicks auf andere Marken
 
-Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Ob es heute im Einsatz ist, weiß ich nicht. Als ich es vorstellte, waren erst einmal alle verblüfft, und wie es technisch funktionierte, war nicht sofort klar. Also zeigte ich mit einer Demo-Library, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
+Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Als ich es vorstellte, waren erst einmal alle verblüfft, und wie es technisch funktionierte, war nicht sofort klar. Also zeigte ich mit einer Demo-Library, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
 
 ## KI-gestützte Systeme
 
@@ -54,11 +54,11 @@ Systeme, die wiederkehrende Arbeit übernehmen, baue ich schon lange. Ein frühe
 
 Zurzeit verantworte ich in einer anderen Agentur Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind 26 Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
 
-### Ein Wizard für Landingpages
+### Eine Oberfläche vom Briefing bis zur Liveschaltung
 
-#### Vom hinterlegten Briefing zur fertigen Seite
+#### Account Manager sollen Landingpages selbst einrichten können
 
-Aus den Bausteinen und den Regeln, die ich geschrieben habe, ist mit Claude Code ein System entstanden, das Landingpages samt Texten produziert. Für einen Kunden wird ein Briefing hinterlegt, und daraus baut das System eine Seite mit passenden Sektionen und Text. Sichtbar wird sie in einem Wizard, den ich entworfen und gebaut habe. Damit soll jeder im Team mit wenigen Klicks eine Landingpage erzeugen können. Links stehen die Texte als Formular, rechts steht die Vorschau der Seite, umschaltbar auf die mobile Ansicht. Wer mehr Mühe hineinstecken will, kann Sektionen hinzufügen, entfernen oder verschieben. Das allgemeine Layout ist durch ein Template festgelegt. Accessibility ist Bedingung für die Freigabe, nicht Nacharbeit. Von Hand brauchte nach meiner Erinnerung allein der erste Aufbau einer Seite einen halben bis einen ganzen Tag, ohne Text und ohne mobile Fassung. Mit dem Wizard steht die erste Fassung mit Text nach rund fünf Minuten, Korrekturen kommen obendrauf. Der Wizard ist fertig gebaut und läuft noch lokal bei mir, die Übernahme ins gemeinsame System steht aus. Die Rechte liegen beim Arbeitgeber, zeigen kann ich davon also nichts.
+In dieser Agentur verantworte ich die Landingpages für die Kunden, von der Gestaltung über den Text bis zur Technik, von der Domain bis zum Tracking. Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. Drei Assistenten führen durch den Weg. Der erste fragt auf drei kurzen Karten das Briefing ab, danach zeigt eine Übersicht, was als Nächstes zu tun ist. Text und Struktur der Seite entstehen automatisch, im Editor passt man sie an, das Formular links, die Vorschau rechts. Nach dem ersten Review zieht der zweite Assistent die Seite in den Account des Kunden um, der dritte führt Schritt für Schritt durch die technische Einrichtung, danach wird die Domain eingerichtet. Am Ende geht die Seite live, und eine Testanfrage läuft durch. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit November 2026 ist die Oberfläche Teil des internen Systems der Agentur, der Einsatz im Team steht bevor. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
 
 
 ## Aus dem Studium
@@ -82,3 +82,4 @@ Mein Schwerpunkt ist UX, und die Oberfläche ist der Teil davon, den man sieht. 
 ## Kontakt
 
 Über Produktdesign, Designsysteme und KI tausche ich mich gern aus.
+
