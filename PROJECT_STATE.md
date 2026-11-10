@@ -4,23 +4,18 @@ Letzte Aktualisierung: 2026-11-10
 
 ## Nächster Schritt
 
-**Freigabe der Vorschau durch André (10.11.2026), zwei Varianten.**
-Textstand 10.11. abends aus bewerbungen-2026 (Commit e67dc86, nach dem
-Gremium): VW-Satz „Meine Kollegen … dankbar", Token-Satz „verblüfft", der
-Ablauf der Funnel-Karte und „Wie ich arbeite" gestrichen; 66 Sätze je
-Sprache. Zwei Pull Requests, beide Gate grün, keine Drift:
-- PR #5, Zweig `startseite-2026-11-10`, Vorschau
-  `deploy-preview-5--andreux-design.netlify.app`: bisherige Anordnung.
-- PR #6 (Entwurf), Zweig `startseite-2026-11-10-ergebnis-oben`, Vorschau
-  `deploy-preview-6--andreux-design.netlify.app`: baut auf #5 auf, der
-  Ergebnis-Absatz steht auf fünf Karten direkt unter dem Untertitel
-  (16 darüber, 32 darunter, Regel `.untertitel + .ergebnis`).
-Nach Andrés Wahl genau einen nach `main` mergen, den anderen schließen;
-vorher nichts live (André 10.11.: „Erst ansehen", beide PRs offen). Das
-„Also" der Token-Karte ist gestrichen (0b63b2e: „Mit einer Demo-Library
-zeigte ich …"). Das „damit" der Bausteine-Karte bleibt; Thema nur, falls
-André „Ergebnis oben" wählt. Die
-VW-Karte hat kein Ergebnis mehr. Danach weiter mit Cloudflare:
+**Freigabe der Vorschau durch André (10.11.2026).** Textstand 10.11.
+abends aus bewerbungen-2026 (Commit 0b63b2e, nach dem Gremium): VW-Satz
+„Meine Kollegen … dankbar", Token-Satz „verblüfft" samt „Also", der Ablauf
+der Funnel-Karte und „Wie ich arbeite" gestrichen; 66 Sätze je Sprache.
+PR #5, Zweig `startseite-2026-11-10`, Vorschau
+`deploy-preview-5--andreux-design.netlify.app`, Gate grün, keine Drift.
+Erst nach Andrés ausdrücklicher Freigabe nach `main` mergen.
+Die Anordnung ist entschieden: bisherige, Ergebnis nach der Beschreibung.
+Die Variante „Ergebnis oben" (PR #6, Zweig
+`startseite-2026-11-10-ergebnis-oben`) ist geschlossen, nicht gemergt;
+André: „Sicher dass das Ergebnis zuerst da stehen sollte ? Wirkt etwas
+komisch." Die VW-Karte hat kein Ergebnis mehr. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
