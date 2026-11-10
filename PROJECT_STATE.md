@@ -15,7 +15,10 @@ Die Anordnung ist entschieden: bisherige, Ergebnis nach der Beschreibung.
 Die Variante „Ergebnis oben" (PR #6, Zweig
 `startseite-2026-11-10-ergebnis-oben`) ist geschlossen, nicht gemergt;
 André: „Sicher dass das Ergebnis zuerst da stehen sollte ? Wirkt etwas
-komisch." Die VW-Karte hat kein Ergebnis mehr. Danach weiter mit Cloudflare:
+komisch." Die VW-Karte hat kein Ergebnis mehr. Etikett „Ergebnis:" nur bei echtem
+Ergebnis (André 10.11.): bei Tokens und filo entfernt, beide Absätze sind
+jetzt `p.text` mit unverändertem Wortlaut; „Ergebnis:" bleibt bei one
+conference, Bausteine und Oberfläche. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
