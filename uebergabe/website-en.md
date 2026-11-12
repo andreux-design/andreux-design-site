@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit 88de8bb; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
+# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit nach 88de8bb, Kopie 15:09; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -7,6 +7,8 @@ I design products and the systems they are built on.
 ## About me
 
 I have been working in the field since 2010. I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. I was already doing this more than ten years ago, with an input form I built for a recurring report that was then ready at the push of a button. Later it was design systems in Figma; today it is systems built with AI.
+
+In my work, a criterion decides whether a design is good, not taste. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules.
 
 ## End-to-end product design
 
@@ -46,9 +48,7 @@ The second is an internal library. For Volkswagen Commercial Vehicles I built th
 
 #### Layouts that became building blocks
 
-At my current agency I am responsible for landing pages, including concept, design and copy. I began there by building page layouts by hand and writing my own rules for copy and design as the basis for evaluation. Back then I set up a small design system in Figma for each client so that I could design consistently myself. Those layouts have become 26 building blocks, and pages are now generated from them automatically. If a client has no design system yet, or only an inadequate one, a new one is created at the start of the project following a set of rules and applied to the building blocks. What I had built by hand as layouts has become the basis of automated production.
-
-In my work, a criterion decides whether a design is good, not taste. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules.
+At my current agency I am responsible for landing pages, including concept, design and copy. I began there by building page layouts by hand and writing my own rules for copy and design as the basis for evaluation. Back then I set up a small design system in Figma for each client so that I could design consistently myself. Those layouts have become building blocks, and pages are now generated from them automatically. If a client has no design system yet, or only an inadequate one, a new one is created at the start of the project following a set of rules and applied to the building blocks. What I had built by hand as layouts has become the basis of automated production.
 
 ### One interface from brief to launch
 

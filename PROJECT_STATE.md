@@ -59,7 +59,11 @@ Compiler-Sätze als letzter Absatz der Bausteine-Karte nach dem Ergebnis
 selbst ein". Dann 88de8bb: Berichtssatz neu, Untertitel
 „Account Manager können Landingpages selbst einrichten", Oberflächen-Karte
 im Präteritum, „einrichten und anpassen"; Tintenkante „Ä" IBM Plex Sans
-0,0225 em. DE und EN je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
+0,0225 em. Dann (Kopie 15:09): Kriteriums- und
+Compiler-Absatz als zweiter Absatz von Über mich (`.einleitung .satz +
+.satz` 16), raus aus der Bausteine-Karte (Regel `.ergebnis + .text`
+entfernt); „Aus den Vorlagen sind Bausteine geworden" ohne 26. DE und EN
+je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse

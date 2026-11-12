@@ -388,6 +388,9 @@ a { color: inherit; }
   font-size: var(--schrift-1); color: var(--tinte-gedaempft);
   max-width: var(--mass-prosa-web); margin: 0;
 }
+/* Zweiter Absatz in "Ueber mich" (12.11.2026, Kriterium und Compiler):
+   16 dazwischen wie zwischen zwei Textabsaetzen einer Karte. */
+.einleitung .satz + .satz { margin-top: var(--raum-6); }
 /* Eingereihte Abschnitte: Einleitung, "Was ich suche", Kontakt stehen ab
    900px mit Titel und Text in der Textspalte bei 272, wie die Saeulen; die
    linke Spalte bleibt leer, sie ist die Kennungsspalte des Systems. Eine
@@ -860,9 +863,6 @@ p { max-width: var(--mass-prosa-web); }
   font-size: var(--schrift-0);
 }
 .ergebnis + .ergebnis { margin-top: 0; }
-/* Text nach dem Ergebnis (Bausteine-Karte, 12.11.2026): dieselben 32 wie
-   ueber dem Ergebnis, damit es als eigene Stufe stehen bleibt. */
-.ergebnis + .text { margin-top: var(--raum-8); }
 .ergebnis b { color: var(--tinte); font-weight: 500; }
 /* Zwischenzeilen im Impressum: 500 wie "Ergebnis", nicht 700; die Seite
    laedt Plex Sans nur in 400 und 500, 700 waere synthetisch (01.10.2026). */

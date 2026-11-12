@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit 88de8bb; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit nach 88de8bb, Kopie 15:09; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -7,6 +7,8 @@ Ich gestalte Produkte und die Systeme, auf denen sie stehen.
 ## Über mich
 
 Im Beruf bin ich seit 2010. Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Das war schon vor über zehn Jahren so, damals mit einer Eingabemaske für einen regelmäßigen Bericht, der danach auf Knopfdruck fertig war. Später waren es Designsysteme in Figma, heute sind es Systeme mit KI.
+
+Ob ein Entwurf gut ist, entscheidet bei mir ein Kriterium, nicht der Geschmack. Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln schreiben, der das Fach kennt.
 
 ## End-to-End-Produktdesign
 
@@ -46,9 +48,7 @@ Das zweite ist eine interne Library. Für Volkswagen Nutzfahrzeuge habe ich die 
 
 #### Vorlagen, die zu Bausteinen wurden
 
-In meiner jetzigen Agentur verantworte ich Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind 26 Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
-
-Ob ein Entwurf gut ist, entscheidet bei mir ein Kriterium, nicht der Geschmack. Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln schreiben, der das Fach kennt.
+In meiner jetzigen Agentur verantworte ich Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
 
 ### Eine Oberfläche vom Briefing bis zur Liveschaltung
 
