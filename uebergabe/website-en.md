@@ -44,7 +44,7 @@ The second is a library for Volkswagen Commercial Vehicles, for which I built th
 
 ## AI-assisted systems
 
-With AI, I shape what I know into tools and products. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules and review steps.
+With AI, I shape what I know into tools and products. In code, the compiler tells you whether something is right. For design and copy there is none, so someone who knows the craft has to write the rules.
 
 ### A library of building blocks for automated pages
 

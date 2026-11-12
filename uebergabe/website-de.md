@@ -44,7 +44,7 @@ Das zweite ist eine Library für Volkswagen Nutzfahrzeuge, für die ich die Webs
 
 ## KI-gestützte Systeme
 
-Mit KI forme ich mein Wissen zu Werkzeugen und Produkten. Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln und Prüfstufen schreiben, der das Fach kennt.
+Mit KI forme ich mein Wissen zu Werkzeugen und Produkten. Beim Code sagt der Compiler, ob es stimmt. Für Gestaltung und Text gibt es keinen, da muss jemand die Regeln schreiben, der das Fach kennt.
 
 ### Eine Bausteinbibliothek für automatisierte Seiten
 
