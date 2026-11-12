@@ -10,11 +10,9 @@ die Bewerbungssitzung). Textstand der iCloud-Kopien vom 12.11. 15:09
 (bewerbungen-2026 34a00bd), je 54 Sätze, 6 Kartentitel; live geprüft auf
 andreux.design und /en. Verlauf der Runde 10. bis 12.11. unten.
 
-**Vorschau PR #7** (Zweig `startseite-2026-11-12b`,
-`deploy-preview-7--andreux-design.netlify.app`): zwei Sätze aus
+**Live seit 12.11.2026, Merge `191cac4`** (PR #7): zwei Sätze aus
 bewerbungen-2026 f57aac8 (Bausteine „unter anderem", Token „Also habe ich
-ein System gebaut …"), Gate grün; live erst nach Andrés Wort in dieser
-Sitzung.
+ein System gebaut …"), Freigabe André in dieser Sitzung; live geprüft.
 
 **Verlauf 10. bis 12.11.2026.** Textstand 10.11.
 abends aus bewerbungen-2026 (Commit 0b63b2e, nach dem Gremium): VW-Satz
