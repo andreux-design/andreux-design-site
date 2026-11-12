@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit nach 88de8bb, Kopie 15:09; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit f57aac8; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -38,7 +38,7 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 
 Beide sind 2024 in der Münchner Agentur entstanden.
 
-Das erste ist ein Designsystem aus Design Tokens. Eine neue Marke anzulegen war in der Agentur sehr aufwändig, und das White-Label-System, mit dem wir die Kundenprojekte bauten, war auf mehrere Dateien verteilt. Also habe ich nach einem System gesucht, das dieses Problem löst. Das Token-System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich die Auswirkungen; sie blieb bei der Agentur.
+Das erste ist ein Designsystem aus Design Tokens. Eine neue Marke anzulegen war in der Agentur sehr aufwändig, und das White-Label-System, mit dem wir die Kundenprojekte bauten, war auf mehrere Dateien verteilt. Also habe ich ein System gebaut, das dieses Problem lösen sollte. Das Token-System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich die Auswirkungen; sie blieb bei der Agentur.
 
 Das zweite ist eine interne Library. Für Volkswagen Nutzfahrzeuge habe ich die Websites zweier Modelle gebaut, des ID. Buzz und des California. Der Hersteller hatte seine UI-Komponenten dokumentiert, in unserem Team fehlten sie aber in Figma. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich die Library nach und nach in Figma aufgebaut.
 
@@ -48,7 +48,7 @@ Das zweite ist eine interne Library. Für Volkswagen Nutzfahrzeuge habe ich die 
 
 #### Vorlagen, die zu Bausteinen wurden
 
-In meiner jetzigen Agentur verantworte ich Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
+In meiner jetzigen Agentur verantworte ich unter anderem Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
 
 ### Eine Oberfläche vom Briefing bis zur Liveschaltung
 
