@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit 49ed34b; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit c63c2be; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -40,7 +40,7 @@ Beide sind 2024 in der Münchner Agentur entstanden, für die ich auch die Konfe
 
 Das erste ist ein Designsystem aus Design Tokens. Eine neue Marke anzulegen war in der Agentur sehr aufwändig, und das White-Label-System, mit dem wir die Kundenprojekte bauten, war auf mehrere Dateien verteilt. Also habe ich nach einem System gesucht, das dieses Problem löst. Das Token-System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich die Auswirkungen; sie blieb bei der Agentur.
 
-Das zweite ist eine interne Library. Für Volkswagen Nutzfahrzeuge habe ich die Websites zweier Modelle gebaut, des ID. Buzz und des California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich die Library nach und nach in Figma aufgebaut.
+Das zweite ist eine interne Library. Für Volkswagen Nutzfahrzeuge habe ich die Websites zweier Modelle gebaut, des ID. Buzz und des California. Der Hersteller hatte seine UI-Komponenten dokumentiert, in unserem Team fehlten sie aber in Figma. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich die Library nach und nach in Figma aufgebaut.
 
 ## KI-gestützte Systeme
 
