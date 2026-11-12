@@ -4,13 +4,18 @@ Letzte Aktualisierung: 2026-11-12
 
 ## Nächster Schritt
 
-**Freigabe der Vorschau durch André (10.11.2026).** Textstand 10.11.
+**Live seit 12.11.2026, Merge `d3ad399`** (PR #5, Freigabe André in
+dieser Sitzung nach seinem „Besser als alles zuvor oder ? Dann live" über
+die Bewerbungssitzung). Textstand der iCloud-Kopien vom 12.11. 15:09
+(bewerbungen-2026 34a00bd), je 54 Sätze, 6 Kartentitel; live geprüft auf
+andreux.design und /en. Verlauf der Runde 10. bis 12.11. unten.
+
+**Verlauf 10. bis 12.11.2026.** Textstand 10.11.
 abends aus bewerbungen-2026 (Commit 0b63b2e, nach dem Gremium): VW-Satz
 „Meine Kollegen … dankbar", Token-Satz „verblüfft" samt „Also", der Ablauf
 der Funnel-Karte und „Wie ich arbeite" gestrichen; 66 Sätze je Sprache.
 PR #5, Zweig `startseite-2026-11-10`, Vorschau
 `deploy-preview-5--andreux-design.netlify.app`, Gate grün, keine Drift.
-Erst nach Andrés ausdrücklicher Freigabe nach `main` mergen.
 Die Anordnung ist entschieden: bisherige, Ergebnis nach der Beschreibung.
 Die Variante „Ergebnis oben" (PR #6, Zweig
 `startseite-2026-11-10-ergebnis-oben`) ist geschlossen, nicht gemergt;
