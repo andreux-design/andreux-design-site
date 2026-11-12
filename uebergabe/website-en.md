@@ -1,12 +1,14 @@
-# Seitentext EN, Stand 10.11.2026 nachts (Kopie website-en-neu-2026-11-10.md aus iCloud, 20:47; gleiche Struktur wie DE)
+# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, ohne Lektor, von André noch nicht gelesen; gleiche Struktur wie DE)
 
 Senior Product Designer
 
 I design products and the systems they stand on.
 
+In my work, a criterion decides whether a design is good, not taste.
+
 ## About me
 
-Today I am the only designer responsible for an agency's entire production: design, copy and system. I follow a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens, rules and review steps. Today I build systems like that with AI models, which I brief like team members. I started in prepress in 2010 and have been designing since 2011.
+Today I am the only product designer responsible for an agency's entire production: design, copy and system. I follow a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. I started in prepress in 2010 and have been designing since 2011.
 
 ## End-to-end product design
 
@@ -30,23 +32,25 @@ In 2024, at a digital agency in Munich, I redesigned the internal conference app
 
 I build design systems, from design tokens through several layers to nested components and flows, with what Figma provides.
 
-### Two systems for a digital agency in Munich
+### Two systems on my own initiative
 
 #### A token-based design system, a library for Volkswagen
 
-On my own initiative, I built a token-based design system in 2024, because the agency's white-label system, which we used to build client projects, was spread across several files. The system can be switched to other brands in a few clicks and includes light and dark mode. I used a demo library to show what the system did; it stayed with the agency. Afterwards, the people in charge spoke with me one on one to understand it in detail.
+Both were created in 2024 at the Munich agency for which I also designed the conference app.
 
-In 2024, at a digital agency in Munich, I built the websites for two Volkswagen Commercial Vehicles models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again.
+The first is a design system built from design tokens. Setting up a new brand took a lot of effort at the agency, and the white-label system we used to build client projects was spread across several files. So I looked for a system that solves this problem. The token system can be switched to other brands in a few clicks and includes light and dark mode. I used a demo library to show the effects; it stayed with the agency.
+
+The second is a library for Volkswagen Commercial Vehicles, for which I built the websites of two models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again.
 
 ## AI-assisted systems
 
-In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules and review steps.
+With AI, I shape what I know into tools and products. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules and review steps.
 
 ### A library of building blocks for automated pages
 
 #### Layouts that became building blocks
 
-At the moment I am responsible for landing pages at another agency, concept, design and copy included. I began there by building page layouts by hand and writing my own rules for copy and design as the basis for evaluation. Back then I set up a small design system in Figma for each client so that I could design consistently myself. Those layouts have become 26 building blocks, and pages are now generated from them automatically. If a client has no design system yet, or only an inadequate one, a new one is created at the start of the project according to rules and applied to the building blocks. What I had built by hand as layouts has become the basis of automated production.
+At my current agency I am responsible for landing pages, concept, design and copy included. I began there by building page layouts by hand and writing my own rules for copy and design as the basis for evaluation. Back then I set up a small design system in Figma for each client so that I could design consistently myself. Those layouts have become 26 building blocks, and pages are now generated from them automatically. If a client has no design system yet, or only an inadequate one, a new one is created at the start of the project according to rules and applied to the building blocks. What I had built by hand as layouts has become the basis of automated production.
 
 ### One interface from brief to launch
 
@@ -65,4 +69,3 @@ filo, my bachelor's thesis, came out of everyday work. You look for a message ab
 ## Contact
 
 I'm happy to talk about product design, design systems and AI.
-

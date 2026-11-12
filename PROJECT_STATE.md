@@ -39,9 +39,10 @@ Stats weiter 64 darunter; Drift prüft die Klasse mit, Tintenkante „O" Sora
 500 0,05 em), Über mich „einziger Product Designer" ohne Prüfstufen, Karte
 „Zwei Systeme auf eigene Initiative" mit drei Absätzen (Einleitung, Tokens,
 Volkswagen), KI-Einleitung „Mit KI forme ich …", Bausteine „In meiner
-jetzigen Agentur". DE 52 Sätze. **Englisch steht noch auf dem 10.11.:** im
-iCloud lag keine englische Kopie, übersetzt wird hier nicht; angefragt bei
-der Bewerbungssitzung. Vor der Freigabe muss Englisch nachgezogen sein. Danach weiter mit Cloudflare:
+jetzigen Agentur". Englisch nachgezogen (Kopie
+`website-en-neu-2026-11-12.md`, in der Bewerbungssitzung übersetzt, ohne
+Lektor, von André noch nicht gelesen), Tintenkante „I" Sora 500 0,1 em.
+DE und EN je 52 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
