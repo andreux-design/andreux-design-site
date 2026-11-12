@@ -1,14 +1,12 @@
-# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit afabffc; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
+# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit 94aaa79; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
 
 Senior Product Designer
 
 I design products and the systems they are built on.
 
-In my work, a criterion decides whether a design is good, not taste.
-
 ## About me
 
-I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. It was already like that more than ten years ago, back then with a report generated from an input form at the push of a button. Later it was design systems in Figma, today it is systems built with AI. I have been working in the field since 2010.
+I have been working in the field since 2010. I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. That was already the case more than ten years ago, with a recurring report generated from an input form at the push of a button. Later it was design systems in Figma, today it is systems built with AI.
 
 ## End-to-end product design
 
@@ -36,7 +34,7 @@ I build design systems, from design tokens through several layers to nested comp
 
 #### A token-based design system, an internal library
 
-Both were created in 2024 at the Munich agency for which I also redesigned the conference app.
+Both were created in 2024 at the Munich agency.
 
 The first is a design system built from design tokens. Setting up a new brand took a lot of effort at the agency, and the white-label system we used to build client projects was spread across several files. So I looked for a system that would solve this problem. The token system can be switched to other brands in a few clicks and includes light and dark mode. I used a demo library to show the effects; it stayed with the agency.
 
@@ -44,17 +42,17 @@ The second is an internal library. For Volkswagen Commercial Vehicles I built th
 
 ## AI-assisted systems
 
-In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules.
-
 ### A library of building blocks for automated pages
 
 #### Layouts that became building blocks
 
 At my current agency I am responsible for landing pages, including concept, design and copy. I began there by building page layouts by hand and writing my own rules for copy and design as the basis for evaluation. Back then I set up a small design system in Figma for each client so that I could design consistently myself. Those layouts have become 26 building blocks, and pages are now generated from them automatically. If a client has no design system yet, or only an inadequate one, a new one is created at the start of the project following a set of rules and applied to the building blocks. What I had built by hand as layouts has become the basis of automated production.
 
+In my work, a criterion decides whether a design is good, not taste. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules.
+
 ### One interface from brief to launch
 
-#### Account managers should be able to set up landing pages themselves
+#### Account managers set up landing pages themselves
 
 Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since early November 2026 the interface has been live in the agency's internal system and is in use. I can't show the interface itself; the rights to it belong to my employer.
 

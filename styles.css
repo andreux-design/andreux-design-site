@@ -463,19 +463,6 @@ h2::before { margin-left: var(--einzug); }
   margin: 0 0 var(--raum-5);
 }
 @media (min-width: 900px) { .eigenname { font-size: var(--schrift-3); } }
-/* Unterzeile unter dem Titel (12.11.2026, Text aus dem Bewerbungsrepo):
-   gebaut wie die Rolle darueber, Display-Schrift 500, Stufe 1 und 3,
-   gedaempfte Tinte; die beiden rahmen den Titel. 24 zum Titel, die Stats
-   behalten ihre 64 darunter. */
-.unterzeile {
-  font-family: var(--familie-display); font-weight: 500;
-  font-size: var(--schrift-1); line-height: var(--zeile-ueberschrift);
-  letter-spacing: var(--spur-gross);
-  color: var(--tinte-gedaempft);
-  max-width: var(--mass-prosa-web);
-  margin: var(--raum-7) 0 0;
-}
-@media (min-width: 900px) { .unterzeile { font-size: var(--schrift-3); } }
 
 /* BEWEGUNG NUR ALS ANTWORT (André, 01.10.2026). Bis dahin hoben sich Rolle,
    Titel, Stats, Einleitung und Sprungmarken beim Laden um 8px (Klasse
@@ -873,6 +860,9 @@ p { max-width: var(--mass-prosa-web); }
   font-size: var(--schrift-0);
 }
 .ergebnis + .ergebnis { margin-top: 0; }
+/* Text nach dem Ergebnis (Bausteine-Karte, 12.11.2026): dieselben 32 wie
+   ueber dem Ergebnis, damit es als eigene Stufe stehen bleibt. */
+.ergebnis + .text { margin-top: var(--raum-8); }
 .ergebnis b { color: var(--tinte); font-weight: 500; }
 /* Zwischenzeilen im Impressum: 500 wie "Ergebnis", nicht 700; die Seite
    laedt Plex Sans nur in 400 und 500, 700 waere synthetisch (01.10.2026). */

@@ -50,7 +50,13 @@ gestrichen, „habe ich die Library nach und nach in Figma aufgebaut",
 Englisch zehn Sprachkorrekturen nach Lektorlauf (Titel „the systems they
 are built on"). Dann c63c2be (UI-Komponenten) und afabffc: Schluss von
 Über mich ersetzt (Bericht vor zehn Jahren, Designsysteme, KI, „Im Beruf
-bin ich seit 2010"). DE und EN je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
+bin ich seit 2010"). Dann 94aaa79: Unterzeile im Kopf entfällt (samt
+`.unterzeile`, Tabellenzeile Sora 500 und Drift-Klasse); Über mich beginnt
+mit „Im Beruf bin ich seit 2010."; „Beide sind 2024 in der Münchner Agentur
+entstanden." ohne Nachsatz; Säule 3 ohne Einleitung, Kriteriums- und
+Compiler-Sätze als letzter Absatz der Bausteine-Karte nach dem Ergebnis
+(`.ergebnis + .text` 32); Untertitel „Account Manager richten Landingpages
+selbst ein". DE und EN je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
