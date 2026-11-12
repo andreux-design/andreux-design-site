@@ -45,7 +45,10 @@ Lektor, von André noch nicht gelesen), Tintenkante „I" Sora 500 0,1 em.
 Danach am 12.11.: KI-Einleitung erst gekürzt, nach dem
 zweiten Prüflauf wieder mit „Compiler und Tests"; Untertitel „… eine
 interne Library", Library-Satz geteilt, „Konferenz-App neu gestaltet"
-(bewerbungen-2026 5f2c76e). DE und EN je 53 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
+(bewerbungen-2026 5f2c76e). Dann (49ed34b): erster Satz der KI-Einleitung
+gestrichen, „habe ich die Library nach und nach in Figma aufgebaut",
+Englisch zehn Sprachkorrekturen nach Lektorlauf (Titel „the systems they
+are built on"). DE und EN je 52 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
