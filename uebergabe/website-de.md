@@ -34,17 +34,17 @@ Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu versch
 
 ### Zwei Systeme auf eigene Initiative
 
-#### Ein Designsystem aus Tokens, eine Library für Volkswagen
+#### Ein Designsystem aus Tokens, eine interne Library
 
-Beide sind 2024 in der Münchner Agentur entstanden, für die ich auch die Konferenz-App gestaltet habe.
+Beide sind 2024 in der Münchner Agentur entstanden, für die ich auch die Konferenz-App neu gestaltet habe.
 
 Das erste ist ein Designsystem aus Design Tokens. Eine neue Marke anzulegen war in der Agentur sehr aufwändig, und das White-Label-System, mit dem wir die Kundenprojekte bauten, war auf mehrere Dateien verteilt. Also habe ich nach einem System gesucht, das dieses Problem löst. Das Token-System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich die Auswirkungen; sie blieb bei der Agentur.
 
-Das zweite ist eine Library für Volkswagen Nutzfahrzeuge, für die ich die Websites zweier Modelle gebaut habe, des ID. Buzz und des California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut.
+Das zweite ist eine interne Library. Für Volkswagen Nutzfahrzeuge habe ich die Websites zweier Modelle gebaut, des ID. Buzz und des California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut.
 
 ## KI-gestützte Systeme
 
-Mit KI forme ich mein Wissen zu Werkzeugen und Produkten. Beim Code sagt der Compiler, ob es stimmt. Für Gestaltung und Text gibt es keinen, da muss jemand die Regeln schreiben, der das Fach kennt.
+Mit KI forme ich mein Wissen zu Werkzeugen und Produkten. Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln schreiben, der das Fach kennt.
 
 ### Eine Bausteinbibliothek für automatisierte Seiten
 

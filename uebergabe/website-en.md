@@ -36,7 +36,7 @@ I build design systems, from design tokens through several layers to nested comp
 
 #### A token-based design system, a library for Volkswagen
 
-Both were created in 2024 at the Munich agency for which I also designed the conference app.
+Both were created in 2024 at the Munich agency for which I also redesigned the conference app.
 
 The first is a design system built from design tokens. Setting up a new brand took a lot of effort at the agency, and the white-label system we used to build client projects was spread across several files. So I looked for a system that solves this problem. The token system can be switched to other brands in a few clicks and includes light and dark mode. I used a demo library to show the effects; it stayed with the agency.
 
