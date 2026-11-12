@@ -1,6 +1,6 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-11-10
+Letzte Aktualisierung: 2026-11-12
 
 ## Nächster Schritt
 
@@ -32,7 +32,16 @@ Mehraufwand); filo gekürzt; der Schlussabsatz von Säule 3 entfällt samt
 Regel `.schluss`; Volkswagen und Tokens sind eine Karte „Zwei Systeme für
 eine Münchner Digitalagentur", Token-Absätze zuerst, dann Volkswagen.
 Tintenkanten-Tabelle um „J" (IBM Plex Sans 400, 0,0275 em) und „Z" (Sora
-600, 0,045 em). 49 Sätze, 6 Kartentitel je Sprache. Danach weiter mit Cloudflare:
+600, 0,045 em). 49 Sätze, 6 Kartentitel je Sprache. **12.11.2026, nur Deutsch** (bewerbungen-2026
+f6dc8ba, Kopie `website-de-neu-2026-11-12.md`): Unterzeile unter dem Titel
+als `p.unterzeile` (Sora 500, Stufe 1/3, gedämpft, 24 unter dem Titel,
+Stats weiter 64 darunter; Drift prüft die Klasse mit, Tintenkante „O" Sora
+500 0,05 em), Über mich „einziger Product Designer" ohne Prüfstufen, Karte
+„Zwei Systeme auf eigene Initiative" mit drei Absätzen (Einleitung, Tokens,
+Volkswagen), KI-Einleitung „Mit KI forme ich …", Bausteine „In meiner
+jetzigen Agentur". DE 52 Sätze. **Englisch steht noch auf dem 10.11.:** im
+iCloud lag keine englische Kopie, übersetzt wird hier nicht; angefragt bei
+der Bewerbungssitzung. Vor der Freigabe muss Englisch nachgezogen sein. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse

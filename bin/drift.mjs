@@ -55,8 +55,8 @@ const main = (html.match(/<main[\s\S]*?<\/main>/) || [""])[0].replace(/<!--[\s\S
 const bloecke = [...main.matchAll(
   // (?=[\s>]) nach dem Tagnamen: ohne Wortgrenze traf <p auch <path im
   // Chevron-SVG und schluckte bis zum </p> der Einleitung (01.10.2026).
-  /<(h1|p)(?=[\s>])(?:[^>]*class="(?:eigenname|satz|anspruch|text|ergebnis)")?[^>]*>([\s\S]*?)<\/\1>/g
-)].filter(m => m[1] === "h1" || /class="(?:eigenname|satz|anspruch|text|ergebnis)"/.test(m[0].split(">")[0])).map(m => m[2]
+  /<(h1|p)(?=[\s>])(?:[^>]*class="(?:eigenname|unterzeile|satz|anspruch|text|ergebnis)")?[^>]*>([\s\S]*?)<\/\1>/g
+)].filter(m => m[1] === "h1" || /class="(?:eigenname|unterzeile|satz|anspruch|text|ergebnis)"/.test(m[0].split(">")[0])).map(m => m[2]
   .replace(/<b>(Vorgehen|Ergebnis|Nicht gezeigt|Approach|Result|Not shown):<\/b>\s*/g, "")
   .replace(/<[^>]+>/g, "")
 );

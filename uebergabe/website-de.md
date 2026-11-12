@@ -1,12 +1,14 @@
-# Seitentext DE, Stand 10.11.2026 nachts (Quelle: bewerbungen-2026, texte/website.md; bereinigte Kopie website-de-neu-2026-11-10.md aus iCloud, 20:47; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit f6dc8ba; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
 Ich gestalte Produkte und die Systeme, auf denen sie stehen.
 
+Ob ein Entwurf gut ist, entscheidet bei mir ein Kriterium, nicht der Geschmack.
+
 ## Über mich
 
-Heute verantworte ich als einziger Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens, Regeln und Prüfstufen. Heute baue ich solche Systeme mit KI-Modellen, die ich briefe wie Mitarbeiter. Angefangen habe ich 2010 in der Druckvorstufe, seit 2011 gestalte ich.
+Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Angefangen habe ich 2010 in der Druckvorstufe, seit 2011 gestalte ich.
 
 ## End-to-End-Produktdesign
 
@@ -30,23 +32,25 @@ In einer Münchner Digitalagentur habe ich 2024 die interne Konferenz-App „one
 
 Ich baue Designsysteme auf, von Design Tokens über mehrere Ebenen bis zu verschachtelten Komponenten und Flows, mit dem, was Figma dafür hergibt.
 
-### Zwei Systeme für eine Münchner Digitalagentur
+### Zwei Systeme auf eigene Initiative
 
 #### Ein Designsystem aus Tokens, eine Library für Volkswagen
 
-Auf eigene Initiative habe ich 2024 ein Designsystem aus Design Tokens gebaut, weil das White-Label-System der Agentur, mit dem wir die Kundenprojekte bauten, auf mehrere Dateien verteilt war. Das System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich, was das System bewirkte; sie blieb bei der Agentur. Danach sprachen die Verantwortlichen einzeln mit mir, um es im Detail zu verstehen.
+Beide sind 2024 in der Münchner Agentur entstanden, für die ich auch die Konferenz-App gestaltet habe.
 
-2024 habe ich in einer Münchner Digitalagentur die Websites für zwei Modelle von Volkswagen Nutzfahrzeuge gebaut, den ID. Buzz und den California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut.
+Das erste ist ein Designsystem aus Design Tokens. Eine neue Marke anzulegen war in der Agentur sehr aufwändig, und das White-Label-System, mit dem wir die Kundenprojekte bauten, war auf mehrere Dateien verteilt. Also habe ich nach einem System gesucht, das dieses Problem löst. Das Token-System lässt sich mit wenigen Klicks auf andere Marken umstellen und führt Hell- und Dunkelmodus mit. Mit einer Demo-Library zeigte ich die Auswirkungen; sie blieb bei der Agentur.
+
+Das zweite ist eine Library für Volkswagen Nutzfahrzeuge, für die ich die Websites zweier Modelle gebaut habe, des ID. Buzz und des California. Der Hersteller hatte seine Komponenten dokumentiert, in unserem Team fehlten sie aber als Figma-Komponenten. Damit wir sie nicht immer wieder neu anlegen mussten, habe ich nach und nach eine interne Library in Figma aufgebaut.
 
 ## KI-gestützte Systeme
 
-Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln und Prüfstufen schreiben, der das Fach kennt.
+Mit KI forme ich mein Wissen zu Werkzeugen und Produkten. Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln und Prüfstufen schreiben, der das Fach kennt.
 
 ### Eine Bausteinbibliothek für automatisierte Seiten
 
 #### Vorlagen, die zu Bausteinen wurden
 
-Zurzeit verantworte ich in einer anderen Agentur Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind 26 Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
+In meiner jetzigen Agentur verantworte ich Landingpages mit Konzept, Gestaltung und Text. Zuerst habe ich dort Layoutvorlagen von Hand angelegt und eigene Text- und Designregeln festgelegt, nach denen bewertet wird. Zu jedem Kunden legte ich damals ein kleines Designsystem in Figma an, damit ich selbst einheitlich gestalten konnte. Aus den Vorlagen sind 26 Bausteine geworden, aus denen heute Seiten automatisiert entstehen. Hat ein Kunde noch kein Designsystem oder nur ein unzureichendes, entsteht beim Projektstart ein neues nach Regeln und wird auf die Bausteine angewandt. Was ich als Vorlagen von Hand angelegt hatte, ist damit zur Grundlage der maschinellen Produktion geworden.
 
 ### Eine Oberfläche vom Briefing bis zur Liveschaltung
 
