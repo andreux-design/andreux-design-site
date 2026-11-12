@@ -34,17 +34,17 @@ I build design systems, from design tokens through several layers to nested comp
 
 ### Two systems on my own initiative
 
-#### A token-based design system, a library for Volkswagen
+#### A token-based design system, an internal library
 
 Both were created in 2024 at the Munich agency for which I also redesigned the conference app.
 
 The first is a design system built from design tokens. Setting up a new brand took a lot of effort at the agency, and the white-label system we used to build client projects was spread across several files. So I looked for a system that solves this problem. The token system can be switched to other brands in a few clicks and includes light and dark mode. I used a demo library to show the effects; it stayed with the agency.
 
-The second is a library for Volkswagen Commercial Vehicles, for which I built the websites of two models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again.
+The second is an internal library. For Volkswagen Commercial Vehicles I built the websites of two models, the ID. Buzz and the California. The manufacturer had documented its components, but our team did not have them as Figma components. I gradually built an internal library in Figma so that we would not have to recreate them again and again.
 
 ## AI-assisted systems
 
-With AI, I shape what I know into tools and products. In code, the compiler tells you whether something is right. For design and copy there is none, so someone who knows the craft has to write the rules.
+With AI, I shape what I know into tools and products. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules.
 
 ### A library of building blocks for automated pages
 
