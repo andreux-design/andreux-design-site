@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit 94aaa79; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit 88de8bb; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -6,7 +6,7 @@ Ich gestalte Produkte und die Systeme, auf denen sie stehen.
 
 ## Über mich
 
-Im Beruf bin ich seit 2010. Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Das war schon vor über zehn Jahren so, damals mit einem regelmäßigen Bericht, der auf Knopfdruck aus einer Eingabemaske entstand. Später waren es Designsysteme in Figma, heute sind es Systeme mit KI.
+Im Beruf bin ich seit 2010. Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Das war schon vor über zehn Jahren so, damals mit einer Eingabemaske für einen regelmäßigen Bericht, der danach auf Knopfdruck fertig war. Später waren es Designsysteme in Figma, heute sind es Systeme mit KI.
 
 ## End-to-End-Produktdesign
 
@@ -52,9 +52,9 @@ Ob ein Entwurf gut ist, entscheidet bei mir ein Kriterium, nicht der Geschmack. 
 
 ### Eine Oberfläche vom Briefing bis zur Liveschaltung
 
-#### Account Manager richten Landingpages selbst ein
+#### Account Manager können Landingpages selbst einrichten
 
-Jede Änderung läuft über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung geht Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. So soll auch jemand ohne Vorwissen eine Seite einrichten können, ohne etwas kaputtzumachen. Seit Anfang November 2026 ist die Oberfläche im internen System der Agentur veröffentlicht und wird genutzt. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
+Änderungen liefen über mich, und im Hin und Her zwischen Briefing, Feedback und Anpassung ging Zeit verloren. Deshalb habe ich mit Claude Code, einem KI-Werkzeug, eine Oberfläche entworfen und gebaut, in der ein Account Manager eine Landingpage selbst einrichten, erstellen und anpassen kann, bis zu Hosting und Tracking. So soll auch jemand ohne Vorwissen eine Seite einrichten und anpassen können, ohne etwas kaputtzumachen. Seit Anfang November 2026 ist die Oberfläche im internen System der Agentur veröffentlicht und wird genutzt. Die Oberfläche selbst kann ich nicht zeigen, die Rechte daran liegen beim Arbeitgeber.
 
 ## Aus dem Studium
 

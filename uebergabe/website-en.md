@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit 94aaa79; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
+# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit 88de8bb; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -6,7 +6,7 @@ I design products and the systems they are built on.
 
 ## About me
 
-I have been working in the field since 2010. I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. That was already the case more than ten years ago, with a recurring report generated from an input form at the push of a button. Later it was design systems in Figma, today it is systems built with AI.
+I have been working in the field since 2010. I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. I was already doing this more than ten years ago, with an input form I built for a recurring report that was then ready at the push of a button. Later it was design systems in Figma; today it is systems built with AI.
 
 ## End-to-end product design
 
@@ -52,9 +52,9 @@ In my work, a criterion decides whether a design is good, not taste. In code, co
 
 ### One interface from brief to launch
 
-#### Account managers set up landing pages themselves
+#### Account managers can set up landing pages themselves
 
-Every change goes through me, and time gets lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up a page without breaking anything. Since early November 2026 the interface has been live in the agency's internal system and is in use. I can't show the interface itself; the rights to it belong to my employer.
+Changes used to go through me, and time was lost in the back and forth between brief, feedback and adjustment. That is why I used Claude Code, an AI tool, to design and build an interface in which an account manager can set up, create and adjust a landing page on their own, all the way to hosting and tracking. The idea is that even someone with no prior knowledge can set up and adjust a page without breaking anything. Since early November 2026 the interface has been live in the agency's internal system and is in use. I can't show the interface itself; the rights to it belong to my employer.
 
 ## From university
 

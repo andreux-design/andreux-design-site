@@ -56,7 +56,10 @@ mit „Im Beruf bin ich seit 2010."; „Beide sind 2024 in der Münchner Agentur
 entstanden." ohne Nachsatz; Säule 3 ohne Einleitung, Kriteriums- und
 Compiler-Sätze als letzter Absatz der Bausteine-Karte nach dem Ergebnis
 (`.ergebnis + .text` 32); Untertitel „Account Manager richten Landingpages
-selbst ein". DE und EN je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
+selbst ein". Dann 88de8bb: Berichtssatz neu, Untertitel
+„Account Manager können Landingpages selbst einrichten", Oberflächen-Karte
+im Präteritum, „einrichten und anpassen"; Tintenkante „Ä" IBM Plex Sans
+0,0225 em. DE und EN je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
