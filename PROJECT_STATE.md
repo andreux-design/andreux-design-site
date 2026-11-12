@@ -42,7 +42,10 @@ Volkswagen), KI-Einleitung „Mit KI forme ich …", Bausteine „In meiner
 jetzigen Agentur". Englisch nachgezogen (Kopie
 `website-en-neu-2026-11-12.md`, in der Bewerbungssitzung übersetzt, ohne
 Lektor, von André noch nicht gelesen), Tintenkante „I" Sora 500 0,1 em.
-DE und EN je 52 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
+Danach am 12.11.: KI-Einleitung erst gekürzt, nach dem
+zweiten Prüflauf wieder mit „Compiler und Tests"; Untertitel „… eine
+interne Library", Library-Satz geteilt, „Konferenz-App neu gestaltet"
+(bewerbungen-2026 5f2c76e). DE und EN je 53 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
