@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit c63c2be; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
+# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit afabffc; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -8,7 +8,7 @@ In my work, a criterion decides whether a design is good, not taste.
 
 ## About me
 
-I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. I started in prepress in 2010 and have been designing since 2011.
+I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. It was already like that more than ten years ago, back then with a report generated from an input form at the push of a button. Later it was design systems in Figma, today it is systems built with AI. I have been working in the field since 2010.
 
 ## End-to-end product design
 

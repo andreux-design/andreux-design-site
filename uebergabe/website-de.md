@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit c63c2be; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit afabffc; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
 
 Senior Product Designer
 
@@ -8,7 +8,7 @@ Ob ein Entwurf gut ist, entscheidet bei mir ein Kriterium, nicht der Geschmack.
 
 ## Über mich
 
-Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Angefangen habe ich 2010 in der Druckvorstufe, seit 2011 gestalte ich.
+Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Das war schon vor über zehn Jahren so, damals mit einem Bericht, der auf Knopfdruck aus einer Eingabemaske entstand. Später waren es Designsysteme in Figma, heute sind es Systeme mit KI. Im Beruf bin ich seit 2010.
 
 ## End-to-End-Produktdesign
 

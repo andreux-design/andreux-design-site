@@ -48,7 +48,9 @@ interne Library", Library-Satz geteilt, „Konferenz-App neu gestaltet"
 (bewerbungen-2026 5f2c76e). Dann (49ed34b): erster Satz der KI-Einleitung
 gestrichen, „habe ich die Library nach und nach in Figma aufgebaut",
 Englisch zehn Sprachkorrekturen nach Lektorlauf (Titel „the systems they
-are built on"). DE und EN je 52 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
+are built on"). Dann c63c2be (UI-Komponenten) und afabffc: Schluss von
+Über mich ersetzt (Bericht vor zehn Jahren, Designsysteme, KI, „Im Beruf
+bin ich seit 2010"). DE und EN je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
