@@ -1,8 +1,69 @@
 # Stand: andreux-design-site
 
-Letzte Aktualisierung: 2026-10-22
+Letzte Aktualisierung: 2026-11-12
 
 ## Nächster Schritt
+
+**Freigabe der Vorschau durch André (10.11.2026).** Textstand 10.11.
+abends aus bewerbungen-2026 (Commit 0b63b2e, nach dem Gremium): VW-Satz
+„Meine Kollegen … dankbar", Token-Satz „verblüfft" samt „Also", der Ablauf
+der Funnel-Karte und „Wie ich arbeite" gestrichen; 66 Sätze je Sprache.
+PR #5, Zweig `startseite-2026-11-10`, Vorschau
+`deploy-preview-5--andreux-design.netlify.app`, Gate grün, keine Drift.
+Erst nach Andrés ausdrücklicher Freigabe nach `main` mergen.
+Die Anordnung ist entschieden: bisherige, Ergebnis nach der Beschreibung.
+Die Variante „Ergebnis oben" (PR #6, Zweig
+`startseite-2026-11-10-ergebnis-oben`) ist geschlossen, nicht gemergt;
+André: „Sicher dass das Ergebnis zuerst da stehen sollte ? Wirkt etwas
+komisch." Die VW-Karte hat kein Ergebnis mehr. Etikett „Ergebnis:" nur bei echtem
+Ergebnis (André 10.11.): bei Tokens und filo entfernt, beide Absätze sind
+jetzt `p.text` mit unverändertem Wortlaut; „Ergebnis:" bleibt bei one
+conference, Bausteine und Oberfläche. Stand 10.11. spät (Kopien 18:57): Oberflächenkarte
+ohne ersten Satz, beginnt mit „Jede Änderung …", Statussatz „Seit Anfang
+November 2026 … veröffentlicht und wird genutzt"; der Absatz „Systeme, die
+wiederkehrende Arbeit übernehmen …" steht als Schluss hinter den Karten
+von Säule 3 (`.eingereiht.schluss`, 64 nach der letzten Karte, gemessen
+390 und 1280), die Sonderregel 64 zur ersten Karte ist entfernt; colibre
+ist von der Startseite entfernt, „Aus dem Studium" trägt nur filo
+(Fallstudie colibre bleibt späterer Auftrag). Tintenkanten-Tabelle um „J"
+(IBM Plex Sans 400, 0,0275 em). Stand 10.11. nachts (Kopien 20:47): Über mich neu
+(„Heute verantworte ich als einziger Designer …", ohne „seit 2019" und
+Mehraufwand); filo gekürzt; der Schlussabsatz von Säule 3 entfällt samt
+Regel `.schluss`; Volkswagen und Tokens sind eine Karte „Zwei Systeme für
+eine Münchner Digitalagentur", Token-Absätze zuerst, dann Volkswagen.
+Tintenkanten-Tabelle um „J" (IBM Plex Sans 400, 0,0275 em) und „Z" (Sora
+600, 0,045 em). 49 Sätze, 6 Kartentitel je Sprache. **12.11.2026, nur Deutsch** (bewerbungen-2026
+f6dc8ba, Kopie `website-de-neu-2026-11-12.md`): Unterzeile unter dem Titel
+als `p.unterzeile` (Sora 500, Stufe 1/3, gedämpft, 24 unter dem Titel,
+Stats weiter 64 darunter; Drift prüft die Klasse mit, Tintenkante „O" Sora
+500 0,05 em), Über mich „einziger Product Designer" ohne Prüfstufen, Karte
+„Zwei Systeme auf eigene Initiative" mit drei Absätzen (Einleitung, Tokens,
+Volkswagen), KI-Einleitung „Mit KI forme ich …", Bausteine „In meiner
+jetzigen Agentur". Englisch nachgezogen (Kopie
+`website-en-neu-2026-11-12.md`, in der Bewerbungssitzung übersetzt, ohne
+Lektor, von André noch nicht gelesen), Tintenkante „I" Sora 500 0,1 em.
+Danach am 12.11.: KI-Einleitung erst gekürzt, nach dem
+zweiten Prüflauf wieder mit „Compiler und Tests"; Untertitel „… eine
+interne Library", Library-Satz geteilt, „Konferenz-App neu gestaltet"
+(bewerbungen-2026 5f2c76e). Dann (49ed34b): erster Satz der KI-Einleitung
+gestrichen, „habe ich die Library nach und nach in Figma aufgebaut",
+Englisch zehn Sprachkorrekturen nach Lektorlauf (Titel „the systems they
+are built on"). Dann c63c2be (UI-Komponenten) und afabffc: Schluss von
+Über mich ersetzt (Bericht vor zehn Jahren, Designsysteme, KI, „Im Beruf
+bin ich seit 2010"). Dann 94aaa79: Unterzeile im Kopf entfällt (samt
+`.unterzeile`, Tabellenzeile Sora 500 und Drift-Klasse); Über mich beginnt
+mit „Im Beruf bin ich seit 2010."; „Beide sind 2024 in der Münchner Agentur
+entstanden." ohne Nachsatz; Säule 3 ohne Einleitung, Kriteriums- und
+Compiler-Sätze als letzter Absatz der Bausteine-Karte nach dem Ergebnis
+(`.ergebnis + .text` 32); Untertitel „Account Manager richten Landingpages
+selbst ein". Dann 88de8bb: Berichtssatz neu, Untertitel
+„Account Manager können Landingpages selbst einrichten", Oberflächen-Karte
+im Präteritum, „einrichten und anpassen"; Tintenkante „Ä" IBM Plex Sans
+0,0225 em. Dann (Kopie 15:09): Kriteriums- und
+Compiler-Absatz als zweiter Absatz von Über mich (`.einleitung .satz +
+.satz` 16), raus aus der Bausteine-Karte (Regel `.ergebnis + .text`
+entfernt); „Aus den Vorlagen sind Bausteine geworden" ohne 26. DE und EN
+je 54 Sätze, 6 Kartentitel. Danach weiter mit Cloudflare:
 
 **Cloudflare, bei André im Dashboard:** Bot Fight Mode bzw. JS-Detections,
 E-Mail-Verschleierung und den Analytics-Beacon abschalten, danach Lighthouse
@@ -19,13 +80,12 @@ mit Andrés Wortlaut) steht in `doku/stand-bis-2026-10-02.md`.
 
 ## Offen
 
-- [ ] **Wizard-Satz und „fünf Minuten"** in der Funnel-Karte sind
-      eingefroren. André, 19.10.: der Wizard zieht bis Ende Oktober in ein
-      internes System um, rund 30 Minuten im Erstaufbau. Das wird im
-      Bewerbungsrepo geklärt und kommt als eigener Auftrag; bis dahin nichts
-      daran ändern
+- [x] **Wizard-Satz und „fünf Minuten"** erledigt: Funnel-Karte ist mit
+      dem Textstand 10.11. neu (PR #5, wartet auf Freigabe)
 - [ ] **Fallstudienseiten** für GoTiger, filo, colibre, mit Kurzfassungen auf
-      der Hauptseite (Schritt zwei, André 16. und 17.09.). Text kommt über
+      der Hauptseite (Schritt zwei, André 16. und 17.09.; laut Auftrag
+      10.11. GoTiger zuerst, erst wenn die Bilder da sind, jetzt nicht
+      bauen; Texte in bewerbungen-2026 `texte/fallstudie-*.md`). Text kommt über
       `uebergabe/`; Tintenkanten-Tabelle im Seitenskript um neue
       Anfangsglyphen ergänzen (Messlogik: Canvas bei 400px, erste
       eingefärbte Spalte, in em)
