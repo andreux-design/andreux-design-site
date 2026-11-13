@@ -1,4 +1,4 @@
-# Seitentext EN, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md, Commit f57aac8; Kopie website-en-neu-2026-11-12.md aus iCloud; übersetzt in der Bewerbungssitzung, Lektorlauf 12.11.; gleiche Struktur wie DE)
+# Seitentext EN, Stand 13.11.2026 (Quelle: bewerbungen-2026, texte/website-en.md; Kopie website-en-neu-2026-11-13.md aus iCloud; erster Satz in About me gestrichen; gleiche Struktur wie DE)
 
 Senior Product Designer
 
@@ -6,7 +6,7 @@ I design products and the systems they are built on.
 
 ## About me
 
-I have been working in the field since 2010. I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. I was already doing this more than ten years ago, with an input form I built for a recurring report that was then ready at the push of a button. Later it was design systems in Figma; today it is systems built with AI.
+I am currently the only product designer responsible for an agency's entire production: design, copy and system. I take a product from research through concept to implementation. Along the way I notice where work repeats, and I build the system for it out of components, tokens and rules. I was already doing this more than ten years ago, with an input form I built for a recurring report that was then ready at the push of a button. Later it was design systems in Figma; today it is systems built with AI.
 
 In my work, a criterion decides whether a design is good, not taste. In code, compilers and tests tell you whether something is right. For design and copy there is no compiler, so someone who knows the craft has to write the rules.
 
@@ -67,3 +67,4 @@ filo, my bachelor's thesis, came out of everyday work. You look for a message ab
 ## Contact
 
 I'm happy to talk about product design, design systems and AI.
+
