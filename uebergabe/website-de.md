@@ -1,4 +1,4 @@
-# Seitentext DE, Stand 12.11.2026 (Quelle: bewerbungen-2026, texte/website.md, Commit f57aac8; bereinigte Kopie website-de-neu-2026-11-12.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####)
+# Seitentext DE, Stand 13.11.2026 (Quelle: bewerbungen-2026, texte/website.md; bereinigte Kopie website-de-neu-2026-11-13.md aus iCloud, Rumpf bis Behauptungen; Abschnittstitel ##, Kartentitel ###, Untertitel ####; erster Satz in Über mich gestrichen)
 
 Senior Product Designer
 
@@ -6,7 +6,7 @@ Ich gestalte Produkte und die Systeme, auf denen sie stehen.
 
 ## Über mich
 
-Im Beruf bin ich seit 2010. Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Das war schon vor über zehn Jahren so, damals mit einer Eingabemaske für einen regelmäßigen Bericht, der danach auf Knopfdruck fertig war. Später waren es Designsysteme in Figma, heute sind es Systeme mit KI.
+Heute verantworte ich als einziger Product Designer die gesamte Produktion einer Agentur, Gestaltung, Text und System. Ich begleite ein Produkt vom Research über das Konzept bis zur Umsetzung. Dabei sehe ich, wo sich Arbeit wiederholt, und baue das System dazu, aus Komponenten, Tokens und Regeln. Das war schon vor über zehn Jahren so, damals mit einer Eingabemaske für einen regelmäßigen Bericht, der danach auf Knopfdruck fertig war. Später waren es Designsysteme in Figma, heute sind es Systeme mit KI.
 
 Ob ein Entwurf gut ist, entscheidet bei mir ein Kriterium, nicht der Geschmack. Beim Code sagen Compiler und Tests, ob es stimmt. Für Gestaltung und Text gibt es keinen Compiler, da muss jemand die Regeln schreiben, der das Fach kennt.
 
