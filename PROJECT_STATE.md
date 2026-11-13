@@ -4,6 +4,15 @@ Letzte Aktualisierung: 2026-11-12
 
 ## Nächster Schritt
 
+**Vorschau PR #8 seit 13.11.2026, wartet auf André** (Zweig
+`startseite-2026-11-13`, Commit `6a5fa06`,
+deploy-preview-8--andreux-design.netlify.app). Erster Satz in „Über mich"
+gestrichen, DE „Im Beruf bin ich seit 2010.", EN „I have been working in
+the field since 2010.", weil der Seitenkopf das Jahr schon nennt (André über
+die Bewerbungssitzung). Wortlaut aus den iCloud-Kopien vom 13.11. 12:59,
+sonst kein Wort geändert. Gate grün, keine Drift, 53 Sätze je Sprache.
+Live nur auf Andrés eigenes Wort in dieser Sitzung.
+
 **Live seit 12.11.2026, Merge `d3ad399`** (PR #5, Freigabe André in
 dieser Sitzung nach seinem „Besser als alles zuvor oder ? Dann live" über
 die Bewerbungssitzung). Textstand der iCloud-Kopien vom 12.11. 15:09
